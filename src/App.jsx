@@ -1,9 +1,39 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Activity, Cpu, TerminalSquare } from 'lucide-react';
+import { ArrowUpRight, Code2, GitBranch, ShieldAlert, CheckSquare, XSquare } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
+
+/* --- SEO Structured Data --- */
+const StructuredData = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "The Spark — Agentic Engineering Workshop",
+    "description": "A 2-day hands-on workshop that transforms development teams into agentic engineering practitioners.",
+    "provider": {
+      "@type": "Organization",
+      "name": "The Agentic Agency"
+    },
+    "courseMode": "onsite",
+    "duration": "P2D",
+    "offers": {
+      "@type": "Offer",
+      "price": "49999",
+      "priceCurrency": "DKK",
+      "availability": "https://schema.org/InStock"
+    },
+    "occupationalCategory": "Software Development",
+    "teaches": "Agentic engineering methodology for production-grade AI-assisted software development",
+    "coursePrerequisites": "Software development experience",
+    "maximumAttendeeCapacity": 12
+  };
+
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+  );
+};
 
 /* --- Magnetic Button Component --- */
 const MagneticButton = ({ children, className = '', onClick }) => {
@@ -76,7 +106,6 @@ export default function App() {
           }
         });
       });
-
     }, appRef);
 
     return () => ctx.revert();
@@ -84,6 +113,7 @@ export default function App() {
 
   return (
     <div ref={appRef} className="bg-[#E6E6E1] text-[#000000] selection:bg-[#000000] selection:text-[#E6E6E1] relative min-h-screen">
+      <StructuredData />
       <div className="bg-noise"></div>
 
       {/* A. NAVBAR */}
@@ -102,25 +132,55 @@ export default function App() {
 
         <div className="relative z-10 max-w-5xl">
           <h1 className="hero-anim text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none mb-2">
-            REWRITE THE
+            YOUR TEAM ALREADY USES AI.
           </h1>
-          <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-8">
-            OPERATING SYSTEM.
+          <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-8 text-black">
+            LEARN TO ENGINEER.
           </h1>
-          <p className="hero-anim text-xl md:text-2xl text-black/70 max-w-2xl mb-12 font-medium leading-snug">
-            Nexus AI is the strategic transformation partner that reignites innovation capability for ambitious organizations trapped in rigid processes.
+          <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-12 font-medium leading-snug">
+            <strong>The Spark</strong> is a 2-day intensive workshop that takes your developers from ad-hoc AI prompting to structured, production-grade agentic engineering. Hands-on from hour one.
           </p>
-          <div className="hero-anim">
+          <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90">
-              Book The Spark <ArrowUpRight size={20} />
+              Book a workshop <ArrowUpRight size={20} />
             </MagneticButton>
+            <span className="font-mono text-sm font-bold uppercase tracking-widest text-black/50 border-l-2 border-black/20 pl-4 py-1">
+              Trusted by leading engineering<br/>teams across Denmark
+            </span>
           </div>
         </div>
       </section>
 
-      {/* C. FEATURES */}
-      <section className="py-32 px-6 md:px-16 bg-[#E6E6E1] relative z-20">
+      {/* C. THE PROBLEM (Philosophy Style) */}
+      <section id="philosophy" className="relative py-48 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden rounded-xl mx-4 my-12">
+        <div className="absolute inset-0 opacity-20">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356f27?q=80&w=2000" alt="Industrial Textures" className="w-full h-full object-cover grayscale" />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
+          <p className="phil-word text-xl md:text-3xl text-[#E6E6E1]/60 mb-8 font-medium">
+            Vibe coding gets you started. It won't get you to production.
+          </p>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight uppercase">
+            <span className="phil-word inline-block mr-3">We</span>
+            <span className="phil-word inline-block mr-3">bridge</span>
+            <span className="phil-word inline-block mr-3">the</span>
+            <span className="phil-word inline-block mr-3">gap</span>
+            <span className="phil-word inline-block mr-3">to</span><br/>
+            <span className="phil-word inline-block text-[#E6E6E1] bg-white/10 px-4 mt-4 border border-white/20 rounded-xl">AGENTIC ENGINEERING.</span>
+          </h2>
+          <p className="mt-12 text-lg text-[#E6E6E1]/70 max-w-3xl mx-auto font-medium phil-word">
+            Teams that figure out agentic engineering first will ship faster, with fewer defects, and with documentation as a byproduct — not an afterthought. Teams that don't will keep treating AI as a productivity trick and wonder why the results are inconsistent.
+          </p>
+        </div>
+      </section>
+
+      {/* D. THE THREE CHAPTERS (Features) */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1] relative z-20">
         <div className="max-w-[1400px] mx-auto">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">The Three Chapters</h2>
+            <p className="text-xl font-medium text-black/70 max-w-2xl">Every software project falls into one of three chapters. Your team will learn the right agentic approach for each.</p>
+          </div>
           <div className="grid lg:grid-cols-3 gap-6">
             <DiagnosticShuffler />
             <TelemetryTypewriter />
@@ -129,39 +189,24 @@ export default function App() {
         </div>
       </section>
 
-      {/* D. PHILOSOPHY */}
-      <section id="philosophy" className="relative py-48 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden rounded-xl mx-4 my-12">
-        <div className="absolute inset-0 opacity-20">
-          <img src="https://images.unsplash.com/photo-1504307651254-35680f356f27?q=80&w=2000" alt="Industrial Textures" className="w-full h-full object-cover grayscale" />
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <p className="phil-word text-xl md:text-2xl text-[#E6E6E1]/60 mb-8 font-medium">
-            Most consultancies focus on: implementing tools.
-          </p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight uppercase">
-            <span className="phil-word inline-block mr-3">We</span>
-            <span className="phil-word inline-block mr-3">focus</span>
-            <span className="phil-word inline-block mr-3">on:</span>
-            <span className="phil-word inline-block mr-3">upgrading</span>
-            <span className="phil-word inline-block mr-3">your</span>
-            <span className="phil-word inline-block mr-3">team's</span>
-            <span className="phil-word inline-block mr-3">entire</span><br/>
-            <span className="phil-word inline-block text-[#E6E6E1] bg-white/10 px-4 mt-4 border border-white/20 rounded-xl">OPERATING SYSTEM.</span>
-          </h2>
-        </div>
-      </section>
-
-      {/* E. PROTOCOL */}
+      {/* E. HOW IT WORKS (Protocol Stacking) */}
       <section className="bg-[#E6E6E1] py-24 px-6 md:px-16 relative">
         <div className="max-w-[1400px] mx-auto">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Hands-on from the first hour.</h2>
+            <p className="text-xl font-medium text-black/70">Not slides. Not theory. Real code.</p>
+          </div>
           <div className="relative">
             {/* Card 1 */}
             <div className="protocol-card sticky top-32 h-[60vh] md:h-[500px] bg-white rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 mb-12 shadow-xl border border-black/5">
               <div className="flex-1">
-                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">01. THE SPARK</h3>
-                <p className="text-black/70 text-lg md:text-xl leading-relaxed max-w-md font-medium">
-                  Diagnose the core problem. We map your value streams and pinpoint the exact legacy systems where agentic workflows will deliver the highest ROI.
-                </p>
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">DAY 1: ORIENTATION</h3>
+                <ul className="space-y-4 text-black/80 font-medium text-lg">
+                  <li className="flex gap-3"><strong>Framework:</strong> Vibe coding vs. agentic engineering.</li>
+                  <li className="flex gap-3"><strong>Setup:</strong> Pre-configured tooling. Operational in 30 mins.</li>
+                  <li className="flex gap-3"><strong>Exploration:</strong> Learn to interview the agent about unfamiliar codebases.</li>
+                  <li className="flex gap-3"><strong>Execution:</strong> 2 hands-on challenge sets (Frontend + Backend).</li>
+                </ul>
               </div>
               <div className="w-64 h-64 md:w-96 md:h-96 relative flex items-center justify-center border-2 border-dashed border-black/20 rounded-full overflow-hidden bg-[#E6E6E1]/50">
                 <svg viewBox="0 0 100 100" className="w-3/4 h-3/4 animate-[spin_15s_linear_infinite] opacity-60">
@@ -174,73 +219,138 @@ export default function App() {
             {/* Card 2 */}
             <div className="protocol-card sticky top-40 h-[60vh] md:h-[500px] bg-black text-[#E6E6E1] rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 mb-12 shadow-2xl">
               <div className="flex-1">
-                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">02. THE CATALYST</h3>
-                <p className="text-[#E6E6E1]/70 text-lg md:text-xl leading-relaxed max-w-md font-medium">
-                  Prove the value with a pilot team. We guide a single, high-impact team to a measurable win in one quarter, creating the internal case study for change.
-                </p>
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">DAY 2: DEPTH & COMMITMENT</h3>
+                <ul className="space-y-4 text-[#E6E6E1]/80 font-medium text-lg">
+                  <li className="flex gap-3"><strong>Demos:</strong> Learn from peer accomplishments.</li>
+                  <li className="flex gap-3"><strong>Deep Challenges:</strong> Catching and correcting AI mistakes.</li>
+                  <li className="flex gap-3"><strong>Diagnostic:</strong> Output a structured plan for your CTO.</li>
+                  <li className="flex gap-3"><strong>Commitment:</strong> Define a real "in the wild" project.</li>
+                </ul>
               </div>
               <div className="w-64 h-64 md:w-96 md:h-96 relative bg-[#111] rounded-xl overflow-hidden border border-white/10">
                  <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#333 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
                  <div className="absolute top-0 left-0 w-full h-[3px] bg-[#E6E6E1] shadow-[0_0_15px_#E6E6E1] animate-[scan_3s_linear_infinite] opacity-80"></div>
-                 <style>{`@keyframes scan { 0% { top: 0; } 100% { top: 100%; } }`}</style>
               </div>
             </div>
 
             {/* Card 3 */}
             <div className="protocol-card sticky top-48 h-[60vh] md:h-[500px] bg-white rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-xl border border-black/5">
               <div className="flex-1">
-                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">03. THE SCALE ENGINE</h3>
-                <p className="text-black/70 text-lg md:text-xl leading-relaxed max-w-md font-medium">
-                  Embed the capability. We help you build a self-sustaining Center of Excellence and a talent ecosystem to make agentic engineering your new default.
-                </p>
+                <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">THE PRACTICE BEGINS</h3>
+                <p className="text-black/80 font-medium text-lg mb-6">This isn't a certificate you hang on the wall. It's a practice you bring to work on Monday.</p>
+                <ul className="space-y-4 text-black/80 font-medium text-lg border-l-4 border-black pl-6">
+                  <li><strong>Shooting Star Community:</strong> Ongoing support channel.</li>
+                  <li><strong>6-Week Reunion:</strong> Physical meetup to demo results.</li>
+                  <li><strong>Recognition Tiers:</strong> Reward application and evangelism.</li>
+                </ul>
               </div>
               <div className="w-64 h-64 md:w-96 md:h-96 relative flex items-center justify-center bg-[#E6E6E1]/30 rounded-xl border border-black/10">
                  <svg viewBox="0 0 200 100" className="w-full px-4">
                     <path d="M0 50 L 40 50 L 50 20 L 60 80 L 70 50 L 200 50" fill="none" stroke="#000000" strokeWidth="4" strokeLinecap="square" strokeLinejoin="miter" className="animate-[dash_2s_linear_infinite]" strokeDasharray="300" strokeDashoffset="300"/>
                  </svg>
-                 <style>{`@keyframes dash { to { stroke-dashoffset: 0; } }`}</style>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* F. CTA SECTION */}
-      <section className="py-32 bg-[#E6E6E1] text-center px-6">
+      {/* F. TARGET AUDIENCE */}
+      <section className="py-24 bg-black text-[#E6E6E1] px-6 md:px-16">
+        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-0 border-4 border-white/20 rounded-xl overflow-hidden">
+          <div className="p-12 md:p-16 bg-black border-b md:border-b-0 md:border-r border-white/20">
+            <div className="flex items-center gap-4 mb-8">
+              <CheckSquare size={32} className="text-[#E6E6E1]" />
+              <h3 className="text-3xl font-bold uppercase">Who It's For</h3>
+            </div>
+            <ul className="space-y-6 text-lg font-medium text-[#E6E6E1]/80">
+              <li>Lead developers & senior engineers wanting a structured methodology.</li>
+              <li>Architects evaluating agentic engineering strategies.</li>
+              <li>Team leads aligning their team on AI workflows.</li>
+              <li>AI/Data engineers bridging models to production.</li>
+            </ul>
+          </div>
+          <div className="p-12 md:p-16 bg-[#111]">
+            <div className="flex items-center gap-4 mb-8">
+              <XSquare size={32} className="text-white/50" />
+              <h3 className="text-3xl font-bold uppercase text-white/50">Who It's Not For</h3>
+            </div>
+            <ul className="space-y-6 text-lg font-medium text-white/50">
+              <li>Business-side stakeholders (stay tuned).</li>
+              <li>Complete beginners in software development.</li>
+              <li>Teams looking for a 1-hour overview or rubber-stamp certification.</li>
+              <li className="pt-4 mt-4 border-t border-white/10 text-white/80">
+                <strong>Requirement:</strong> Minimum group size is 3 participants from the same organization. This is a team capability, not a personal credential.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* G. PRICING */}
+      <section className="py-24 bg-[#E6E6E1] text-center px-6">
         <div className="max-w-4xl mx-auto border-4 border-black rounded-xl p-12 md:p-24 bg-white shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6">Start The Transformation.</h2>
-          <p className="text-xl md:text-2xl text-black/70 mb-12 font-medium max-w-2xl mx-auto">
-            The Spark is a fixed-price, high-impact two-day diagnostic. It is the fastest way to understand the potential of agentic engineering in your organization.
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tighter uppercase mb-2">One Price. No Complexity.</h2>
+          <p className="text-xl font-medium text-black/70 mb-12">Under your approval threshold.</p>
+
+          <div className="font-mono text-7xl md:text-8xl font-bold mb-6 tracking-tighter">
+            49,999 <span className="text-2xl text-black/50">DKK</span>
+          </div>
+          <p className="text-lg font-bold mb-12 border-b-2 border-black/10 pb-12 max-w-lg mx-auto">
+            Ex. VAT. Up to 12 participants.<br/><span className="font-medium text-black/70">Open or Closed (On-site) Workshops.</span>
           </p>
+
+          <div className="bg-[#E6E6E1]/50 p-6 rounded-lg mb-12 text-left border border-black/10">
+            <p className="font-medium text-sm text-black/80">
+              <strong>Early Adopter?</strong> Founding partner rate available for early clients. Shape the program's evolution in exchange for testimonials.
+            </p>
+          </div>
+
           <MagneticButton className="mx-auto bg-black text-[#E6E6E1] px-12 py-6 text-xl font-bold flex items-center gap-3 hover:bg-black/90">
-            Book The Spark <ArrowUpRight size={24}/>
+            Get in touch <ArrowUpRight size={24}/>
           </MagneticButton>
         </div>
       </section>
 
-      {/* G. FOOTER */}
-      <footer className="bg-black text-[#E6E6E1]/60 py-16 px-6 md:px-16 rounded-t-[4rem]">
-        <div className="max-w-[1400px] mx-auto grid md:grid-cols-4 gap-12 mb-16">
-          <div className="md:col-span-2">
-            <h4 className="font-bold text-3xl text-[#E6E6E1] mb-2 tracking-tighter">NEXUS AI</h4>
-            <p className="font-medium text-sm">Strategic transformation for the agentic era.</p>
-          </div>
-          <div>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><a href="#" className="hover:text-[#E6E6E1] transition-colors hover:-translate-y-px inline-block">The Spark</a></li>
-              <li><a href="#" className="hover:text-[#E6E6E1] transition-colors hover:-translate-y-px inline-block">The Catalyst</a></li>
-              <li><a href="#" className="hover:text-[#E6E6E1] transition-colors hover:-translate-y-px inline-block">The Scale Engine</a></li>
-            </ul>
-          </div>
-          <div>
-            <ul className="space-y-4 text-sm font-medium">
-              <li><a href="#" className="hover:text-[#E6E6E1] transition-colors hover:-translate-y-px inline-block">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-[#E6E6E1] transition-colors hover:-translate-y-px inline-block">Terms of Service</a></li>
-            </ul>
+      {/* H. FAQ */}
+      <section className="py-24 bg-[#E6E6E1] px-6 md:px-16 border-t-4 border-black">
+        <div className="max-w-[1400px] mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-16">Frequently Asked Questions</h2>
+          <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
+            {[
+              { q: "What is agentic engineering?", a: "The discipline of using AI agents systematically across the full software development lifecycle—from specs to TDD and implementation. It's the step beyond autocomplete." },
+              { q: "How is this different from a regular AI course?", a: "Most courses teach prompting. The Spark teaches a methodology. It's hands-on: your team writes real code on a real application for two full days." },
+              { q: "What tools do you use?", a: "Industry-leading agentic tools including Claude Code and Cursor. Workstations come pre-configured—your team is coding within the first hour." },
+              { q: "Do participants need prior AI experience?", a: "Basic development experience is required, but no specific AI tool experience is needed. We build from fundamentals to advanced patterns." },
+              { q: "Can you run this on-site?", a: "Yes. Closed workshops are delivered on-site at your location for a minimum of 3 participants from your organization. Same price, same format." },
+              { q: "Is this a certification?", a: "No. No one is an authority on agentic engineering yet. This is a practical, evolving methodology delivered by practitioners. Pioneer spirit, not institutional authority." }
+            ].map((faq, i) => (
+              <div key={i} className="border-b-2 border-black/20 pb-6">
+                <h4 className="text-xl font-bold mb-3">{faq.q}</h4>
+                <p className="text-black/70 font-medium leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
+
+      {/* I. FOOTER CTA */}
+      <footer className="bg-black text-[#E6E6E1]/60 pt-24 pb-12 px-6 md:px-16 rounded-t-[4rem]">
+        <div className="max-w-[1400px] mx-auto text-center mb-24">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6 text-[#E6E6E1]">Ready to move beyond vibe coding?</h2>
+          <p className="text-xl font-medium mb-12 max-w-2xl mx-auto">The Spark is running now. Founding partner spots are limited.</p>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+            <MagneticButton className="bg-[#E6E6E1] text-black px-10 py-5 text-lg font-bold">
+              Book a workshop
+            </MagneticButton>
+            <a href="#" className="font-bold text-[#E6E6E1] hover:underline underline-offset-4">Questions? Talk to us →</a>
+          </div>
+        </div>
+
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/20">
-          <p className="text-sm font-medium mb-4 md:mb-0">© 2026 Nexus AI. All rights reserved.</p>
+          <div className="flex items-center gap-6 mb-4 md:mb-0">
+            <span className="font-bold text-xl text-[#E6E6E1] tracking-tighter uppercase">THE AGENTIC AGENCY</span>
+            <span className="text-sm font-medium">© 2026 The Agentic Agency. All rights reserved.</span>
+          </div>
           <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-xl border border-white/20">
             <div className="w-2 h-2 rounded-full bg-[#E6E6E1] animate-pulse"></div>
             <span className="font-mono text-xs tracking-wider uppercase">System Operational</span>
@@ -262,16 +372,16 @@ const FloatingNav = () => {
   }, []);
 
   return (
-    <div className="fixed top-6 left-0 w-full z-40 flex justify-center px-4 hover:-translate-y-px transition-transform duration-300">
-      <nav className={`transition-all duration-500 rounded-full px-6 py-3 flex items-center gap-8 ${scrolled ? 'bg-[#E6E6E1]/60 backdrop-blur-xl border border-black/10 shadow-lg' : 'bg-transparent'}`}>
-        <span className="font-bold tracking-tighter text-xl uppercase">NEXUS AI</span>
+    <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 hover:-translate-y-px transition-transform duration-300">
+      <nav className={`transition-all duration-500 rounded-full px-6 py-3 flex items-center gap-8 ${scrolled ? 'bg-[#E6E6E1]/90 backdrop-blur-xl border border-black/10 shadow-lg' : 'bg-transparent'}`}>
+        <span className="font-bold tracking-tighter text-xl uppercase">THE AGENTIC AGENCY</span>
         <div className="hidden md:flex gap-6 text-sm font-semibold">
-          <a href="#" className="hover:opacity-60 transition-opacity">The Spark</a>
-          <a href="#" className="hover:opacity-60 transition-opacity">The Catalyst</a>
-          <a href="#" className="hover:opacity-60 transition-opacity">The Scale Engine</a>
+          <a href="#" className="hover:opacity-60 transition-opacity">The Problem</a>
+          <a href="#" className="hover:opacity-60 transition-opacity">Chapters</a>
+          <a href="#" className="hover:opacity-60 transition-opacity">Curriculum</a>
         </div>
         <MagneticButton className="bg-black text-[#E6E6E1] px-5 py-2.5 text-xs font-bold uppercase tracking-wide">
-          Book The Spark
+          Book a workshop
         </MagneticButton>
       </nav>
     </div>
@@ -280,9 +390,9 @@ const FloatingNav = () => {
 
 const DiagnosticShuffler = () => {
   const [items, setItems] = useState([
-    "1. Pinpoint Bottlenecks",
-    "2. Quantify Agentic Lift",
-    "3. Build The Roadmap"
+    "Gather Requirements",
+    "Structure Specs",
+    "Drive Test-Driven Dev"
   ]);
 
   useEffect(() => {
@@ -300,10 +410,10 @@ const DiagnosticShuffler = () => {
   return (
     <div className="bg-white rounded-xl p-8 border border-black/10 shadow-sm flex flex-col h-[400px]">
       <div className="flex items-center gap-3 mb-4">
-        <Activity size={24} className="text-black" />
-        <h3 className="font-bold text-2xl uppercase tracking-tight">The Spark</h3>
+        <Code2 size={24} className="text-black" />
+        <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 1: Greenfield</h3>
       </div>
-      <p className="text-black/70 font-medium text-sm mb-8 leading-relaxed">A high-impact diagnostic audit to identify bottlenecks and map the agentic opportunity.</p>
+      <p className="text-black/70 font-medium text-sm mb-8 leading-relaxed">Building something entirely new. The agent drives architecture and TDD from day one.</p>
 
       <div className="relative flex-1 mt-4">
         {items.map((item, index) => (
@@ -317,7 +427,7 @@ const DiagnosticShuffler = () => {
               opacity: 1 - index * 0.2
             }}
           >
-            <span className="font-bold text-black uppercase tracking-wide text-sm">{item}</span>
+            <span className="font-bold text-black uppercase tracking-wide text-xs">{item}</span>
           </div>
         ))}
       </div>
@@ -327,10 +437,10 @@ const DiagnosticShuffler = () => {
 
 const TelemetryTypewriter = () => {
   const lines = [
-    "Initializing pilot team...",
-    "Deploying AXIOM framework...",
-    "Measuring velocity increase...",
-    "Success criteria met."
+    "Mapping existing architecture...",
+    "Identifying coupling points...",
+    "Generating non-breaking specs...",
+    "Feature integrated safely."
   ];
   const [currentLine, setCurrentLine] = useState(0);
   const [text, setText] = useState("");
@@ -361,11 +471,11 @@ const TelemetryTypewriter = () => {
     <div className="bg-black rounded-xl p-8 border border-black/30 shadow-sm flex flex-col h-[400px] text-[#E6E6E1]">
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center gap-3">
-          <TerminalSquare size={24} className="text-[#E6E6E1]" />
-          <h3 className="font-bold text-2xl uppercase tracking-tight">The Catalyst</h3>
+          <GitBranch size={24} className="text-[#E6E6E1]" />
+          <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 2: Extension</h3>
         </div>
       </div>
-      <p className="text-[#E6E6E1]/60 font-medium text-sm mb-8 leading-relaxed">A 3-month implementation program to guide a pilot team to a measurable win.</p>
+      <p className="text-[#E6E6E1]/60 font-medium text-sm mb-8 leading-relaxed">New on existing. Ensure new features don't break what's already there.</p>
 
       <div className="flex-1 bg-[#111] border border-white/10 rounded-xl p-6 font-mono text-sm flex items-start shadow-inner">
         <span className="text-[#E6E6E1]/50 mr-2">~%</span>
@@ -386,13 +496,13 @@ const CursorScheduler = () => {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
 
       tl.set('.anim-cursor-2', { x: 0, y: 150, opacity: 0 });
-      tl.set('.qbr-cell', { backgroundColor: 'transparent', color: '#000000' });
+      tl.set('.doc-cell', { backgroundColor: '#E6E6E1', color: '#000000' });
 
       tl.to('.anim-cursor-2', { opacity: 1, duration: 0.3 });
       tl.to('.anim-cursor-2', { x: 140, y: 40, duration: 1, ease: 'power2.inOut' });
 
       tl.to('.anim-cursor-2', { scale: 0.8, duration: 0.1 });
-      tl.to('.qbr-cell', { backgroundColor: '#000000', color: '#E6E6E1', duration: 0.1 });
+      tl.to('.doc-cell', { backgroundColor: '#000000', color: '#E6E6E1', duration: 0.1 });
       tl.to('.anim-cursor-2', { scale: 1, duration: 0.1 });
 
       tl.to('.anim-cursor-2', { x: 220, y: 180, duration: 1, ease: 'power2.inOut', delay: 0.5 });
@@ -409,26 +519,22 @@ const CursorScheduler = () => {
   return (
     <div ref={scheduleRef} className="bg-white rounded-xl p-8 border border-black/10 shadow-sm flex flex-col h-[400px] relative overflow-hidden">
       <div className="flex items-center gap-3 mb-4">
-        <Cpu size={24} className="text-black" />
-        <h3 className="font-bold text-2xl uppercase tracking-tight">The Scale Engine</h3>
+        <ShieldAlert size={24} className="text-black" />
+        <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 3: Stewardship</h3>
       </div>
-      <p className="text-black/70 font-medium text-sm mb-8 leading-relaxed">An ongoing partnership to build a self-sustaining, scalable transformation.</p>
+      <p className="text-black/70 font-medium text-sm mb-8 leading-relaxed">Refactoring, test coverage, and documentation recovery. The agent understands the codebase before touching it.</p>
 
       <div className="flex-1 relative">
-        <div className="grid grid-cols-5 gap-2 mb-6 text-center font-mono text-xs font-bold">
-          <div className="text-black/40">M</div><div className="text-black/40">T</div><div className="text-black/40">W</div><div className="text-black/40">T</div><div className="text-black/40">F</div>
-          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]"></div>
-          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]"></div>
-          <div className="qbr-cell h-10 border border-black/20 rounded-lg flex items-center justify-center transition-colors shadow-sm">QBR</div>
-          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]"></div>
-          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]"></div>
+        <div className="grid grid-cols-2 gap-2 mb-6 text-center font-mono text-xs font-bold">
+          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]">Test Cov.</div>
+          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]">Refactor</div>
+          <div className="doc-cell h-10 border border-black/20 rounded-lg flex items-center justify-center transition-colors shadow-sm col-span-2">Recover Docs</div>
         </div>
 
         <div className="absolute bottom-0 right-0 save-btn bg-black text-[#E6E6E1] px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide border-2 border-transparent">
-          Save
+          Commit
         </div>
 
-        {/* Brutalist Cursor */}
         <div className="anim-cursor-2 absolute top-0 left-0 w-8 h-8 z-20" style={{ pointerEvents: 'none' }}>
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 4L18 10L12 12L10 18L4 4Z" fill="#000000" stroke="#FFFFFF" strokeWidth="1.5" strokeLinejoin="miter"/>
