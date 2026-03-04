@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Repeat, Building2, Sparkles, Calendar, Users, FileText, MessageSquare, Check, X } from 'lucide-react';
+import { ArrowUpRight, Repeat, Building2, TrendingUp, Calendar, Users, FileText, MessageSquare, Check, X, ClipboardCheck } from 'lucide-react';
 import { MagneticButton } from '../components/common';
-import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
+import { ProductLadderSection, FAQSection } from '../components/sections';
 import { PageMeta, ScaleEngineServiceSchema, FAQSchema, BreadcrumbSchema } from '../components/seo';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +36,7 @@ const ScaleEnginePage = () => {
       items: ["Center of Excellence design", "Internal coaching program", "Tooling standardization", "Governance frameworks"]
     },
     {
-      icon: Sparkles,
+      icon: TrendingUp,
       name: "Evolution",
       subtitle: "Stay at the frontier",
       description: "Keep your organization at the leading edge as agentic engineering continues to evolve rapidly.",
@@ -76,7 +76,7 @@ const ScaleEnginePage = () => {
     <div ref={pageRef}>
       <PageMeta
         title="The Scale Engine — Advisory Retainer for Agentic Engineering"
-        description="Advisory retainer to scale agentic engineering org-wide. Build internal capability with expert guidance. 6-month minimum."
+        description="Advisory retainer to scale agentic engineering org-wide. Build internal capability with expert guidance."
         path="/the-scale-engine"
       />
       <ScaleEngineServiceSchema />
@@ -98,19 +98,19 @@ const ScaleEnginePage = () => {
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/50 mb-4">Advisory Retainer</div>
+          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/60 mb-4">Advisory Retainer</div>
           <h1 className="hero-anim text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-none tracking-tighter mb-4 text-black">
             THE SCALE ENGINE
           </h1>
           <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-12 font-medium leading-snug">
-            One team proved it works. Now build the internal capability to replicate it — without becoming dependent on external consultants.
+            One team proved it works. Now build it into an internal capability of staying at the frontier.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90">
               Schedule a discovery conversation <ArrowUpRight size={20} />
             </MagneticButton>
-            <span className="font-mono text-sm font-bold uppercase tracking-widest text-black/50 border-l-2 border-black/20 pl-4 py-1">
-              Prerequisite: The Catalyst<br/>6-month minimum
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
+              Prerequisite: The Catalyst<br/>Custom scoped
             </span>
           </div>
         </div>
@@ -121,7 +121,7 @@ const ScaleEnginePage = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">The Three Pillars</h2>
-            <p className="text-xl text-[#E6E6E1]/70 font-medium max-w-2xl mx-auto">
+            <p className="text-xl text-[#E6E6E1]/80 font-medium max-w-2xl mx-auto">
               Scale isn't about doing more of the same. It's about building organizational capability.
             </p>
           </div>
@@ -130,16 +130,16 @@ const ScaleEnginePage = () => {
             {pillars.map((pillar, i) => (
               <div
                 key={pillar.name}
-                className="pillar-card bg-[#111] rounded-xl p-8 border-4 border-white/20 hover:border-white/40 transition-colors"
+                className="pillar-card bg-[#111] rounded-xl p-8 border-4 border-white/30 hover:border-white/50 transition-colors"
               >
-                <pillar.icon size={40} className="mb-6 text-[#E6E6E1]/80" />
-                <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-2">{pillar.subtitle}</div>
+                <pillar.icon size={40} className="mb-6 text-[#E6E6E1]" />
+                <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/70 mb-2">{pillar.subtitle}</div>
                 <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">{pillar.name}</h3>
-                <p className="text-[#E6E6E1]/70 font-medium mb-6">{pillar.description}</p>
+                <p className="text-[#E6E6E1]/80 font-medium mb-6">{pillar.description}</p>
                 <ul className="space-y-2">
                   {pillar.items.map((item, j) => (
-                    <li key={j} className="flex items-center gap-2 text-sm font-medium text-[#E6E6E1]/60">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#E6E6E1]/40"></div>
+                    <li key={j} className="flex items-center gap-2 text-sm font-medium text-[#E6E6E1]/75">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#E6E6E1]/60"></div>
                       {item}
                     </li>
                   ))}
@@ -159,37 +159,37 @@ const ScaleEnginePage = () => {
             <div className="bg-white rounded-xl p-8 border-4 border-black">
               <Calendar size={32} className="mb-4" />
               <h3 className="font-bold text-xl uppercase tracking-tight mb-2">Strategic Advisory</h3>
-              <p className="text-black/60 font-medium text-sm mb-4">2 days/month</p>
-              <p className="text-black/70 font-medium">On-site or virtual strategic sessions with leadership.</p>
+              <p className="text-black/70 font-medium text-sm mb-4">2 days/month</p>
+              <p className="text-black/80 font-medium">On-site or virtual strategic sessions with leadership.</p>
             </div>
             <div className="bg-white rounded-xl p-8 border-4 border-black">
               <Users size={32} className="mb-4" />
               <h3 className="font-bold text-xl uppercase tracking-tight mb-2">Champion Coaching</h3>
-              <p className="text-black/60 font-medium text-sm mb-4">2x/month</p>
-              <p className="text-black/70 font-medium">90-minute sessions with internal champions leading rollout.</p>
+              <p className="text-black/70 font-medium text-sm mb-4">2x/month</p>
+              <p className="text-black/80 font-medium">90-minute sessions with internal champions leading rollout.</p>
             </div>
             <div className="bg-white rounded-xl p-8 border-4 border-black">
               <FileText size={32} className="mb-4" />
               <h3 className="font-bold text-xl uppercase tracking-tight mb-2">Quarterly Briefing</h3>
-              <p className="text-black/60 font-medium text-sm mb-4">1x/quarter</p>
-              <p className="text-black/70 font-medium">2-hour executive session on state of agentic engineering.</p>
+              <p className="text-black/70 font-medium text-sm mb-4">1x/quarter</p>
+              <p className="text-black/80 font-medium">2-hour executive session on state of agentic engineering.</p>
             </div>
             <div className="bg-white rounded-xl p-8 border-4 border-black">
               <MessageSquare size={32} className="mb-4" />
               <h3 className="font-bold text-xl uppercase tracking-tight mb-2">Async Advisory</h3>
-              <p className="text-black/60 font-medium text-sm mb-4">Continuous</p>
-              <p className="text-black/70 font-medium">Next-business-day response on strategic questions.</p>
+              <p className="text-black/70 font-medium text-sm mb-4">Continuous</p>
+              <p className="text-black/80 font-medium">Next-business-day response on strategic questions.</p>
             </div>
           </div>
 
           <div className="mt-12 bg-black text-[#E6E6E1] rounded-xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-shrink-0">
-                <Sparkles size={48} className="text-[#E6E6E1]/80" />
+                <TrendingUp size={48} className="text-[#E6E6E1]" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold uppercase tracking-tight mb-2">Methodology Updates</h3>
-                <p className="text-[#E6E6E1]/70 font-medium">
+                <p className="text-[#E6E6E1]/85 font-medium">
                   Ongoing access to our evolving methodology, playbooks, templates, and tools. As agentic engineering advances, so does your organization.
                 </p>
               </div>
@@ -202,16 +202,16 @@ const ScaleEnginePage = () => {
       <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-[1400px] mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">Why Not Just Run More Catalysts?</h2>
-          <p className="text-xl text-[#E6E6E1]/70 font-medium mb-16 max-w-3xl">
+          <p className="text-xl text-[#E6E6E1]/80 font-medium mb-16 max-w-3xl">
             Scale Engine is fundamentally different from running multiple Catalyst engagements. Here's why:
           </p>
 
-          <div className="grid md:grid-cols-2 gap-0 border-4 border-white/20 rounded-xl overflow-hidden">
+          <div className="grid md:grid-cols-2 gap-0 border-4 border-white/30 rounded-xl overflow-hidden">
             {/* Multiple Catalysts */}
-            <div className="p-8 md:p-12 bg-[#111] border-b md:border-b-0 md:border-r border-white/20">
+            <div className="p-8 md:p-12 bg-[#111] border-b md:border-b-0 md:border-r border-white/30">
               <div className="flex items-center gap-3 mb-8">
-                <X size={32} className="text-white/50" />
-                <h3 className="text-2xl font-bold uppercase text-white/50">Multiple Catalysts</h3>
+                <X size={32} className="text-[#E6E6E1]/60" />
+                <h3 className="text-2xl font-bold uppercase text-[#E6E6E1]/70">Multiple Catalysts</h3>
               </div>
               <ul className="space-y-4">
                 {[
@@ -221,8 +221,8 @@ const ScaleEnginePage = () => {
                   "We're embedded practitioners",
                   "Build capability per team"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white/50 font-medium">
-                    <div className="w-2 h-2 rounded-full bg-white/30 mt-2 flex-shrink-0"></div>
+                  <li key={i} className="flex items-start gap-3 text-[#E6E6E1]/70 font-medium">
+                    <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/50 mt-2 flex-shrink-0"></div>
                     {item}
                   </li>
                 ))}
@@ -243,7 +243,7 @@ const ScaleEnginePage = () => {
                   "We're strategic architects + advisors",
                   "Build organizational capability"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#E6E6E1] font-medium">
+                  <li key={i} className="flex items-start gap-3 text-[#E6E6E1]/90 font-medium">
                     <div className="w-2 h-2 rounded-full bg-[#E6E6E1] mt-2 flex-shrink-0"></div>
                     {item}
                   </li>
@@ -254,32 +254,68 @@ const ScaleEnginePage = () => {
         </div>
       </section>
 
-      {/* E. TARGET AUDIENCE */}
-      <TargetAudienceSection
-        forItems={[
-          "Organizations with successful Catalyst engagement wanting to scale.",
-          "CTOs/VP Engineering with budget authority for multi-team transformation.",
-          "Companies ready to build internal Centers of Excellence."
-        ]}
-        notForItems={[
-          "Organizations without Catalyst proof (prerequisite).",
-          "Teams looking for hands-on delivery (that's Catalyst).",
-          "Short-term engagements (6-month minimum)."
-        ]}
-        requirement="Completed Catalyst with documented success metrics."
-      />
+      {/* E. WHO IT'S FOR + ASSESSMENT OFFER */}
+      <section className="py-24 bg-black text-[#E6E6E1] px-6 md:px-16">
+        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-0 border-4 border-white/30 rounded-xl overflow-hidden">
+          {/* Who It's For */}
+          <div className="p-12 md:p-16 bg-black border-b md:border-b-0 md:border-r border-white/30">
+            <div className="flex items-center gap-4 mb-8">
+              <Check size={32} className="text-[#E6E6E1]" />
+              <h3 className="text-3xl font-bold uppercase">Who It's For</h3>
+            </div>
+            <ul className="space-y-6 text-lg font-medium text-[#E6E6E1]/90">
+              <li>Organizations with successful Catalyst engagement wanting to scale.</li>
+              <li>CTOs/VP Engineering with budget authority for multi-team transformation.</li>
+              <li>Companies ready to build internal Centers of Excellence.</li>
+            </ul>
+            <div className="mt-8 pt-6 border-t border-white/20">
+              <p className="text-[#E6E6E1]/80 font-medium">
+                <strong className="text-[#E6E6E1]">Prerequisite:</strong> Completed Catalyst with documented success metrics.
+              </p>
+            </div>
+          </div>
+
+          {/* Assessment Offer */}
+          <div className="p-12 md:p-16 bg-[#111]">
+            <div className="flex items-center gap-4 mb-8">
+              <ClipboardCheck size={32} className="text-[#E6E6E1]" />
+              <h3 className="text-2xl md:text-3xl font-bold uppercase text-[#E6E6E1]">Not sure how mature your practice is?</h3>
+            </div>
+            <p className="text-lg font-medium text-[#E6E6E1]/85 mb-6">
+              We offer a complimentary <strong>Adoption Assessment</strong> to help you understand where you stand:
+            </p>
+            <ul className="space-y-4 text-[#E6E6E1]/80 font-medium mb-8">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/60 mt-2 flex-shrink-0"></div>
+                Current AI tooling and usage patterns across your org
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/60 mt-2 flex-shrink-0"></div>
+                Readiness indicators for scaling agentic engineering
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/60 mt-2 flex-shrink-0"></div>
+                Recommended path forward based on your situation
+              </li>
+            </ul>
+            <p className="text-sm text-[#E6E6E1]/70 mb-6 italic">An investment by us in understanding your needs.</p>
+            <MagneticButton
+              className="bg-[#E6E6E1] text-black px-6 py-3 text-base font-bold"
+            >
+              Get assessed <ArrowUpRight size={16} />
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
 
       {/* F. CTA */}
       <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white rounded-xl p-12 md:p-16 border-4 border-black shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Ready to scale?</h2>
-            <p className="text-xl text-black/70 font-medium mb-4">
-              The Scale Engine is a strategic advisory partnership.
-            </p>
-            <p className="text-lg text-black/60 font-medium mb-8">
-              Pricing is scoped to your organization's size, rollout ambitions, and timeline.<br/>
-              <strong>Minimum commitment: 6 months</strong>
+            <p className="text-xl text-black/80 font-medium mb-8">
+              The Scale Engine is a strategic advisory partnership.<br/>
+              Pricing is scoped to your organization's size, rollout ambitions, and timeline.
             </p>
             <MagneticButton className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto">
               Schedule a discovery conversation <ArrowUpRight size={22} />

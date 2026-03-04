@@ -37,18 +37,18 @@ const SparkPage = () => {
         }
       );
 
-      // Protocol Stacking
+      // Protocol Stacking - blur starts when next card reaches center (natural eye position)
       const cards = gsap.utils.toArray('.protocol-card');
       cards.forEach((card, i) => {
         if (i === cards.length - 1) return;
         gsap.to(card, {
-          scale: 0.9,
-          filter: 'blur(5px)',
-          opacity: 0.5,
+          scale: 0.95,
+          filter: 'blur(3px)',
+          opacity: 0.6,
           scrollTrigger: {
             trigger: cards[i + 1],
-            start: 'top bottom',
-            end: 'top center',
+            start: 'top center',
+            end: 'top 30%',
             scrub: true,
           }
         });
@@ -95,8 +95,8 @@ const SparkPage = () => {
             <MagneticButton className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90">
               Book a workshop <ArrowUpRight size={20} />
             </MagneticButton>
-            <span className="font-mono text-sm font-bold uppercase tracking-widest text-black/50 border-l-2 border-black/20 pl-4 py-1">
-              From DKK 49,999<br/>Max 12 participants
+            <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
+              Open: DKK 49,999 / 3 pax<br/>Closed: DKK 199,996 / ≤12 pax
             </span>
           </div>
         </div>
@@ -108,7 +108,7 @@ const SparkPage = () => {
           <img src="https://images.unsplash.com/photo-1504307651254-35680f356f27?q=80&w=2000" alt="Industrial Textures" className="w-full h-full object-cover grayscale" />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <p className="phil-word text-xl md:text-3xl text-[#E6E6E1]/60 mb-8 font-medium">
+          <p className="phil-word text-xl md:text-3xl text-[#E6E6E1]/80 mb-8 font-medium">
             Vibe coding gets you started. It won't get you to production.
           </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight uppercase">
@@ -117,9 +117,9 @@ const SparkPage = () => {
             <span className="phil-word inline-block mr-3">the</span>
             <span className="phil-word inline-block mr-3">gap</span>
             <span className="phil-word inline-block mr-3">to</span><br/>
-            <span className="phil-word inline-block text-[#E6E6E1] bg-white/10 px-4 mt-4 border border-white/20 rounded-xl">AGENTIC ENGINEERING.</span>
+            <span className="phil-word inline-block text-[#E6E6E1] bg-white/15 px-4 mt-4 border border-white/30 rounded-xl">AGENTIC ENGINEERING.</span>
           </h2>
-          <p className="mt-12 text-lg text-[#E6E6E1]/70 max-w-3xl mx-auto font-medium phil-word">
+          <p className="mt-12 text-lg text-[#E6E6E1]/85 max-w-3xl mx-auto font-medium phil-word">
             Teams that figure out agentic engineering first will ship faster, with fewer defects, and with documentation as a byproduct — not an afterthought.
           </p>
         </div>
@@ -213,12 +213,14 @@ const SparkPage = () => {
           "Team leads aligning their team on AI workflows.",
           "AI/Data engineers bridging models to production."
         ]}
-        notForItems={[
-          "Business-side stakeholders (stay tuned for executive briefings).",
-          "Complete beginners in software development.",
-          "Teams looking for a certification stamp."
-        ]}
         requirement="Minimum 3 participants from the same organization. This is a team capability, not a personal credential."
+        alternateTitle="Interested but have a different background?"
+        alternateItems={[
+          "Business-side stakeholders — executive briefings coming soon.",
+          "Earlier in your development career — we can point you to foundational resources.",
+          "Looking for certification — we focus on capability, but happy to discuss your goals."
+        ]}
+        alternateCTA={{ text: "Let's talk", to: "/about" }}
       />
 
       {/* F. PRICING */}
@@ -266,32 +268,32 @@ const SparkPage = () => {
             </div>
 
             {/* Closed Workshop */}
-            <div className="bg-black text-[#E6E6E1] rounded-xl p-10 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)]">
-              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-2">Your team only</div>
+            <div className="bg-black text-[#E6E6E1] rounded-xl p-10 border-4 border-white/30 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)]">
+              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/70 mb-2">Your team only</div>
               <h3 className="text-3xl font-bold uppercase tracking-tight mb-2">Closed Workshop</h3>
-              <div className="font-mono text-5xl font-bold mb-2">199,996 <span className="text-lg text-[#E6E6E1]/50">DKK</span></div>
-              <p className="text-[#E6E6E1]/60 font-medium mb-8">Exclusive session, up to 12 participants</p>
+              <div className="font-mono text-5xl font-bold mb-2">199,996 <span className="text-lg text-[#E6E6E1]/70">DKK</span></div>
+              <p className="text-[#E6E6E1]/80 font-medium mb-8">Exclusive session, up to 12 participants</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
                   <Check size={20} className="text-[#E6E6E1] mt-1 flex-shrink-0" />
-                  <span className="font-medium">Exclusive 2-day workshop for your team</span>
+                  <span className="font-medium text-[#E6E6E1]/90">Exclusive 2-day workshop for your team</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={20} className="text-[#E6E6E1] mt-1 flex-shrink-0" />
-                  <span className="font-medium">Customized challenge sets using your context</span>
+                  <span className="font-medium text-[#E6E6E1]/90">Customized challenge sets using your context</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={20} className="text-[#E6E6E1] mt-1 flex-shrink-0" />
-                  <span className="font-medium">Team alignment on shared vocabulary</span>
+                  <span className="font-medium text-[#E6E6E1]/90">Team alignment on shared vocabulary</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check size={20} className="text-[#E6E6E1] mt-1 flex-shrink-0" />
-                  <span className="font-medium">Up to 12 participants from your org</span>
+                  <span className="font-medium text-[#E6E6E1]/90">Up to 12 participants from your org</span>
                 </li>
               </ul>
 
-              <p className="text-sm text-[#E6E6E1]/60 font-medium mb-6 border-t border-white/10 pt-6">
+              <p className="text-sm text-[#E6E6E1]/80 font-medium mb-6 border-t border-white/20 pt-6">
                 <strong>Ideal for:</strong> Organizations ready to transform a full team.
               </p>
 
@@ -335,21 +337,19 @@ const SparkPage = () => {
 /* --- Subcomponents for Features Section --- */
 
 const DiagnosticShuffler = () => {
-  const [items, setItems] = useState([
-    "Gather Requirements",
-    "Structure Specs",
-    "Drive Test-Driven Dev"
-  ]);
+  // Fixed order: TDD sequence flows top-to-bottom (define → scaffold → implement)
+  const items = [
+    { step: "01", label: "Define Acceptance Criteria" },
+    { step: "02", label: "Generate Test Scaffolds" },
+    { step: "03", label: "Implement to Pass" }
+  ];
+
+  const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setItems(prev => {
-        const newArr = [...prev];
-        const last = newArr.pop();
-        newArr.unshift(last);
-        return newArr;
-      });
-    }, 3000);
+      setActiveStep(prev => (prev + 1) % items.length);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -359,21 +359,20 @@ const DiagnosticShuffler = () => {
         <Code2 size={24} className="text-black" />
         <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 1: Greenfield</h3>
       </div>
-      <p className="text-black/70 font-medium text-sm mb-8 leading-relaxed">Building something entirely new. The agent drives architecture and TDD from day one.</p>
+      <p className="text-black/80 font-medium text-sm mb-6 leading-relaxed">Building something new. The agent helps you define what "done" looks like before writing implementation code.</p>
 
-      <div className="relative flex-1 mt-4">
+      <div className="flex-1 flex flex-col justify-center space-y-3">
         {items.map((item, index) => (
           <div
-            key={item}
-            className="absolute w-full bg-[#E6E6E1] border border-black/20 rounded-xl p-4 flex items-center justify-center transition-all duration-700 ease-bounce-spring shadow-sm"
-            style={{
-              top: `${index * 60}px`,
-              zIndex: 10 - index,
-              transform: `scale(${1 - index * 0.05})`,
-              opacity: 1 - index * 0.2
-            }}
+            key={item.step}
+            className={`w-full border-2 rounded-xl p-4 flex items-center gap-4 transition-all duration-500 ${
+              index === activeStep
+                ? 'bg-black text-[#E6E6E1] border-black shadow-lg scale-[1.02]'
+                : 'bg-[#E6E6E1] text-black/70 border-black/20'
+            }`}
           >
-            <span className="font-bold text-black uppercase tracking-wide text-xs">{item}</span>
+            <span className={`font-mono text-xs font-bold ${index === activeStep ? 'text-[#E6E6E1]/60' : 'text-black/40'}`}>{item.step}</span>
+            <span className="font-bold uppercase tracking-wide text-sm">{item.label}</span>
           </div>
         ))}
       </div>
@@ -382,11 +381,13 @@ const DiagnosticShuffler = () => {
 };
 
 const TelemetryTypewriter = () => {
+  // Logical sequence: understand → protect → extend → verify
   const lines = [
-    "Mapping existing architecture...",
-    "Identifying coupling points...",
-    "Generating non-breaking specs...",
-    "Feature integrated safely."
+    "→ Analyzing dependency graph...",
+    "→ Identifying integration points...",
+    "→ Generating regression tests...",
+    "→ Implementing feature module...",
+    "✓ All tests passing. Ready for review."
   ];
   const [currentLine, setCurrentLine] = useState(0);
   const [text, setText] = useState("");
@@ -399,7 +400,7 @@ const TelemetryTypewriter = () => {
       if (!isDeleting) {
         setText(fullText.substring(0, text.length + 1));
         if (text === fullText) {
-          setTimeout(() => setIsDeleting(true), 1500);
+          setTimeout(() => setIsDeleting(true), 1800);
         }
       } else {
         setText(fullText.substring(0, text.length - 1));
@@ -408,24 +409,24 @@ const TelemetryTypewriter = () => {
           setCurrentLine((prev) => (prev + 1) % lines.length);
         }
       }
-    }, isDeleting ? 30 : 70);
+    }, isDeleting ? 25 : 50);
 
     return () => clearTimeout(timer);
   }, [text, isDeleting, currentLine]);
 
   return (
-    <div className="bg-black rounded-xl p-8 border border-black/30 shadow-sm flex flex-col h-[400px] text-[#E6E6E1]">
+    <div className="bg-black rounded-xl p-8 border border-white/20 shadow-sm flex flex-col h-[400px] text-[#E6E6E1]">
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center gap-3">
           <GitBranch size={24} className="text-[#E6E6E1]" />
           <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 2: Extension</h3>
         </div>
       </div>
-      <p className="text-[#E6E6E1]/60 font-medium text-sm mb-8 leading-relaxed">New on existing. Ensure new features don't break what's already there.</p>
+      <p className="text-[#E6E6E1]/80 font-medium text-sm mb-6 leading-relaxed">Adding features to existing code. The agent maps dependencies and protects what's already working.</p>
 
-      <div className="flex-1 bg-[#111] border border-white/10 rounded-xl p-6 font-mono text-sm flex items-start shadow-inner">
-        <span className="text-[#E6E6E1]/50 mr-2">~%</span>
-        <p className="leading-relaxed">
+      <div className="flex-1 bg-[#111] border border-white/20 rounded-xl p-6 font-mono text-sm flex items-start shadow-inner">
+        <span className="text-[#E6E6E1]/60 mr-2">$</span>
+        <p className="leading-relaxed text-[#E6E6E1]/90">
           {text}
           <span className="inline-block w-2 h-4 bg-[#E6E6E1] ml-1 animate-[pulse_1s_step-end_infinite]"></span>
         </p>
@@ -436,30 +437,20 @@ const TelemetryTypewriter = () => {
 
 const CursorScheduler = () => {
   const scheduleRef = useRef(null);
+  const [activeTask, setActiveTask] = useState(0);
+
+  const tasks = [
+    { label: "Audit Coverage Gaps", status: "done" },
+    { label: "Generate Missing Tests", status: "done" },
+    { label: "Extract Documentation", status: "active" },
+    { label: "Validate & Commit", status: "pending" }
+  ];
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-
-      tl.set('.anim-cursor-2', { x: 0, y: 150, opacity: 0 });
-      tl.set('.doc-cell', { backgroundColor: '#E6E6E1', color: '#000000' });
-
-      tl.to('.anim-cursor-2', { opacity: 1, duration: 0.3 });
-      tl.to('.anim-cursor-2', { x: 140, y: 40, duration: 1, ease: 'power2.inOut' });
-
-      tl.to('.anim-cursor-2', { scale: 0.8, duration: 0.1 });
-      tl.to('.doc-cell', { backgroundColor: '#000000', color: '#E6E6E1', duration: 0.1 });
-      tl.to('.anim-cursor-2', { scale: 1, duration: 0.1 });
-
-      tl.to('.anim-cursor-2', { x: 220, y: 180, duration: 1, ease: 'power2.inOut', delay: 0.5 });
-      tl.to('.anim-cursor-2', { scale: 0.8, duration: 0.1 });
-      tl.to('.save-btn', { scale: 0.95, duration: 0.1, yoyo: true, repeat: 1 });
-      tl.to('.anim-cursor-2', { scale: 1, duration: 0.1 });
-
-      tl.to('.anim-cursor-2', { opacity: 0, duration: 0.3, delay: 0.2 });
-
-    }, scheduleRef);
-    return () => ctx.revert();
+    const interval = setInterval(() => {
+      setActiveTask(prev => (prev + 1) % tasks.length);
+    }, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -468,24 +459,33 @@ const CursorScheduler = () => {
         <ShieldAlert size={24} className="text-black" />
         <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 3: Stewardship</h3>
       </div>
-      <p className="text-black/70 font-medium text-sm mb-8 leading-relaxed">Refactoring, test coverage, and documentation recovery. The agent understands the codebase before touching it.</p>
+      <p className="text-black/80 font-medium text-sm mb-6 leading-relaxed">Maintaining and improving existing code. The agent audits, documents, and refactors systematically.</p>
 
-      <div className="flex-1 relative">
-        <div className="grid grid-cols-2 gap-2 mb-6 text-center font-mono text-xs font-bold">
-          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]">Test Cov.</div>
-          <div className="h-10 border border-black/20 rounded-lg flex items-center justify-center bg-[#E6E6E1]">Refactor</div>
-          <div className="doc-cell h-10 border border-black/20 rounded-lg flex items-center justify-center transition-colors shadow-sm col-span-2">Recover Docs</div>
-        </div>
+      <div className="flex-1 flex flex-col justify-center space-y-2">
+        {tasks.map((task, index) => {
+          const isActive = index === activeTask;
+          const isDone = index < activeTask;
 
-        <div className="absolute bottom-0 right-0 save-btn bg-black text-[#E6E6E1] px-6 py-2 rounded-lg text-sm font-bold uppercase tracking-wide border-2 border-transparent">
-          Commit
-        </div>
-
-        <div className="anim-cursor-2 absolute top-0 left-0 w-8 h-8 z-20" style={{ pointerEvents: 'none' }}>
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 4L18 10L12 12L10 18L4 4Z" fill="#000000" stroke="#FFFFFF" strokeWidth="1.5" strokeLinejoin="miter"/>
-          </svg>
-        </div>
+          return (
+            <div
+              key={task.label}
+              className={`flex items-center gap-3 p-3 rounded-lg border-2 transition-all duration-300 ${
+                isActive
+                  ? 'bg-black text-[#E6E6E1] border-black'
+                  : isDone
+                  ? 'bg-[#E6E6E1] border-black/30 text-black/60'
+                  : 'bg-[#E6E6E1]/50 border-black/10 text-black/40'
+              }`}
+            >
+              <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center text-xs font-bold ${
+                isActive ? 'border-[#E6E6E1] bg-[#E6E6E1] text-black' : isDone ? 'border-black/30 bg-black/20' : 'border-black/20'
+              }`}>
+                {isDone ? '✓' : ''}
+              </div>
+              <span className="font-bold text-sm uppercase tracking-wide">{task.label}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
