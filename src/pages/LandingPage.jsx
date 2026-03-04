@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { ProductLadderSection } from '../components/sections';
 import { PageMeta, OrganizationSchema, BreadcrumbSchema } from '../components/seo';
@@ -20,7 +20,17 @@ const LandingPage = () => {
         { y: 0, opacity: 1, duration: 1.2, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
       );
 
-      // Philosophy word reveal
+      // Scroll indicator bounce animation
+      gsap.to('.scroll-indicator', {
+        y: 8,
+        duration: 1.2,
+        ease: 'power2.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: 2
+      });
+
+      // Philosophy word reveal (main headline)
       gsap.fromTo('.phil-word',
         { y: 20, opacity: 0 },
         {
@@ -32,6 +42,21 @@ const LandingPage = () => {
           scrollTrigger: {
             trigger: '#problem-section',
             start: 'top 70%'
+          }
+        }
+      );
+
+      // Subtext reveal (below fold)
+      gsap.fromTo('.subtext-reveal',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#subtext-section',
+            start: 'top 80%'
           }
         }
       );
@@ -51,7 +76,7 @@ const LandingPage = () => {
       <BreadcrumbSchema items={[{ name: 'Home', path: '/' }]} />
 
       {/* A. HERO SECTION */}
-      <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-[#E6E6E1]">
+      <section className="relative h-[100dvh] w-full flex flex-col justify-end pb-16 px-6 md:px-16 overflow-hidden bg-[#E6E6E1]">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?q=80&w=2000"
@@ -61,7 +86,7 @@ const LandingPage = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#E6E6E1] via-[#E6E6E1]/80 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-5xl">
+        <div className="relative z-10 max-w-5xl mb-16">
           <h1 className="hero-anim text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none mb-2">
             THE AGENTIC AGENCY
           </h1>
@@ -83,10 +108,18 @@ const LandingPage = () => {
             </span>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <div className="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
+          <span className="font-mono text-xs uppercase tracking-widest text-black/50">Scroll</span>
+          <div className="w-8 h-12 border-2 border-black/30 rounded-full flex items-start justify-center pt-2">
+            <ChevronDown size={16} className="text-black/50" />
+          </div>
+        </div>
       </section>
 
-      {/* B. THE GAP (Problem/Solution) */}
-      <section id="problem-section" className="relative py-48 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden rounded-xl mx-4 my-12">
+      {/* B. THE GAP (Problem Statement) */}
+      <section id="problem-section" className="relative py-32 md:py-48 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden rounded-xl mx-4 mt-12 mb-0 rounded-b-none">
         <div className="absolute inset-0 opacity-20">
           <img
             src="https://images.unsplash.com/photo-1504307651254-35680f356f27?q=80&w=2000"
@@ -95,20 +128,41 @@ const LandingPage = () => {
           />
         </div>
         <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <p className="phil-word text-xl md:text-3xl text-[#E6E6E1]/80 mb-8 font-medium">
-            There's a gap between "AI helped me write this function" and "AI systematically helped us deliver this feature."
+          <p className="phil-word text-xl md:text-3xl text-[#E6E6E1]/80 mb-12 font-medium leading-relaxed">
+            There's a gap between "AI helped me write this function" and<br className="hidden md:block" /> "AI systematically helped us deliver this feature."
           </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight uppercase">
-            <span className="phil-word inline-block mr-3">That</span>
-            <span className="phil-word inline-block mr-3">gap</span>
-            <span className="phil-word inline-block mr-3">has</span>
-            <span className="phil-word inline-block mr-3">a</span>
-            <span className="phil-word inline-block mr-3">name:</span><br />
-            <span className="phil-word inline-block text-[#E6E6E1] bg-white/15 px-4 mt-4 border border-white/30 rounded-xl">AGENTIC ENGINEERING.</span>
+            <span className="phil-word inline-block mr-2 md:mr-3">That</span>
+            <span className="phil-word inline-block mr-2 md:mr-3">gap</span>
+            <span className="phil-word inline-block mr-2 md:mr-3">has</span>
+            <span className="phil-word inline-block mr-2 md:mr-3">a</span>
+            <span className="phil-word inline-block">name:</span>
           </h2>
-          <p className="mt-12 text-lg text-[#E6E6E1]/80 max-w-3xl mx-auto font-medium phil-word">
-            We close that gap — systematically. Through hands-on workshops, embedded programs, and advisory partnerships.
+          <div className="mt-8 md:mt-12">
+            <span className="phil-word inline-block text-4xl md:text-6xl lg:text-7xl font-bold uppercase text-[#E6E6E1] bg-white/15 px-6 py-3 border-2 border-white/30 rounded-xl">
+              AGENTIC ENGINEERING.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* B2. THE SOLUTION (Below Fold) */}
+      <section id="subtext-section" className="relative py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden rounded-xl mx-4 mt-0 mb-12 rounded-t-none border-t border-white/10">
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h3 className="subtext-reveal text-3xl md:text-5xl font-bold uppercase tracking-tight mb-8">
+            We close that gap.
+          </h3>
+          <p className="subtext-reveal text-lg md:text-xl text-[#E6E6E1]/80 font-medium leading-relaxed max-w-2xl mx-auto">
+            Systematically. Through hands-on workshops, embedded transformation programs, and strategic advisory partnerships.
           </p>
+          <div className="subtext-reveal mt-12 flex flex-col sm:flex-row justify-center gap-4">
+            <MagneticButton
+              to="/the-spark"
+              className="bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold"
+            >
+              Start with The Spark <ArrowUpRight size={18} />
+            </MagneticButton>
+          </div>
         </div>
       </section>
 

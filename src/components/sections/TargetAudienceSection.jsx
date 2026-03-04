@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { CheckSquare, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { MagneticButton } from '../common';
 
@@ -9,7 +8,7 @@ const TargetAudienceSection = ({
   alternateItems = [],
   alternateTitle = "Interested but have a different background?",
   requirement = null,
-  alternateCTA = null, // { text: "Get in touch", to: "/about" }
+  alternateCTA = null, // { text: "Get in touch", to: "/about" } or { text: "Contact", href: "mailto:..." }
 }) => {
   return (
     <section className="py-24 bg-black text-[#E6E6E1] px-6 md:px-16">
@@ -46,13 +45,13 @@ const TargetAudienceSection = ({
             ))}
           </ul>
           {alternateCTA && (
-            <div className="mt-8 pt-6 border-t border-white/20">
+            <div className="mt-10 pt-6 border-t border-white/20">
               <MagneticButton
-                to={alternateCTA.to}
-                href={alternateCTA.href}
-                className="bg-[#E6E6E1] text-black px-6 py-3 text-base font-bold"
+                {...(alternateCTA.to ? { to: alternateCTA.to } : {})}
+                {...(alternateCTA.href ? { href: alternateCTA.href } : {})}
+                className="bg-[#E6E6E1] text-black px-8 py-4 text-base font-bold"
               >
-                {alternateCTA.text} <ArrowUpRight size={16} />
+                {alternateCTA.text} <ArrowUpRight size={18} />
               </MagneticButton>
             </div>
           )}
