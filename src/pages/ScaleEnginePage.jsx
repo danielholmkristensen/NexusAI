@@ -198,112 +198,104 @@ const ScaleEnginePage = () => {
         </div>
       </section>
 
-      {/* D. WHY NOT JUST RUN MORE CATALYSTS */}
-      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+      {/* D. DECISION FLOW - Numbered Steps */}
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1] rounded-xl mx-4 my-12">
         <div className="max-w-[1400px] mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">Why Not Just Run More Catalysts?</h2>
-          <p className="text-xl text-[#E6E6E1]/80 font-medium mb-16 max-w-3xl">
-            Scale Engine is fundamentally different from running multiple Catalyst engagements. Here's why:
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Is Scale Engine Right For You?</h2>
+          <p className="text-xl text-[#E6E6E1]/70 font-medium mb-16 max-w-2xl">
+            Three steps to decide.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-0 border-4 border-white/30 rounded-xl overflow-hidden">
-            {/* Multiple Catalysts */}
-            <div className="p-8 md:p-12 bg-[#111] border-b md:border-b-0 md:border-r border-white/30">
-              <div className="flex items-center gap-3 mb-8">
-                <X size={32} className="text-[#E6E6E1]/60" />
-                <h3 className="text-2xl font-bold uppercase text-[#E6E6E1]/70">Multiple Catalysts</h3>
-              </div>
-              <ul className="space-y-4">
-                {[
-                  "We deliver (hands-on)",
-                  "High dependency on us",
-                  "Linear scale (1 team at a time)",
-                  "We're embedded practitioners",
-                  "Build capability per team"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#E6E6E1]/70 font-medium">
-                    <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/50 mt-2 flex-shrink-0"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {/* Step 1: Compare */}
+          <div className="mb-16">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-[#E6E6E1] text-black rounded-lg flex items-center justify-center font-black text-xl">1</div>
+              <h3 className="text-2xl font-bold uppercase tracking-tight">Compare the approaches</h3>
             </div>
-
-            {/* Scale Engine */}
-            <div className="p-8 md:p-12 bg-black">
-              <div className="flex items-center gap-3 mb-8">
-                <Check size={32} className="text-[#E6E6E1]" />
-                <h3 className="text-2xl font-bold uppercase">The Scale Engine</h3>
+            <div className="grid md:grid-cols-2 gap-0 border-4 border-white/30 rounded-xl overflow-hidden">
+              <div className="p-8 bg-[#111] border-b md:border-b-0 md:border-r border-white/30">
+                <div className="flex items-center gap-3 mb-6">
+                  <X size={24} className="text-[#E6E6E1]/50" />
+                  <span className="font-bold uppercase text-[#E6E6E1]/60">Multiple Catalysts</span>
+                </div>
+                <ul className="space-y-3 text-sm">
+                  {["We deliver (hands-on)", "Tactical dependency", "Linear scale", "Build capability per team"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-[#E6E6E1]/60">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#E6E6E1]/40"></div>{item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-4">
-                {[
-                  "Your champions deliver",
-                  "Decreasing dependency",
-                  "Exponential (champions multiply)",
-                  "We're strategic architects + advisors",
-                  "Build organizational capability"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[#E6E6E1]/90 font-medium">
-                    <div className="w-2 h-2 rounded-full bg-[#E6E6E1] mt-2 flex-shrink-0"></div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="p-8 bg-black">
+                <div className="flex items-center gap-3 mb-6">
+                  <Check size={24} className="text-[#E6E6E1]" />
+                  <span className="font-bold uppercase">Scale Engine</span>
+                </div>
+                <ul className="space-y-3 text-sm">
+                  {["Your champions deliver", "Established autonomy", "Self-reinforcing adoption", "Build org capability"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-[#E6E6E1]/90">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#E6E6E1]"></div>{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* E. WHO IT'S FOR + ASSESSMENT OFFER */}
-      <section className="py-24 bg-black text-[#E6E6E1] px-6 md:px-16">
-        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-0 border-4 border-white/30 rounded-xl overflow-hidden">
-          {/* Who It's For */}
-          <div className="p-12 md:p-16 bg-black border-b md:border-b-0 md:border-r border-white/30">
+          {/* Step 2: Qualify */}
+          <div className="mb-16">
             <div className="flex items-center gap-4 mb-8">
-              <Check size={32} className="text-[#E6E6E1]" />
-              <h3 className="text-3xl font-bold uppercase">Who It's For</h3>
+              <div className="w-12 h-12 bg-[#E6E6E1] text-black rounded-lg flex items-center justify-center font-black text-xl">2</div>
+              <h3 className="text-2xl font-bold uppercase tracking-tight">Check the prerequisites</h3>
             </div>
-            <ul className="space-y-6 text-lg font-medium text-[#E6E6E1]/90">
-              <li>Organizations with successful Catalyst engagement wanting to scale.</li>
-              <li>CTOs/VP Engineering with budget authority for multi-team transformation.</li>
-              <li>Companies ready to build internal Centers of Excellence.</li>
-            </ul>
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <p className="text-[#E6E6E1]/80 font-medium">
-                <strong className="text-[#E6E6E1]">Prerequisite:</strong> Completed Catalyst with documented success metrics.
+            <div className="grid md:grid-cols-3 gap-4">
+              {[
+                { label: "Proven Success", desc: "Completed Catalyst with documented metrics" },
+                { label: "C-Level Sponsorship", desc: "Executive backing for multi-team transformation" },
+                { label: "CoE Ambition", desc: "Ready to build internal Centers of Excellence" }
+              ].map((item, i) => (
+                <div key={i} className="bg-[#111] rounded-xl p-6 border-2 border-white/20">
+                  <Check size={20} className="text-[#E6E6E1] mb-3" />
+                  <div className="font-bold uppercase text-sm tracking-tight mb-1">{item.label}</div>
+                  <p className="text-sm text-[#E6E6E1]/70">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Step 3: Assess */}
+          <div>
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-12 bg-[#E6E6E1] text-black rounded-lg flex items-center justify-center font-black text-xl">3</div>
+              <h3 className="text-2xl font-bold uppercase tracking-tight">Not sure? Get assessed</h3>
+            </div>
+            <div className="bg-[#111] rounded-xl p-8 md:p-10 border-2 border-white/20">
+              <p className="text-lg font-medium text-[#E6E6E1]/90 mb-8">
+                Complimentary <strong className="text-[#E6E6E1]">Adoption Assessment</strong> — we'll help you understand where you stand.
               </p>
-            </div>
-          </div>
 
-          {/* Assessment Offer */}
-          <div className="p-12 md:p-16 bg-[#111]">
-            <div className="flex items-center gap-4 mb-8">
-              <ClipboardCheck size={32} className="text-[#E6E6E1]" />
-              <h3 className="text-2xl md:text-3xl font-bold uppercase text-[#E6E6E1]">Not sure how mature your practice is?</h3>
+              <div className="grid md:grid-cols-3 gap-4 mb-8">
+                <div className="bg-black rounded-lg p-5 border border-white/10">
+                  <div className="font-bold text-sm uppercase tracking-tight mb-2">Current State</div>
+                  <p className="text-sm text-[#E6E6E1]/60">AI tooling and usage patterns across your organization</p>
+                </div>
+                <div className="bg-black rounded-lg p-5 border border-white/10">
+                  <div className="font-bold text-sm uppercase tracking-tight mb-2">Readiness</div>
+                  <p className="text-sm text-[#E6E6E1]/60">Indicators for scaling agentic engineering practice</p>
+                </div>
+                <div className="bg-black rounded-lg p-5 border border-white/10">
+                  <div className="font-bold text-sm uppercase tracking-tight mb-2">Path Forward</div>
+                  <p className="text-sm text-[#E6E6E1]/60">Recommended next steps based on your situation</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <MagneticButton className="bg-[#E6E6E1] text-black px-6 py-4 font-bold">
+                  Get assessed <ArrowUpRight size={16} />
+                </MagneticButton>
+                <span className="text-sm text-[#E6E6E1]/50 italic">An investment by us in understanding your needs</span>
+              </div>
             </div>
-            <p className="text-lg font-medium text-[#E6E6E1]/85 mb-6">
-              We offer a complimentary <strong>Adoption Assessment</strong> to help you understand where you stand:
-            </p>
-            <ul className="space-y-4 text-[#E6E6E1]/80 font-medium mb-8">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/60 mt-2 flex-shrink-0"></div>
-                Current AI tooling and usage patterns across your org
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/60 mt-2 flex-shrink-0"></div>
-                Readiness indicators for scaling agentic engineering
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#E6E6E1]/60 mt-2 flex-shrink-0"></div>
-                Recommended path forward based on your situation
-              </li>
-            </ul>
-            <p className="text-sm text-[#E6E6E1]/70 mb-6 italic">An investment by us in understanding your needs.</p>
-            <MagneticButton
-              className="bg-[#E6E6E1] text-black px-6 py-3 text-base font-bold"
-            >
-              Get assessed <ArrowUpRight size={16} />
-            </MagneticButton>
           </div>
         </div>
       </section>
