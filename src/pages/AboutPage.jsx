@@ -23,18 +23,6 @@ const AboutPage = () => {
       quote: "There's a gap between using AI tools and engineering with them systematically. We help teams close that gap."
     },
     {
-      initials: "HHB",
-      name: "Henrik Hasselbalch Busch",
-      title: "Co-Founder",
-      bio: "Henrik built and scaled Blackwood Seven, an AI-powered marketing measurement platform serving global brands like Honda, Suncorp, and Telenor — acquired by Kantar in 2022. He brings deep experience in building AI products that deliver measurable business outcomes.",
-      credentials: [
-        "CEO & Co-Founder of Blackwood Seven (2013-2022, acquired by Kantar)",
-        "Former CEO at Jubii Media Group; Chairman at SimpleSite",
-        "Copenhagen Business School; Singularity University Executive Program"
-      ],
-      quote: null
-    },
-    {
       initials: "ME",
       name: "Morten Elk",
       title: "Co-Founder",
@@ -189,7 +177,7 @@ const AboutPage = () => {
             Enterprise transformation experience, AI product leadership, and technical depth. We don't just advise — we build alongside you.
           </p>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {founders.map((founder) => (
               <div
                 key={founder.name}
