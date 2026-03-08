@@ -155,7 +155,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
 
   // Full product ladder for landing page
   return (
-    <section ref={sectionRef} className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+    <section ref={sectionRef} className="py-24 px-6 md:px-16 bg-white">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Our Programs</h2>
