@@ -105,7 +105,7 @@ const CatalystPage = () => {
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/60 mb-4">12-Week Transformation</div>
+          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/60 mb-4">12 Week Acceleration</div>
           <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-4 text-black">
             THE CATALYST
           </h1>
