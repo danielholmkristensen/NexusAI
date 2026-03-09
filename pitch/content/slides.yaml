@@ -1,0 +1,135 @@
+# Agentic Agency Pitch Deck Content
+# Edit this file to update slide content without touching Python code
+
+metadata:
+  title: "The Agentic Agency Pitch Deck"
+  date: "2026"
+  venue: ""
+
+slides:
+  # ACT 1: FRAME THE OPPORTUNITY
+  - id: title
+    type: title
+    headline: "THE AGENTIC AGENCY"
+    subhead: "ENGINEERING > PROMPTING"
+    footer: ""
+
+  - id: the_gap
+    type: statement
+    headline: "THE GAP"
+    statement: |
+      There's a gap between 'AI helped me write this function'
+      and 'AI systematically helped us deliver this feature.'
+    emphasis: "That gap has a name: AGENTIC ENGINEERING"
+
+  - id: what_is_agentic
+    type: content
+    layout: cards
+    headline: "WHAT IS AGENTIC ENGINEERING?"
+    bullets:
+      - "Superpowers the competent developer and architect"
+      - "Works where you're NOT already an expert"
+      - "Not just code: planning, insights, documentation"
+      - "Requires skilled 'steering' and 'harnessing'"
+
+  - id: methodology
+    type: content
+    layout: cards
+    headline: "OUR METHODOLOGY"
+    bullets:
+      - "How we code, test, and document with AI as a true collaborator"
+      - "How we scope large undertakings without drift"
+      - "Systematic approaches to complex engineering problems"
+
+  # ACT 2: LIVE DEMONSTRATION
+  - id: demo_setup
+    type: demo_anchor
+    badge: "LIVE DEMO"
+    headline: "ATOMIC CRM"
+    subhead: "Let's see this in action"
+    note: "Open-source CRM application"
+    transition: "→ SWITCH TO CURSOR/TERMINAL"
+
+  - id: demo_anchor_understanding
+    type: demo_anchor
+    badge: "DEMO INSIGHT"
+    headline: "UNDERSTANDING CODE"
+    subhead: "In 5 minutes, we understood what would take a new hire weeks"
+    note: "Legacy code read • Architecture mapping • Gap analysis"
+
+  - id: demo_anchor_scope
+    type: demo_anchor
+    badge: "DEMO INSIGHT"
+    headline: "FROM QUESTION TO SCOPE"
+    subhead: "From 'Can we do X?' to a scoped implementation plan"
+    note: "Feasibility assessment • Effort estimation • Risk identification"
+
+  - id: demo_anchor_ship
+    type: demo_anchor
+    badge: "DEMO INSIGHT"
+    headline: "SPEC TO SHIP"
+    subhead: "Specification → Implementation → Working feature"
+    note: "Feature built live • Complex features relayed"
+
+  # ACT 3: THE OFFER
+  - id: agency
+    type: content
+    layout: cards
+    headline: "THE AGENTIC AGENCY"
+    bullets:
+      - "We run workshops and programs for engineering teams"
+      - "For teams ready to multiply their output"
+      - "Engineering-first approach to AI adoption"
+
+  - id: value_promise
+    type: value_promise
+    headline: "WHAT YOU'LL WALK AWAY WITH"
+    subhead: "Action-oriented outcomes you can apply on Monday morning."
+    outcomes:
+      - title: "Interview unfamiliar codebases using clarifying agents"
+        benefit: "so you can onboard to any project in hours, not weeks."
+      - title: "Apply the Three Chapters framework (Greenfield, Extension, Stewardship)"
+        benefit: "so you can choose the right agentic approach for every project type."
+      - title: "Write specs that agents can execute reliably"
+        benefit: "so your AI output is production-grade, not 'works on my machine'."
+      - title: "Catch and correct agent mistakes systematically"
+        benefit: "so you can maintain engineering rigor while moving fast."
+      - title: "Build a personal 'in the wild' project with defined success criteria"
+        benefit: "so you can apply the methodology to your actual work immediately."
+      - title: "Produce a team diagnostic for your CTO"
+        benefit: "so leadership sees exactly where agentic engineering fits in your organization."
+
+  - id: spark
+    type: offer
+    headline: "THE SPARK"
+    subhead: "2-Day Workshop"
+    bullets:
+      - "Your senior devs and architects will do what you just saw"
+      - "Hands-on from hour one — real code, real challenges"
+      - "Pre-configured workstations (Claude Code + Cursor)"
+    pricing:
+      - label: "Open Workshop"
+        price: "DKK 49,999"
+        detail: "3 seats • Learn with 3-4 companies • 12 max total"
+      - label: "Closed Workshop"
+        price: "DKK 199,996"
+        detail: "Up to 12 participants • Exclusive for your team"
+
+  - id: ladder
+    type: content
+    layout: cards
+    headline: "THE PRODUCT LADDER"
+    bullets:
+      - "SPARK — Hands-on workshop, immediate skills transfer"
+      - "CATALYST — Embedded support, sustained momentum"
+      - "SCALE ENGINE — Full transformation program"
+    note: "Start here, go as deep as you need"
+
+  - id: next_step
+    type: cta
+    headline: "NEXT STEP"
+    cta: "Let's talk about your team"
+    contact:
+      - "hello@theagenticagency.com"
+      - "theagenticagency.com"
+    footer: "Questions?"

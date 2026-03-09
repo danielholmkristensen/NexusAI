@@ -8,9 +8,9 @@ const PageMeta = ({
   type = 'website',
   image = null
 }) => {
-  const siteUrl = 'https://theagenticagency.com';
+  const siteUrl = 'https://agenticagency.dev';
   const fullUrl = `${siteUrl}${path}`;
-  const siteName = 'The Agentic Agency';
+  const siteName = 'Agentic Agency';
 
   return (
     <Helmet>

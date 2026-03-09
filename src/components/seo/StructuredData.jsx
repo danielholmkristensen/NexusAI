@@ -5,8 +5,8 @@ export const OrganizationSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "The Agentic Agency",
-    "url": "https://theagenticagency.com",
+    "name": "Agentic Agency",
+    "url": "https://agenticagency.dev",
     "description": "We transform development teams from ad-hoc AI usage into structured, production-grade agentic engineering practitioners.",
     "address": {
       "@type": "PostalAddress",
@@ -14,7 +14,7 @@ export const OrganizationSchema = () => {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "hello@theagenticagency.com",
+      "email": "hello@agenticagency.dev",
       "contactType": "sales"
     }
   };
@@ -33,7 +33,7 @@ export const SparkCourseSchema = () => {
     "description": "A 2-day hands-on workshop that transforms development teams into agentic engineering practitioners.",
     "provider": {
       "@type": "Organization",
-      "name": "The Agentic Agency"
+      "name": "Agentic Agency"
     },
     "courseMode": "onsite",
     "duration": "P2D",
@@ -75,7 +75,7 @@ export const CatalystCourseSchema = () => {
     "description": "12-week embedded program transforming one team into agentic engineering practitioners with weekly on-site support.",
     "provider": {
       "@type": "Organization",
-      "name": "The Agentic Agency"
+      "name": "Agentic Agency"
     },
     "courseMode": "onsite",
     "duration": "P12W",
@@ -98,7 +98,7 @@ export const ScaleEngineServiceSchema = () => {
     "description": "Advisory retainer to scale agentic engineering across your organization. Build internal capability with expert guidance.",
     "provider": {
       "@type": "Organization",
-      "name": "The Agentic Agency"
+      "name": "Agentic Agency"
     },
     "serviceType": "Consulting",
     "areaServed": {
@@ -122,7 +122,7 @@ export const FounderSchema = ({ name, jobTitle, description }) => {
     "description": description,
     "worksFor": {
       "@type": "Organization",
-      "name": "The Agentic Agency"
+      "name": "Agentic Agency"
     }
   };
 
@@ -160,7 +160,7 @@ export const BreadcrumbSchema = ({ items }) => {
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": `https://theagenticagency.com${item.path}`
+      "item": `https://agenticagency.dev${item.path}`
     }))
   };
 

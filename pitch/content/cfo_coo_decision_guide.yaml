@@ -1,0 +1,200 @@
+# CFO/COO Decision Guide — Founding Workshop
+# 29 Questions for Founders to Decide
+
+metadata:
+  title: "CFO/COO Decision Guide"
+  date: "March 2026"
+
+slides:
+  - id: title
+    type: title
+    headline: "CFO/COO DECISION GUIDE"
+    subhead: "29 QUESTIONS FOR THE FOUNDING WORKSHOP"
+    footer: "Based on AGENTIC_AGENCY_BUSINESS_BUDGET_v13.xlsx · March 2026"
+
+  - id: executive_summary
+    type: pyramid
+    theme: dark
+    headline: "THE MODEL WORKS. THE TIMING DOESN'T."
+    subhead: "Y1 profit 876K · Y2 profit 4.3M · Cash trough: -50.347 DKK in Sep-26"
+    evidence:
+      - "Unit economics are sound"
+      - "Aug-Sep funding gap requires ~100K bridge"
+      - "Four categories of decisions must close today"
+
+  - id: cash_gap
+    type: chart
+    headline: "P0: THE CASH GAP — MUST DECIDE TODAY"
+    subhead: "Starting cash: 0 DKK · Negative Aug-Sep · Recovery in Oct"
+    chart:
+      type: bar
+      labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      values: [115000, 162329, 199658, 36991, -25678, -50347, 198978, 394971, 512964]
+    insight: "Gap is ~100K. Options: founder loan, deferred comp, client prepay, or external seed."
+
+  - id: funding_questions
+    type: content
+    layout: numbered
+    headline: "FUNDING: 3 QUESTIONS TO DECIDE"
+    bullets:
+      - "Q1: Who provides the bridge capital? (Daniel loan vs deferred comp vs client prepay vs external)"
+      - "Q2: What triggers repayment? (Oct-Nov from cash? Dec-26 bonus?)"
+      - "Q3: What if gap is larger? (Buffer: 100K + 50K contingency)"
+    note: "Recommendation: 50K loan + 50K deferred comp spreads risk"
+
+  - id: henrik_targets
+    type: matrix
+    headline: "P1: HENRIK SALES TARGETS (APR-SEP)"
+    matrix:
+      headers:
+        - "MILESTONE"
+        - "TARGET"
+        - "DEADLINE"
+        - "STATUS"
+      rows:
+        - ["Pilot workshops", "2", "Apr-26", "In progress"]
+        - ["Additional workshops", "4", "Aug-26", "Not started"]
+        - ["First Catalyst", "1", "Jul-26", "Not started"]
+        - ["Brand identity", "Complete", "Jun-1-26", "Not started"]
+        - ["AM hiring launched", "Started", "Jul-1-26", "Not started"]
+        - ["AM offer made", "Accepted", "Sep-1-26", "Not started"]
+
+  - id: henrik_questions
+    type: content
+    layout: numbered
+    headline: "HENRIK: 4 QUESTIONS TO DECIDE"
+    bullets:
+      - "Q4: Are these targets right? Too aggressive? Too conservative?"
+      - "Q5: What if Henrik closes 5 workshops instead of 6? Partial credit or binary?"
+      - "Q6: What if Catalyst doesn't close by Jul-26? Is Sep-26 acceptable?"
+      - "Q7: Who owns brand delivery — Henrik alone or with external designer?"
+    note: "Currently: no targets in writing"
+
+  - id: morten_milestones
+    type: matrix
+    headline: "P1: MORTEN PLAYBOOK MILESTONES"
+    matrix:
+      headers:
+        - "MILESTONE"
+        - "DELIVERABLE"
+        - "DEADLINE"
+        - "STATUS"
+      rows:
+        - ["Co-deliver workshops", "4-6 workshops", "Jun-26", "Committed verbally"]
+        - ["Instructor Playbook v1", "Written doc", "Jun-30-26", "NOT FORMALIZED"]
+        - ["Final Playbook", "Handoff package", "Sep-30-26", "NOT FORMALIZED"]
+        - ["Methodology handoff", "Senior Hire solo", "Nov-30-26", "NOT FORMALIZED"]
+
+  - id: morten_questions
+    type: content
+    layout: numbered
+    headline: "MORTEN: 4 QUESTIONS TO DECIDE"
+    bullets:
+      - "Q8: What does 'Playbook v1' contain? Define minimum viable spec."
+      - "Q9: Who reviews/approves the Playbook? Daniel? External?"
+      - "Q10: What does 'handoff complete' mean? Senior Hire runs 1 workshop solo? 3?"
+      - "Q11: What if Senior Hire struggles — Morten's failure or hiring failure?"
+    note: "The playbook is the measurable artifact. Without deadline, equity has no completion condition."
+
+  - id: daniel_milestones
+    type: matrix
+    headline: "P1: DANIEL DELIVERY + OPERATIONS"
+    matrix:
+      headers:
+        - "MILESTONE"
+        - "DELIVERABLE"
+        - "DEADLINE"
+        - "STATUS"
+      rows:
+        - ["Deliver all workshops", "Lead or support", "Ongoing", "Committed"]
+        - ["Survive Oct step change", "No burnout", "Dec-26", "Planned"]
+        - ["Onboard Senior Hire", "Productive in 3mo", "Jan-27", "Planned"]
+        - ["First Catalyst case study", "Published", "Feb-27", "Planned"]
+
+  - id: daniel_questions
+    type: content
+    layout: numbered
+    headline: "DANIEL: 3 QUESTIONS TO DECIDE"
+    bullets:
+      - "Q12: Daniel at 100%+ utilization in 14 weeks. What is the burnout mitigation plan?"
+      - "Q13: What if Daniel gets sick in a critical week? Backup plan?"
+      - "Q14: Is 80K/month acceptable through Dec-26, or step up when cash allows?"
+    note: "Most defensible equity position. Risk is compensation gap, not ownership."
+
+  - id: hiring_gates
+    type: data_table
+    theme: light
+    headline: "P2: HIRING GATES — OCT-26 STEP CHANGE"
+    subhead: "Fixed costs jump 148% in October (125K → 310K/month)"
+    table:
+      headers:
+        - "HIRE"
+        - "START"
+        - "COST"
+        - "RAMP"
+        - "RISK"
+      rows:
+        - ["Senior Hire", "Oct-26", "100K/mo", "3 months", "300K if fails"]
+        - ["Account Manager", "Oct-26", "85K/mo", "1-2 months", "Q4 sales collapse"]
+    assumptions:
+      - "Gate: ≥2 Catalysts signed by Sep-15"
+      - "Who makes hire/no-hire call?"
+
+  - id: hiring_questions
+    type: content
+    layout: numbered
+    headline: "HIRING: 10 QUESTIONS TO DECIDE"
+    bullets:
+      - "Q15-18: Sep-15 gate criteria · Decision process · Plan B if no hire"
+      - "Q19-21: Senior Hire profile · Who leads hiring · 90-day success metric"
+      - "Q22-24: AM ramp expectation · Henrik handoff · If AM fails, Henrik back in?"
+    note: "The double cliff (both hires same month) is the highest-risk moment in Y1"
+
+  - id: equity_questions
+    type: content
+    layout: numbered
+    headline: "P3: EQUITY — 5 QUESTIONS TO DECIDE"
+    bullets:
+      - "Q25: Is 65/20/15 contingent on milestones, or granted upfront with clawback?"
+      - "Q26: Vesting schedule? 4-year cliff? Or milestone-based?"
+      - "Q27: What if Morten's contribution ends Nov-26? Full 20% vested?"
+      - "Q28: What if Henrik hits 80% of targets? Partial credit?"
+    note: "Q29: Future partner pool — 10% reserved? 15%? From whose shares?"
+
+  - id: summary
+    type: data_table
+    theme: dark
+    headline: "DECISION SUMMARY: SIGN TODAY"
+    subhead: "5 decisions that must close before the Contribution Agreement"
+    table:
+      headers:
+        - "#"
+        - "DECISION"
+        - "OWNER"
+        - "DEADLINE"
+      rows:
+        - ["1", "Aug-Sep funding mechanism", "All", "Today"]
+        - ["2", "Henrik monthly close targets", "Henrik", "Today"]
+        - ["3", "Morten Playbook milestones", "Morten", "Today"]
+        - ["4", "Sep-15 gate criteria", "All", "Today"]
+        - ["5", "Equity structure", "All", "Before Apr-1"]
+
+  - id: assumptions
+    type: data_table
+    theme: light
+    headline: "APPENDIX: KEY MODEL ASSUMPTIONS"
+    subhead: "Challenge any that seem wrong"
+    table:
+      headers:
+        - "ASSUMPTION"
+        - "VALUE"
+        - "SOURCE"
+      rows:
+        - ["Daniel FTE", "1.5 (60h/week)", "Inputs"]
+        - ["Morten FTE (Apr-Jun)", "0.5 (20h/week)", "Inputs"]
+        - ["Henrik FTE", "0.2 (8h/week)", "Inputs"]
+        - ["Spark closed price", "35.000 DKK", "Inputs"]
+        - ["Catalyst price", "395.000 DKK", "Inputs"]
+        - ["Daniel salary", "80.000 DKK/mo", "Inputs"]
+        - ["Senior Hire cost", "100.000 DKK/mo", "Inputs"]
+        - ["Workshop variable", "~26.000 DKK/WS", "Cost Register"]

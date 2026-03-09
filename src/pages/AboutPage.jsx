@@ -83,7 +83,7 @@ const AboutPage = () => {
   return (
     <div ref={pageRef}>
       <PageMeta
-        title="About — The Agentic Agency"
+        title="About — Agentic Agency"
         description="Practitioners at the forefront of agentic engineering. Meet the team behind hands-on workshops and transformation programs."
         path="/about"
       />

@@ -135,7 +135,7 @@ const LandingPage = () => {
   return (
     <div ref={pageRef}>
       <PageMeta
-        title="The Agentic Agency — Transform Teams into Agentic Engineers"
+        title="Agentic Agency — Transform Teams into Agentic Engineers"
         description="We close the gap from vibe coding to production-grade agentic engineering. Workshops, transformation programs, and advisory retainers for engineering teams."
         path="/"
       />

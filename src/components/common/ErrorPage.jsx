@@ -99,7 +99,7 @@ const ErrorPage = () => {
         {/* Brand footer */}
         <div className="text-center mt-12">
           <Link to="/" className="font-bold text-xl text-black/30 uppercase tracking-tighter hover:text-black/50 transition-colors">
-            The Agentic Agency
+            Agentic Agency
           </Link>
         </div>
       </div>

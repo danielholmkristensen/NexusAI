@@ -47,7 +47,7 @@ const FloatingNav = () => {
     <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 hover:-translate-y-px transition-transform duration-300">
       <nav className={`transition-all duration-500 rounded-full px-6 py-3 flex items-center gap-8 ${scrolled ? 'bg-[#E6E6E1]/90 backdrop-blur-xl border border-black/10 shadow-lg' : 'bg-transparent'}`}>
         <Link to="/" className="font-bold tracking-tighter text-xl uppercase hover:opacity-80 transition-opacity">
-          THE AGENTIC AGENCY
+          AGENTIC AGENCY
         </Link>
 
         {/* Desktop Navigation */}

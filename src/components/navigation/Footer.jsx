@@ -65,8 +65,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/20">
           <div className="flex items-center gap-6 mb-4 md:mb-0">
-            <span className="font-bold text-xl text-[#E6E6E1] tracking-tighter uppercase">THE AGENTIC AGENCY</span>
-            <span className="text-sm font-medium">© 2026 The Agentic Agency. All rights reserved.</span>
+            <span className="font-bold text-xl text-[#E6E6E1] tracking-tighter uppercase">AGENTIC AGENCY</span>
+            <span className="text-sm font-medium">© 2026 Agentic Agency. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-xl border border-white/20">
             <div className="w-2 h-2 rounded-full bg-[#E6E6E1]"></div>

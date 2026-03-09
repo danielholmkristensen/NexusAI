@@ -1,0 +1,105 @@
+# Founding Workshop Presentation
+# Executive Summary for Morten & Henrik
+# Based on Budget v11 and Founder Contribution Analysis
+
+metadata:
+  title: "Founding Alignment Workshop"
+  date: "March 2026"
+
+slides:
+  # OPENING (2 slides)
+  - id: title
+    type: title
+    headline: "FOUNDING ALIGNMENT"
+    subhead: "A REALISTIC STARTING POINT"
+    footer: "The Agentic Agency · March 2026"
+
+  - id: design_principles
+    type: content
+    layout: cards
+    headline: "WHAT WE'RE OPTIMIZING FOR"
+    bullets:
+      - "A business that scales beyond the three of us"
+      - "Senior sales + delivery capacity from Month 7"
+      - "Fast growth without founder burnout"
+      - "Aligned contributions → aligned ownership"
+
+  # THE MODEL (3 slides)
+  - id: financial_picture
+    type: content
+    layout: numbered
+    headline: "THE FINANCIAL PICTURE"
+    bullets:
+      - "Y1 Net Profit: 876K DKK (20% margin)"
+      - "Y2 Net Profit: 4.3M DKK (46% margin)"
+      - "Cash trough: 1.82M DKK in Aug-26 (vs 2M seed)"
+      - "The model is financially sound"
+    note: "The question isn't 'can we make money?' — it's 'can we execute?'"
+
+  - id: timeline
+    type: content
+    layout: cards
+    headline: "THE TIMELINE"
+    bullets:
+      - "Phase 1 (Apr-Jun): Morten leads, Daniel supports — 2 WS/month"
+      - "Phase 2 (Jul-Sep): Daniel leads, Henrik sprints on sales"
+      - "Phase 3 (Oct+): Senior hire + AM arrive — 310K/month step change"
+    note: "Key dates: Sep-15 gate review · Oct-26 cliff"
+
+  - id: constraints
+    type: statement
+    headline: "THE CONSTRAINTS"
+    statement: |
+      Daniel hits 100%+ utilization in 14 weeks.
+      Morten at 120% in workshop weeks (Apr-Jun).
+      Henrik is sole closer for 6 months — with no targets in writing.
+    emphasis: "These are the pressure points we need to manage."
+
+  # CONTRIBUTIONS (3 slides)
+  - id: daniel
+    type: content
+    layout: numbered
+    headline: "DANIEL — DELIVERY ENGINE"
+    bullets:
+      - "1.5 FTE, 80K/month, indefinite commitment"
+      - "65% equity — sole cash + delivery risk"
+      - "Key obligation: survive the Oct-26 step change"
+      - "Sweat equity gap: 80K vs 180-200K market rate"
+
+  - id: morten
+    type: content
+    layout: numbered
+    headline: "MORTEN — METHODOLOGY ARCHITECT"
+    bullets:
+      - "0.5 FTE (Apr-Jun) → 0.2 FTE (Oct+) → Advisory (Y2)"
+      - "20% equity — justified by playbook + methodology"
+      - "Milestones: Playbook Jun-30, Sep-30, Nov-30"
+      - "The test: Can a Senior Hire run a workshop without Morten?"
+
+  - id: henrik
+    type: content
+    layout: numbered
+    headline: "HENRIK — SALES ENGINE"
+    bullets:
+      - "0.2 FTE, no cash — sole closer for 6 months"
+      - "15% equity — highest-leverage early contribution"
+      - "Deliverables: 8 WS closed, 1 Catalyst, brand by Jun-1"
+      - "The test: Did Apr-Sep sales hit targets?"
+
+  # THE CONVERSATION (2 slides)
+  - id: unresolved
+    type: demo_anchor
+    badge: "OPEN ITEMS"
+    headline: "WHAT'S UNRESOLVED"
+    subhead: "These gaps need to close before we sign"
+    note: "Morten: Playbook deadlines not formalized · Henrik: Close targets not in writing · All: Sep-15 gate ownership unclear · Future partner pool: 10% is too small"
+
+  - id: next_step
+    type: cta
+    headline: "NEXT STEP"
+    cta: "Add specific milestones to the Contribution Agreement"
+    contact:
+      - "Henrik signs monthly close targets (Apr-Sep)"
+      - "Morten signs playbook milestones (Jun/Sep/Nov)"
+      - "All founders sign Sep-15 gate review protocol"
+    footer: "Let's formalize what we've already agreed"

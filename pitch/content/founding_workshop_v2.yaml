@@ -1,0 +1,216 @@
+# Founding Workshop v2 — Data-Driven with Pyramid Structure
+# Executive Summary for Morten & Henrik
+# Based on Budget v11 and Founder Contribution Analysis
+
+metadata:
+  title: "Founding Alignment Workshop"
+  date: "March 2026"
+
+slides:
+  # ============================================================================
+  # PYRAMID: CONCLUSION FIRST
+  # ============================================================================
+
+  - id: conclusion
+    type: pyramid
+    theme: dark
+    headline: "THE BUSINESS WORKS. BUT WE NEED SEED CAPITAL OR DEFERRED COMP."
+    subhead: "Y1 profit 876K · Y2 profit 4.3M · Cash trough: -50K DKK in Sep-26"
+    evidence:
+      - "Unit economics are sound — problem is timing, not model"
+      - "Options: 100K seed loan, deferred salary (Jul-Aug), or client pre-payments"
+      - "Ownership conversation is downstream of contribution + funding conversation"
+
+  # ============================================================================
+  # REVENUE: WHAT WE EARN
+  # ============================================================================
+
+  - id: revenue_table
+    type: data_table
+    theme: light
+    headline: "REVENUE 2026: 4.3M DKK FROM THREE PRODUCTS"
+    subhead: "Spark workshops drive volume · Catalyst drives margin · Scale Engine arrives late but transforms Y2"
+    table:
+      headers:
+        - "Month"
+        - "Spark WS"
+        - "Spark Rev"
+        - "Catalyst"
+        - "Cat Rev"
+        - "Total Rev"
+      rows:
+        - ["Apr-26", "2", "115K", "0", "0", "115K"]
+        - ["May-26", "2", "200K", "0", "0", "200K"]
+        - ["Jun-26", "2", "200K", "0", "0", "200K"]
+        - ["Jul-26", "0", "0", "0", "0", "0"]
+        - ["Aug-26", "1", "100K", "0", "0", "100K"]
+        - ["Sep-26", "1", "100K", "1", "132K", "232K"]
+        - ["Oct-26", "4", "400K", "1", "132K", "532K"]
+        - ["Nov-26", "4", "400K", "1", "132K", "532K"]
+        - ["Dec-26", "4", "400K", "0", "0", "400K"]
+        - ["Y1 Total", "20", "1.9M", "3", "396K", "4.3M"]
+    assumptions:
+      - "Spark avg revenue 100K/WS (weighted company mix)"
+      - "Catalyst 395K recognized over 3 months"
+      - "Jul-26 is holiday month (0 workshops)"
+      - "Oct+ assumes Senior Hire enables 4 WS/month"
+
+  # ============================================================================
+  # COSTS: WHAT WE SPEND
+  # ============================================================================
+
+  - id: cost_table
+    type: data_table
+    theme: light
+    headline: "COSTS 2026: 3.4M DKK WITH OCT STEP CHANGE"
+    subhead: "Fixed costs jump 148% in October when Senior Hire + Account Manager arrive"
+    table:
+      headers:
+        - "Cost Line"
+        - "Apr-Sep"
+        - "Oct-Dec"
+        - "Y1 Total"
+        - "Notes"
+      rows:
+        - ["Daniel salary", "80K/mo", "80K/mo", "960K", "Fixed, indefinite"]
+        - ["Morten delivery", "8-16K/mo", "8K/mo", "112K", "Per workshop only"]
+        - ["Senior Hire", "—", "100K/mo", "300K", "Starts Oct-26"]
+        - ["Account Manager", "—", "85K/mo", "255K", "45K base + 10% commission"]
+        - ["Tooling + overhead", "22K/mo", "44K/mo", "264K", "Scales at Oct-26"]
+        - ["Workshop variable", "26-38K/WS", "26K/WS", "790K", "Venue, travel, materials"]
+        - ["TOTAL FIXED", "125K/mo", "310K/mo", "2.6M", "+148% step change"]
+    assumptions:
+      - "Senior Hire + AM both start Oct-26 (gate: ≥2 Catalysts signed by Sep-15)"
+      - "Workshop variable = venue 16K + travel 2K + proviant 8K"
+      - "No Scale Engine costs modeled (near-zero marginal)"
+
+  # ============================================================================
+  # CASH FLOW: CUMULATIVE POSITION
+  # ============================================================================
+
+  - id: cash_flow
+    type: chart
+    headline: "CASH FLOW 2026: BOOTSTRAPPED MODEL SHOWS GAP"
+    subhead: "Starting cash: 0 DKK · Trough: -50K in Sep · Requires ~100K bridge funding"
+    chart:
+      type: bar
+      labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+      values: [115000, 162329, 199658, 36991, -25678, -50347, 198978, 394971, 512964]
+      # Display format: 115.000, 162.329, etc. (European thousands separator)
+    insight: "INSIGHT: Unit economics work. Timing doesn't. Cash negative Aug-Sep. Need seed capital, deferred comp, or client pre-payments."
+
+  # ============================================================================
+  # UTILIZATION: WHO IS OVERLOADED
+  # ============================================================================
+
+  - id: utilization
+    type: data_table
+    theme: dark
+    headline: "UTILIZATION 2026: CONSTRAINTS BY PERSON"
+    subhead: "Daniel hits 100%+ in 14 weeks · Morten at 120% in WS weeks · Henrik is sole closer Apr-Sep"
+    table:
+      headers:
+        - "Person"
+        - "Apr-Jun"
+        - "Jul-Sep"
+        - "Oct-Dec"
+        - "Constraint"
+      rows:
+        - ["Daniel", "65%", "65-87%", "93-100%+", "14 weeks above 100%"]
+        - ["Morten", "120% WS weeks", "40%", "10%", "Unsustainable Apr-Jun"]
+        - ["Henrik", "25%", "25%", "19%", "Sole closer for 6 months"]
+        - ["Senior Hire", "—", "—", "40-100%", "3-month ramp to lead"]
+        - ["Acct Manager", "—", "—", "91%", "Full sales cycle from Oct"]
+    assumptions:
+      - "Daniel at 1.5 FTE = 60h/week available"
+      - "Morten at 0.5 FTE Apr-Jun = 20h/week"
+      - "Henrik at 0.2 FTE = 32h/month (8h/week)"
+      - "WS week = delivery week with both days consumed"
+
+  # ============================================================================
+  # RESPONSIBILITY MATRIX: WHO DOES WHAT BY WHEN
+  # ============================================================================
+
+  - id: responsibility_matrix
+    type: matrix
+    headline: "WHO DOES WHAT BY WHEN"
+    matrix:
+      headers:
+        - "WHO"
+        - "WHAT"
+        - "WHEN"
+        - "STATUS"
+      rows:
+        - ["Henrik", "Close 2 pilot workshops", "Apr-26", "In progress"]
+        - ["Henrik", "Close 4 more workshops (May-Aug)", "Aug-26", "Not started"]
+        - ["Henrik", "Close first Catalyst client", "Jul-26", "Not started"]
+        - ["Henrik", "Deliver brand identity", "Jun-1-26", "Not started"]
+        - ["Henrik", "Launch AM hiring process", "Jul-1-26", "Not started"]
+        - ["Henrik", "Make AM offer", "Sep-1-26", "Not started"]
+        - ["Morten", "Co-deliver all Apr-Jun workshops", "Jun-26", "Committed verbally"]
+        - ["Morten", "Instructor Playbook v1", "Jun-30-26", "NOT FORMALIZED"]
+        - ["Morten", "Final Playbook", "Sep-30-26", "NOT FORMALIZED"]
+        - ["Morten", "Methodology handoff to Senior Hire", "Nov-30-26", "NOT FORMALIZED"]
+        - ["Daniel", "Deliver all workshops (support → lead)", "Ongoing", "Committed"]
+        - ["Daniel", "Onboard Senior Hire", "Oct-26", "Planned"]
+        - ["Daniel", "First Catalyst case study", "Feb-27", "Planned"]
+        - ["All", "Sep-15 gate review (hire decision)", "Sep-15-26", "NO OWNER"]
+
+  # ============================================================================
+  # CONTRIBUTIONS: THE THREE TESTS
+  # ============================================================================
+
+  - id: daniel_contribution
+    type: content
+    layout: numbered
+    headline: "DANIEL: 65% — DELIVERY ENGINE + CASH BRIDGE"
+    bullets:
+      - "1.5 FTE (60h/week) at below-market 80K/month"
+      - "Sole delivery asset H1 → primary asset H2"
+      - "Sweat equity: 80K vs 180K market = 100K/month unpaid (900K Y1)"
+      - "Test: Survive Oct-26 step change + fund Jul-Aug gap"
+    note: "Most defensible equity position. Aug-Sep cash gap requires seed loan or salary deferral."
+
+  - id: morten_contribution
+    type: content
+    layout: numbered
+    headline: "MORTEN: 20% — METHODOLOGY + PLAYBOOK HANDOFF"
+    bullets:
+      - "0.5 FTE Apr-Jun (120% in WS weeks) → 0.2 FTE Oct+ → Advisory Y2"
+      - "8K per workshop delivery (no equity for delivery hours)"
+      - "Equity justified by: playbook + methodology institutionalization"
+      - "Test: Can Senior Hire run workshop without Morten by Nov-26?"
+    note: "Playbook is the measurable artifact. Without deadline, equity has no completion condition."
+
+  - id: henrik_contribution
+    type: content
+    layout: numbered
+    headline: "HENRIK: 15% — SALES ENGINE (APR-SEP)"
+    bullets:
+      - "0.2 FTE (32h/month), no cash contribution"
+      - "Sole closer for 6 months — model generates zero revenue without his closes"
+      - "Targets: 8 WS closed, 1 Catalyst, brand by Jun-1, AM hired by Oct-1"
+      - "Test: Did Apr-Sep sales hit targets when Henrik was irreplaceable?"
+    note: "Highest-leverage early contribution. Currently no targets in writing."
+
+  # ============================================================================
+  # UNRESOLVED + ACTION
+  # ============================================================================
+
+  - id: unresolved
+    type: demo_anchor
+    badge: "GAPS TO CLOSE"
+    headline: "WHAT'S NOT YET PINNED"
+    subhead: "These items must be formalized before we sign the Contribution Agreement"
+    note: "FUNDING: Who covers Aug-Sep gap (~100K)? · Morten: Playbook milestones not in writing · Henrik: Sales targets not in writing · All: Sep-15 gate has no owner"
+
+  - id: next_step
+    type: cta
+    headline: "FOUR DECISIONS NEEDED"
+    cta: "Resolve funding + formalize contribution milestones today"
+    contact:
+      - "1. ALL: Decide Aug-Sep funding (seed loan vs deferred comp vs client prepay)"
+      - "2. Henrik: Sign monthly close targets (Apr-Sep)"
+      - "3. Morten: Sign playbook milestones (Jun/Sep/Nov)"
+      - "4. All: Sign Sep-15 gate review protocol"
+    footer: "The model works. The timing requires a bridge."
