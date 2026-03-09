@@ -12,9 +12,9 @@ const WaitlistForm = ({ variant = 'default' }) => {
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [errorMessage, setErrorMessage] = useState('');
 
-  const getCookie = (name) => {
+  const getCookie = (cookieName) => {
     const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
+    const parts = value.split(`; ${cookieName}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
     return null;
   };
