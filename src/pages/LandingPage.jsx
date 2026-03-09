@@ -154,9 +154,6 @@ const LandingPage = () => {
         </div>
 
         <div className="relative z-10 max-w-5xl mb-16">
-          <h1 className="hero-anim text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-none mb-2">
-            THE AGENTIC AGENCY
-          </h1>
           <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-8 text-black">
             ENGINEERING &gt; PROMPTING
           </h1>
