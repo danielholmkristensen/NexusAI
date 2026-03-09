@@ -16,7 +16,7 @@ const CatalystPage = () => {
   const catalystFAQs = [
     { q: "Do we need to complete The Spark first?", a: "Yes. The Spark teaches the methodology; The Catalyst embeds it. Without shared vocabulary and baseline skills, the 12 weeks are less effective." },
     { q: "How many team members should be involved?", a: "Minimum 3 who completed The Spark. Ideal is 4-6. Larger teams can participate but primary focus is the core group." },
-    { q: "What happens if we have an emergency?", a: "Up to 2 emergency half-days per quarter are included. Critical issues (production risk) get 2-hour response with on-site support if needed." },
+    { q: "What happens if we have an emergency?", a: "Up to 2 emergency half-days during the engagement for production-impacting issues related to agentic workflows. Critical issues get 2-hour response with on-site support if needed." },
     { q: "What's the Scaling Readiness Assessment?", a: "Week 12 deliverable that identifies which other teams could benefit from agentic engineering, what prerequisites must exist, and realistic timeline. It's both a deliverable and the foundation for Scale Engine conversations." },
     { q: "Can we pause the engagement?", a: "Pauses are possible but not recommended. Momentum matters. If business circumstances require it, we work together on a modified timeline." },
     { q: "How is pricing determined?", a: "We scope engagements based on your team's size and specific needs. Contact us for a discovery conversation." }
@@ -105,7 +105,7 @@ const CatalystPage = () => {
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/60 mb-4">12 Week Acceleration</div>
+          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/60 mb-4">12-Week Transformation</div>
           <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-4 text-black">
             THE CATALYST
           </h1>
@@ -113,11 +113,14 @@ const CatalystPage = () => {
             A workshop gives you the methodology. <strong>The Catalyst</strong> embeds it into your team's daily workflow — with expert guidance every step of the way.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <MagneticButton className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90">
+            <MagneticButton
+              href="mailto:hello@theagenticagency.com?subject=Catalyst%20Program%20Inquiry"
+              className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
+            >
               Book a discovery call <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
-              Prerequisite: The Spark<br/>Custom scoped
+              Prerequisite: The Spark<br/>From DKK 395,000
             </span>
           </div>
         </div>
@@ -275,7 +278,7 @@ const CatalystPage = () => {
                 </li>
                 <li className="flex items-start gap-4 bg-white p-4 rounded-lg border-2 border-black">
                   <CheckCircle size={20} className="mt-1 flex-shrink-0" />
-                  <span className="font-medium">Up to 2 emergency half-days per quarter for critical escalations</span>
+                  <span className="font-medium">Up to 2 emergency half-days during engagement for production-impacting issues</span>
                 </li>
               </ul>
             </div>
@@ -349,9 +352,12 @@ const CatalystPage = () => {
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Ready to move faster with agentic engineering?</h2>
             <p className="text-xl text-black/70 font-medium mb-8">
               The Catalyst is a 12-week embedded transformation program.<br/>
-              Pricing is scoped to your team's size and specific needs.
+              Engagements typically start at DKK 395,000, scoped to your team's size and needs.
             </p>
-            <MagneticButton className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto">
+            <MagneticButton
+              href="mailto:hello@theagenticagency.com?subject=Catalyst%20Program%20Inquiry"
+              className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto"
+            >
               Book a discovery call <ArrowUpRight size={22} />
             </MagneticButton>
           </div>

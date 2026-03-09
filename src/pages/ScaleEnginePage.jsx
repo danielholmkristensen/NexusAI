@@ -103,14 +103,17 @@ const ScaleEnginePage = () => {
             THE SCALE ENGINE
           </h1>
           <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-12 font-medium leading-snug">
-            One team proved it works. Now build it into an internal capability of staying at the frontier.
+            One team proved it works. Now make it an organizational capability — and stay at the frontier.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <MagneticButton className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90">
+            <MagneticButton
+              href="mailto:hello@theagenticagency.com?subject=Scale%20Engine%20Inquiry"
+              className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
+            >
               Schedule a discovery conversation <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
-              Prerequisite: The Catalyst<br/>Custom scoped
+              Prerequisite: The Catalyst<br/>From DKK 50,000/month
             </span>
           </div>
         </div>
@@ -290,7 +293,10 @@ const ScaleEnginePage = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <MagneticButton className="bg-[#E6E6E1] text-black px-6 py-4 font-bold">
+                <MagneticButton
+                  href="mailto:hello@theagenticagency.com?subject=Adoption%20Assessment%20Request"
+                  className="bg-[#E6E6E1] text-black px-6 py-4 font-bold"
+                >
                   Get assessed <ArrowUpRight size={16} />
                 </MagneticButton>
                 <span className="text-sm text-[#E6E6E1]/50 italic">An investment by us in understanding your needs</span>
@@ -307,9 +313,12 @@ const ScaleEnginePage = () => {
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Ready to scale?</h2>
             <p className="text-xl text-black/80 font-medium mb-8">
               The Scale Engine is a strategic advisory partnership.<br/>
-              Pricing is scoped to your organization's size, rollout ambitions, and timeline.
+              Retainers typically start at DKK 50,000/month, scoped to your organization's size and rollout ambitions.
             </p>
-            <MagneticButton className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto">
+            <MagneticButton
+              href="mailto:hello@theagenticagency.com?subject=Scale%20Engine%20Inquiry"
+              className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto"
+            >
               Schedule a discovery conversation <ArrowUpRight size={22} />
             </MagneticButton>
           </div>

@@ -168,7 +168,7 @@ const LandingPage = () => {
               to="/the-spark"
               className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
             >
-              Explore our programs <ArrowUpRight size={20} />
+              Start with The Spark <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-sm font-bold uppercase tracking-widest text-black/50 border-l-2 border-black/20 pl-4 py-1">
               Workshops. Transformation.<br/>Advisory.

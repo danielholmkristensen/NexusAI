@@ -13,7 +13,7 @@ const SparkPage = () => {
 
   const sparkFAQs = [
     { q: "What's the difference between open and closed?", a: "Open workshops include 3-4 companies learning together (12 participants max). Closed workshops are exclusively for your organization. Same curriculum, different dynamics." },
-    { q: "Can we send just 1 or 2 people?", a: "We require minimum 3 participants from the same organization. Agentic engineering is a team practice, not an individual skill." },
+    { q: "Can we send just 1 or 2 people?", a: "We require minimum 3 participants because agentic engineering changes how a team collaborates — not just how individuals code. With fewer than 3, the shared vocabulary and workflow changes don't survive re-entry to the team." },
     { q: "Do we need prior AI experience?", a: "Basic development experience required. No specific AI tool experience needed — we build from fundamentals." },
     { q: "What tools do you use?", a: "Claude Code and Cursor. Workstations come pre-configured so you're coding within the first hour." },
     { q: "Is this a certification?", a: "No. We focus on practical capability, not credentials. You'll leave with skills you can apply immediately — that's the proof that matters." },
@@ -110,11 +110,14 @@ const SparkPage = () => {
             Your team already uses AI to write code. <strong>The Spark</strong> teaches them to engineer with it. Two days. Hands-on from hour one. Real code, real challenges.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <MagneticButton className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90">
+            <MagneticButton
+              href="mailto:hello@theagenticagency.com?subject=Spark%20Workshop%20Inquiry"
+              className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
+            >
               Book a workshop <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
-              Open: DKK 49,999 / 3 pax<br/>Closed: DKK 199,996 / ≤12 pax
+              Open: DKK 49,999 / 3 pax<br/>Closed: From DKK 249,000
             </span>
           </div>
         </div>
@@ -127,7 +130,7 @@ const SparkPage = () => {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <p className="phil-word text-xl md:text-3xl text-[#E6E6E1]/80 mb-8 font-medium">
-            Vibe coding gets you started. It won't get you to production.
+            Ad-hoc AI prompting gets you started. It won't get you to production.
           </p>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight uppercase">
             <span className="phil-word inline-block mr-3">We</span>
@@ -196,7 +199,7 @@ const SparkPage = () => {
               {
                 num: "06",
                 title: "Ongoing Community Access",
-                desc: "Shooting Star alumni network plus a 6-week reunion to demo real results."
+                desc: "Join the Shooting Star community — our alumni network where practitioners share results and stay current — plus a 6-week reunion to demo real progress."
               }
             ].map((item) => (
               <div key={item.num} className="outcome-card bg-[#111] border border-white/10 rounded-xl p-6 hover:border-white/30 transition-colors">
@@ -264,7 +267,7 @@ const SparkPage = () => {
                 <ul className="space-y-4 text-black/80 font-medium text-lg border-l-4 border-black pl-6">
                   <li><strong>Shooting Star Community:</strong> Ongoing support channel.</li>
                   <li><strong>6-Week Reunion:</strong> Physical meetup to demo results.</li>
-                  <li><strong>Recognition Tiers:</strong> Reward application and evangelism.</li>
+                  <li><strong>Practitioner Levels:</strong> Recognize contribution and community involvement.</li>
                 </ul>
               </div>
               <div className="w-64 h-64 md:w-96 md:h-96 relative flex items-center justify-center bg-[#E6E6E1]/30 rounded-xl border border-black/10">
@@ -292,7 +295,7 @@ const SparkPage = () => {
           "Earlier in your development career — we can point you to foundational resources.",
           "Looking for certification — we focus on capability, but happy to discuss your goals."
         ]}
-        alternateCTA={{ text: "Let's talk", to: "/about" }}
+        alternateCTA={{ text: "Let's talk", href: "mailto:hello@theagenticagency.com?subject=Workshop%20Inquiry" }}
       />
 
       {/* E2. WHAT ENGINEERS SAY */}
@@ -394,7 +397,10 @@ const SparkPage = () => {
                 <strong>Ideal for:</strong> Teams testing the methodology before committing org-wide.
               </p>
 
-              <MagneticButton className="w-full bg-black text-[#E6E6E1] px-8 py-4 text-lg font-bold justify-center">
+              <MagneticButton
+                href="mailto:hello@theagenticagency.com?subject=Open%20Workshop%20—%20Reserve%20Seats"
+                className="w-full bg-black text-[#E6E6E1] px-8 py-4 text-lg font-bold justify-center"
+              >
                 Reserve seats <ArrowUpRight size={18} />
               </MagneticButton>
             </div>
@@ -403,8 +409,8 @@ const SparkPage = () => {
             <div className="bg-black text-[#E6E6E1] rounded-xl p-10 border-4 border-white/30 shadow-[12px_12px_0px_0px_rgba(0,0,0,0.3)]">
               <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/70 mb-2">Your team only</div>
               <h3 className="text-3xl font-bold uppercase tracking-tight mb-2">Closed Workshop</h3>
-              <div className="font-mono text-5xl font-bold mb-2">199,996 <span className="text-lg text-[#E6E6E1]/70">DKK</span></div>
-              <p className="text-[#E6E6E1]/80 font-medium mb-8">Exclusive session, up to 12 participants</p>
+              <div className="font-mono text-4xl font-bold mb-2">From 249,000 <span className="text-lg text-[#E6E6E1]/70">DKK</span></div>
+              <p className="text-[#E6E6E1]/80 font-medium mb-8">Exclusive session, up to 12 participants. Customization premium included.</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
@@ -429,7 +435,10 @@ const SparkPage = () => {
                 <strong>Ideal for:</strong> Organizations ready to transform a full team.
               </p>
 
-              <MagneticButton className="w-full bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold justify-center">
+              <MagneticButton
+                href="mailto:hello@theagenticagency.com?subject=Closed%20Workshop%20Inquiry"
+                className="w-full bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold justify-center"
+              >
                 Book closed session <ArrowUpRight size={18} />
               </MagneticButton>
             </div>
@@ -489,7 +498,7 @@ const DiagnosticShuffler = () => {
     <div className="bg-white rounded-xl p-8 border border-black/10 shadow-sm flex flex-col h-[400px]">
       <div className="flex items-center gap-3 mb-4">
         <Code2 size={24} className="text-black" />
-        <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 1: Greenfield</h3>
+        <h3 className="font-bold text-2xl uppercase tracking-tight">01: Greenfield</h3>
       </div>
       <p className="text-black/80 font-medium text-sm mb-6 leading-relaxed">Building something new. The agent helps you define what "done" looks like before writing implementation code.</p>
 
@@ -551,7 +560,7 @@ const TelemetryTypewriter = () => {
       <div className="flex justify-between items-start mb-4">
         <div className="flex items-center gap-3">
           <GitBranch size={24} className="text-[#E6E6E1]" />
-          <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 2: Extension</h3>
+          <h3 className="font-bold text-2xl uppercase tracking-tight">02: Extension</h3>
         </div>
       </div>
       <p className="text-[#E6E6E1]/80 font-medium text-sm mb-6 leading-relaxed">Adding features to existing code. The agent maps dependencies and protects what's already working.</p>
@@ -589,7 +598,7 @@ const CursorScheduler = () => {
     <div ref={scheduleRef} className="bg-white rounded-xl p-8 border border-black/10 shadow-sm flex flex-col h-[400px] relative overflow-hidden">
       <div className="flex items-center gap-3 mb-4">
         <ShieldAlert size={24} className="text-black" />
-        <h3 className="font-bold text-2xl uppercase tracking-tight">Chap. 3: Stewardship</h3>
+        <h3 className="font-bold text-2xl uppercase tracking-tight">03: Stewardship</h3>
       </div>
       <p className="text-black/80 font-medium text-sm mb-6 leading-relaxed">Maintaining and improving existing code. The agent audits, documents, and refactors systematically.</p>
 

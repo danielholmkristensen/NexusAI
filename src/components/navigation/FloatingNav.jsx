@@ -27,6 +27,22 @@ const FloatingNav = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  // Contextual CTA based on current page
+  const getCTA = () => {
+    switch (location.pathname) {
+      case '/the-catalyst':
+        return { label: 'Book a discovery call', href: 'mailto:hello@theagenticagency.com?subject=Catalyst%20Program%20Inquiry' };
+      case '/the-scale-engine':
+        return { label: 'Schedule a conversation', href: 'mailto:hello@theagenticagency.com?subject=Scale%20Engine%20Inquiry' };
+      case '/about':
+        return { label: 'Get in touch', href: 'mailto:hello@theagenticagency.com?subject=Let\'s%20Talk' };
+      default:
+        return { label: 'Book a workshop', href: 'mailto:hello@theagenticagency.com?subject=Spark%20Workshop%20Inquiry' };
+    }
+  };
+
+  const cta = getCTA();
+
   return (
     <div className="fixed top-6 left-0 w-full z-50 flex justify-center px-4 hover:-translate-y-px transition-transform duration-300">
       <nav className={`transition-all duration-500 rounded-full px-6 py-3 flex items-center gap-8 ${scrolled ? 'bg-[#E6E6E1]/90 backdrop-blur-xl border border-black/10 shadow-lg' : 'bg-transparent'}`}>
@@ -48,10 +64,10 @@ const FloatingNav = () => {
         </div>
 
         <MagneticButton
-          to="/the-spark"
+          href={cta.href}
           className="hidden md:flex bg-black text-[#E6E6E1] px-5 py-2.5 text-xs font-bold uppercase tracking-wide"
         >
-          Book a workshop
+          {cta.label}
         </MagneticButton>
 
         {/* Mobile Menu Button */}
@@ -80,10 +96,10 @@ const FloatingNav = () => {
               </Link>
             ))}
             <MagneticButton
-              to="/the-spark"
+              href={cta.href}
               className="bg-black text-[#E6E6E1] px-6 py-3 text-sm font-bold uppercase tracking-wide mt-4"
             >
-              Book a workshop
+              {cta.label}
             </MagneticButton>
           </div>
         </div>

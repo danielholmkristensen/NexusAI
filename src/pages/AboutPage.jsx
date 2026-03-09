@@ -32,7 +32,7 @@ const AboutPage = () => {
         "CEO of SimpleSite; Founder of Nordic Growth Hackers",
         "Entrepreneur and investor in Copenhagen's technology ecosystem"
       ],
-      quote: null
+      quote: "The best engineering practices are discovered through rigorous observation, not invented through theory. We measure what works."
     }
   ];
 
@@ -174,7 +174,7 @@ const AboutPage = () => {
         <div className="max-w-[1400px] mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">The Team</h2>
           <p className="text-xl text-[#E6E6E1]/70 font-medium mb-16 max-w-2xl">
-            Enterprise transformation experience, AI product leadership, and technical depth. We don't just advise — we build alongside you.
+            Enterprise transformation experience, AI product leadership, and technical depth. From hands-on workshops to strategic advisory, we meet you where you are.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -276,7 +276,10 @@ const AboutPage = () => {
               Ready to explore how agentic engineering could transform your team?
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <MagneticButton className="bg-black text-[#E6E6E1] px-10 py-5 text-lg font-bold">
+              <MagneticButton
+                href="mailto:hello@theagenticagency.com?subject=Let's%20Talk"
+                className="bg-black text-[#E6E6E1] px-10 py-5 text-lg font-bold"
+              >
                 Book a conversation <ArrowUpRight size={20} />
               </MagneticButton>
               <MagneticButton
