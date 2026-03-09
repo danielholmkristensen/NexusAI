@@ -10,7 +10,7 @@ const Footer = () => {
           Ready to move beyond vibe coding?
         </h2>
         <p className="text-xl font-medium mb-12 max-w-2xl mx-auto">
-          The Spark is running now. Seats are limited.
+          Scheduled The Spark sessions are fully booked - sign up for our waitlist.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
           <MagneticButton

@@ -161,7 +161,7 @@ const LandingPage = () => {
             ENGINEERING &gt; PROMPTING
           </h1>
           <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-12 font-medium leading-snug">
-            We transform development teams from ad-hoc AI usage into structured, production-grade agentic engineering practitioners.
+            We move development teams from ad-hoc AI usage into structured, production-grade agentic engineering practitioners.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton
@@ -171,7 +171,7 @@ const LandingPage = () => {
               Start with The Spark <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-sm font-bold uppercase tracking-widest text-black/50 border-l-2 border-black/20 pl-4 py-1">
-              Workshops. Transformation.<br/>Advisory.
+              New agentic competence level.<br/>Adoption acceleration. Transformation.
             </span>
           </div>
         </div>
@@ -236,12 +236,12 @@ const LandingPage = () => {
             </div>
             <div className="pillar-item p-6 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
               <div className="text-4xl font-black text-black/20 mb-2">02</div>
-              <div className="font-bold uppercase tracking-tight text-black">Transformation</div>
+              <div className="font-bold uppercase tracking-tight text-black">Acceleration</div>
               <div className="text-sm text-black/60 mt-1">12-week programs</div>
             </div>
             <div className="pillar-item p-6 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
               <div className="text-4xl font-black text-black/20 mb-2">03</div>
-              <div className="font-bold uppercase tracking-tight text-black">Advisory</div>
+              <div className="font-bold uppercase tracking-tight text-black">Transformation</div>
               <div className="text-sm text-black/60 mt-1">Ongoing partnership</div>
             </div>
           </div>

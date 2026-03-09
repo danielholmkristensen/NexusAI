@@ -158,7 +158,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
     <section ref={sectionRef} className="py-24 px-6 md:px-16 bg-white">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Our Programs</h2>
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Move faster as a practitioner, team and organization</h2>
           <p className="text-xl font-medium text-black/70 max-w-2xl mx-auto">
             Start with The Spark. Build from there. Each step prepares you for the next.
           </p>
