@@ -107,7 +107,7 @@ const ScaleEnginePage = () => {
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton
-              href="mailto:hello@theagenticagency.com?subject=Scale%20Engine%20Inquiry"
+              href="mailto:scaleengine@agenticagency.dev?subject=Scale%20Engine%20Inquiry"
               className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
             >
               Schedule a discovery conversation <ArrowUpRight size={20} />
@@ -294,7 +294,7 @@ const ScaleEnginePage = () => {
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <MagneticButton
-                  href="mailto:hello@theagenticagency.com?subject=Adoption%20Assessment%20Request"
+                  href="mailto:scaleengine@agenticagency.dev?subject=Adoption%20Assessment%20Request"
                   className="bg-[#E6E6E1] text-black px-6 py-4 font-bold"
                 >
                   Get assessed <ArrowUpRight size={16} />
@@ -316,7 +316,7 @@ const ScaleEnginePage = () => {
               Pricing is scoped to your organization's size, rollout ambitions, and timeline.
             </p>
             <MagneticButton
-              href="mailto:hello@theagenticagency.com?subject=Scale%20Engine%20Inquiry"
+              href="mailto:scaleengine@agenticagency.dev?subject=Scale%20Engine%20Inquiry"
               className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto"
             >
               Schedule a discovery conversation <ArrowUpRight size={22} />

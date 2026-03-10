@@ -277,16 +277,16 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
               <MagneticButton
-                href="mailto:hello@theagenticagency.com?subject=Let's%20Talk"
+                href="mailto:about@agenticagency.dev?subject=Let's%20Talk"
                 className="bg-black text-[#E6E6E1] px-10 py-5 text-lg font-bold"
               >
                 Book a conversation <ArrowUpRight size={20} />
               </MagneticButton>
               <MagneticButton
-                href="mailto:hello@theagenticagency.com"
+                href="mailto:about@agenticagency.dev"
                 className="bg-white text-black px-10 py-5 text-lg font-bold border-2 border-black"
               >
-                <Mail size={20} /> hello@theagenticagency.com
+                <Mail size={20} /> about@agenticagency.dev
               </MagneticButton>
             </div>
           </div>

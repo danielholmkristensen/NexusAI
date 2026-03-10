@@ -31,13 +31,13 @@ const FloatingNav = () => {
   const getCTA = () => {
     switch (location.pathname) {
       case '/the-catalyst':
-        return { label: 'Book a discovery call', href: 'mailto:hello@theagenticagency.com?subject=Catalyst%20Program%20Inquiry' };
+        return { label: 'Book a discovery call', href: 'mailto:catalyst@agenticagency.dev?subject=Catalyst%20Program%20Inquiry' };
       case '/the-scale-engine':
-        return { label: 'Schedule a conversation', href: 'mailto:hello@theagenticagency.com?subject=Scale%20Engine%20Inquiry' };
+        return { label: 'Schedule a conversation', href: 'mailto:scaleengine@agenticagency.dev?subject=Scale%20Engine%20Inquiry' };
       case '/about':
-        return { label: 'Get in touch', href: 'mailto:hello@theagenticagency.com?subject=Let\'s%20Talk' };
+        return { label: 'Get in touch', href: 'mailto:about@agenticagency.dev?subject=Let\'s%20Talk' };
       default:
-        return { label: 'Book a workshop', href: 'mailto:hello@theagenticagency.com?subject=Spark%20Workshop%20Inquiry' };
+        return { label: 'Book a workshop', href: 'mailto:spark@agenticagency.dev?subject=Spark%20Workshop%20Inquiry' };
     }
   };
 

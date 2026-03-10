@@ -41,7 +41,7 @@ const Footer = () => {
             <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Company</h4>
             <ul className="space-y-2">
               <li><Link to="/about" className="hover:text-[#E6E6E1] transition-colors">About Us</Link></li>
-              <li><a href="mailto:hello@theagenticagency.com" className="hover:text-[#E6E6E1] transition-colors">Contact</a></li>
+              <li><a href="mailto:contact@agenticagency.dev" className="hover:text-[#E6E6E1] transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>
@@ -55,7 +55,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Connect</h4>
             <ul className="space-y-2">
-              <li><a href="mailto:hello@theagenticagency.com" className="hover:text-[#E6E6E1] transition-colors">hello@theagenticagency.com</a></li>
+              <li><a href="mailto:contact@agenticagency.dev" className="hover:text-[#E6E6E1] transition-colors">contact@agenticagency.dev</a></li>
             </ul>
           </div>
         </div>

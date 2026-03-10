@@ -111,7 +111,7 @@ const SparkPage = () => {
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton
-              href="mailto:hello@theagenticagency.com?subject=Spark%20Workshop%20Inquiry"
+              href="mailto:spark@agenticagency.dev?subject=Spark%20Workshop%20Inquiry"
               className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
             >
               Book a workshop <ArrowUpRight size={20} />
@@ -295,7 +295,7 @@ const SparkPage = () => {
           "Earlier in your development career — we can point you to foundational resources.",
           "Looking for certification — we focus on capability, but happy to discuss your goals."
         ]}
-        alternateCTA={{ text: "Let's talk", href: "mailto:hello@theagenticagency.com?subject=Workshop%20Inquiry" }}
+        alternateCTA={{ text: "Let's talk", href: "mailto:spark@agenticagency.dev?subject=Workshop%20Inquiry" }}
       />
 
       {/* E2. WHAT ENGINEERS SAY */}
@@ -398,7 +398,7 @@ const SparkPage = () => {
               </p>
 
               <MagneticButton
-                href="mailto:hello@theagenticagency.com?subject=Open%20Workshop%20—%20Reserve%20Seats"
+                href="mailto:spark@agenticagency.dev?subject=Open%20Workshop%20—%20Reserve%20Seats"
                 className="w-full bg-black text-[#E6E6E1] px-8 py-4 text-lg font-bold justify-center"
               >
                 Reserve seats <ArrowUpRight size={18} />
@@ -436,7 +436,7 @@ const SparkPage = () => {
               </p>
 
               <MagneticButton
-                href="mailto:hello@theagenticagency.com?subject=Closed%20Workshop%20Inquiry"
+                href="mailto:spark@agenticagency.dev?subject=Closed%20Workshop%20Inquiry"
                 className="w-full bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold justify-center"
               >
                 Book closed session <ArrowUpRight size={18} />

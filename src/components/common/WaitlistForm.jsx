@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { ArrowRight, Check, AlertCircle, Loader2 } from 'lucide-react';
 
 // HubSpot configuration - set these in Vercel environment variables
-// VITE_HUBSPOT_PORTAL_ID and VITE_HUBSPOT_FORM_GUID
+// VITE_HUBSPOT_PORTAL_ID, VITE_HUBSPOT_FORM_GUID, VITE_HUBSPOT_REGION
 const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID || '';
 const HUBSPOT_FORM_GUID = import.meta.env.VITE_HUBSPOT_FORM_GUID || '';
+const HUBSPOT_REGION = import.meta.env.VITE_HUBSPOT_REGION || '';
 
 const WaitlistForm = ({ variant = 'default' }) => {
   const [email, setEmail] = useState('');
@@ -27,7 +28,8 @@ const WaitlistForm = ({ variant = 'default' }) => {
     setStatus('loading');
     setErrorMessage('');
 
-    const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
+    const baseUrl = HUBSPOT_REGION ? `https://api-${HUBSPOT_REGION}.hsforms.com` : 'https://api.hsforms.com';
+    const endpoint = `${baseUrl}/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
 
     const payload = {
       fields: [
@@ -70,7 +72,7 @@ const WaitlistForm = ({ variant = 'default' }) => {
     return (
       <div className="w-full max-w-xl mx-auto text-center">
         <a
-          href="mailto:hello@theagenticagency.com?subject=Spark%20Waitlist"
+          href="mailto:waitlist@agenticagency.dev?subject=Spark%20Waitlist"
           className={`
             inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold uppercase tracking-tight
             ${variant === 'dark'
