@@ -7,7 +7,18 @@ const HUBSPOT_PORTAL_ID = import.meta.env.VITE_HUBSPOT_PORTAL_ID || '';
 const HUBSPOT_FORM_GUID = import.meta.env.VITE_HUBSPOT_FORM_GUID || '';
 const HUBSPOT_REGION = import.meta.env.VITE_HUBSPOT_REGION || '';
 
-const WaitlistForm = ({ variant = 'default' }) => {
+const getPageSource = () => {
+  if (typeof window === 'undefined') return 'Website';
+  const path = window.location.pathname;
+  if (path.includes('spark')) return 'Spark Page';
+  if (path.includes('catalyst')) return 'Catalyst Page';
+  if (path.includes('scale-engine')) return 'Scale Engine Page';
+  if (path.includes('about')) return 'About Page';
+  return 'Homepage';
+};
+
+const WaitlistForm = ({ variant = 'default', source }) => {
+  const effectiveSource = source || getPageSource();
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
@@ -34,7 +45,8 @@ const WaitlistForm = ({ variant = 'default' }) => {
     const payload = {
       fields: [
         { name: 'email', value: email },
-        ...(name ? [{ name: 'firstname', value: name }] : [])
+        ...(name ? [{ name: 'firstname', value: name }] : []),
+        { name: 'signup_source', value: effectiveSource }
       ],
       context: {
         hutk: getCookie('hubspotutk'),
