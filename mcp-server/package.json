@@ -1,0 +1,13 @@
+{
+  "name": "agentic-agency-mcp",
+  "version": "1.0.0",
+  "description": "Custom MCP server for HubSpot forms and Vercel environment variables",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}
