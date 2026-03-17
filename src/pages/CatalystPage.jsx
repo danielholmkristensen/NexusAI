@@ -330,7 +330,28 @@ const CatalystPage = () => {
         </div>
       </section>
 
-      {/* F. TARGET AUDIENCE */}
+      {/* F. TESTIMONIAL */}
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-[#111] border-4 border-white/30 rounded-xl p-8 md:p-12">
+            <svg className="w-12 h-12 text-[#E6E6E1]/20 mb-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p className="text-xl md:text-2xl text-[#E6E6E1]/90 font-medium leading-relaxed mb-4">
+              "This project had been on our roadmap for years. Huge business value. But every time we scoped it out traditionally, the large effort needed made it lose in the prioritization. Now we did it. One calendar month. One person. End to end."
+            </p>
+            <p className="text-lg text-[#E6E6E1]/70 font-medium leading-relaxed mb-8">
+              "That outcome wasn't luck. It was a methodology that front-loads the thinking and then executes fast with agentic methods. The delivery record is real."
+            </p>
+            <div className="border-t border-white/20 pt-6">
+              <p className="font-bold text-lg">Niels Hanberg</p>
+              <p className="text-[#E6E6E1]/60">CTO · Copyright Agent, Copenhagen</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* G. TARGET AUDIENCE */}
       <TargetAudienceSection
         forItems={[
           "Teams that completed The Spark and want to go deeper.",

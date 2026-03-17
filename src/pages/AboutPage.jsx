@@ -17,6 +17,8 @@ const AboutPage = () => {
       initials: "DHK",
       name: "Daniel Holm Kristensen",
       title: "Co-Founder",
+      image: "/daniel.jpg",
+      imagePosition: "center 30%",
       bio: "Daniel is a transformation leader who has guided engineering teams through billion-kroner technology programs at STARK Group, TDC, Telenor, and Adecco. He specializes in aligning leadership, rebuilding momentum in complex programs, and ensuring technology investments deliver real impact.",
       credentials: [
         "Led enterprise transformations across 200+ person programs",
@@ -28,6 +30,8 @@ const AboutPage = () => {
       initials: "ME",
       name: "Morten Elk",
       title: "Co-Founder",
+      image: "/morten.jpg",
+      imagePosition: "center top",
       bio: "Morten combines scientific rigor with entrepreneurial execution. With a PhD in Physics and decades of building technology businesses, he brings analytical depth to understanding what actually works in engineering practice.",
       credentials: [
         "PhD Physics, University of Copenhagen",
@@ -185,11 +189,13 @@ const AboutPage = () => {
                 key={founder.name}
                 className="founder-card bg-[#111] rounded-xl border-4 border-white/20 overflow-hidden group hover:border-white/40 transition-colors"
               >
-                {/* Initials Avatar */}
-                <div className="h-48 bg-[#E6E6E1] flex items-center justify-center">
-                  <span className="text-6xl font-black text-black/20 tracking-tighter">
-                    {founder.initials}
-                  </span>
+                {/* Founder Photo */}
+                <div style={{ height: '320px', backgroundColor: '#1a1a1a', overflow: 'hidden' }}>
+                  <img
+                    src={founder.image}
+                    alt={founder.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: founder.imagePosition }}
+                  />
                 </div>
 
                 {/* Content */}
