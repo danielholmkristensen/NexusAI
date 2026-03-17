@@ -311,7 +311,7 @@ const SparkPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                quote: "I went from using Copilot for autocomplete to actually engineering with AI. The Three Chapters framework changed how I approach every project now.",
+                quote: "I went from using Copilot for autocomplete to actually engineering with AI. The common language provided by the three chapter references and the ADAPT methodology changed how my team and I approach every project now.",
                 name: "Senior Backend Engineer",
                 company: "Fintech Scale-up"
               },
@@ -331,7 +331,7 @@ const SparkPage = () => {
                 company: "Copyright Agent, Copenhagen"
               },
               {
-                quote: "The 'in the wild' project kept me accountable. Six weeks later, I demoed a real feature built with the methodology. That's rare for training.",
+                quote: "The 'In the Wild' project kept me accountable and made me build in a new way. Six weeks later I demoed a real application built with the ADAPT methodology. That's a first. The productivity change from 2 days training...is hard to understand.",
                 name: "Full-Stack Developer",
                 company: "Media Company"
               },
