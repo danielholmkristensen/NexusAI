@@ -9,6 +9,7 @@ const SparkPage = React.lazy(() => import('../pages/SparkPage'));
 const CatalystPage = React.lazy(() => import('../pages/CatalystPage'));
 const ScaleEnginePage = React.lazy(() => import('../pages/ScaleEnginePage'));
 const AboutPage = React.lazy(() => import('../pages/AboutPage'));
+const ExecutiveDeck = React.lazy(() => import('../components/ExecutiveDeck'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -21,6 +22,14 @@ const PageLoader = () => (
 );
 
 const router = createBrowserRouter([
+  {
+    path: '/pitch',
+    element: (
+      <React.Suspense fallback={<PageLoader />}>
+        <ExecutiveDeck />
+      </React.Suspense>
+    ),
+  },
   {
     path: '/',
     element: <MainLayout />,
