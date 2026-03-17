@@ -326,9 +326,9 @@ const SparkPage = () => {
                 company: "Enterprise SaaS"
               },
               {
-                quote: "Our team came back aligned on vocabulary and approach. That shared understanding accelerated our AI adoption more than any tool could.",
-                name: "Engineering Manager",
-                company: "Healthcare Tech"
+                quote: "I've built AI-assisted tools before — usually by trial and error until something worked. This was different. We started with specification, mapped the domain properly, then built. The structure felt like overhead on day one. By day two I understood why it exists. We shipped something I'd have scoped at three months in six weeks.",
+                name: "Lead Engineer",
+                company: "Copyright Agent, Copenhagen"
               },
               {
                 quote: "The 'in the wild' project kept me accountable. Six weeks later, I demoed a real feature built with the methodology. That's rare for training.",

@@ -308,18 +308,39 @@ const ScaleEnginePage = () => {
         </div>
       </section>
 
-      {/* F. CTA */}
+      {/* E. TESTIMONIAL */}
       <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white border-4 border-black rounded-xl p-8 md:p-12 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <svg className="w-12 h-12 text-black/20 mb-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            <p className="text-xl md:text-2xl text-black/90 font-medium leading-relaxed mb-4">
+              "They came with a methodology — not a philosophy, a method. Specification before implementation. Domain grounding from the start."
+            </p>
+            <p className="text-lg text-black/70 font-medium leading-relaxed mb-8">
+              "The knowledge that used to live in the heads of our most experienced people is now available to everyone from day one. That's what org-wide capability actually looks like."
+            </p>
+            <div className="border-t border-black/20 pt-6">
+              <p className="font-bold text-lg">Niels Hanberg</p>
+              <p className="text-black/60">CTO · Copyright Agent, Copenhagen</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* F. CTA */}
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1] rounded-xl mx-4 my-12">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white rounded-xl p-12 md:p-16 border-4 border-black shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]">
+          <div className="bg-[#111] rounded-xl p-12 md:p-16 border-4 border-white/30">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Ready to scale?</h2>
-            <p className="text-xl text-black/80 font-medium mb-8">
+            <p className="text-xl text-[#E6E6E1]/80 font-medium mb-8">
               The Scale Engine is a strategic advisory partnership.<br/>
               Pricing is scoped to your organization's size, rollout ambitions, and timeline.
             </p>
             <MagneticButton
               onClick={() => openInquiry('scale-engine', 'Schedule a conversation')}
-              className="bg-black text-[#E6E6E1] px-10 py-5 text-xl font-bold mx-auto"
+              className="bg-[#E6E6E1] text-black px-10 py-5 text-xl font-bold mx-auto"
             >
               Schedule a discovery conversation <ArrowUpRight size={22} />
             </MagneticButton>
