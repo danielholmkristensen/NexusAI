@@ -164,12 +164,15 @@ const MethodPage = () => {
       {/* WHY CLAUDE CODE */}
       <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs uppercase tracking-widest text-black/40 mb-8">Our tool of choice</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-black/40 mb-8">Our current tool of choice</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">Claude Code</h2>
 
           <div className="space-y-6 text-lg text-black/70 leading-relaxed mb-12">
             <p>
-              We didn't choose Claude Code because it's trendy. We chose it because the evidence is overwhelming.
+              We didn't choose Claude Code because it's trendy. We chose it because the evidence is overwhelming. We continuously test a wide range of tools — Cursor, Windsurf, Copilot, Codex, and emerging alternatives — to stay in pioneer territory.
+            </p>
+            <p className="text-black/50">
+              For now, Claude Code delivers the best results for complex, multi-file, long-running autonomous work. That may change. The methodology won't.
             </p>
           </div>
 
@@ -203,18 +206,74 @@ const MethodPage = () => {
         </div>
       </section>
 
-      {/* THE HARNESS - Deep Dive */}
+      {/* ADAPT - The Framework */}
       <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs uppercase tracking-widest text-white/30 mb-8">The methodology</p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">The Harness</h2>
+          <p className="font-mono text-xs uppercase tracking-widest text-white/30 mb-8">The framework</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">ADAPT</h2>
+          <p className="text-lg text-white/40 mb-12 font-mono">Agentic Development via Artifacts, Persistence and Testing</p>
 
           <div className="space-y-6 text-lg text-white/70 leading-relaxed mb-16">
             <p>
-              A structured workflow that gives a highly capable agent the structure it needs to sustain that capability across an entire Increment — predictably, coherently, and with minimal human intervention once the scope is set.
+              We coined <strong className="text-white">ADAPT</strong> to describe an AI-native approach to software delivery. Not "faster SAFe." Not "agile with copilots." Something structurally different.
             </p>
             <p className="text-white/50">
-              The challenge is one of harnessing. If you can give an agent a precise scope — a clear account of what needs to be built and in what order — and if you can give it rich context about your architectural choices, your constraints, your preferences, and what correct looks like, it can work almost indefinitely.
+              ADAPT exists because agents are expensive to re-contextualize. They lose memory. They can't talk to each other. They drift. <span className="text-white/80">Persistent artifacts are the solution.</span>
+            </p>
+          </div>
+
+          {/* The Hierarchy */}
+          <div className="border border-white/20 rounded-lg overflow-hidden mb-12">
+            <div className="grid grid-cols-4 bg-white/10 p-4 font-mono text-xs uppercase tracking-widest text-white/50">
+              <div><span className="normal-case">SAFe</span> Concept</div>
+              <div>ADAPT</div>
+              <div>Time Shift</div>
+              <div>Key Insight</div>
+            </div>
+            {[
+              { safe: "Program Increment", adapt: "Increment", time: "8–12 wks → 30m–15hr", insight: "Scope-boxed, not time-boxed" },
+              { safe: "Sprint", adapt: "Iteration", time: "2 wks → 30m–4hr", insight: "Graph-partitioned planning" },
+              { safe: "Feature", adapt: "Feature", time: "1–2 wks → 15m–2hr", insight: "Context isolation, zero file overlap" },
+              { safe: "Task", adapt: "Task", time: "Hrs–Days → 5–30m", insight: "Enforced test-gate (not aspirational)" },
+              { safe: "Inspect & Adapt", adapt: "I&A Cycle", time: "Once per PI → Every Iteration", insight: "12-step automated verification" }
+            ].map((row, i) => (
+              <div key={i} className="grid grid-cols-4 p-4 border-t border-white/10 text-sm">
+                <div className="text-white/40">{row.safe}</div>
+                <div className="text-white font-bold">{row.adapt}</div>
+                <div className="text-white/60 font-mono text-xs">{row.time}</div>
+                <div className="text-white/50">{row.insight}</div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-white/40 text-sm leading-relaxed mb-8">
+            The compression is not about working faster. It's about working differently — replacing coordination ceremonies with persistent artifacts that give agents the context they need to execute autonomously.
+          </p>
+
+          {/* Connection to Harness and Tooling */}
+          <div className="border-t border-white/20 pt-8 mt-8">
+            <p className="text-white/70 leading-relaxed">
+              <strong className="text-white">The Harness</strong> is our implementation of ADAPT — the specific workflow, document templates, and verification protocols that operationalize the framework. It's designed to be <strong className="text-white">tool-agnostic</strong>, though our current tool of choice is Claude Code.
+            </p>
+            <p className="text-white/40 text-sm mt-4">
+              We continuously evaluate emerging tools to stay in pioneer territory. The methodology persists; the tooling evolves.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* THE HARNESS - Deep Dive */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-4xl mx-auto">
+          <p className="font-mono text-xs uppercase tracking-widest text-black/40 mb-8">ADAPT in practice</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8 text-black">The Harness</h2>
+
+          <div className="space-y-6 text-lg text-black/70 leading-relaxed mb-16">
+            <p>
+              A highly capable agent needs structure to sustain that capability across an entire Increment — predictably, coherently, and with minimal human intervention once the scope is set.
+            </p>
+            <p className="text-black/50">
+              If you can give an agent a precise scope — a clear account of what needs to be built and in what order — and if you can give it rich context about your architectural choices, your constraints, your preferences, and what correct looks like, it can work almost indefinitely.
             </p>
           </div>
 
@@ -225,10 +284,10 @@ const MethodPage = () => {
               { phase: "Execute", desc: "A loop of Plan, Build, and Reflect. Each Iteration follows the same structure, with the I&A Cycle capturing lessons learned.", icon: RefreshCw },
               { phase: "Deliver", desc: "Acceptance criteria are verified. The Scope Document proves its value — criteria are either met or not.", icon: Target }
             ].map((item, i) => (
-              <div key={i} className="border-t border-white/20 pt-6">
-                <item.icon size={24} className="mb-4 text-white/40" />
-                <h4 className="text-xl font-bold mb-3">{item.phase}</h4>
-                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+              <div key={i} className="border-t border-black/20 pt-6">
+                <item.icon size={24} className="mb-4 text-black/40" />
+                <h4 className="text-xl font-bold mb-3 text-black">{item.phase}</h4>
+                <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -236,9 +295,9 @@ const MethodPage = () => {
       </section>
 
       {/* VALUE DRIVERS - Expandable Deep Dives */}
-      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-4xl mx-auto">
-          <p className="font-mono text-xs uppercase tracking-widest text-black/40 mb-8">The mechanics</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-white/30 mb-8">The mechanics</p>
           <h2 className="text-3xl font-bold tracking-tight mb-12">Six principles that make it work</h2>
 
           <div className="space-y-4">
@@ -274,23 +333,23 @@ const MethodPage = () => {
                 long: "Setting up a meaningful test suite is rarely clean. Tests are difficult to wire up, tricky to make deterministic, and often need to be substantially rethought as understanding of the system deepens. The Harness takes a different view: testing capability is itself something that matures across Iterations. Each I&A Cycle surfaces what the agent got wrong about the test environment, what kinds of tests proved brittle or misleading, and what a better approach looks like. By the later Iterations, the agent is running the right tests, reliably, without thrashing."
               }
             ].map((item, i) => (
-              <div key={i} className="border border-black/10 rounded-lg overflow-hidden bg-white">
+              <div key={i} className="border border-white/20 rounded-lg overflow-hidden bg-white/5">
                 <button
                   onClick={() => setExpandedSection(expandedSection === i ? null : i)}
-                  className="w-full p-6 text-left flex items-start justify-between hover:bg-black/5 transition-colors"
+                  className="w-full p-6 text-left flex items-start justify-between hover:bg-white/10 transition-colors"
                 >
                   <div>
-                    <h4 className="font-bold text-lg mb-1">{item.title}</h4>
-                    <p className="text-black/50 text-sm">{item.short}</p>
+                    <h4 className="font-bold text-lg mb-1 text-white">{item.title}</h4>
+                    <p className="text-white/50 text-sm">{item.short}</p>
                   </div>
                   <ChevronDown
                     size={20}
-                    className={`text-black/30 transition-transform mt-1 ${expandedSection === i ? 'rotate-180' : ''}`}
+                    className={`text-white/30 transition-transform mt-1 ${expandedSection === i ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {expandedSection === i && (
-                  <div className="px-6 pb-6 pt-2 border-t border-black/5">
-                    <p className="text-black/70 leading-relaxed">{item.long}</p>
+                  <div className="px-6 pb-6 pt-2 border-t border-white/10">
+                    <p className="text-white/70 leading-relaxed">{item.long}</p>
                   </div>
                 )}
               </div>
@@ -300,26 +359,26 @@ const MethodPage = () => {
       </section>
 
       {/* THE ARCHITECT'S ROLE - Philosophical */}
-      <section className="py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
+      <section className="py-32 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-3xl mx-auto">
-          <p className="font-mono text-xs uppercase tracking-widest text-white/30 mb-8">The human in the loop</p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-12">
+          <p className="font-mono text-xs uppercase tracking-widest text-black/40 mb-8">The human in the loop</p>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-12 text-black">
             The architect's role shifts from moment-to-moment overseer to systems designer.
           </h2>
-          <div className="space-y-6 text-lg text-white/60 leading-relaxed">
+          <div className="space-y-6 text-lg text-black/60 leading-relaxed">
             <p>
               The emphasis on the Scope Document might create a misleading impression: that the senior engineer is expected to produce a large, comprehensive document through force of will and volume of typing.
             </p>
-            <p className="text-white/80">
+            <p className="text-black/80">
               That is not what happens in practice.
             </p>
             <p>
               The Scope Document is itself produced in dialogue with Claude Code. The architect directs it to inspect the existing codebase, research the best available architectural approaches, and surface the implicit decisions that have accumulated over time.
             </p>
-            <p className="border-l-2 border-white/30 pl-6 py-4 text-white/90">
+            <p className="border-l-2 border-black/30 pl-6 py-4 text-black/90">
               The architect's effort is not clerical. It is not about typing volume. It is about <strong>controlling the conversation</strong>: deciding what questions need to be asked, what needs to be researched, what risks need to be named.
             </p>
-            <p className="text-white/50 text-base">
+            <p className="text-black/50 text-base">
               The senior engineer's contribution is the ability to look at a nascent architectural direction and see, from experience, the problem that is hiding in plain sight.
             </p>
           </div>
@@ -327,18 +386,18 @@ const MethodPage = () => {
       </section>
 
       {/* CLOSING THOUGHT - Easter Egg territory */}
-      <section className="py-32 px-6 md:px-16 bg-[#E6E6E1]">
+      <section className="py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-2xl md:text-3xl font-medium leading-relaxed text-black/80 mb-8">
-            Not keystrokes. <strong className="text-black">Judgment.</strong>
+          <p className="text-2xl md:text-3xl font-medium leading-relaxed text-white/80 mb-8">
+            Not keystrokes. <strong className="text-white">Judgment.</strong>
           </p>
-          <p className="text-black/50 max-w-xl mx-auto leading-relaxed">
-            The Scope Document is the crystallisation of that judgment into a form the agent can carry forward — reliably, indefinitely, across the full arc of the Increment.
+          <p className="text-white/50 max-w-xl mx-auto leading-relaxed">
+            The Scope Document is the crystallization of that judgment into a form the agent can carry forward — reliably, indefinitely, across the full arc of the Increment.
           </p>
 
           {/* Subtle signature - Easter egg */}
-          <div className="mt-24 pt-12 border-t border-black/10">
-            <p className="font-mono text-xs text-black/30 tracking-widest">
+          <div className="mt-24 pt-12 border-t border-white/10">
+            <p className="font-mono text-xs text-white/30 tracking-widest">
               That is a better use of the human.
             </p>
           </div>

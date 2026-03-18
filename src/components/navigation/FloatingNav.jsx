@@ -25,6 +25,7 @@ const FloatingNav = () => {
     { to: '/the-catalyst', label: 'The Catalyst' },
     { to: '/the-scale-engine', label: 'The Scale Engine' },
     { to: '/about', label: 'About' },
+    { to: '/method', label: 'Method' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -38,6 +39,8 @@ const FloatingNav = () => {
         return { label: 'Schedule a conversation', product: 'scale-engine' };
       case '/about':
         return { label: 'Get in touch', product: 'general' };
+      case '/method':
+        return { label: 'Book a workshop', product: 'spark' };
       default:
         return { label: 'Book a workshop', product: 'spark' };
     }

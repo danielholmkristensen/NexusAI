@@ -104,7 +104,7 @@ export default function FlowSlides() {
 
           {/* Header */}
           <div className="absolute top-[8%] w-full text-center anim-text-2">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">Solution: The harness</h1>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-2">Solution: The Harness</h1>
             <p className="text-xl md:text-2xl font-medium text-black/70">Long-running, autonomous <span className="italic font-bold">correct</span> delivery of Increments and features to scope</p>
           </div>
 

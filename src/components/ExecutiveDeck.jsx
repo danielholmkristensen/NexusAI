@@ -205,7 +205,7 @@ export default function ExecutiveDeck() {
           <span className="absolute top-16 right-16 font-mono text-3xl font-bold text-white/20 z-20">{String(slideNum).padStart(2, '0')}</span>
           <div className="mb-8 stagger-item text-center z-20">
             <span className="font-mono text-sm tracking-widest uppercase text-white/50 mb-2 block bg-black/50 w-max mx-auto px-2">SOLUTION</span>
-            <h2 className="text-5xl font-black tracking-tighter uppercase bg-black/50 inline-block px-4">The harness.</h2>
+            <h2 className="text-5xl font-black tracking-tighter uppercase bg-black/50 inline-block px-4">The Harness.</h2>
             <p className="text-xl font-medium text-white/70 mt-2 bg-black/50 backdrop-blur-sm p-2 w-max mx-auto rounded-lg">
               Long-running, autonomous <span className="italic font-bold">correct</span> delivery of Increments and features to scope
             </p>
