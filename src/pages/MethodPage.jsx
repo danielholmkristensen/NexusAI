@@ -400,7 +400,7 @@ const MethodPage = () => {
       <section className="py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-2xl md:text-3xl font-medium leading-relaxed text-white/80 mb-8">
-            Not keystrokes. <strong className="text-white">The experienced human point of view.</strong>
+            Not keystrokes. <strong className="text-white">The experienced human POV.</strong>
           </p>
           <p className="text-white/50 max-w-xl mx-auto leading-relaxed">
             The Scope Document is the crystallization of that perspective into a form the agent can carry forward — reliably, indefinitely, across the full arc of the Increment.
