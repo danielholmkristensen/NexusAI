@@ -222,8 +222,8 @@ const MethodPage = () => {
             </p>
           </div>
 
-          {/* The Hierarchy - Redesigned for readability */}
-          <div className="space-y-3 mb-16">
+          {/* The Hierarchy - Strict grid layout */}
+          <div className="space-y-4 mb-16">
             {[
               { safe: "Program Increment", adapt: "Increment", time: "8–12 wks → 30m–15hr", insight: "Scope-boxed, not time-boxed" },
               { safe: "Sprint", adapt: "Iteration", time: "2 wks → 30m–4hr", insight: "Graph-partitioned planning" },
@@ -231,19 +231,16 @@ const MethodPage = () => {
               { safe: "Task", adapt: "Task", time: "Hrs–Days → 5–30m", insight: "Enforced test-gate (not aspirational)" },
               { safe: "Inspect & Adapt", adapt: "I&A Cycle", time: "Once per PI → Every Iteration", insight: "12-step automated verification" }
             ].map((row, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 rounded-lg p-5 hover:bg-white/10 transition-colors">
-                <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-6">
-                  <div className="flex items-center gap-3 md:w-64">
-                    <span className="text-white/30 text-sm">{row.safe}</span>
-                    <span className="text-white/30">→</span>
-                    <span className="text-white font-bold text-lg">{row.adapt}</span>
-                  </div>
-                  <div className="font-mono text-sm text-white/70 bg-white/10 px-3 py-1 rounded w-max">
-                    {row.time}
-                  </div>
-                  <div className="text-white/50 text-sm flex-1">
-                    {row.insight}
-                  </div>
+              <div key={i} className="grid grid-cols-[140px_24px_140px_1fr] md:grid-cols-[160px_24px_140px_200px_1fr] items-center gap-2 py-4 border-b border-white/10 last:border-b-0">
+                <div className="text-white/40 text-sm">{row.safe}</div>
+                <div className="text-white/30 text-center">→</div>
+                <div className="text-white font-bold">{row.adapt}</div>
+                <div className="hidden md:block font-mono text-xs text-white/60">{row.time}</div>
+                <div className="hidden md:block text-white/40 text-sm">{row.insight}</div>
+                {/* Mobile: time and insight on second row */}
+                <div className="md:hidden col-span-4 mt-2 flex flex-col gap-1">
+                  <div className="font-mono text-xs text-white/60">{row.time}</div>
+                  <div className="text-white/40 text-xs">{row.insight}</div>
                 </div>
               </div>
             ))}
@@ -311,7 +308,7 @@ const MethodPage = () => {
               {
                 title: "The Scope Document is the anchor",
                 short: "A rigorously defined scope gives the agent an unambiguous ground truth.",
-                long: "The architect's judgment about what context matters — which architectural choices, which constraints, which known pitfalls — is exactly the kind of knowledge an AI agent cannot reconstruct on its own. A great Scope Document reflects years of hard-won engineering experience distilled into a form the agent can act on reliably. Done well, it prevents the most expensive failure mode in AI-assisted development — silent, compounding drift across Iterations — before a single line of code is written."
+                long: "The architect's experienced point of view about what context matters — which architectural choices, which constraints, which known pitfalls — is exactly the kind of knowledge an AI agent cannot reconstruct on its own. A great Scope Document reflects years of hard-won engineering experience distilled into a form the agent can act on reliably. Done well, it prevents the most expensive failure mode in AI-assisted development — silent, compounding drift across Iterations — before a single line of code is written."
               },
               {
                 title: "The task manager enforces execution fidelity",
@@ -395,10 +392,10 @@ const MethodPage = () => {
       <section className="py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-2xl md:text-3xl font-medium leading-relaxed text-white/80 mb-8">
-            Not keystrokes. <strong className="text-white">Judgment.</strong>
+            Not keystrokes. <strong className="text-white">The experienced human point of view.</strong>
           </p>
           <p className="text-white/50 max-w-xl mx-auto leading-relaxed">
-            The Scope Document is the crystallization of that judgment into a form the agent can carry forward — reliably, indefinitely, across the full arc of the Increment.
+            The Scope Document is the crystallization of that perspective into a form the agent can carry forward — reliably, indefinitely, across the full arc of the Increment.
           </p>
 
           {/* Subtle signature - Easter egg */}
