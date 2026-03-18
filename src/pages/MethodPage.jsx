@@ -288,17 +288,35 @@ const MethodPage = () => {
             </p>
           </div>
 
-          {/* Three Phases - Clean */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {/* Three Phases - With micro animations */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16 relative">
+            {/* Connecting line (desktop only) */}
+            <div className="hidden md:block absolute top-12 left-[20%] right-[20%] h-px bg-gradient-to-r from-transparent via-black/20 to-transparent"></div>
+
             {[
-              { phase: "Define", desc: "The architect works with the LLM to produce a Scope Document — what must be built and all contextually relevant knowledge.", icon: FileText },
-              { phase: "Execute", desc: "A loop of Plan, Build, and Reflect. Each Iteration follows the same structure, with the I&A Cycle capturing lessons learned.", icon: RefreshCw },
-              { phase: "Deliver", desc: "Acceptance criteria are verified. The Scope Document proves its value — criteria are either met or not.", icon: Target }
+              { phase: "Define", num: "01", desc: "The architect works with the LLM to produce a Scope Document — what must be built and all contextually relevant knowledge.", icon: FileText },
+              { phase: "Execute", num: "02", desc: "A loop of Plan, Build, and Reflect. Each Iteration follows the same structure, with the I&A Cycle capturing lessons learned.", icon: RefreshCw },
+              { phase: "Deliver", num: "03", desc: "Acceptance criteria are verified. The Scope Document proves its value — criteria are either met or not.", icon: Target }
             ].map((item, i) => (
-              <div key={i} className="border-t border-black/20 pt-6">
-                <item.icon size={24} className="mb-4 text-black/40" />
+              <div
+                key={i}
+                className="group relative bg-white border border-black/10 rounded-xl p-6 hover:border-black/30 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+              >
+                {/* Step number */}
+                <span className="absolute -top-3 left-6 bg-black text-white text-xs font-mono px-2 py-1 rounded">
+                  {item.num}
+                </span>
+
+                {/* Icon with animation */}
+                <div className="w-12 h-12 rounded-full bg-black/5 flex items-center justify-center mb-4 group-hover:bg-black group-hover:scale-110 transition-all duration-300">
+                  <item.icon size={20} className="text-black/60 group-hover:text-white transition-colors duration-300" />
+                </div>
+
                 <h4 className="text-xl font-bold mb-3 text-black">{item.phase}</h4>
                 <p className="text-black/50 text-sm leading-relaxed">{item.desc}</p>
+
+                {/* Hover indicator */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-black scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-xl"></div>
               </div>
             ))}
           </div>
