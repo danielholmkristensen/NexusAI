@@ -9,6 +9,7 @@ const SparkPage = React.lazy(() => import('../pages/SparkPage'));
 const CatalystPage = React.lazy(() => import('../pages/CatalystPage'));
 const ScaleEnginePage = React.lazy(() => import('../pages/ScaleEnginePage'));
 const AboutPage = React.lazy(() => import('../pages/AboutPage'));
+const MethodPage = React.lazy(() => import('../pages/MethodPage'));
 const ProtectedDeck = React.lazy(() => import('../components/ProtectedDeck'));
 const FlowSlides = React.lazy(() => import('../components/FlowSlides'));
 
@@ -81,6 +82,14 @@ const router = createBrowserRouter([
         element: (
           <React.Suspense fallback={<PageLoader />}>
             <AboutPage />
+          </React.Suspense>
+        ),
+      },
+      {
+        path: 'method',
+        element: (
+          <React.Suspense fallback={<PageLoader />}>
+            <MethodPage />
           </React.Suspense>
         ),
       },
