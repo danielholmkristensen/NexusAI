@@ -229,12 +229,12 @@ export default function ExecutiveDeck() {
               <polygon points="50,58 46,60 50,62" fill="#E6E6E1" />
               <path d="M 64 68 L 68 68 L 68 76 L 58 76 L 58 68 L 60 68" fill="none" stroke="#E6E6E1" strokeWidth="2" vectorEffect="non-scaling-stroke" markerEnd="url(#arrow-solid-3)" />
               <path d="M 52 70 L 56 70 L 56 78 L 46 78 L 46 70 L 48 70" fill="none" stroke="#E6E6E1" strokeWidth="2" vectorEffect="non-scaling-stroke" markerEnd="url(#arrow-solid-3)" />
-              <path d="M 85 55 L 85 85 L 25 85 L 25 60" fill="none" stroke="#E6E6E1" strokeWidth="1.5" strokeDasharray="6 6" vectorEffect="non-scaling-stroke" markerEnd="url(#arrow-solid-3)" />
+              <path d="M 88 65 L 88 88 L 25 88 L 25 62" fill="none" stroke="#E6E6E1" strokeWidth="1.5" strokeDasharray="6 6" vectorEffect="non-scaling-stroke" markerEnd="url(#arrow-solid-3)" />
             </g>
           </svg>
-          <div className="absolute top-[35%] left-[10%] font-black text-xl uppercase tracking-widest stagger-item z-20 bg-black/90 px-2">Define</div>
-          <div className="absolute top-[35%] left-[45%] font-black text-xl uppercase tracking-widest stagger-item z-20 bg-black/90 px-2">Execute <span className="text-sm font-mono normal-case opacity-50 tracking-normal">(Iteration 1-N)</span></div>
-          <div className="absolute top-[35%] right-[9%] font-black text-xl uppercase tracking-widest stagger-item z-20 bg-black/90 px-2">Deliver</div>
+          <div className="absolute top-[32%] left-[10%] font-black text-xl uppercase tracking-widest stagger-item z-20 bg-black/90 px-2">Define</div>
+          <div className="absolute top-[32%] left-[45%] font-black text-xl uppercase tracking-widest stagger-item z-20 bg-black/90 px-2">Execute <span className="text-sm font-mono normal-case opacity-50 tracking-normal">(Iteration 1-N)</span></div>
+          <div className="absolute top-[32%] right-[9%] font-black text-xl uppercase tracking-widest stagger-item z-20 bg-black/90 px-2">Deliver</div>
           <div className="absolute top-[55%] left-[5%] w-[12%] stagger-item z-20 bg-[#111]/90 p-3 shadow-sm border border-white/10 text-[#E6E6E1]">
             <h4 className="font-bold text-sm mb-1 uppercase">Spec</h4>
             <p className="text-[9px] font-medium text-white/70 mb-2 leading-tight">Total scope, accept criteria, references, ...</p>
@@ -943,6 +943,14 @@ export default function ExecutiveDeck() {
             linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
           background-size: 64px 64px;
           background-position: center center;
+        }
+        /* Ensure SAFe displays with correct capitalization */
+        .normal-case {
+          text-transform: none !important;
+          font-variant: normal !important;
+          font-variant-caps: normal !important;
+          -webkit-font-feature-settings: normal !important;
+          font-feature-settings: normal !important;
         }
       `}</style>
 
