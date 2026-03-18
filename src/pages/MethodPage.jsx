@@ -222,28 +222,27 @@ const MethodPage = () => {
             </p>
           </div>
 
-          {/* The Hierarchy - Strict grid layout */}
-          <div className="space-y-4 mb-16">
-            {[
-              { safe: "Program Increment", adapt: "Increment", time: "8–12 wks → 30m–15hr", insight: "Scope-boxed, not time-boxed" },
-              { safe: "Sprint", adapt: "Iteration", time: "2 wks → 30m–4hr", insight: "Graph-partitioned planning" },
-              { safe: "Feature", adapt: "Feature", time: "1–2 wks → 15m–2hr", insight: "Context isolation, zero file overlap" },
-              { safe: "Task", adapt: "Task", time: "Hrs–Days → 5–30m", insight: "Enforced test-gate (not aspirational)" },
-              { safe: "Inspect & Adapt", adapt: "I&A Cycle", time: "Once per PI → Every Iteration", insight: "12-step automated verification" }
-            ].map((row, i) => (
-              <div key={i} className="grid grid-cols-[140px_24px_140px_1fr] md:grid-cols-[160px_24px_140px_200px_1fr] items-center gap-2 py-4 border-b border-white/10 last:border-b-0">
-                <div className="text-white/40 text-sm">{row.safe}</div>
-                <div className="text-white/30 text-center">→</div>
-                <div className="text-white font-bold">{row.adapt}</div>
-                <div className="hidden md:block font-mono text-xs text-white/60">{row.time}</div>
-                <div className="hidden md:block text-white/40 text-sm">{row.insight}</div>
-                {/* Mobile: time and insight on second row */}
-                <div className="md:hidden col-span-4 mt-2 flex flex-col gap-1">
-                  <div className="font-mono text-xs text-white/60">{row.time}</div>
-                  <div className="text-white/40 text-xs">{row.insight}</div>
-                </div>
-              </div>
-            ))}
+          {/* The Hierarchy - Strict aligned table */}
+          <div className="mb-16 font-mono text-sm">
+            <table className="w-full">
+              <tbody>
+                {[
+                  { safe: "Program Increment", adapt: "Increment", time: "8–12 wks → 30m–15hr", insight: "Scope-boxed, not time-boxed" },
+                  { safe: "Sprint", adapt: "Iteration", time: "2 wks → 30m–4hr", insight: "Graph-partitioned planning" },
+                  { safe: "Feature", adapt: "Feature", time: "1–2 wks → 15m–2hr", insight: "Context isolation, zero file overlap" },
+                  { safe: "Task", adapt: "Task", time: "Hrs–Days → 5–30m", insight: "Enforced test-gate (not aspirational)" },
+                  { safe: "Inspect & Adapt", adapt: "I&A Cycle", time: "Once per PI → Every Iteration", insight: "12-step automated verification" }
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-white/10 last:border-b-0">
+                    <td className="py-4 pr-4 text-white/40 whitespace-nowrap">{row.safe}</td>
+                    <td className="py-4 px-4 text-white/30 text-center">→</td>
+                    <td className="py-4 px-4 text-white font-bold whitespace-nowrap">{row.adapt}</td>
+                    <td className="py-4 px-4 text-white/50 whitespace-nowrap hidden md:table-cell">{row.time}</td>
+                    <td className="py-4 pl-4 text-white/40 hidden lg:table-cell">{row.insight}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
 
           {/* Key Message - Emphasized */}
