@@ -169,7 +169,7 @@ const MethodPage = () => {
 
           <div className="space-y-6 text-lg text-black/70 leading-relaxed mb-12">
             <p>
-              We didn't choose Claude Code because it's trendy. We chose it because the evidence is overwhelming. We continuously test a wide range of tools — Cursor, Windsurf, Copilot, Codex, and emerging alternatives — to stay in pioneer territory.
+              We didn't choose Claude Code because it's trendy. We chose it because the evidence is overwhelming. We continuously test emerging tools to stay in pioneer territory.
             </p>
             <p className="text-black/50">
               For now, Claude Code delivers the best results for complex, multi-file, long-running autonomous work. That may change. The methodology won't.
