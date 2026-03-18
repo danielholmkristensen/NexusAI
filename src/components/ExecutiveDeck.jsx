@@ -145,7 +145,7 @@ export default function ExecutiveDeck() {
           </div>
           <div className="grid grid-cols-2 gap-16 flex-1 z-20">
             <div className="stagger-item border-t-4 border-black pt-6 bg-[#E6E6E1]/80 backdrop-blur-sm p-8">
-              <span className="font-mono text-sm text-black/50 block mb-8 uppercase font-bold">ADAPT vs. SAFe with humans</span>
+              <span className="font-mono text-sm text-black/50 block mb-8 uppercase font-bold">ADAPT vs. <span className="normal-case">SAFe</span> with humans</span>
               <ul className="space-y-8">
                 <li className="flex items-start gap-4"><div className="w-10 h-10 bg-black text-[#E6E6E1] font-mono flex items-center justify-center font-bold text-xl shrink-0">1</div><span className="text-3xl font-medium">AI builds faster than humans</span></li>
                 <li className="flex items-start gap-4"><div className="w-10 h-10 bg-black text-[#E6E6E1] font-mono flex items-center justify-center font-bold text-xl shrink-0">2</div><span className="text-3xl font-medium">Zero coordination ceremonies</span></li>
@@ -369,13 +369,13 @@ export default function ExecutiveDeck() {
           <span className="absolute top-16 right-16 font-mono text-3xl font-bold text-white/20 z-20">{String(slideNum).padStart(2, '0')}</span>
           <div className="w-1/2 bg-[#E6E6E1] p-16 flex flex-col justify-center border-r-4 border-black z-10 bg-blueprint-dark">
             <span className="font-mono text-lg uppercase tracking-widest text-black/50 mb-8 stagger-item font-black">THE OLD PARADIGM</span>
-            <h2 className="text-5xl font-black uppercase tracking-tighter mb-8 stagger-item">This is not <br/>"faster SAFe."</h2>
+            <h2 className="text-5xl font-black uppercase tracking-tighter mb-8 stagger-item">This is not <br/>"faster <span className="normal-case">SAFe</span>."</h2>
             <p className="text-2xl font-medium text-black/80 leading-snug mb-8 stagger-item">
               SAFe exists because <span className="font-bold">humans</span> are expensive to coordinate.
             </p>
             <p className="text-lg font-medium text-black/60 mb-8 stagger-item">They forget. They miscommunicate. They need alignment.</p>
             <div className="border-l-4 border-black pl-4 py-2 stagger-item">
-              <p className="text-xl font-bold uppercase tracking-tight">Ceremonies are the solution in SAFe.</p>
+              <p className="text-xl font-bold uppercase tracking-tight">Ceremonies are the solution in <span className="normal-case">SAFe</span>.</p>
             </div>
           </div>
           <div className="w-1/2 bg-black text-[#E6E6E1] p-16 flex flex-col justify-center z-10 bg-blueprint-light">
@@ -446,13 +446,13 @@ export default function ExecutiveDeck() {
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-bold text-base uppercase">Program Increment → Increment</span>
                 </div>
-                <div className="relative h-10 bg-black/10 rounded-sm overflow-hidden border border-black/20">
-                  <div className="absolute inset-y-0 left-0 bg-black/30 flex items-center px-4" style={{width: '100%'}}>
+                <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 bg-black/20 border border-black/30 flex items-center px-4 rounded-sm" style={{width: '100%'}}>
                     <span className="font-mono text-sm font-bold text-black">SAFe: 8–12 weeks</span>
                   </div>
                 </div>
-                <div className="relative h-10 bg-black rounded-sm overflow-hidden mt-2">
-                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4" style={{width: '10%', minWidth: '140px'}}>
+                <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden mt-2">
+                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '12%', minWidth: '140px'}}>
                     <span className="font-mono text-sm font-bold text-white whitespace-nowrap">ADAPT: 30m – 15hr</span>
                   </div>
                 </div>
@@ -463,13 +463,13 @@ export default function ExecutiveDeck() {
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-bold text-base uppercase">Sprint → Iteration</span>
                 </div>
-                <div className="relative h-10 bg-black/10 rounded-sm overflow-hidden border border-black/20">
-                  <div className="absolute inset-y-0 left-0 bg-black/30 flex items-center px-4" style={{width: '60%'}}>
+                <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 bg-black/20 border border-black/30 flex items-center px-4 rounded-sm" style={{width: '65%'}}>
                     <span className="font-mono text-sm font-bold text-black">SAFe: 2 weeks</span>
                   </div>
                 </div>
-                <div className="relative h-10 bg-black rounded-sm overflow-hidden mt-2">
-                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4" style={{width: '8%', minWidth: '130px'}}>
+                <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden mt-2">
+                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '10%', minWidth: '125px'}}>
                     <span className="font-mono text-sm font-bold text-white whitespace-nowrap">ADAPT: 30m – 4hr</span>
                   </div>
                 </div>
@@ -480,13 +480,13 @@ export default function ExecutiveDeck() {
                 <div className="flex justify-between items-center mb-2">
                   <span className="font-bold text-base uppercase">Feature → Feature (One Agent)</span>
                 </div>
-                <div className="relative h-10 bg-black/10 rounded-sm overflow-hidden border border-black/20">
-                  <div className="absolute inset-y-0 left-0 bg-black/30 flex items-center px-4" style={{width: '40%'}}>
+                <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 bg-black/20 border border-black/30 flex items-center px-4 rounded-sm" style={{width: '45%'}}>
                     <span className="font-mono text-sm font-bold text-black">SAFe: 1–2 weeks</span>
                   </div>
                 </div>
-                <div className="relative h-10 bg-black rounded-sm overflow-hidden mt-2">
-                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4" style={{width: '6%', minWidth: '120px'}}>
+                <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden mt-2">
+                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '8%', minWidth: '120px'}}>
                     <span className="font-mono text-sm font-bold text-white whitespace-nowrap">ADAPT: 15m – 2hr</span>
                   </div>
                 </div>
@@ -708,9 +708,7 @@ export default function ExecutiveDeck() {
                 <h3 className="font-bold text-xl uppercase tracking-widest mb-4 text-white">Volume Discounts</h3>
                 <p className="text-lg text-white/80 mb-4">Discounts are negotiable upon:</p>
                 <ul className="space-y-3 text-lg text-white/90">
-                  <li className="flex items-center gap-3"><CheckSquare size={18} className="text-white/50"/>Willingness to provide logos and testimonials</li>
-                  <li className="flex items-center gap-3"><CheckSquare size={18} className="text-white/50"/>Progression to The Catalyst or The Scale Engine</li>
-                  <li className="flex items-center gap-3"><CheckSquare size={18} className="text-white/50"/>Pre-committed bulk workshop purchases</li>
+                  <li className="flex items-center gap-3"><CheckSquare size={18} className="text-white/50"/>Willingness to provide logos, testimonials, reference and intro calls upon successful service delivery</li>
                 </ul>
               </div>
             </div>
