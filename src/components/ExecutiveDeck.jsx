@@ -438,7 +438,7 @@ export default function ExecutiveDeck() {
           <div className="max-w-5xl mx-auto w-full z-20">
             <span className="font-mono text-sm tracking-widest uppercase text-black/50 mb-4 block text-center stagger-item">TIMESCALE COMPRESSION</span>
             <h2 className="text-5xl font-black uppercase tracking-tighter mb-8 text-center stagger-item">Same rigor. Fundamentally different timescale.</h2>
-            <p className="text-center text-xs font-mono text-black/40 mb-8 stagger-item italic">Illustrative — highly dependent on organizational, technical, and data maturity</p>
+            <p className="text-center text-sm font-mono text-black/60 mb-8 stagger-item italic bg-black/10 py-2 px-4 rounded-lg inline-block w-full border border-black/20">Illustrative — highly dependent on organizational, technical, and data maturity</p>
 
             <div className="space-y-6 stagger-item">
               {/* Program Increment / Increment */}
@@ -452,7 +452,7 @@ export default function ExecutiveDeck() {
                   </div>
                 </div>
                 <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden mt-2">
-                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '12%', minWidth: '140px'}}>
+                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '16%', minWidth: '182px'}}>
                     <span className="font-mono text-sm font-bold text-white whitespace-nowrap">ADAPT: 30m – 15hr</span>
                   </div>
                 </div>
@@ -469,7 +469,7 @@ export default function ExecutiveDeck() {
                   </div>
                 </div>
                 <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden mt-2">
-                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '10%', minWidth: '125px'}}>
+                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '13%', minWidth: '163px'}}>
                     <span className="font-mono text-sm font-bold text-white whitespace-nowrap">ADAPT: 30m – 4hr</span>
                   </div>
                 </div>
@@ -486,7 +486,7 @@ export default function ExecutiveDeck() {
                   </div>
                 </div>
                 <div className="relative h-10 bg-black/5 rounded-sm overflow-hidden mt-2">
-                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '8%', minWidth: '120px'}}>
+                  <div className="absolute inset-y-0 left-0 bg-black flex items-center px-4 rounded-sm" style={{width: '10%', minWidth: '156px'}}>
                     <span className="font-mono text-sm font-bold text-white whitespace-nowrap">ADAPT: 15m – 2hr</span>
                   </div>
                 </div>
