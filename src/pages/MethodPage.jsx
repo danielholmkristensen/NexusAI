@@ -225,6 +225,15 @@ const MethodPage = () => {
           {/* The Hierarchy - Strict aligned table */}
           <div className="mb-16 font-mono text-sm">
             <table className="w-full">
+              <thead>
+                <tr className="border-b border-white/20">
+                  <th className="py-3 pr-4 text-left text-xs uppercase tracking-widest text-white/30 font-normal"><span className="normal-case">SAFe</span></th>
+                  <th className="py-3 px-4"></th>
+                  <th className="py-3 px-4 text-left text-xs uppercase tracking-widest text-white/30 font-normal">ADAPT</th>
+                  <th className="py-3 px-4 text-left text-xs uppercase tracking-widest text-white/30 font-normal hidden md:table-cell">Time Shift</th>
+                  <th className="py-3 pl-4 text-left text-xs uppercase tracking-widest text-white/30 font-normal hidden lg:table-cell">Key Insight</th>
+                </tr>
+              </thead>
               <tbody>
                 {[
                   { safe: "Program Increment", adapt: "Increment", time: "8–12 wks → 30m–15hr", insight: "Scope-boxed, not time-boxed" },
