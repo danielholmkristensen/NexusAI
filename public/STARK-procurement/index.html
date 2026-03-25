@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STARK Procurement - Agentic Agency Proposal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --aa-black: #000000;
+            --aa-cement: #E6E6E1;
+            --aa-dark-bg: #111111;
+            --aa-cement-90: rgba(230, 230, 225, 0.90);
+            --aa-cement-70: rgba(230, 230, 225, 0.70);
+            --aa-cement-50: rgba(230, 230, 225, 0.50);
+            --aa-cement-30: rgba(230, 230, 225, 0.30);
+            --aa-cement-20: rgba(230, 230, 225, 0.20);
+            --aa-cement-10: rgba(230, 230, 225, 0.10);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--aa-black);
+            color: var(--aa-cement);
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px 80px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--aa-cement-10);
+        }
+
+        .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .slide-number {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 12px;
+            color: var(--aa-cement-30);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 1rem;
+            color: var(--aa-cement-90);
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--aa-cement-70);
+        }
+
+        .subtitle {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--aa-cement-50);
+            margin-bottom: 1rem;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+        .grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 15px; }
+
+        .card {
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement-20);
+            padding: 30px;
+        }
+
+        .card-light {
+            background: var(--aa-cement);
+            color: var(--aa-black);
+            padding: 30px;
+        }
+
+        .quote {
+            border-left: 4px solid var(--aa-cement-30);
+            padding-left: 30px;
+            font-size: 1.5rem;
+            color: var(--aa-cement-70);
+            line-height: 1.5;
+            margin: 2rem 0;
+        }
+
+        .quote-author {
+            font-size: 1rem;
+            color: var(--aa-cement-50);
+            margin-top: 1rem;
+        }
+
+        .highlight {
+            color: var(--aa-cement);
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--aa-cement);
+            color: var(--aa-black);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-outline {
+            display: inline-block;
+            border: 1px solid var(--aa-cement-30);
+            color: var(--aa-cement-50);
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-box .number {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--aa-cement);
+        }
+
+        .stat-box .label {
+            font-size: 0.9rem;
+            color: var(--aa-cement-50);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--aa-cement-20);
+        }
+
+        th {
+            color: var(--aa-cement-50);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .check-list {
+            list-style: none;
+        }
+
+        .check-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--aa-cement-70);
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--aa-cement);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .timeline-item {
+            padding: 20px;
+            border-left: 3px solid var(--aa-cement-30);
+            background: var(--aa-dark-bg);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+        }
+
+        .agent-card {
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement-20);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .agent-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-card .savings {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--aa-cement);
+            margin-top: 1rem;
+        }
+
+        .use-case {
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement-20);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .use-case h4 {
+            font-size: 1.1rem;
+            color: var(--aa-cement);
+            margin-bottom: 10px;
+        }
+
+        .use-case p {
+            font-size: 1rem;
+            color: var(--aa-cement-70);
+        }
+
+        .use-case .meta {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--aa-cement-50);
+        }
+
+        .screen-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .screen-item {
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement-20);
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .screen-item .id {
+            font-weight: 700;
+            color: var(--aa-cement);
+            margin-bottom: 5px;
+        }
+
+        .screen-item .name {
+            color: var(--aa-cement-50);
+        }
+
+        /* Lightbox styles for zoomable images */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .lightbox-image {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 60px rgba(230, 230, 225, 0.1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: var(--aa-cement);
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--aa-cement-30);
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            background: var(--aa-cement);
+            color: var(--aa-black);
+            transform: scale(1.1);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 1px solid var(--aa-cement-20);
+        }
+
+        .lightbox-nav-text {
+            color: var(--aa-cement-50);
+            font-size: 0.85rem;
+        }
+
+        .lightbox-nav-key {
+            background: var(--aa-cement-20);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: var(--aa-cement);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Expandable sections */
+        .expandable-section {
+            border: 1px solid var(--aa-cement-20);
+            margin-bottom: 10px;
+            background: var(--aa-dark-bg);
+            transition: all 0.3s ease;
+        }
+
+        .expandable-header {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .expandable-header:hover {
+            background: rgba(230, 230, 225, 0.05);
+        }
+
+        .expandable-header h4 {
+            font-size: 1rem;
+            color: var(--aa-cement);
+            margin: 0;
+        }
+
+        .expandable-header .preview {
+            font-size: 0.85rem;
+            color: var(--aa-cement-50);
+            margin-left: 15px;
+        }
+
+        .expandable-toggle {
+            font-size: 1.5rem;
+            color: var(--aa-cement-50);
+            transition: transform 0.3s ease;
+        }
+
+        .expandable-section.expanded .expandable-toggle {
+            transform: rotate(45deg);
+        }
+
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .expandable-section.expanded .expandable-content {
+            max-height: 2000px;
+            padding: 0 25px 25px 25px;
+        }
+
+        .expandable-section.expanded {
+            border-color: var(--aa-cement-50);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Contact cards */
+        .contact-card {
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement-20);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .contact-card h4 {
+            font-size: 1.25rem;
+            color: var(--aa-cement);
+            margin-bottom: 5px;
+        }
+
+        .contact-card .role {
+            font-size: 0.9rem;
+            color: var(--aa-cement-50);
+            margin-bottom: 15px;
+        }
+
+        .contact-card a {
+            color: var(--aa-cement-70);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .contact-card a:hover {
+            color: var(--aa-cement);
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th {
+            background: var(--aa-cement-20);
+            padding: 15px;
+            text-align: left;
+        }
+
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--aa-cement-10);
+        }
+
+        .comparison-table tr:last-child td {
+            background: rgba(230, 230, 225, 0.05);
+            font-weight: 600;
+        }
+
+        /* Left Navigation Bar */
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 10px 0;
+        }
+
+        .side-nav-item {
+            display: flex;
+            align-items: center;
+            height: 28px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        .side-nav-number {
+            width: 32px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--aa-cement-30);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .side-nav-title {
+            white-space: nowrap;
+            font-size: 0.75rem;
+            color: var(--aa-cement);
+            padding-right: 15px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: var(--aa-black);
+            border: 1px solid var(--aa-cement-20);
+            border-left: none;
+            padding: 6px 15px 6px 8px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .side-nav-item:hover .side-nav-number {
+            color: var(--aa-cement);
+            background: var(--aa-cement-10);
+        }
+
+        .side-nav-item:hover .side-nav-title {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .side-nav-item.active .side-nav-number {
+            color: var(--aa-black);
+            background: var(--aa-cement);
+            font-weight: 700;
+        }
+
+        .side-nav-item.appendix .side-nav-number {
+            font-size: 0.6rem;
+            color: var(--aa-cement-20);
+        }
+
+        /* Go Deeper - Flatter cards */
+        .go-deeper-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px;
+        }
+
+        .go-deeper-card {
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement-20);
+            padding: 12px 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .go-deeper-card:hover {
+            border-color: var(--aa-cement-50);
+            background: rgba(230, 230, 225, 0.05);
+        }
+
+        .go-deeper-card.active {
+            border-color: var(--aa-cement);
+            background: rgba(230, 230, 225, 0.08);
+        }
+
+        .go-deeper-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+        }
+
+        .go-deeper-card h4 {
+            font-size: 0.8rem;
+            color: var(--aa-cement);
+            margin-bottom: 3px;
+        }
+
+        .go-deeper-card .hint {
+            font-size: 0.65rem;
+            color: var(--aa-cement-50);
+        }
+
+        /* Go Deeper detail with close button */
+        .go-deeper-detail {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--aa-dark-bg);
+            border: 1px solid var(--aa-cement);
+            animation: fadeIn 0.3s ease;
+            position: relative;
+        }
+
+        .go-deeper-detail.active {
+            display: block;
+        }
+
+        .go-deeper-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--aa-cement-20);
+            border: 1px solid var(--aa-cement-30);
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--aa-cement-70);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .go-deeper-close:hover {
+            background: var(--aa-cement);
+            color: var(--aa-black);
+        }
+
+        .go-deeper-detail h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            padding-right: 40px;
+        }
+
+        .go-deeper-detail img {
+            width: 100%;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: outline 0.2s ease;
+        }
+
+        .go-deeper-detail img:hover {
+            outline: 2px solid var(--aa-cement-50);
+            outline-offset: 2px;
+        }
+
+        .go-deeper-detail p {
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            color: var(--aa-cement-50);
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+            .side-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Left Navigation Bar -->
+<nav class="side-nav" id="sideNav">
+    <!-- Will be populated by JavaScript -->
+</nav>
+
+<!-- SLIDE 1: Title -->
+<section class="slide">
+    <div class="slide-content centered">
+        <p class="subtitle">The Agentic Agency</p>
+        <h1>STARK<br>PROCUREMENT</h1>
+        <p style="font-size: 1.5rem; color: var(--aa-cement-70); margin: 2rem auto;">AI Development-as-a-Service<br>Fixed price. Record time. Enterprise quality.</p>
+        <p style="color: var(--aa-cement-50); margin-top: 3rem;">Engineering > Prompting</p>
+    </div>
+    <div class="slide-number">01</div>
+</section>
+
+<!-- SLIDE 2: The Shift - Intro -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">The Shift Is Here</p>
+        <h2>Most Leaders Aren't Ready.<br>We Are.</h2>
+
+        <div class="quote" style="margin-top: 3rem; font-size: 1.5rem;">
+            "At the AI day of CTO Craft, of all places, there was an aggressive push back from leaders not ready to embrace agentic workflows — dismissive that they would work in practice.
+            <br><br>
+            Meanwhile I had an agent swarm running on my laptop.
+            <br><br>
+            That moment told me everything I needed to know about where we are right now."
+            <div class="quote-author">— Corey Latislaw, AI-first Engineering Leader</div>
+        </div>
+
+        <p style="margin-top: 3rem; font-size: 1.25rem; color: var(--aa-cement-70);">
+            Three crystallized truths about the new reality — and how we've built for each one.
+            <span style="font-size: 0.9rem; color: var(--aa-cement-30); display: block; margin-top: 0.5rem;">
+                → For the interested reader: <a href="#appendix-truths" style="color: var(--aa-cement-50); text-decoration: underline;">Appendix A</a>
+            </span>
+        </p>
+    </div>
+    <div class="slide-number">02</div>
+</section>
+
+<!-- SLIDE 3: The Command Center (Video) -->
+<section class="slide" style="background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);">
+    <div class="slide-content" style="display: flex; flex-direction: column; align-items: center; padding-top: 1.5rem;">
+        <p style="font-size: 0.7rem; letter-spacing: 5px; color: var(--aa-cement-50); margin-bottom: 0.8rem;">HOW WE WORK</p>
+        <h2 style="font-size: 2.8rem; margin-bottom: 0.3rem; text-align: center;">The Command Center</h2>
+        <p style="font-size: 1rem; color: var(--aa-cement-50); margin-bottom: 1.5rem; letter-spacing: 1px;">
+            One place. All stakeholders. No ceremonies.
+        </p>
+
+        <div style="position: relative;">
+            <video
+                controls
+                style="max-width: 90vw; max-height: 52vh; border-radius: 8px; box-shadow: 0 30px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(230,230,225,0.08);"
+                poster="video-poster.png"
+            >
+                <source src="CommandCenter-Demo-Subtitled.mp4" type="video/mp4">
+                <source src="CommandCenter-Demo-Subtitled.mov" type="video/quicktime">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <p style="margin-top: 1.2rem; text-align: center; font-size: 0.95rem; color: var(--aa-cement-30);">
+            Press play to see how STARK stakeholders will collaborate with us.
+        </p>
+    </div>
+    <div class="slide-number">03</div>
+</section>
+
+<!-- SLIDE 4: Reveal 1 - Dashboard -->
+<section class="slide">
+    <div class="slide-content" style="padding: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p style="font-size: 0.75rem; letter-spacing: 4px; color: var(--aa-cement-50); margin-bottom: 1rem;">INTRODUCING</p>
+        <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; text-align: center;">Your Morning Briefing.</h1>
+        <p style="font-size: 1.3rem; color: var(--aa-cement-70); margin-bottom: 2rem;">Everything you need. Nothing you don't.</p>
+        <div style="position: relative; padding: 20px;">
+            <img src="preview-dashboard.png" alt="Dashboard Preview"
+                 style="max-width: 85vw; max-height: 58vh; border-radius: 12px; box-shadow: 0 25px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(230,230,225,0.1);">
+            <div style="position: absolute; inset: 0; border-radius: 12px; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%); pointer-events: none;"></div>
+        </div>
+    </div>
+    <div class="slide-number">04</div>
+</section>
+
+<!-- SLIDE 5: Reveal 2 - Handle Now -->
+<section class="slide">
+    <div class="slide-content" style="padding: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p style="font-size: 0.75rem; letter-spacing: 4px; color: var(--aa-cement-50); margin-bottom: 1rem;">DECISIONS FIRST</p>
+        <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; text-align: center;">One Click Away.</h1>
+        <p style="font-size: 1.3rem; color: var(--aa-cement-70); margin-bottom: 2rem;">Your action queue. Prioritized. Ready.</p>
+        <div style="position: relative; padding: 20px;">
+            <img src="preview-handle-now.png" alt="Handle Now Preview"
+                 style="max-width: 85vw; max-height: 58vh; border-radius: 12px; box-shadow: 0 25px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(230,230,225,0.1);">
+            <div style="position: absolute; inset: 0; border-radius: 12px; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%); pointer-events: none;"></div>
+        </div>
+    </div>
+    <div class="slide-number">05</div>
+</section>
+
+<!-- SLIDE 6: Reveal 3 - Invoices -->
+<section class="slide">
+    <div class="slide-content" style="padding: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p style="font-size: 0.75rem; letter-spacing: 4px; color: var(--aa-cement-50); margin-bottom: 1rem;">INTELLIGENCE BUILT IN</p>
+        <h1 style="font-size: 3.5rem; margin-bottom: 0.5rem; text-align: center;">Smart Matching.</h1>
+        <p style="font-size: 1.3rem; color: var(--aa-cement-70); margin-bottom: 2rem;">Discrepancies surfaced. Patterns detected. Auto-approve ready.</p>
+        <div style="position: relative; padding: 20px;">
+            <img src="preview-invoices.png" alt="Invoices Preview"
+                 style="max-width: 85vw; max-height: 58vh; border-radius: 12px; box-shadow: 0 25px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(230,230,225,0.1);">
+            <div style="position: absolute; inset: 0; border-radius: 12px; background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.4) 100%); pointer-events: none;"></div>
+        </div>
+    </div>
+    <div class="slide-number">06</div>
+</section>
+
+<!-- SLIDE 7: Transition to Details -->
+<section class="slide">
+    <div class="slide-content centered" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh;">
+        <p class="subtitle" style="margin-bottom: 2rem;">That's the Vision</p>
+        <h1 style="font-size: 3.5rem; line-height: 1.3;">Now Let's Talk<br>How We Get There.</h1>
+        <p style="margin-top: 3rem; font-size: 1.25rem; color: var(--aa-cement-50);">
+            The scope. The timeline. The investment.
+        </p>
+    </div>
+    <div class="slide-number">07</div>
+</section>
+
+<!-- SLIDE 8: Scope Overview -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">What We Deliver</p>
+        <h2>Scope in Plain Terms</h2>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div>
+                <h3>The Core System</h3>
+                <ul class="check-list">
+                    <li><strong>PR Management</strong> — Receive, validate, deduplicate from all sources</li>
+                    <li><strong>PO Generation</strong> — Single conversion + intelligent bundling</li>
+                    <li><strong>Supplier Communication</strong> — EDI and Email via Stark Output</li>
+                    <li><strong>Response Interpretation</strong> — Parse confirmations, update status</li>
+                    <li><strong>Invoice Processing</strong> — 2-way matching with tolerance rules</li>
+                    <li><strong>Approval Workflow</strong> — Multi-level, delegation, escalation</li>
+                    <li><strong>Dashboard & Reporting</strong> — Morning briefing, KPIs, action items</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Technical Delivery</h3>
+                <ul class="check-list">
+                    <li><strong>17 production screens</strong> — Full UI with responsive design</li>
+                    <li><strong>13 Kafka topics</strong> — 4 inbound, 3 outbound channels, 6 event streams</li>
+                    <li><strong>PostgreSQL schema</strong> — 7-year retention, full audit trail</li>
+                    <li><strong>SSO integration</strong> — SAML/OIDC with STARK IAM</li>
+                    <li><strong>Toggle-ready architecture</strong> — Future integrations pre-wired</li>
+                    <li><strong>Complete documentation</strong> — API specs, user guides, runbooks</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 25px; border: 1px solid var(--aa-cement-20); text-align: center;">
+            <span style="font-size: 1.25rem; color: var(--aa-cement-50);">Volume Supported:</span>
+            <span style="font-size: 1.25rem; font-weight: 700; margin-left: 15px;">750,000 POs/year</span>
+            <span style="font-size: 1.25rem; color: var(--aa-cement-30); margin: 0 15px;">|</span>
+            <span style="font-size: 1.25rem; font-weight: 700;">€1.1B annual value</span>
+            <span style="font-size: 1.25rem; color: var(--aa-cement-30); margin: 0 15px;">|</span>
+            <span style="font-size: 1.25rem; font-weight: 700;">30 concurrent users</span>
+        </div>
+    </div>
+    <div class="slide-number">08</div>
+</section>
+
+<!-- SLIDE 9: In/Out Scope & Dependencies -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Clear Boundaries</p>
+        <h2>What's In, What's Out</h2>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div class="card-light">
+                <h3>IN SCOPE — Phase 1</h3>
+                <ul class="check-list" style="color: var(--aa-black);">
+                    <li style="color: var(--aa-black);">UC-1: PR Parameters via API</li>
+                    <li style="color: var(--aa-black);">UC-2: Bundling (same supplier + location)</li>
+                    <li style="color: var(--aa-black);">UC-3: Status Update to Kafka</li>
+                    <li style="color: var(--aa-black);">UC-4: Send PO (EDI/Email)</li>
+                    <li style="color: var(--aa-black);">UC-5: Interpret Supplier Response</li>
+                    <li style="color: var(--aa-black);">UC-6: Supplier Communication (Direct)</li>
+                    <li style="color: var(--aa-black);">UC-8: Internal Suppliers (STO Option A)</li>
+                    <li style="color: var(--aa-black);">17 production screens + 13 Kafka topics</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 style="color: var(--aa-cement-50);">OUT OF SCOPE</h3>
+                <table style="font-size: 0.9rem;">
+                    <tr><td style="color: var(--aa-cement-50);">UC-7: Supplier Master Data</td><td><span class="badge-outline">Future</span></td></tr>
+                    <tr><td style="color: var(--aa-cement-50);">UC-9: Contract Management</td><td><span class="badge-outline">Icertis TBD</span></td></tr>
+                    <tr><td style="color: var(--aa-cement-50);">3-Way Invoice Match</td><td><span class="badge-outline">Needs NYCE</span></td></tr>
+                    <tr><td style="color: var(--aa-cement-50);">SAP Finance Direct API</td><td><span class="badge-outline">Phase 2</span></td></tr>
+                    <tr><td style="color: var(--aa-cement-50);">SalesApp Bidirectional</td><td><span class="badge-outline">Phase 2</span></td></tr>
+                    <tr><td style="color: var(--aa-cement-50);">Supplier Portal / Mobile App</td><td><span class="badge-outline">Phase 3</span></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Dependencies We Assume Ready</h3>
+            <div class="grid-6">
+                <div style="text-align: center; padding: 15px; border: 1px solid var(--aa-cement-20);">
+                    <span class="badge" style="font-size: 0.65rem;">READY</span>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">Relex Feed</p>
+                </div>
+                <div style="text-align: center; padding: 15px; border: 1px solid var(--aa-cement-20);">
+                    <span class="badge" style="font-size: 0.65rem;">READY</span>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">ECom Feed</p>
+                </div>
+                <div style="text-align: center; padding: 15px; border: 1px solid var(--aa-cement-20);">
+                    <span class="badge" style="font-size: 0.65rem;">READY</span>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">Stark Output</p>
+                </div>
+                <div style="text-align: center; padding: 15px; border: 1px solid var(--aa-cement-20);">
+                    <span class="badge" style="font-size: 0.65rem;">READY</span>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">SSO/IAM</p>
+                </div>
+                <div style="text-align: center; padding: 15px; border: 1px solid var(--aa-cement-20);">
+                    <span class="badge" style="font-size: 0.65rem;">READY</span>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">MDM</p>
+                </div>
+                <div style="text-align: center; padding: 15px; border: 1px solid var(--aa-cement-20);">
+                    <span class="badge" style="font-size: 0.65rem;">READY</span>
+                    <p style="font-size: 0.8rem; margin-top: 8px;">Kafka</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">09</div>
+</section>
+
+<!-- SLIDE 10: Use Cases (Collapsed) -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Use Cases</p>
+        <h2>9 Core Capabilities</h2>
+        <p style="margin-bottom: 2rem; font-size: 1rem;">Click any capability to see details.</p>
+
+        <div id="use-cases-container">
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-1: PR Parameters via API</h4><span class="preview">Ingest PRs from Relex, ECom, SalesApp via Kafka</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Receive purchase requests from all sources with complete validation and deduplication.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Single source of truth for all procurement demand</div>
+                        <div><strong>HOW:</strong> Per-source Kafka consumers with schema validation</div>
+                        <div><strong>RESULT:</strong> DLQ for failures, dedup by source+reference</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-2: Intelligent Bundling</h4><span class="preview">Combine PRs into optimized POs with packet specs</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Group PRs by supplier + location into single POs to reduce freight costs.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Reduce freight costs, simplify supplier handling</div>
+                        <div><strong>HOW:</strong> Bundling workspace with auto-suggest, drag-drop</div>
+                        <div><strong>RESULT:</strong> Packet labeling per PR source</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-3: Status Updates to Kafka</h4><span class="preview">Real-time event notifications for all state changes</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Emit events: PR received, PO created/sent/confirmed, Invoice matched/approved.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Enable downstream systems to react in real-time</div>
+                        <div><strong>HOW:</strong> Lightweight Kafka events (IDs + metadata)</div>
+                        <div><strong>RESULT:</strong> Full data via Status API on request</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-4: Send PO (EDI/Email)</h4><span class="preview">Deliver POs via supplier's preferred channel</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Transmit POs through Stark Output — EDI gateway + email.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Supplier gets machine-readable or human-readable order</div>
+                        <div><strong>HOW:</strong> Format per channel, publish to outbound topics</div>
+                        <div><strong>RESULT:</strong> Stark Output delivers to 10,000 suppliers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-5: Interpret Supplier Response</h4><span class="preview">Parse confirmations, auto-update PO status</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Extract confirmation status, delivery dates, quantity/price changes.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Eliminate manual data entry for 80%+ of responses</div>
+                        <div><strong>HOW:</strong> Tier 1: Rule-based. Tier 2: AI. Tier 3: Human queue</div>
+                        <div><strong>RESULT:</strong> Automated status updates, exception flagging</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-6: Supplier Communication</h4><span class="preview">Direct messaging linked to PO/PR/Invoice context</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Send/receive messages with thread view and quick-action templates.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Chase follow-ups without leaving system</div>
+                        <div><strong>HOW:</strong> Email send/receive, auto-link by PO reference</div>
+                        <div><strong>RESULT:</strong> Full communication history, attachment support</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-7: Invoice Matching</h4><span class="preview">2-way match with configurable tolerances</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Compare invoice to PO on line items, quantities, prices.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Auto-approve 80%+ of invoices</div>
+                        <div><strong>HOW:</strong> Tolerance rules: ±2% qty, ±1% price, ±DKK 100</div>
+                        <div><strong>RESULT:</strong> Discrepancy queue with side-by-side review</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-8: Internal Suppliers (STO)</h4><span class="preview">Stock transfer orders for warehouse movements</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Handle inter-branch transfers using same workflow as external suppliers.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Unified workflow for all supplier types</div>
+                        <div><strong>HOW:</strong> Option A: Supplier flag + dedicated screens</div>
+                        <div><strong>RESULT:</strong> Ready for NYCE integration</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>UC-9: Approval Workflow</h4><span class="preview">Multi-level with authority limits and delegation</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.95rem; margin-bottom: 15px;">Route POs/invoices by value, enforce 4-eyes, support delegation.</p>
+                    <div class="grid-3" style="font-size: 0.85rem; color: var(--aa-cement-50);">
+                        <div><strong>WHY:</strong> Compliance, financial control, audit trail</div>
+                        <div><strong>HOW:</strong> Per-user limits, configurable chains, 48h escalation</div>
+                        <div><strong>RESULT:</strong> Bulk approval, full delegation support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">10</div>
+</section>
+
+<!-- SLIDE 11: Go Deeper - Technical Overview -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">For The Technically Curious</p>
+        <h2>Go Deeper</h2>
+        <p style="margin-bottom: 2rem; font-size: 1rem;">Click any area to explore architecture details.</p>
+
+        <div class="go-deeper-grid">
+            <div class="go-deeper-card" onclick="showDeepDetail('ui')">
+                <div class="icon">🖥️</div>
+                <h4>User Interface</h4>
+                <div class="hint">17 screens, navigation flow</div>
+            </div>
+            <div class="go-deeper-card" onclick="showDeepDetail('logic')">
+                <div class="icon">⚙️</div>
+                <h4>Business Logic</h4>
+                <div class="hint">Workflows, approvals, matching</div>
+            </div>
+            <div class="go-deeper-card" onclick="showDeepDetail('arch')">
+                <div class="icon">🏗️</div>
+                <h4>Technical Architecture</h4>
+                <div class="hint">C4 Level 2, containers</div>
+            </div>
+            <div class="go-deeper-card" onclick="showDeepDetail('context')">
+                <div class="icon">🌐</div>
+                <h4>External Boundaries</h4>
+                <div class="hint">C4 Level 1, integrations</div>
+            </div>
+            <div class="go-deeper-card" onclick="showDeepDetail('kafka')">
+                <div class="icon">⚡</div>
+                <h4>Kafka Integration</h4>
+                <div class="hint">13 topics + DLQs</div>
+            </div>
+            <div class="go-deeper-card" onclick="showDeepDetail('data')">
+                <div class="icon">🗄️</div>
+                <h4>Data Layer</h4>
+                <div class="hint">Entity model, retention</div>
+            </div>
+        </div>
+
+        <!-- Detail panels -->
+        <div id="detail-ui" class="go-deeper-detail">
+            <span class="go-deeper-close" onclick="closeDeepDetail()">✕</span>
+            <h3>User Interface — 17 Production Screens</h3>
+            <img src="diagrams/07-screen-navigation.png" alt="Screen Navigation" onclick="openLightbox('diagrams/07-screen-navigation.png', 'Screen Navigation Map')">
+            <p>Dashboard as primary entry → PR Management → PO Management → Invoice Management → Approvals. Settings and Suppliers as supporting modules.</p>
+        </div>
+
+        <div id="detail-logic" class="go-deeper-detail">
+            <span class="go-deeper-close" onclick="closeDeepDetail()">✕</span>
+            <h3>Business Logic — Workflows & Processes</h3>
+            <img src="diagrams/04-approval-workflow.png" alt="Approval Workflow" onclick="openLightbox('diagrams/04-approval-workflow.png', 'Approval Workflow')">
+            <div class="grid-2" style="margin-top: 1rem; font-size: 0.85rem; color: var(--aa-cement-70);">
+                <div><strong style="color: var(--aa-cement);">Approval Thresholds:</strong> &lt;10K: 1 approver | 10-50K: 2 (4-eyes) | 50-200K: 3 | &gt;200K: 4 (incl. CFO)</div>
+                <div><strong style="color: var(--aa-cement);">Invoice Tolerances:</strong> Qty ±2% | Price ±1% | Total ±DKK 100</div>
+            </div>
+        </div>
+
+        <div id="detail-arch" class="go-deeper-detail">
+            <span class="go-deeper-close" onclick="closeDeepDetail()">✕</span>
+            <h3>Technical Architecture — C4 Level 2</h3>
+            <img src="diagrams/02-container-architecture.png" alt="Container Architecture" onclick="openLightbox('diagrams/02-container-architecture.png', 'Container Architecture')">
+            <p>Standard stack: Next.js + PostgreSQL + Redis + Kafka. Deploy on Azure, AWS, GCP, or private cloud. No vendor lock-in.</p>
+        </div>
+
+        <div id="detail-context" class="go-deeper-detail">
+            <span class="go-deeper-close" onclick="closeDeepDetail()">✕</span>
+            <h3>External Boundaries — C4 Level 1</h3>
+            <img src="diagrams/01-system-context.png" alt="System Context" onclick="openLightbox('diagrams/01-system-context.png', 'System Context')">
+            <p>We own the center. Relex, ECom, SalesApp feed in via Kafka. Stark Output delivers to 10,000 suppliers. Toggle-ready for NYCE and SAP Finance.</p>
+        </div>
+
+        <div id="detail-kafka" class="go-deeper-detail">
+            <span class="go-deeper-close" onclick="closeDeepDetail()">✕</span>
+            <h3>Kafka Integration — 13 Topics</h3>
+            <img src="diagrams/05-kafka-topology.png" alt="Kafka Topology" onclick="openLightbox('diagrams/05-kafka-topology.png', 'Kafka Topology')">
+            <p>4 inbound (Relex, ECom, SalesApp, Aspect4) + 3 outbound channels (EDI, Email, Portal) + 6 event topics. Per-source DLQs. Isolated failure domains. 3x retry with exponential backoff.</p>
+        </div>
+
+        <div id="detail-data" class="go-deeper-detail">
+            <span class="go-deeper-close" onclick="closeDeepDetail()">✕</span>
+            <h3>Data Layer — Entity Relationships</h3>
+            <img src="diagrams/06-entity-relationships.png" alt="Entity Relationships" onclick="openLightbox('diagrams/06-entity-relationships.png', 'Entity Relationships')">
+            <p>Core entities: PR, PO, PO Line, Invoice, Approval, Delegation, Supplier. 7-year retention. Full audit trail. Daily MDM sync.</p>
+        </div>
+    </div>
+    <div class="slide-number">11</div>
+</section>
+
+<!-- SLIDE 12: An Invitation to Experience the Model -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Before We Talk Price</p>
+        <h2>An Invitation to Experience the Model</h2>
+
+        <div style="margin-top: 2rem;">
+            <p style="font-size: 1.15rem; line-height: 1.8; color: var(--aa-cement-70); max-width: 100%;">
+                The price point for this engagement reflects a <span class="highlight">strategic decision</span>, not a market rate. We are extending an invitation to experience Agentic Engineering firsthand.
+            </p>
+        </div>
+
+        <div class="grid-3" style="margin-top: 2.5rem;">
+            <div class="card">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Why This Price?</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7;">
+                    Agentic Engineering is a relatively unknown delivery model. Many organizations are skeptical—and rightfully so. We believe the best way to demonstrate the model is to <strong>deliver results that speak for themselves</strong>.
+                </p>
+            </div>
+            <div class="card">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">What This Is NOT</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7;">
+                    This is not a race to the bottom. We are not undercutting the market to win volume. This price is a <strong>one-time showcase opportunity</strong>—an investment in demonstrating capability and building a reference relationship.
+                </p>
+            </div>
+            <div class="card">
+                <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">What You Get</h3>
+                <p style="font-size: 0.95rem; line-height: 1.7;">
+                    The same quality, rigor, and professionalism as our full-rate engagements. <strong>No shortcuts. No reduced scope. No junior resources.</strong> You receive our best work.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">12</div>
+</section>
+
+<!-- SLIDE 13: Our Guarantees -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Our Commitment</p>
+        <h2>Our Guarantees</h2>
+        <p style="margin-bottom: 2rem;">We don't ask you to trust our judgment of quality. We ask you to define it.</p>
+
+        <div class="grid-3">
+            <div class="card-light" style="padding: 30px;">
+                <h3 style="color: var(--aa-black); font-size: 1.1rem; margin-bottom: 1rem;">Code Quality: Show Us Your Standard</h3>
+                <p style="font-size: 0.95rem; color: rgba(0,0,0,0.8); line-height: 1.7;">
+                    Show us examples of what you consider <strong>great code</strong>—or even beautiful code. We will study it, understand its patterns, and adhere to that standard throughout our delivery.
+                </p>
+                <p style="font-size: 0.85rem; color: rgba(0,0,0,0.6); margin-top: 1rem; font-style: italic;">
+                    Examples: A Rails project with clean service objects, a React codebase with excellent composition, or documentation-driven patterns you value.
+                </p>
+            </div>
+            <div class="card-light" style="padding: 30px;">
+                <h3 style="color: var(--aa-black); font-size: 1.1rem; margin-bottom: 1rem;">Documentation: Show Us What Impressed You</h3>
+                <p style="font-size: 0.95rem; color: rgba(0,0,0,0.8); line-height: 1.7;">
+                    Show us examples of documentation that made you say <strong>'wow'</strong>—regardless of context or industry. We will adapt to that standard.
+                </p>
+                <p style="font-size: 0.85rem; color: rgba(0,0,0,0.6); margin-top: 1rem; font-style: italic;">
+                    If you admire Stripe's API docs, we'll structure ours similarly. If you prefer AWS well-architected style, we'll match it.
+                </p>
+            </div>
+            <div class="card-light" style="padding: 30px;">
+                <h3 style="color: var(--aa-black); font-size: 1.1rem; margin-bottom: 1rem;">Delivery Walkthrough: Full Transparency</h3>
+                <p style="font-size: 0.95rem; color: rgba(0,0,0,0.8); line-height: 1.7;">
+                    At the end, we conduct a <strong>full one-hour walkthrough</strong> with your technical team. Every screen, every integration, every business rule shown working against real data.
+                </p>
+                <p style="font-size: 0.85rem; color: rgba(0,0,0,0.6); margin-top: 1rem; font-style: italic;">
+                    Everything IN SCOPE will be delivered. Everything OUT OF SCOPE will not be delivered—and we will not charge extra.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">13</div>
+</section>
+
+<!-- SLIDE 14: Pricing -->
+<section class="slide">
+    <div class="slide-content centered">
+        <p class="subtitle">The Direct Answer</p>
+        <h1>Why Us?</h1>
+
+        <div class="grid-3" style="margin-top: 4rem;">
+            <div class="card-light" style="padding: 40px;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--aa-black);">Can We Deliver Faster?</h3>
+                <p style="font-size: 1rem; line-height: 1.6; color: var(--aa-black);">
+                    In <strong>2 days</strong> we demonstrated complete context capture, scope understanding, and solution architecture.
+                </p>
+                <p style="font-size: 1rem; margin-top: 1rem; color: rgba(0,0,0,0.7);">
+                    Traditional teams take 2-4 weeks for discovery alone.
+                </p>
+            </div>
+            <div class="card-light" style="padding: 40px;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--aa-black);">Can We Deliver on Cost?</h3>
+                <p style="font-size: 1rem; line-height: 1.6; color: var(--aa-black);">
+                    <strong>1,000,000 DKK</strong> ex VAT for complete delivery. Fixed price. No surprises.
+                </p>
+                <p style="font-size: 1rem; margin-top: 1rem; color: rgba(0,0,0,0.7);">
+                    40% upfront • 40% midway • 20% at acceptance
+                </p>
+            </div>
+            <div class="card-light" style="padding: 40px;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--aa-black);">Can We Deliver Quality?</h3>
+                <p style="font-size: 1rem; line-height: 1.6; color: var(--aa-black);">
+                    Fully functioning product in <strong>8 weeks</strong> from signature. Including 2 weeks UAT.
+                </p>
+                <p style="font-size: 1rem; margin-top: 1rem; color: rgba(0,0,0,0.7);">
+                    80%+ test coverage. Enterprise architecture.
+                </p>
+            </div>
+        </div>
+
+        <p style="margin-top: 3rem; color: var(--aa-cement-50); font-size: 1.1rem;">
+            We do this to gain your trust and open the potential for partnership.
+        </p>
+    </div>
+    <div class="slide-number">14</div>
+</section>
+
+<!-- SLIDE 15: Cost Savings -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Beyond the Software</p>
+        <h2>€540K – €840K Annual FTE Savings</h2>
+        <p style="margin-bottom: 2rem;">Agentic execution in the Procurement Solution. 9-14 FTE reduction.</p>
+
+        <div class="grid-3">
+            <div class="agent-card">
+                <span class="badge" style="margin-bottom: 15px;">Agent 1 — Phase 1</span>
+                <h3>Invoice Match Agent</h3>
+                <p style="color: var(--aa-cement-50); margin: 1rem 0; font-size: 0.95rem;">Automated 2-way matching with configurable tolerances. Auto-approve within mandate.</p>
+                <div class="savings">4-6 FTE</div>
+                <p style="color: var(--aa-cement-30); font-size: 0.85rem;">€240K-€360K/year saved</p>
+            </div>
+            <div class="agent-card">
+                <span class="badge" style="margin-bottom: 15px;">Agent 2 — Phase 1</span>
+                <h3>Supplier Response Interpreter</h3>
+                <p style="color: var(--aa-cement-50); margin: 1rem 0; font-size: 0.95rem;">Parse confirmations, extract delivery dates, detect price/quantity changes. Rule-based + AI fallback.</p>
+                <div class="savings">2-3 FTE</div>
+                <p style="color: var(--aa-cement-30); font-size: 0.85rem;">€120K-€180K/year saved</p>
+            </div>
+            <div class="agent-card">
+                <span class="badge" style="margin-bottom: 15px;">Agent 3 — Phase 2</span>
+                <h3>Supplier Communication Agent</h3>
+                <p style="color: var(--aa-cement-50); margin: 1rem 0; font-size: 0.95rem;">Draft follow-ups, handle routine queries, auto-send standard messages with human review.</p>
+                <div class="savings">3-5 FTE</div>
+                <p style="color: var(--aa-cement-30); font-size: 0.85rem;">€180K-€300K/year saved</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 2.5rem; padding: 30px; background: var(--aa-cement); text-align: center;">
+            <p style="font-size: 1.1rem; color: var(--aa-black);">3 Agents = 9-14 FTE reduction @ €60K/FTE</p>
+            <p style="font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; color: var(--aa-black);">€540K-€840K/year</p>
+            <p style="font-size: 0.95rem; color: rgba(0,0,0,0.7);">Agents 1-2 in Phase 1. Agent 3 in Phase 2. 500K DKK/year includes all three agents + 10K LOC changes.</p>
+        </div>
+    </div>
+    <div class="slide-number">15</div>
+</section>
+
+<!-- SLIDE 16: Success Criteria -->
+<section class="slide">
+    <div class="slide-content centered" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80vh;">
+        <p class="subtitle">We Work With Outcome-Focused Customers</p>
+        <h1 style="margin-bottom: 3rem;">What Are Your<br>Criteria for Success?</h1>
+        <p style="font-size: 1.25rem; color: var(--aa-cement-50);">
+            We love results. We love saving money.<br>Let's define success together.
+        </p>
+    </div>
+    <div class="slide-number">16</div>
+</section>
+
+<!-- SLIDE 17: About Us -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Who We Are</p>
+        <h2>About Agentic Agency</h2>
+
+        <div style="margin-top: 2rem;">
+            <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Our Approach: Agentic Engineering</h3>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--aa-cement-70); max-width: 100%;">
+                At Agentic Agency, we practice <span class="highlight">Agentic Engineering</span>—a fundamentally different approach to software delivery. This is not 'AI-assisted development' where humans write code with AI suggestions. This is AI agents autonomously executing engineering tasks under human direction and review.
+            </p>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--aa-cement-70); margin-top: 1rem;">
+                The result is <span class="highlight">engineering excellence at speed</span>: production-grade software with proper architecture, comprehensive testing, and maintainable code—delivered in compressed timelines because agents work continuously while humans focus on direction, constraints, and quality gates.
+            </p>
+        </div>
+
+        <div class="grid-4" style="margin-top: 2.5rem;">
+            <div class="card" style="padding: 20px; text-align: center;">
+                <h4 style="font-size: 0.9rem; color: var(--aa-cement); margin-bottom: 10px;">Engineering, Not Prompting</h4>
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50);">We deliver engineered systems. Architecture, testing, documentation—all first-class.</p>
+            </div>
+            <div class="card" style="padding: 20px; text-align: center;">
+                <h4 style="font-size: 0.9rem; color: var(--aa-cement); margin-bottom: 10px;">Agents Under Direction</h4>
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50);">AI agents execute within boundaries set by experienced engineers.</p>
+            </div>
+            <div class="card" style="padding: 20px; text-align: center;">
+                <h4 style="font-size: 0.9rem; color: var(--aa-cement); margin-bottom: 10px;">Transparency in Execution</h4>
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50);">You see everything we build, as we build it. No black boxes.</p>
+            </div>
+            <div class="card" style="padding: 20px; text-align: center;">
+                <h4 style="font-size: 0.9rem; color: var(--aa-cement); margin-bottom: 10px;">Partnership Over Transaction</h4>
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50);">We succeed when you succeed. Long-term relationship, not one-off sale.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">17</div>
+</section>
+
+<!-- SLIDE 18: Our Aim & Contact -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Our Aim</p>
+        <h2>Partnership</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8; color: var(--aa-cement-70); margin-top: 1.5rem; max-width: 900px;">
+            We are not looking for a transaction. We are looking for a <span class="highlight">partnership</span>.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--aa-cement-50); margin-top: 1rem; max-width: 900px;">
+            STARK Group's digital transformation journey spans multiple systems, teams, and years. We believe Agentic Engineering can be a valuable capability in that journey—not just for procurement, but across the portfolio. This engagement is an opportunity for both parties to evaluate fit.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.8; color: var(--aa-cement-70); margin-top: 1rem; max-width: 900px;">
+            <strong>Success for us means:</strong> You complete this project with confidence in our capability, with a system you're proud of, and with the desire to continue working together.
+        </p>
+
+        <div class="grid-2" style="margin-top: 3rem; max-width: 800px;">
+            <div class="contact-card">
+                <h4>Daniel Holm Kristensen</h4>
+                <p class="role">Co-founder and Delivery Lead</p>
+                <p><a href="mailto:daniel.holm@agenticagency.dev">daniel.holm@agenticagency.dev</a></p>
+                <p><a href="tel:+4528962000">+45 28 96 20 00</a></p>
+            </div>
+            <div class="contact-card">
+                <h4>Morten Elk</h4>
+                <p class="role">Co-founder</p>
+                <p><a href="mailto:morten.elk@agenticagency.dev">morten.elk@agenticagency.dev</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">18</div>
+</section>
+
+<!-- SLIDE 19: Closing -->
+<section class="slide">
+    <div class="slide-content centered" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80vh;">
+        <p class="subtitle">The Agentic Agency</p>
+        <h1>We Build<br>So You Can Focus<br>On Your Future</h1>
+        <p style="margin-top: 3rem; color: var(--aa-cement-50); font-size: 1.25rem;">Engineering > Prompting</p>
+    </div>
+    <div class="slide-number">19</div>
+</section>
+
+<!-- APPENDIX A: The New Reality - 3 Truths -->
+<section class="slide" id="appendix-truths">
+    <div class="slide-content">
+        <p class="subtitle">Appendix A</p>
+        <h2>The New Reality — Three Truths</h2>
+
+        <div style="margin-top: 2rem;">
+            <!-- Truth 1 -->
+            <div style="margin-bottom: 2rem; padding: 25px; border: 1px solid var(--aa-cement-20); background: var(--aa-dark-bg);">
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50); margin-bottom: 0.5rem;">TRUTH #1</p>
+                <p style="font-size: 1.1rem; color: var(--aa-cement-70); line-height: 1.6; margin-bottom: 1rem;">
+                    "The team size question has a working answer: 1 PM, 1 developer, agent swarms. The PM holds intent and outcomes. The developer holds architecture and judgment. The agents do the delivery."
+                </p>
+                <div style="padding: 15px; background: var(--aa-cement); color: var(--aa-black);">
+                    <p style="font-size: 0.95rem; color: var(--aa-black);"><strong>Our Answer:</strong> Morten (architecture + judgment) + Daniel (intent + outcomes) + numberless AI agents = delivery at impossible speed.</p>
+                </div>
+            </div>
+
+            <!-- Truth 2 -->
+            <div style="margin-bottom: 2rem; padding: 25px; border: 1px solid var(--aa-cement-20); background: var(--aa-dark-bg);">
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50); margin-bottom: 0.5rem;">TRUTH #2</p>
+                <p style="font-size: 1.1rem; color: var(--aa-cement-70); line-height: 1.6; margin-bottom: 1rem;">
+                    "The speed of iteration beats the quality of iteration. Done beats perfect. Shipping beats planning. The feedback loop is the product."
+                </p>
+                <div style="padding: 15px; background: var(--aa-cement); color: var(--aa-black);">
+                    <p style="font-size: 0.95rem; color: var(--aa-black);"><strong>Our Answer:</strong> Weekly demos. 8 weeks to production. 80%+ test coverage. Working code, not status updates.</p>
+                </div>
+            </div>
+
+            <!-- Truth 3 -->
+            <div style="padding: 25px; border: 1px solid var(--aa-cement-20); background: var(--aa-dark-bg);">
+                <p style="font-size: 0.8rem; color: var(--aa-cement-50); margin-bottom: 0.5rem;">TRUTH #3</p>
+                <p style="font-size: 1.1rem; color: var(--aa-cement-70); line-height: 1.6; margin-bottom: 1rem;">
+                    "Engineering > Prompting. Agents can generate code, but generating code is not engineering. Architecture, testing, maintainability, security — these require human judgment."
+                </p>
+                <div style="padding: 15px; background: var(--aa-cement); color: var(--aa-black);">
+                    <p style="font-size: 0.95rem; color: var(--aa-black);"><strong>Our Answer:</strong> Production-grade architecture. 80%+ test coverage. Full documentation. Standard stack. You own 100% of the code.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">A1</div>
+</section>
+
+<!-- APPENDIX B: Timeline -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Appendix B</p>
+        <h2>8-Week Delivery Timeline</h2>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Week 1: Foundation</h3>
+                        <p>Database, auth, API skeleton. First demo: Login works.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Week 2: PR Module</h3>
+                        <p>PR Inbox, Detail, Kafka consumers. Demo: PRs visible.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Week 3: PO Module</h3>
+                        <p>PO generation, bundling, sending. Demo: PR→PO→Supplier.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Week 4: Invoice Module</h3>
+                        <p>Invoice processing, matching, approvals. Demo: Full loop.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Week 5: Polish</h3>
+                        <p>Dashboard, settings, performance. Demo: Production-ready UI.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Week 6: Hardening</h3>
+                        <p>Security, testing, documentation. Demo: 80%+ coverage.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Week 7-8: UAT</h3>
+                        <p>User acceptance testing with STARK team. Bug fixes. Sign-off.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Go-Live</h3>
+                        <p>Production deployment. Hypercare support begins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 20px; border: 1px solid var(--aa-cement-20); text-align: center;">
+            <span style="color: var(--aa-cement-50);">Traditional estimate: 4-6 months</span>
+            <span style="margin: 0 30px; color: var(--aa-cement-30);">|</span>
+            <span style="font-weight: 700;">Agentic delivery: 8 weeks</span>
+        </div>
+    </div>
+    <div class="slide-number">B</div>
+</section>
+
+<!-- APPENDIX C: Software Delivery Landscape -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Appendix C</p>
+        <h2>Understanding the Landscape</h2>
+        <p style="margin-bottom: 2rem;">Software Delivery Approaches Compared</p>
+
+        <div class="grid-2" style="margin-bottom: 2rem;">
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>Low-Code Platforms</h4><span class="preview">OutSystems, Mendix, Power Platform</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong>Definition:</strong> Visual, drag-and-drop interfaces to build applications without traditional programming.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--aa-cement-70);"><strong>Strengths:</strong> Rapid prototyping, reduced need for specialized developers, good for standardized CRUD applications.</p>
+                    <p style="font-size: 0.9rem; color: var(--aa-cement-50);"><strong>Limitations:</strong> Vendor lock-in, limited customization, performance constraints at scale, hidden complexity, ongoing licensing costs, produces code unmaintainable outside the platform.</p>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>Vibecoding</h4><span class="preview">Prompt-driven development</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong>Definition:</strong> Using conversational AI to generate code through prompts, without deep understanding of the underlying technology.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--aa-cement-70);"><strong>Strengths:</strong> Extremely fast initial output, low barrier to entry, can produce working prototypes quickly.</p>
+                    <p style="font-size: 0.9rem; color: var(--aa-cement-50);"><strong>Limitations:</strong> Inconsistent quality, security vulnerabilities, lack of architectural coherence, technical debt, hallucinated solutions. Vibecoding produces artifacts, not systems.</p>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)">
+                <div class="expandable-header">
+                    <div><h4>Traditional Software Development</h4><span class="preview">Skilled developers, established methodologies</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong>Definition:</strong> Conventional engineering with skilled developers, code reviews, testing practices, and deliberate architectural decisions.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--aa-cement-70);"><strong>Strengths:</strong> High quality when done well, full control, deep understanding, maintainability, appropriate for complex systems.</p>
+                    <p style="font-size: 0.9rem; color: var(--aa-cement-50);"><strong>Limitations:</strong> Time-intensive, expensive, dependent on finding skilled talent, can be slow to adapt, process overhead.</p>
+                </div>
+            </div>
+
+            <div class="expandable-section" onclick="toggleExpand(this)" style="border-color: var(--aa-cement-50);">
+                <div class="expandable-header">
+                    <div><h4>Agentic Engineering</h4><span class="preview">AI agents under human direction</span></div>
+                    <span class="expandable-toggle">+</span>
+                </div>
+                <div class="expandable-content">
+                    <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong>Definition:</strong> AI agents autonomously execute engineering tasks—writing code, running tests, fixing bugs—while humans provide direction and quality review.</p>
+                    <p style="font-size: 0.9rem; margin-bottom: 10px; color: var(--aa-cement-70);"><strong>The Core Principle:</strong> Agents do the work. Humans set the direction. Engineers define architecture, acceptance criteria, and quality gates.</p>
+                    <p style="font-size: 0.9rem; color: var(--aa-cement);"><strong>Result:</strong> Fast + High Quality + Full Control + Maintainable. Working in parallel, around the clock, with full context persistence.</p>
+                </div>
+            </div>
+        </div>
+
+        <table class="comparison-table" style="margin-top: 1rem;">
+            <tr>
+                <th>Aspect</th>
+                <th>Low-Code</th>
+                <th>Vibecoding</th>
+                <th>Traditional</th>
+                <th style="background: var(--aa-cement-30);">Agentic Engineering</th>
+            </tr>
+            <tr>
+                <td>Speed</td>
+                <td>Fast</td>
+                <td>Very Fast</td>
+                <td>Slow</td>
+                <td><strong>Fast</strong></td>
+            </tr>
+            <tr>
+                <td>Quality</td>
+                <td>Medium</td>
+                <td>Low-Variable</td>
+                <td>High</td>
+                <td><strong>High (guaranteed)</strong></td>
+            </tr>
+            <tr>
+                <td>Customization</td>
+                <td>Limited</td>
+                <td>Chaotic</td>
+                <td>Full</td>
+                <td><strong>Full control</strong></td>
+            </tr>
+            <tr>
+                <td>Maintainability</td>
+                <td>Platform-dependent</td>
+                <td>Poor</td>
+                <td>High</td>
+                <td><strong>High</strong></td>
+            </tr>
+        </table>
+    </div>
+    <div class="slide-number">C</div>
+</section>
+
+<!-- APPENDIX D: ADAPT Methodology -->
+<section class="slide">
+    <div class="slide-content">
+        <p class="subtitle">Appendix D</p>
+        <h2>The ADAPT Methodology</h2>
+        <p style="margin-bottom: 2rem;">Agentic Development with Artifact Persistence & Testing</p>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div>
+                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--aa-cement-70);">
+                    ADAPT is our methodology for Agentic Engineering: knowledge compounds across sessions, quality is enforced through test-gated tasks, and work is structured for maximum agent parallelization.
+                </p>
+
+                <div style="margin-top: 2rem;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--aa-cement); margin-bottom: 0.5rem;">A — Agentic</h4>
+                        <p style="font-size: 0.9rem; color: var(--aa-cement-50);">AI agents work autonomously on well-defined tasks within clear boundaries. Human engineers set direction, review output, and make architectural decisions.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--aa-cement); margin-bottom: 0.5rem;">D — Development</h4>
+                        <p style="font-size: 0.9rem; color: var(--aa-cement-50);">Real engineering—not prototyping. Production-grade code with proper error handling, type safety, and maintainability.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--aa-cement); margin-bottom: 0.5rem;">A — Artifact</h4>
+                        <p style="font-size: 0.9rem; color: var(--aa-cement-50);">Every decision, lesson, and context is persisted in structured knowledge stores. Nothing is lost between sessions.</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="margin-top: 0;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--aa-cement); margin-bottom: 0.5rem;">P — Persistence</h4>
+                        <p style="font-size: 0.9rem; color: var(--aa-cement-50);">Session continuity through shared context logs, lessons learned, and development diaries. The next session picks up exactly where this one left off.</p>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--aa-cement); margin-bottom: 0.5rem;">T — Testing</h4>
+                        <p style="font-size: 0.9rem; color: var(--aa-cement-50);">Test-gated task completion. No task is marked done until tests pass. Quality is enforced, not hoped for.</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 25px; background: var(--aa-cement);">
+                    <p style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--aa-black);">The Result</p>
+                    <p style="font-size: 0.95rem; line-height: 1.6; color: var(--aa-black);">
+                        Agents that learn from every session. Quality that compounds over time. Delivery that accelerates as context grows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide-number">D</div>
+</section>
+
+<!-- Lightbox Overlay -->
+<div id="lightbox-overlay" class="lightbox-overlay" tabindex="-1">
+    <div class="lightbox-close" onclick="closeLightbox()">✕</div>
+    <img id="lightbox-img" class="lightbox-image" src="" alt="">
+    <div class="lightbox-nav">
+        <span class="lightbox-nav-text">Press</span>
+        <span class="lightbox-nav-key">ESC</span>
+        <span class="lightbox-nav-text">or click anywhere to close</span>
+    </div>
+</div>
+
+<script>
+// Expandable sections
+function toggleExpand(section) {
+    const wasExpanded = section.classList.contains('expanded');
+    const container = section.parentElement;
+    container.querySelectorAll('.expandable-section').forEach(s => {
+        s.classList.remove('expanded');
+    });
+    if (!wasExpanded) {
+        section.classList.add('expanded');
+    }
+}
+
+// Go Deeper detail panels
+function showDeepDetail(id) {
+    document.querySelectorAll('.go-deeper-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    document.querySelectorAll('.go-deeper-detail').forEach(detail => {
+        detail.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+    document.getElementById('detail-' + id).classList.add('active');
+}
+
+function closeDeepDetail() {
+    document.querySelectorAll('.go-deeper-card').forEach(card => {
+        card.classList.remove('active');
+    });
+    document.querySelectorAll('.go-deeper-detail').forEach(detail => {
+        detail.classList.remove('active');
+    });
+}
+
+// Lightbox functionality
+function openLightbox(src, title) {
+    const overlay = document.getElementById('lightbox-overlay');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    img.alt = title;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    overlay.focus();
+}
+
+function closeLightbox() {
+    const overlay = document.getElementById('lightbox-overlay');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close on ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeDeepDetail();
+    }
+});
+
+// Close lightbox on background click
+document.addEventListener('DOMContentLoaded', function() {
+    const overlay = document.getElementById('lightbox-overlay');
+    if (overlay) {
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay || e.target.classList.contains('lightbox-close')) {
+                closeLightbox();
+            }
+        });
+    }
+
+    // Build side navigation
+    buildSideNav();
+    updateActiveNav();
+    window.addEventListener('scroll', updateActiveNav);
+});
+
+// Side Navigation
+const slideData = [
+    { num: '01', title: 'Title' },
+    { num: '02', title: 'The Shift' },
+    { num: '03', title: 'Command Center' },
+    { num: '04', title: 'Dashboard' },
+    { num: '05', title: 'Handle Now' },
+    { num: '06', title: 'Invoices' },
+    { num: '07', title: 'Transition' },
+    { num: '08', title: 'Scope' },
+    { num: '09', title: 'In/Out' },
+    { num: '10', title: 'Use Cases' },
+    { num: '11', title: 'Go Deeper' },
+    { num: '12', title: 'Experience' },
+    { num: '13', title: 'Guarantees' },
+    { num: '14', title: 'Pricing' },
+    { num: '15', title: 'Savings' },
+    { num: '16', title: 'Success' },
+    { num: '17', title: 'About Us' },
+    { num: '18', title: 'Contact' },
+    { num: '19', title: 'Closing' },
+    { num: 'A', title: '3 Truths', appendix: true },
+    { num: 'B', title: 'Timeline', appendix: true },
+    { num: 'C', title: 'Landscape', appendix: true },
+    { num: 'D', title: 'ADAPT', appendix: true }
+];
+
+function buildSideNav() {
+    const nav = document.getElementById('sideNav');
+    if (!nav) return;
+
+    nav.innerHTML = slideData.map((slide, i) => `
+        <div class="side-nav-item${slide.appendix ? ' appendix' : ''}" data-index="${i}" onclick="scrollToSlide(${i})">
+            <span class="side-nav-number">${slide.num}</span>
+            <span class="side-nav-title">${slide.title}</span>
+        </div>
+    `).join('');
+}
+
+function scrollToSlide(index) {
+    const slides = document.querySelectorAll('.slide');
+    if (slides[index]) {
+        slides[index].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+function updateActiveNav() {
+    const slides = document.querySelectorAll('.slide');
+    const navItems = document.querySelectorAll('.side-nav-item');
+
+    let activeIndex = 0;
+    slides.forEach((slide, i) => {
+        const rect = slide.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2) {
+            activeIndex = i;
+        }
+    });
+
+    navItems.forEach((item, i) => {
+        item.classList.toggle('active', i === activeIndex);
+    });
+}
+</script>
+
+</body>
+</html>
