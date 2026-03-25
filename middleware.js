@@ -1,27 +1,18 @@
 export const config = {
-  matcher: '/STARK-procurement/:path*',
+  matcher: ['/STARK-procurement', '/STARK-procurement/:path*'],
 };
 
 export default function middleware(request) {
-  const authHeader = request.headers.get('authorization');
+  const url = new URL(request.url);
 
-  if (authHeader) {
-    const [scheme, encoded] = authHeader.split(' ');
-    if (scheme === 'Basic') {
-      const decoded = atob(encoded);
-      const [user, password] = decoded.split(':');
+  // Check for auth cookie
+  const cookies = request.headers.get('cookie') || '';
+  const hasAuth = cookies.includes('stark_auth=verified');
 
-      // Password: ADAPT2026e (any username accepted)
-      if (password === 'ADAPT2026e') {
-        return;
-      }
-    }
+  if (hasAuth) {
+    return; // Allow through
   }
 
-  return new Response('Authentication required', {
-    status: 401,
-    headers: {
-      'WWW-Authenticate': 'Basic realm="STARK Procurement"',
-    },
-  });
+  // Redirect to login page
+  return Response.redirect(new URL('/STARK-procurement-auth/', request.url), 302);
 }
