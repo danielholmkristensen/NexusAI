@@ -1,5 +1,25 @@
 {
+  "headers": [
+    {
+      "source": "/STARK-procurement/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" }
+      ]
+    },
+    {
+      "source": "/STARK-procurement-auth/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+      ]
+    }
+  ],
+  "redirects": [
+    { "source": "/STARK-Procurement", "destination": "/STARK-procurement", "permanent": true },
+    { "source": "/STARK-Procurement/(.*)", "destination": "/STARK-procurement/$1", "permanent": true }
+  ],
   "rewrites": [
+    { "source": "/STARK-procurement", "destination": "/STARK-procurement/index.html" },
+    { "source": "/STARK-procurement/(.*)", "destination": "/STARK-procurement/$1" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }

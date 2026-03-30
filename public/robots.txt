@@ -1,95 +1,66 @@
-# Block all crawlers from STARK-Procurement content
-# Also block the raw HTML file
+# Standard crawlers
+User-agent: *
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /STARK-procurement/
+Disallow: /STARK-Procurement
+Disallow: /STARK-procurement-auth
+Disallow: /stark-procurement.html
 
 # Google
 User-agent: Googlebot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: Googlebot-Image
-Disallow: /STARK-Procurement
+Disallow: /STARK-procurement
+Disallow: /STARK-procurement/
 Disallow: /stark-procurement.html
 
 # Bing
 User-agent: Bingbot
-Disallow: /STARK-Procurement
+Disallow: /STARK-procurement
+Disallow: /STARK-procurement/
 Disallow: /stark-procurement.html
 
-User-agent: msnbot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-# Other search engines
-User-agent: Slurp
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: DuckDuckBot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: Baiduspider
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: YandexBot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-# LLM / AI Crawlers
+# OpenAI
 User-agent: GPTBot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+Disallow: /
 
 User-agent: ChatGPT-User
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+Disallow: /
 
-User-agent: CCBot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+# Anthropic
+User-agent: Claude-Web
+Disallow: /
 
 User-agent: anthropic-ai
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+Disallow: /
 
-User-agent: Claude-Web
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+# Common Crawl (used for AI training)
+User-agent: CCBot
+Disallow: /
 
-User-agent: Bytespider
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: cohere-ai
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: PerplexityBot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
-User-agent: YouBot
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
-
+# Google AI
 User-agent: Google-Extended
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+Disallow: /
 
+# Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+# Meta AI
 User-agent: FacebookBot
-Disallow: /STARK-Procurement
+Disallow: /STARK-procurement
 Disallow: /stark-procurement.html
 
-User-agent: Applebot-Extended
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+User-agent: Meta-ExternalAgent
+Disallow: /
 
-# Catch-all for other bots on sensitive paths
-User-agent: *
-Disallow: /STARK-Procurement
-Disallow: /stark-procurement.html
+# Bytedance
+User-agent: Bytespider
+Disallow: /
 
-# Allow everything else
-User-agent: *
-Allow: /
+# Other AI scrapers
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
