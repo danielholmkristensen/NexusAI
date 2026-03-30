@@ -1,0 +1,95 @@
+# Block all crawlers from STARK-Procurement content
+# Also block the raw HTML file
+
+# Google
+User-agent: Googlebot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: Googlebot-Image
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+# Bing
+User-agent: Bingbot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: msnbot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+# Other search engines
+User-agent: Slurp
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: DuckDuckBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: Baiduspider
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: YandexBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+# LLM / AI Crawlers
+User-agent: GPTBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: ChatGPT-User
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: CCBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: anthropic-ai
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: Claude-Web
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: Bytespider
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: cohere-ai
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: PerplexityBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: YouBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: Google-Extended
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: FacebookBot
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+User-agent: Applebot-Extended
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+# Catch-all for other bots on sensitive paths
+User-agent: *
+Disallow: /STARK-Procurement
+Disallow: /stark-procurement.html
+
+# Allow everything else
+User-agent: *
+Allow: /

@@ -11,6 +11,7 @@ const ScaleEnginePage = React.lazy(() => import('../pages/ScaleEnginePage'));
 const AboutPage = React.lazy(() => import('../pages/AboutPage'));
 const MethodPage = React.lazy(() => import('../pages/MethodPage'));
 const ProtectedDeck = React.lazy(() => import('../components/ProtectedDeck'));
+const ProtectedSTARK = React.lazy(() => import('../components/ProtectedSTARK'));
 const FlowSlides = React.lazy(() => import('../components/FlowSlides'));
 
 // Loading fallback component
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
     element: (
       <React.Suspense fallback={<PageLoader />}>
         <FlowSlides />
+      </React.Suspense>
+    ),
+  },
+  {
+    path: '/STARK-Procurement',
+    element: (
+      <React.Suspense fallback={<PageLoader />}>
+        <ProtectedSTARK />
       </React.Suspense>
     ),
   },
