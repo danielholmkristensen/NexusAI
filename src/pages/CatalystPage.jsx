@@ -18,7 +18,7 @@ const CatalystPage = () => {
     { q: "How do you deliver so fast?", a: "AI-powered development with human engineering oversight. We use agentic workflows for implementation while maintaining 80%+ test coverage and full documentation." },
     { q: "Do we need The Spark first?", a: "Recommended but not required. The Spark ensures smooth handoff. Organizations with mature infrastructure can proceed directly after expedited validation." },
     { q: "What tech stack do you work with?", a: "We're stack-agnostic but opinionated. We'll recommend the right tools for your context. Common: TypeScript, Python, Go, React, Rails, PostgreSQL." },
-    { q: "Who owns the code?", a: "You do. Code built for YOU means full ownership, no licensing restrictions, no vendor lock-in. Run it, modify it, extend it — it's yours." },
+    { q: "Who owns the code?", a: "Agentic Agency retains IP ownership. You receive a perpetual, non-exclusive licence to use the software for your internal business operations. No vendor lock-in — you can run, modify, and extend it. The licence is yours forever upon delivery." },
     { q: "What's included in the deliverable?", a: "Production-ready code, 80%+ test coverage, full documentation, deployment to your infrastructure, and handoff to your team or to The Core for ongoing support." }
   ];
 
@@ -53,7 +53,7 @@ const CatalystPage = () => {
     <div ref={pageRef}>
       <PageMeta
         title="The Catalyst — AI Development as a Service"
-        description="Fixed-price enterprise software delivery. 80%+ test coverage. Full documentation. Code built for YOU. 8-12 weeks from kickoff to production."
+        description="Fixed-price enterprise software delivery. 80%+ test coverage. Full documentation. Perpetual licence included. 8-12 weeks from kickoff to production."
         path="/the-catalyst"
       />
       <BreadcrumbSchema items={[
@@ -79,7 +79,7 @@ const CatalystPage = () => {
             AI Development as a Service. <strong className="text-[#E6E6E1]">Fixed price. Enterprise quality. Delivered.</strong>
           </p>
           <p className="hero-anim text-lg text-[#E6E6E1]/60 max-w-2xl mb-12 font-medium">
-            Production-grade software with 80%+ test coverage. Full documentation. Code built for YOU.
+            Production-grade software with 80%+ test coverage. Full documentation. Perpetual licence included.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton

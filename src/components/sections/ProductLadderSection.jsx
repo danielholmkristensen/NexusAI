@@ -25,7 +25,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
       name: 'THE CATALYST',
       duration: '8-12 Weeks',
       tagline: 'Enterprise software, delivered',
-      description: 'Fixed-price AI-powered software development. Production-grade code with 80%+ test coverage, full documentation. Code built for YOU.',
+      description: 'Fixed-price AI-powered software development. Production-grade code with 80%+ test coverage, full documentation. Perpetual licence included.',
       price: 'Fixed price',
       to: '/the-catalyst',
       cta: 'Learn more'
@@ -200,7 +200,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
 
         <div className="mt-12 text-center">
           <p className="text-black/60 font-medium text-lg">
-            Fixed price. Enterprise quality. Your code.
+            Fixed price. Enterprise quality. Perpetual licence.
           </p>
         </div>
       </div>

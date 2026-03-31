@@ -10,7 +10,7 @@ const Footer = () => {
           Ready for AI-powered delivery?
         </h2>
         <p className="text-xl font-medium mb-8 max-w-2xl mx-auto">
-          Fixed price. Enterprise quality. Code built for YOU.
+          Fixed price. Enterprise quality. Perpetual licence included.
         </p>
 
         {/* Waitlist Form */}

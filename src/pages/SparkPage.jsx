@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check } from 'lucide-react';
+import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, MessageSquare } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
@@ -15,7 +15,7 @@ const SparkPage = () => {
 
   const sparkFAQs = [
     { q: "How long does The Spark take?", a: "Typically 1-2 weeks depending on organizational complexity. We assess your infrastructure, governance requirements, and team readiness in parallel streams." },
-    { q: "What do we need to prepare?", a: "Access to your development infrastructure documentation, key stakeholders' availability, and clarity on which project you want to tackle first in The Catalyst." },
+    { q: "What do we need to prepare?", a: "Ideally: scope documentation — project descriptions, process diagrams, use cases, feature specs, or user screens. Don't have these? No problem. The Spark includes AI Sync Sessions where we capture context directly from your stakeholders through structured conversations." },
     { q: "Is this mandatory before The Catalyst?", a: "Strongly recommended. Organizations that skip onboarding often face delays during delivery. The Spark ensures a smooth handoff." },
     { q: "What if we already have mature DevOps?", a: "Great — The Spark will be faster. We'll validate your setup, establish communication protocols, and align on governance. Even mature orgs benefit from explicit alignment." },
     { q: "Who needs to be involved?", a: "Engineering lead, security/compliance stakeholder, and a business sponsor. We'll identify additional stakeholders during assessment." },
@@ -137,8 +137,71 @@ const SparkPage = () => {
         </div>
       </section>
 
+      {/* AI SYNC SESSIONS - SCOPE CREATION */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-4">No scope docs? No problem.</div>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">AI Sync Sessions</h2>
+              <p className="text-xl text-black/80 font-medium leading-relaxed mb-6">
+                Great software starts with great understanding. Our AI-powered sync sessions capture context directly from your stakeholders — no lengthy interviews, no lost nuance.
+              </p>
+              <p className="text-xl text-black/70 font-medium leading-relaxed mb-8">
+                Three perspectives. One shared understanding. AI synthesizes, humans validate.
+              </p>
+              <div className="flex items-center gap-3 text-sm font-medium text-black/60">
+                <MessageSquare size={18} />
+                <span>Replaces 2-4 weeks of traditional requirements gathering</span>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {/* The Why */}
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 1</div>
+                    <h3 className="text-xl font-bold uppercase tracking-tight">The Why</h3>
+                  </div>
+                  <span className="font-mono text-xs text-black/50">15-20 min</span>
+                </div>
+                <p className="text-black/70 font-medium text-sm mb-3">Strategy, ambition, customer promises. What success looks like.</p>
+                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Sponsors & Leadership</div>
+              </div>
+
+              {/* The What */}
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 2</div>
+                    <h3 className="text-xl font-bold uppercase tracking-tight">The What</h3>
+                  </div>
+                  <span className="font-mono text-xs text-black/50">25-30 min</span>
+                </div>
+                <p className="text-black/70 font-medium text-sm mb-3">Operational reality, process truth. How the work actually happens today.</p>
+                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Domain Experts</div>
+              </div>
+
+              {/* The How */}
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
+                <div className="flex justify-between items-start mb-3">
+                  <div>
+                    <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 3</div>
+                    <h3 className="text-xl font-bold uppercase tracking-tight">The How</h3>
+                  </div>
+                  <span className="font-mono text-xs text-black/50">30-45 min</span>
+                </div>
+                <p className="text-black/70 font-medium text-sm mb-3">Technical depth, system constraints. What's possible and what's not.</p>
+                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Architects & Engineers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* THE THREE PHASES */}
-      <section id="phases-section" className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+      <section id="phases-section" className="py-24 px-6 md:px-16 bg-white">
         <div className="max-w-[1400px] mx-auto">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Three Phases</h2>
@@ -147,9 +210,9 @@ const SparkPage = () => {
 
           <div className="grid lg:grid-cols-3 gap-6">
             {/* Phase 1 */}
-            <div className="phase-card bg-white rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="phase-card bg-[#E6E6E1] rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-2">Phase 1</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Assessment</h3>
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-black">Assessment</h3>
               <p className="text-black/70 font-medium mb-6">
                 We audit your current state: infrastructure, security posture, team structure, and existing workflows.
               </p>
@@ -191,9 +254,9 @@ const SparkPage = () => {
             </div>
 
             {/* Phase 3 */}
-            <div className="phase-card bg-white rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+            <div className="phase-card bg-[#E6E6E1] rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-2">Phase 3</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Preparation</h3>
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-black">Preparation</h3>
               <p className="text-black/70 font-medium mb-6">
                 We prepare the delivery environment: access provisioning, pipeline validation, documentation.
               </p>
