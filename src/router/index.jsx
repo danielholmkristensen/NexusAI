@@ -7,7 +7,7 @@ import { ErrorPage } from '../components/common';
 const LandingPage = React.lazy(() => import('../pages/LandingPage'));
 const SparkPage = React.lazy(() => import('../pages/SparkPage'));
 const CatalystPage = React.lazy(() => import('../pages/CatalystPage'));
-const ScaleEnginePage = React.lazy(() => import('../pages/ScaleEnginePage'));
+const CorePage = React.lazy(() => import('../pages/CorePage'));
 const AboutPage = React.lazy(() => import('../pages/AboutPage'));
 const MethodPage = React.lazy(() => import('../pages/MethodPage'));
 const ProtectedDeck = React.lazy(() => import('../components/ProtectedDeck'));
@@ -79,10 +79,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'the-scale-engine',
+        path: 'the-core',
         element: (
           <React.Suspense fallback={<PageLoader />}>
-            <ScaleEnginePage />
+            <CorePage />
           </React.Suspense>
         ),
       },

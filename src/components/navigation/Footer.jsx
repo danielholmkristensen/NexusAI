@@ -7,10 +7,10 @@ const Footer = () => {
     <footer className="bg-black text-[#E6E6E1]/60 pt-24 pb-12 px-6 md:px-16 rounded-t-[4rem]">
       <div className="max-w-[1400px] mx-auto text-center mb-24">
         <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6 text-[#E6E6E1]">
-          Ready to move beyond vibe coding?
+          Ready for AI-powered delivery?
         </h2>
         <p className="text-xl font-medium mb-8 max-w-2xl mx-auto">
-          Scheduled The Spark sessions are filling up. Join the waitlist to secure your spot.
+          Fixed price. Enterprise quality. Code built for YOU.
         </p>
 
         {/* Waitlist Form */}
@@ -30,11 +30,11 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm">
           <div>
-            <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Products</h4>
+            <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Services</h4>
             <ul className="space-y-2">
               <li><Link to="/the-spark" className="hover:text-[#E6E6E1] transition-colors">The Spark</Link></li>
               <li><Link to="/the-catalyst" className="hover:text-[#E6E6E1] transition-colors">The Catalyst</Link></li>
-              <li><Link to="/the-scale-engine" className="hover:text-[#E6E6E1] transition-colors">The Scale Engine</Link></li>
+              <li><Link to="/the-core" className="hover:text-[#E6E6E1] transition-colors">The Core</Link></li>
             </ul>
           </div>
           <div>
@@ -47,9 +47,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><Link to="/the-spark#faq" className="hover:text-[#E6E6E1] transition-colors">FAQ</Link></li>
-              <li><Link to="/the-spark" className="hover:text-[#E6E6E1] transition-colors">Workshop Overview</Link></li>
-              <li><Link to="/the-catalyst" className="hover:text-[#E6E6E1] transition-colors">Transformation Programs</Link></li>
+              <li><Link to="/the-catalyst#faq" className="hover:text-[#E6E6E1] transition-colors">FAQ</Link></li>
+              <li><Link to="/the-spark" className="hover:text-[#E6E6E1] transition-colors">Onboarding</Link></li>
+              <li><Link to="/the-catalyst" className="hover:text-[#E6E6E1] transition-colors">AI Development</Link></li>
             </ul>
           </div>
           <div>
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-xl border border-white/20">
             <div className="w-2 h-2 rounded-full bg-[#E6E6E1]"></div>
-            <span className="font-mono text-xs tracking-wider uppercase">Accepting bookings for Q2 2026</span>
+            <span className="font-mono text-xs tracking-wider uppercase">Accepting engagements for Q2 2026</span>
           </div>
         </div>
       </div>

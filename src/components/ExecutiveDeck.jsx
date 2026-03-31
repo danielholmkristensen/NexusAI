@@ -697,8 +697,8 @@ export default function ExecutiveDeck() {
                     <span className="text-white/90">+30 days from end of month (delivery cycle)</span>
                   </div>
                   <div className="flex items-start gap-4">
-                    <span className="font-mono text-white/40 w-24 shrink-0">Scale Engine</span>
-                    <span className="text-white/90">+30 days from end of month (delivery cycle)</span>
+                    <span className="font-mono text-white/40 w-24 shrink-0">The Core</span>
+                    <span className="text-white/90">+30 days from end of month (SLA cycle)</span>
                   </div>
                 </div>
               </div>

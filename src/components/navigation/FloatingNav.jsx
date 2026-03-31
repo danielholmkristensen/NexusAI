@@ -23,7 +23,7 @@ const FloatingNav = () => {
   const navLinks = [
     { to: '/the-spark', label: 'The Spark' },
     { to: '/the-catalyst', label: 'The Catalyst' },
-    { to: '/the-scale-engine', label: 'The Scale Engine' },
+    { to: '/the-core', label: 'The Core' },
     { to: '/about', label: 'About' },
     { to: '/method', label: 'Method' },
   ];
@@ -33,16 +33,18 @@ const FloatingNav = () => {
   // Contextual CTA based on current page
   const getCTA = () => {
     switch (location.pathname) {
+      case '/the-spark':
+        return { label: 'Get started', product: 'spark' };
       case '/the-catalyst':
-        return { label: 'Book a discovery call', product: 'catalyst' };
-      case '/the-scale-engine':
-        return { label: 'Schedule a conversation', product: 'scale-engine' };
+        return { label: 'Get a quote', product: 'catalyst' };
+      case '/the-core':
+        return { label: 'Learn more', product: 'core' };
       case '/about':
         return { label: 'Get in touch', product: 'general' };
       case '/method':
-        return { label: 'Book a workshop', product: 'spark' };
+        return { label: 'Get started', product: 'spark' };
       default:
-        return { label: 'Book a workshop', product: 'spark' };
+        return { label: 'Get started', product: 'spark' };
     }
   };
 

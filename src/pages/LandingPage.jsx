@@ -228,18 +228,18 @@ const LandingPage = () => {
           <div className="subtext-reveal grid md:grid-cols-3 gap-6 mt-8 mb-12">
             <div className="pillar-item p-6 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
               <div className="text-4xl font-black text-black/20 mb-2">01</div>
-              <div className="font-bold uppercase tracking-tight text-black">Workshops</div>
-              <div className="text-sm text-black/60 mt-1">2-day intensives</div>
+              <div className="font-bold uppercase tracking-tight text-black">The Spark</div>
+              <div className="text-sm text-black/60 mt-1">Onboarding & readiness</div>
             </div>
             <div className="pillar-item p-6 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
               <div className="text-4xl font-black text-black/20 mb-2">02</div>
-              <div className="font-bold uppercase tracking-tight text-black">Acceleration</div>
-              <div className="text-sm text-black/60 mt-1">12-week programs</div>
+              <div className="font-bold uppercase tracking-tight text-black">The Catalyst</div>
+              <div className="text-sm text-black/60 mt-1">AI Development as a Service</div>
             </div>
             <div className="pillar-item p-6 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
               <div className="text-4xl font-black text-black/20 mb-2">03</div>
-              <div className="font-bold uppercase tracking-tight text-black">Transformation</div>
-              <div className="text-sm text-black/60 mt-1">Ongoing partnership</div>
+              <div className="font-bold uppercase tracking-tight text-black">The Core</div>
+              <div className="text-sm text-black/60 mt-1">Command center & support</div>
             </div>
           </div>
 
@@ -305,7 +305,7 @@ const LandingPage = () => {
             Ready to start?
           </h2>
           <p className="cta-reveal text-xl text-black/70 font-medium mb-12 max-w-2xl mx-auto mt-6">
-            Most teams begin with The Spark — a 2-day workshop that establishes the methodology. From there, you decide how deep to go.
+            Most organizations begin with The Spark — structured onboarding that prepares you for AI Development as a Service. From there, The Catalyst delivers.
           </p>
           <div className="cta-reveal flex flex-col sm:flex-row justify-center gap-6">
             <MagneticButton

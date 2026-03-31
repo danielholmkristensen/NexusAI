@@ -13,31 +13,31 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
     {
       id: 'spark',
       name: 'THE SPARK',
-      duration: '2 Days',
-      tagline: 'Learn the methodology',
-      description: 'A 2-day intensive workshop that takes your developers from ad-hoc AI prompting to structured agentic engineering.',
-      price: 'From DKK 49,999',
+      duration: '1-2 Weeks',
+      tagline: 'Get ready for AI delivery',
+      description: 'Structured onboarding that prepares your organization to receive and benefit from AI Development as a Service. Infrastructure, governance, team alignment.',
+      price: 'From DKK 75,000',
       to: '/the-spark',
       cta: 'Learn more'
     },
     {
       id: 'catalyst',
       name: 'THE CATALYST',
-      duration: '12 Weeks',
-      tagline: 'Transform one team deeply',
-      description: '12-week embedded program transforming one team into independent agentic engineering practitioners.',
-      price: 'Custom scoped',
+      duration: '8-12 Weeks',
+      tagline: 'Enterprise software, delivered',
+      description: 'Fixed-price AI-powered software development. Production-grade code with 80%+ test coverage, full documentation. Code built for YOU.',
+      price: 'Fixed price',
       to: '/the-catalyst',
       cta: 'Learn more'
     },
     {
-      id: 'scale-engine',
-      name: 'THE SCALE ENGINE',
+      id: 'core',
+      name: 'THE CORE',
       duration: 'Ongoing',
-      tagline: 'Scale org-wide with support',
-      description: 'Advisory retainer to scale agentic engineering across your organization. Build internal capability.',
-      price: 'Custom scoped',
-      to: '/the-scale-engine',
+      tagline: 'Visibility. Control. Continuity.',
+      description: 'The Command Center for AI-driven development. Real-time dashboards, session management, and operational control across all engagements.',
+      price: 'SLA-based',
+      to: '/the-core',
       cta: 'Learn more'
     }
   ];
@@ -88,7 +88,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
     return (
       <section className="py-16 px-6 md:px-16 bg-[#E6E6E1] border-t-4 border-black">
         <div className="max-w-[1400px] mx-auto">
-          <h3 className="font-mono text-xs tracking-wider uppercase text-black/50 mb-6">YOUR JOURNEY</h3>
+          <h3 className="font-mono text-xs tracking-wider uppercase text-black/50 mb-6">HOW WE WORK</h3>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             {products.map((product, index) => {
@@ -128,22 +128,22 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
             <div className="mt-8 text-center">
               {currentProduct === 'spark' && (
                 <p className="text-black/70 font-medium">
-                  Ready to go deeper? <Link to="/the-catalyst" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore The Catalyst →</Link>
+                  Ready for delivery? <Link to="/the-catalyst" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore The Catalyst →</Link>
                 </p>
               )}
               {currentProduct === 'catalyst' && (
                 <div className="space-y-2">
                   <p className="text-black/70 font-medium">
-                    Haven't done The Spark? <Link to="/the-spark" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start there →</Link>
+                    Need onboarding first? <Link to="/the-spark" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with The Spark →</Link>
                   </p>
                   <p className="text-black/70 font-medium">
-                    Ready to scale? <Link to="/the-scale-engine" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore The Scale Engine →</Link>
+                    Want ongoing visibility? <Link to="/the-core" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore The Core →</Link>
                   </p>
                 </div>
               )}
-              {currentProduct === 'scale-engine' && (
+              {currentProduct === 'core' && (
                 <p className="text-black/70 font-medium">
-                  New to agentic engineering? <Link to="/the-spark" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with The Spark →</Link>
+                  Need a new engagement? <Link to="/the-catalyst" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with The Catalyst →</Link>
                 </p>
               )}
             </div>
@@ -158,9 +158,9 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
     <section ref={sectionRef} className="py-24 px-6 md:px-16 bg-white">
       <div className="max-w-[1400px] mx-auto">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Move faster as a practitioner, team and organization</h2>
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">AI Development as a Service</h2>
           <p className="text-xl font-medium text-black/70 max-w-2xl mx-auto">
-            Start with The Spark. Build from there. Each step prepares you for the next.
+            Onboard. Build. Operate. Enterprise software at startup speed.
           </p>
         </div>
 
@@ -200,7 +200,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
 
         <div className="mt-12 text-center">
           <p className="text-black/60 font-medium text-lg">
-            Each step builds on the last. Progress when you're ready.
+            Fixed price. Enterprise quality. Your code.
           </p>
         </div>
       </div>

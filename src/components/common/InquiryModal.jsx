@@ -6,9 +6,9 @@ const HUBSPOT_FORM_GUID = import.meta.env.VITE_HUBSPOT_INQUIRY_FORM_GUID || '';
 const HUBSPOT_REGION = import.meta.env.VITE_HUBSPOT_REGION || '';
 
 const PRODUCT_OPTIONS = [
-  { value: 'spark', label: 'The Spark — 2-Day Workshop' },
-  { value: 'catalyst', label: 'The Catalyst — 12-Week Program' },
-  { value: 'scale-engine', label: 'The Scale Engine — Advisory' },
+  { value: 'spark', label: 'The Spark — Onboarding & Readiness' },
+  { value: 'catalyst', label: 'The Catalyst — AI Development as a Service' },
+  { value: 'core', label: 'The Core — Command Center & Support' },
   { value: 'general', label: 'General Inquiry' },
 ];
 
@@ -115,7 +115,7 @@ const InquiryModal = ({ isOpen, onClose, product = 'general', ctaLabel = '' }) =
   const productEmail = {
     spark: 'spark@agenticagency.dev',
     catalyst: 'catalyst@agenticagency.dev',
-    'scale-engine': 'scaleengine@agenticagency.dev',
+    core: 'core@agenticagency.dev',
     general: 'contact@agenticagency.dev',
   }[formData.product] || 'contact@agenticagency.dev';
 

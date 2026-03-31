@@ -24,83 +24,71 @@ export const OrganizationSchema = () => {
   );
 };
 
-// Course schema for The Spark
+// Service schema for The Spark
 export const SparkCourseSchema = () => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "The Spark — Agentic Engineering Workshop",
-    "description": "A 2-day hands-on workshop that transforms development teams into agentic engineering practitioners.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Agentic Agency"
-    },
-    "courseMode": "onsite",
-    "duration": "P2D",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Open Workshop",
-        "price": "49999",
-        "priceCurrency": "DKK",
-        "description": "3 participants from your organization, learn alongside up to 3 other companies",
-        "availability": "https://schema.org/InStock"
-      },
-      {
-        "@type": "Offer",
-        "name": "Closed Workshop",
-        "price": "199996",
-        "priceCurrency": "DKK",
-        "description": "Exclusive workshop for your organization, up to 12 participants",
-        "availability": "https://schema.org/InStock"
-      }
-    ],
-    "occupationalCategory": "Software Development",
-    "teaches": "Agentic engineering methodology for production-grade AI-assisted software development",
-    "coursePrerequisites": "Software development experience",
-    "maximumAttendeeCapacity": 12
-  };
-
-  return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-  );
-};
-
-// Course schema for The Catalyst
-export const CatalystCourseSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "The Catalyst — 12-Week Agentic Transformation",
-    "description": "12-week embedded program transforming one team into agentic engineering practitioners with weekly on-site support.",
-    "provider": {
-      "@type": "Organization",
-      "name": "Agentic Agency"
-    },
-    "courseMode": "onsite",
-    "duration": "P12W",
-    "occupationalCategory": "Software Development",
-    "teaches": "Deep agentic engineering transformation with embedded expert guidance",
-    "coursePrerequisites": "Completion of The Spark workshop"
-  };
-
-  return (
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-  );
-};
-
-// Service schema for The Scale Engine
-export const ScaleEngineServiceSchema = () => {
-  const schema = {
-    "@context": "https://schema.org",
     "@type": "Service",
-    "name": "The Scale Engine — Advisory Retainer",
-    "description": "Advisory retainer to scale agentic engineering across your organization. Build internal capability with expert guidance.",
+    "name": "The Spark — Onboarding & Readiness",
+    "description": "Structured onboarding that prepares your organization to receive and benefit from AI Development as a Service. Infrastructure, governance, team alignment.",
     "provider": {
       "@type": "Organization",
       "name": "Agentic Agency"
     },
     "serviceType": "Consulting",
+    "offers": {
+      "@type": "Offer",
+      "price": "75000",
+      "priceCurrency": "DKK",
+      "description": "1-2 week onboarding and readiness process",
+      "availability": "https://schema.org/InStock"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Denmark and Nordics"
+    }
+  };
+
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+  );
+};
+
+// Service schema for The Catalyst
+export const CatalystCourseSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Catalyst — AI Development as a Service",
+    "description": "Fixed-price enterprise software delivery. Production-grade code with 80%+ test coverage, full documentation. Code built for YOU. 8-12 weeks from kickoff to production.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Agentic Agency"
+    },
+    "serviceType": "Software Development",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Denmark and Nordics"
+    }
+  };
+
+  return (
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+  );
+};
+
+// Service schema for The Core
+export const CoreServiceSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "The Core — Command Center & Support",
+    "description": "The Command Center for AI-driven development. Real-time dashboards, session management, operational control, and SLA-backed support across all your Catalyst engagements.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Agentic Agency"
+    },
+    "serviceType": "Support and Operations",
     "areaServed": {
       "@type": "Place",
       "name": "Denmark and Nordics"
@@ -173,7 +161,7 @@ export default {
   OrganizationSchema,
   SparkCourseSchema,
   CatalystCourseSchema,
-  ScaleEngineServiceSchema,
+  CoreServiceSchema,
   FounderSchema,
   FAQSchema,
   BreadcrumbSchema

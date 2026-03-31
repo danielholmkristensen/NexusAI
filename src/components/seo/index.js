@@ -3,7 +3,7 @@ export {
   OrganizationSchema,
   SparkCourseSchema,
   CatalystCourseSchema,
-  ScaleEngineServiceSchema,
+  CoreServiceSchema,
   FounderSchema,
   FAQSchema,
   BreadcrumbSchema

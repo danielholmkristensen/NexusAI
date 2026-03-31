@@ -12,7 +12,7 @@ const getPageSource = () => {
   const path = window.location.pathname;
   if (path.includes('spark')) return 'Spark Page';
   if (path.includes('catalyst')) return 'Catalyst Page';
-  if (path.includes('scale-engine')) return 'Scale Engine Page';
+  if (path.includes('core')) return 'Core Page';
   if (path.includes('about')) return 'About Page';
   return 'Homepage';
 };
