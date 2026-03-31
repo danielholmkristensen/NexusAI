@@ -100,12 +100,12 @@ const CatalystPage = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">How It Works</h2>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">What You Get</h2>
               <p className="text-xl text-black/80 font-medium leading-relaxed mb-6">
-                AI handles the heavy lifting. Engineers ensure it's done right. You get enterprise-grade software in weeks, not months.
+                AI handles the heavy lifting. Engineers ensure it's done right.
               </p>
               <p className="text-xl text-black/70 font-medium leading-relaxed">
-                Every line is reviewed. Every feature is tested. Every deliverable is documented. This is engineering — accelerated.
+                Every line reviewed. Every feature tested. Every deliverable documented.
               </p>
             </div>
 
@@ -197,10 +197,10 @@ const CatalystPage = () => {
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="space-y-6">
               {[
-                { phase: "01", title: "Scope", desc: "We understand your requirements, define deliverables, and provide a fixed-price quote.", duration: "1 week" },
-                { phase: "02", title: "Spark", desc: "Onboarding and readiness. Infrastructure, governance, team alignment. (Optional if already mature)", duration: "1-2 weeks" },
-                { phase: "03", title: "Build", desc: "AI-powered development with weekly demos. You see progress every week.", duration: "6-10 weeks" },
-                { phase: "04", title: "Deliver", desc: "Deployment, documentation, handoff. Your team takes over — or transition to The Core for ongoing support.", duration: "1 week" }
+                { phase: "01", title: "Scope", desc: "Define requirements and deliverables. Fixed-price quote.", duration: "1 week" },
+                { phase: "02", title: "Spark", desc: "Capture context. Lock specifications. (Optional if already scoped)", duration: "1-2 weeks" },
+                { phase: "03", title: "Build", desc: "AI-powered development. Weekly demos.", duration: "6-10 weeks" },
+                { phase: "04", title: "Deliver", desc: "Deploy. Document. Hand off.", duration: "1 week" }
               ].map((step, i) => (
                 <div key={i} className="process-step flex gap-6">
                   <div className="w-16 flex-shrink-0">
@@ -256,37 +256,48 @@ const CatalystPage = () => {
 
       {/* PRICING PHILOSOPHY */}
       <section className="py-24 bg-white px-6 md:px-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">Fixed Price. Real Delivery.</h2>
-          <p className="text-xl font-medium text-black/70 mb-12 max-w-2xl mx-auto">
-            We don't bill hours. We scope engagements, agree on deliverables, and quote a fixed price. You know what you're paying before we start.
-          </p>
-
-          <div className="bg-[#E6E6E1] rounded-xl p-10 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Typical Range</div>
-                <div className="font-mono text-3xl font-bold">500K - 2M</div>
-                <div className="text-sm text-black/60">DKK per engagement</div>
-              </div>
-              <div className="text-center">
-                <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Timeline</div>
-                <div className="font-mono text-3xl font-bold">8-12</div>
-                <div className="text-sm text-black/60">Weeks to production</div>
-              </div>
-              <div className="text-center">
-                <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Billing</div>
-                <div className="font-mono text-3xl font-bold">Fixed</div>
-                <div className="text-sm text-black/60">No hourly surprises</div>
-              </div>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">Fixed Price.<br/>No Surprises.</h2>
+              <p className="text-xl font-medium text-black/70 mb-6 leading-relaxed">
+                We don't bill hours. We scope your project, agree on deliverables, and quote a fixed price before any work begins.
+              </p>
+              <p className="text-lg text-black/60 font-medium leading-relaxed">
+                Every engagement is custom. The price reflects the complexity of your requirements — not how many hours we spend.
+              </p>
             </div>
 
-            <MagneticButton
-              onClick={() => openInquiry('catalyst', 'Get a quote')}
-              className="bg-black text-[#E6E6E1] px-8 py-4 text-lg font-bold"
-            >
-              Get a quote <ArrowUpRight size={18} />
-            </MagneticButton>
+            <div className="bg-black text-[#E6E6E1] rounded-xl p-10 md:p-12">
+              <div className="border-b border-white/10 pb-8 mb-8">
+                <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/50 mb-3">Our Model</div>
+                <p className="text-2xl font-bold leading-snug">
+                  You know the total cost before we write the first line of code.
+                </p>
+              </div>
+
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start gap-3">
+                  <Check size={18} className="text-[#E6E6E1]/60 mt-1 flex-shrink-0" />
+                  <span className="text-[#E6E6E1]/80 font-medium">Scoped to your requirements</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check size={18} className="text-[#E6E6E1]/60 mt-1 flex-shrink-0" />
+                  <span className="text-[#E6E6E1]/80 font-medium">Fixed timeline with weekly demos</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Check size={18} className="text-[#E6E6E1]/60 mt-1 flex-shrink-0" />
+                  <span className="text-[#E6E6E1]/80 font-medium">No hourly billing. No scope creep charges.</span>
+                </li>
+              </ul>
+
+              <MagneticButton
+                onClick={() => openInquiry('catalyst', 'Get a quote')}
+                className="bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold w-full justify-center"
+              >
+                Get a quote <ArrowUpRight size={18} />
+              </MagneticButton>
+            </div>
           </div>
         </div>
       </section>
