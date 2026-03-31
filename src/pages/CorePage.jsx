@@ -150,7 +150,7 @@ const CorePage = () => {
 
               <div className="dashboard-element space-y-3">
                 {[
-                  { name: "STARK Procurement", status: "active", progress: 65 },
+                  { name: "Market Leader X", status: "active", progress: 65 },
                   { name: "Invoice Automation", status: "active", progress: 40 },
                   { name: "Dashboard v2", status: "pending", progress: 0 }
                 ].map((project, i) => (
