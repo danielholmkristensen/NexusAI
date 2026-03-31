@@ -87,22 +87,6 @@ const LandingPage = () => {
         }
       );
 
-      // Why Us
-      gsap.fromTo('.why-us-content',
-        { y: 40, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: '#why-us-section',
-            start: 'top 70%'
-          }
-        }
-      );
-
       // Final CTA
       gsap.fromTo('.cta-reveal',
         { y: 30, opacity: 0 },
@@ -284,31 +268,6 @@ const LandingPage = () => {
                 <li>• SLA-backed response times</li>
                 <li>• New engagements without re-onboarding</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US — Credibility through restraint */}
-      <section id="why-us-section" className="py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
-        <div className="max-w-4xl mx-auto">
-          <div className="why-us-content">
-            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-12">
-              We build with these tools daily.
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h4 className="font-bold text-lg uppercase tracking-tight mb-3">Methodology over tools.</h4>
-                <p className="text-[#E6E6E1]/60 font-medium">Tools change quarterly. The discipline persists.</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg uppercase tracking-tight mb-3">Delivery over theory.</h4>
-                <p className="text-[#E6E6E1]/60 font-medium">We ship production code, not slide decks.</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-lg uppercase tracking-tight mb-3">Results over credentials.</h4>
-                <p className="text-[#E6E6E1]/60 font-medium">The work speaks for&nbsp;itself.</p>
-              </div>
             </div>
           </div>
         </div>
