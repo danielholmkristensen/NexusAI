@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, MessageSquare } from 'lucide-react';
+import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, MessageSquare, Layers } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
@@ -110,28 +110,33 @@ const SparkPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
+          <div className="grid md:grid-cols-4 gap-6 mt-16">
             {[
               {
-                icon: Shield,
-                title: "Security & Compliance",
-                desc: "Audit existing controls, establish approval workflows, document governance requirements before delivery begins."
+                icon: Users,
+                title: "Who & Why",
+                desc: "Users, stakeholders, business goals. The human context that shapes every decision."
+              },
+              {
+                icon: Layers,
+                title: "What & How",
+                desc: "Features, workflows, technical approach. The blueprint for what we're building."
               },
               {
                 icon: GitBranch,
-                title: "Infrastructure Readiness",
-                desc: "Validate CI/CD pipelines, staging environments, deployment targets. No blocked PRs during delivery."
+                title: "Where",
+                desc: "Existing systems, integrations, infrastructure. The landscape we're building into."
               },
               {
-                icon: Users,
-                title: "Team Alignment",
-                desc: "Identify stakeholders, establish communication protocols, define escalation paths. Everyone knows their role."
+                icon: Shield,
+                title: "Constraints",
+                desc: "Security, compliance, deployment paths. The boundaries that shape the solution."
               }
             ].map((item, i) => (
-              <div key={i} className="border border-white/10 rounded-xl p-8">
-                <item.icon size={32} className="text-[#E6E6E1]/60 mb-4" />
-                <h3 className="text-xl font-bold uppercase tracking-tight mb-3">{item.title}</h3>
-                <p className="text-[#E6E6E1]/70 font-medium">{item.desc}</p>
+              <div key={i} className="border border-white/10 rounded-xl p-6">
+                <item.icon size={28} className="text-[#E6E6E1]/60 mb-4" />
+                <h3 className="text-lg font-bold uppercase tracking-tight mb-2">{item.title}</h3>
+                <p className="text-[#E6E6E1]/70 font-medium text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -178,14 +183,24 @@ const SparkPage = () => {
                 <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Domain Experts</div>
               </div>
 
-              {/* The How */}
+              {/* The Where */}
               <div className="bg-white rounded-xl p-6 border-2 border-black">
                 <div className="mb-3">
                   <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 3</div>
+                  <h3 className="text-xl font-bold uppercase tracking-tight">The Where</h3>
+                </div>
+                <p className="text-black/70 font-medium text-sm mb-3">Infrastructure, existing systems, integration paths. The technical landscape.</p>
+                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Architects & DevOps</div>
+              </div>
+
+              {/* The How */}
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
+                <div className="mb-3">
+                  <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 4</div>
                   <h3 className="text-xl font-bold uppercase tracking-tight">The How</h3>
                 </div>
-                <p className="text-black/70 font-medium text-sm mb-3">Technical depth, system constraints. What's possible and what's not.</p>
-                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Architects & Engineers</div>
+                <p className="text-black/70 font-medium text-sm mb-3">Technical approach, stack decisions, deployment strategy. How we build it.</p>
+                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Engineers & Tech Leads</div>
               </div>
             </div>
           </div>
