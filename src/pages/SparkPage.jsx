@@ -77,10 +77,10 @@ const SparkPage = () => {
             THE SPARK
           </h1>
           <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-6 font-medium leading-snug">
-            We train your teams to use AI in software development. <strong>The results are visible and immediate.</strong>
+            Your team. <strong>Upgraded.</strong>
           </p>
           <p className="hero-anim text-lg text-black/60 max-w-2xl mb-12 font-medium">
-            Move from ad-hoc AI usage to structured, production-grade agentic engineering. Infrastructure, governance, team alignment — everything in place before we write a single line of code.
+            Two weeks from now, your developers ship production code with AI — not prompts, not experiments. Real engineering. We install the capability, you keep it forever.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton

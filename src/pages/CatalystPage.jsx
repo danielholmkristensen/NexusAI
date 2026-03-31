@@ -76,10 +76,10 @@ const CatalystPage = () => {
             THE CATALYST
           </h1>
           <p className="hero-anim text-xl md:text-2xl text-[#E6E6E1]/80 max-w-3xl mb-6 font-medium leading-snug">
-            AI Development as a Service. <strong className="text-[#E6E6E1]">Fixed price. Enterprise quality. Delivered.</strong>
+            Your software. <strong className="text-[#E6E6E1]">Built.</strong>
           </p>
           <p className="hero-anim text-lg text-[#E6E6E1]/60 max-w-2xl mb-12 font-medium">
-            Production-grade software with 80%+ test coverage. Full documentation. Perpetual licence included.
+            Tell us what you need. Watch it get built. Fixed price, enterprise quality, yours to keep. From kickoff to production in weeks — not quarters.
           </p>
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton
