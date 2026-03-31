@@ -17,8 +17,8 @@ const CorePage = () => {
     { q: "What is The Core?", a: "The Core is the Command Center for AI-driven development. Today: real-time dashboards, session management, and SLA-backed support. Tomorrow: a system that learns your preferences and anticipates your needs." },
     { q: "Do we need it after The Catalyst?", a: "Optional but recommended. The Core provides ongoing visibility, support, and the ability to quickly spin up new engagements without re-onboarding." },
     { q: "What's the vision?", a: "A Command Center that learns you. Where we author, you edit. Where we anticipate, you confirm. Each engagement makes the next one smoother. Friction approaches zero over time." },
-    { q: "What's included in the SLA?", a: "Response time guarantees, availability commitments, priority support queue, and escalation paths. Specific terms depend on your tier." },
-    { q: "How is pricing structured?", a: "Yearly retainer based on scope of coverage and SLA tier. Contact us for a quote tailored to your operational needs." },
+    { q: "What's included?", a: "One tier. High standards for all. Dashboard access, rapid response times, direct escalation, screen spec reviews, look & feel acceptance, and delivery sign-off. No feature gates." },
+    { q: "How is pricing structured?", a: "Yearly retainer based on scope of coverage. Contact us for a quote tailored to your operational needs." },
     { q: "Can we add new Catalyst engagements through The Core?", a: "Yes — that's a key benefit. The Core maintains your organizational context, so new engagements start faster and integrate seamlessly." }
   ];
 
@@ -226,51 +226,35 @@ const CorePage = () => {
         </div>
       </section>
 
-      {/* SLA TIERS */}
+      {/* SLA — ONE STANDARD */}
       <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-[1400px] mx-auto">
-          <div className="mb-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">SLA Tiers</h2>
-            <p className="text-xl font-medium text-black/70 max-w-2xl mx-auto">Choose the level of support that matches your operational needs.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {/* Standard */}
-            <div className="bg-white rounded-xl p-8 border-2 border-black">
-              <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Tier 1</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Standard</h3>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Dashboard access",
-                  "8-hour response time",
-                  "Business hours support",
-                  "Monthly reporting"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/80">
-                    <Check size={16} className="text-black" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <MagneticButton
-                onClick={() => openInquiry('core', 'Standard tier')}
-                className="w-full bg-black text-[#E6E6E1] px-6 py-3 font-bold justify-center"
-              >
-                Get pricing
-              </MagneticButton>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="font-mono text-xs uppercase tracking-widest text-black/40 mb-4">Service Level</div>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+                One Tier.<br/>High Standards for All.
+              </h2>
+              <p className="text-xl text-black/80 font-medium leading-relaxed mb-6">
+                With us, you get a highly responsive feedback loop. No tiers to navigate, no feature gates to unlock. Everyone gets our best.
+              </p>
+              <p className="text-lg text-black/60 font-medium leading-relaxed">
+                We're a small team working closely with each client. That's the advantage — tight feedback loops, fast responses, real partnership.
+              </p>
             </div>
 
-            {/* Priority */}
-            <div className="bg-black text-[#E6E6E1] rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)] -translate-y-4">
-              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-2">Tier 2</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Priority</h3>
-              <ul className="space-y-3 mb-8">
+            <div className="bg-black text-[#E6E6E1] rounded-xl p-10 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)]">
+              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-2">The Standard</div>
+              <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">Everything. Always.</h3>
+              <ul className="space-y-4 mb-8">
                 {[
-                  "Everything in Standard",
-                  "2-hour response time",
-                  "Extended hours support",
-                  "Weekly syncs",
-                  "Priority queue"
+                  "Real-time dashboard access",
+                  "Rapid response times",
+                  "Direct escalation channels",
+                  "Regular sync cadence",
+                  "Screen spec reviews",
+                  "Look & feel acceptance",
+                  "Delivery sign-off"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-sm font-medium text-[#E6E6E1]/80">
                     <Check size={16} className="text-[#E6E6E1]" />
@@ -279,36 +263,10 @@ const CorePage = () => {
                 ))}
               </ul>
               <MagneticButton
-                onClick={() => openInquiry('core', 'Priority tier')}
-                className="w-full bg-[#E6E6E1] text-black px-6 py-3 font-bold justify-center"
+                onClick={() => openInquiry('core', 'Learn more')}
+                className="w-full bg-[#E6E6E1] text-black px-6 py-4 font-bold justify-center"
               >
-                Get pricing
-              </MagneticButton>
-            </div>
-
-            {/* Enterprise */}
-            <div className="bg-white rounded-xl p-8 border-2 border-black">
-              <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Tier 3</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Enterprise</h3>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Everything in Priority",
-                  "30-min response time",
-                  "24/7 support available",
-                  "Dedicated account team",
-                  "Custom integrations"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/80">
-                    <Check size={16} className="text-black" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <MagneticButton
-                onClick={() => openInquiry('core', 'Enterprise tier')}
-                className="w-full bg-black text-[#E6E6E1] px-6 py-3 font-bold justify-center"
-              >
-                Contact us
+                Get in touch
               </MagneticButton>
             </div>
           </div>
