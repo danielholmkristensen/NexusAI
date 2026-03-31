@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, MessageSquare } from 'lucide-react';
-import { MagneticButton, FloatingShapes, GlowOrb, AnimatedGrid } from '../components/common';
+import { MagneticButton } from '../components/common';
 import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
 import { useInquiry } from '../context/InquiryContext';
@@ -24,76 +24,26 @@ const SparkPage = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // Enhanced hero animation
       gsap.fromTo('.hero-anim',
-        { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.4, stagger: 0.1, ease: 'power4.out', delay: 0.3 }
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
       );
 
-      // Floating glow pulse
-      gsap.to('.glow-pulse', {
-        scale: 1.15,
-        opacity: 0.7,
-        duration: 4,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true
-      });
-
-      // Why section cards with slide-in
-      gsap.fromTo('.why-card',
-        { y: 50, opacity: 0 },
-        {
-          y: 0, opacity: 1, duration: 0.8, stagger: 0.15, ease: 'power3.out',
-          scrollTrigger: { trigger: '.why-card', start: 'top 75%' }
-        }
-      );
-
-      // AI Sync session cards with stagger
-      gsap.fromTo('.sync-card',
-        { x: 40, opacity: 0, rotateY: 5 },
-        {
-          x: 0, opacity: 1, rotateY: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out',
-          scrollTrigger: { trigger: '.sync-card', start: 'top 75%' }
-        }
-      );
-
-      // Phase cards with 3D entrance
       gsap.fromTo('.phase-card',
-        { y: 60, opacity: 0, rotateX: 10 },
+        { y: 40, opacity: 0 },
         {
-          y: 0, opacity: 1, rotateX: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
-          scrollTrigger: { trigger: '#phases-section', start: 'top 65%' }
+          y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: '#phases-section', start: 'top 70%' }
         }
       );
 
-      // Output items slide in
       gsap.fromTo('.output-item',
-        { x: -30, opacity: 0 },
+        { x: -20, opacity: 0 },
         {
-          x: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '#outputs-section', start: 'top 65%' }
+          x: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out',
+          scrollTrigger: { trigger: '#outputs-section', start: 'top 70%' }
         }
       );
-
-      // Section dividers
-      gsap.fromTo('.section-line',
-        { scaleX: 0 },
-        {
-          scaleX: 1, duration: 1.2, ease: 'power3.inOut',
-          scrollTrigger: { trigger: '.section-line', start: 'top 85%' }
-        }
-      );
-
-      // Pricing card entrance
-      gsap.fromTo('.pricing-card',
-        { y: 40, opacity: 0, scale: 0.98 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.pricing-card', start: 'top 70%' }
-        }
-      );
-
     }, pageRef);
 
     return () => ctx.revert();
@@ -115,17 +65,11 @@ const SparkPage = () => {
       <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-[#E6E6E1]">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#E6E6E1] via-[#E6E6E1] to-[#d4d4cf]"></div>
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.03) 1px, transparent 0)',
+            backgroundSize: '32px 32px'
+          }}></div>
         </div>
-
-        {/* Floating decorative elements */}
-        <FloatingShapes variant="light" />
-        <GlowOrb color="rgba(0, 0, 0, 0.04)" size={700} position="topRight" blur={180} />
-        <AnimatedGrid variant="light" className="opacity-40" />
-
-        {/* Decorative corner accents */}
-        <div className="absolute top-8 left-8 w-20 h-20 border-l-2 border-t-2 border-black/10"></div>
-        <div className="absolute top-8 right-8 w-20 h-20 border-r-2 border-t-2 border-black/10"></div>
-        <div className="absolute bottom-8 left-8 w-20 h-20 border-l-2 border-b-2 border-black/10"></div>
 
         <div className="relative z-10 max-w-5xl">
           <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/50 mb-4">1-2 Weeks</div>
@@ -146,19 +90,15 @@ const SparkPage = () => {
               Start onboarding <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
-              From DKK 75,000<br/>Scoped to complexity
+              1-2 weeks<br/>Scoped to complexity
             </span>
           </div>
         </div>
       </section>
 
       {/* WHY ONBOARDING MATTERS */}
-      <section className="relative py-24 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden">
-        {/* Animated glow */}
-        <div className="glow-pulse absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-[150px]"></div>
-        <AnimatedGrid variant="dark" className="opacity-20" />
-
-        <div className="relative z-10 max-w-[1400px] mx-auto">
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">Why onboarding matters</h2>
             <p className="text-xl text-[#E6E6E1]/80 font-medium leading-relaxed mb-8">
@@ -187,10 +127,10 @@ const SparkPage = () => {
                 desc: "Identify stakeholders, establish communication protocols, define escalation paths. Everyone knows their role."
               }
             ].map((item, i) => (
-              <div key={i} className="why-card border border-white/10 rounded-xl p-8 hover:border-white/20 hover:bg-white/5 transition-all duration-300">
+              <div key={i} className="border border-white/10 rounded-xl p-8">
                 <item.icon size={32} className="text-[#E6E6E1]/60 mb-4" />
                 <h3 className="text-xl font-bold uppercase tracking-tight mb-3">{item.title}</h3>
-                <p className="text-[#E6E6E1]/60 font-medium">{item.desc}</p>
+                <p className="text-[#E6E6E1]/70 font-medium">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -198,10 +138,8 @@ const SparkPage = () => {
       </section>
 
       {/* AI SYNC SESSIONS - SCOPE CREATION */}
-      <section className="relative py-24 px-6 md:px-16 bg-[#E6E6E1] overflow-hidden">
-        <FloatingShapes variant="light" />
-
-        <div className="relative z-10 max-w-[1400px] mx-auto">
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-4">No scope docs? No problem.</div>
@@ -218,41 +156,41 @@ const SparkPage = () => {
               </div>
             </div>
 
-            <div className="space-y-4" style={{ perspective: '1000px' }}>
+            <div className="space-y-4">
               {/* The Why */}
-              <div className="sync-card bg-white rounded-xl p-6 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all duration-300">
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
                 <div className="flex justify-between items-start mb-3">
                   <div>
                     <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 1</div>
                     <h3 className="text-xl font-bold uppercase tracking-tight">The Why</h3>
                   </div>
-                  <span className="font-mono text-xs text-black/40 bg-black/5 px-2 py-1 rounded">15-20 min</span>
+                  <span className="font-mono text-xs text-black/50">15-20 min</span>
                 </div>
                 <p className="text-black/70 font-medium text-sm mb-3">Strategy, ambition, customer promises. What success looks like.</p>
                 <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Sponsors & Leadership</div>
               </div>
 
               {/* The What */}
-              <div className="sync-card bg-white rounded-xl p-6 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all duration-300">
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
                 <div className="flex justify-between items-start mb-3">
                   <div>
                     <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 2</div>
                     <h3 className="text-xl font-bold uppercase tracking-tight">The What</h3>
                   </div>
-                  <span className="font-mono text-xs text-black/40 bg-black/5 px-2 py-1 rounded">25-30 min</span>
+                  <span className="font-mono text-xs text-black/50">25-30 min</span>
                 </div>
                 <p className="text-black/70 font-medium text-sm mb-3">Operational reality, process truth. How the work actually happens today.</p>
                 <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Domain Experts</div>
               </div>
 
               {/* The How */}
-              <div className="sync-card bg-white rounded-xl p-6 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all duration-300">
+              <div className="bg-white rounded-xl p-6 border-2 border-black">
                 <div className="flex justify-between items-start mb-3">
                   <div>
                     <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 3</div>
                     <h3 className="text-xl font-bold uppercase tracking-tight">The How</h3>
                   </div>
-                  <span className="font-mono text-xs text-black/40 bg-black/5 px-2 py-1 rounded">30-45 min</span>
+                  <span className="font-mono text-xs text-black/50">30-45 min</span>
                 </div>
                 <p className="text-black/70 font-medium text-sm mb-3">Technical depth, system constraints. What's possible and what's not.</p>
                 <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Architects & Engineers</div>
@@ -411,16 +349,13 @@ const SparkPage = () => {
       />
 
       {/* PRICING */}
-      <section className="relative py-24 bg-[#E6E6E1] px-6 md:px-16 overflow-hidden">
-        <FloatingShapes variant="light" />
-
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="pricing-card bg-white rounded-xl p-10 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+      <section className="py-24 bg-[#E6E6E1] px-6 md:px-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-white rounded-xl p-10 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
             <div className="text-center mb-8">
-              <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Investment</div>
+              <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Engagement</div>
               <h2 className="text-4xl font-bold uppercase tracking-tighter mb-2">The Spark</h2>
-              <div className="font-mono text-5xl font-bold">From 75,000 <span className="text-lg text-black/50">DKK</span></div>
-              <p className="text-black/60 font-medium mt-2">Scoped to organizational complexity</p>
+              <p className="text-xl text-black/80 font-medium mt-2">Scoped to organizational complexity</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">

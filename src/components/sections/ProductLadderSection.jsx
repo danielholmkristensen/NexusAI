@@ -16,7 +16,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
       duration: '1-2 Weeks',
       tagline: 'Get ready for AI delivery',
       description: 'Structured onboarding that prepares your organization to receive and benefit from AI Development as a Service. Infrastructure, governance, team alignment.',
-      price: 'From DKK 75,000',
+      price: 'Scoped engagement',
       to: '/the-spark',
       cta: 'Learn more'
     },
@@ -36,7 +36,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
       duration: 'Ongoing',
       tagline: 'Visibility. Control. Continuity.',
       description: 'The Command Center for AI-driven development. Real-time dashboards, session management, and operational control across all engagements.',
-      price: 'SLA-based',
+      price: 'Yearly SLA',
       to: '/the-core',
       cta: 'Learn more'
     }

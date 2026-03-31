@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Code2, Shield, FileText, TestTube, Check, Clock, Layers } from 'lucide-react';
-import { MagneticButton, FloatingShapes, GlowOrb, AnimatedGrid } from '../components/common';
+import { MagneticButton } from '../components/common';
 import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
 import { useInquiry } from '../context/InquiryContext';
@@ -24,76 +24,26 @@ const CatalystPage = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      // Enhanced hero animation
       gsap.fromTo('.hero-anim',
-        { y: 60, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1.4, stagger: 0.1, ease: 'power4.out', delay: 0.3 }
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.2, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
       );
 
-      // Floating glow animation
-      gsap.to('.glow-pulse', {
-        scale: 1.2,
-        opacity: 0.6,
-        duration: 5,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true
-      });
-
-      // Stats cards with scale entrance
-      gsap.fromTo('.stat-card',
-        { y: 40, opacity: 0, scale: 0.95 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 0.7, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.stat-card', start: 'top 75%' }
-        }
-      );
-
-      // Guarantee cards with 3D rotation
       gsap.fromTo('.guarantee-card',
-        { y: 50, opacity: 0, rotateX: 10 },
+        { y: 40, opacity: 0 },
         {
-          y: 0, opacity: 1, rotateX: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
-          scrollTrigger: { trigger: '#guarantees-section', start: 'top 65%' }
+          y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: '#guarantees-section', start: 'top 70%' }
         }
       );
 
-      // Process steps slide in
       gsap.fromTo('.process-step',
-        { x: -40, opacity: 0 },
+        { x: -30, opacity: 0 },
         {
-          x: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power3.out',
-          scrollTrigger: { trigger: '#process-section', start: 'top 65%' }
+          x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: '#process-section', start: 'top 70%' }
         }
       );
-
-      // Engineering box animation
-      gsap.fromTo('.engineering-box',
-        { x: 40, opacity: 0 },
-        {
-          x: 0, opacity: 1, duration: 1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.engineering-box', start: 'top 70%' }
-        }
-      );
-
-      // Pricing card entrance
-      gsap.fromTo('.pricing-card',
-        { y: 50, opacity: 0, scale: 0.98 },
-        {
-          y: 0, opacity: 1, scale: 1, duration: 1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.pricing-card', start: 'top 70%' }
-        }
-      );
-
-      // Section lines
-      gsap.fromTo('.section-line',
-        { scaleX: 0 },
-        {
-          scaleX: 1, duration: 1.2, ease: 'power3.inOut',
-          scrollTrigger: { trigger: '.section-line', start: 'top 85%' }
-        }
-      );
-
     }, pageRef);
 
     return () => ctx.revert();
@@ -113,14 +63,12 @@ const CatalystPage = () => {
 
       {/* HERO */}
       <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-black text-[#E6E6E1]">
-        {/* Floating shapes and glow */}
-        <FloatingShapes variant="dark" />
-        <div className="glow-pulse absolute top-1/3 right-1/4 w-[600px] h-[600px] bg-white/5 rounded-full blur-[200px]"></div>
-        <AnimatedGrid variant="dark" className="opacity-30" />
-
-        {/* Corner accents */}
-        <div className="absolute top-8 left-8 w-20 h-20 border-l border-t border-white/10"></div>
-        <div className="absolute top-8 right-8 w-20 h-20 border-r border-t border-white/10"></div>
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.03) 1px, transparent 0)',
+            backgroundSize: '48px 48px'
+          }}></div>
+        </div>
 
         <div className="relative z-10 max-w-5xl">
           <div className="hero-anim font-mono text-sm uppercase tracking-widest text-[#E6E6E1]/50 mb-4">8-12 Weeks</div>
@@ -148,10 +96,8 @@ const CatalystPage = () => {
       </section>
 
       {/* WHAT IS ADAAS */}
-      <section className="relative py-24 px-6 md:px-16 bg-[#E6E6E1] overflow-hidden">
-        <FloatingShapes variant="light" />
-
-        <div className="relative z-10 max-w-[1400px] mx-auto">
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-16">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">AI Development as a Service</h2>
             <p className="text-xl text-black/80 font-medium leading-relaxed mb-6">
@@ -166,10 +112,10 @@ const CatalystPage = () => {
             {[
               { num: "80%+", label: "Test Coverage", desc: "Every deliverable" },
               { num: "8-12", label: "Weeks", desc: "Typical timeline" },
-              { num: "∞", label: "Perpetual", desc: "Licence included" },
+              { num: "100%", label: "Your Code", desc: "No lock-in" },
               { num: "Fixed", label: "Price", desc: "Agreed upfront" }
             ].map((stat, i) => (
-              <div key={i} className="stat-card bg-white rounded-xl p-6 border-2 border-black text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5 transition-all duration-300">
+              <div key={i} className="bg-white rounded-xl p-6 border-2 border-black text-center">
                 <div className="font-mono text-4xl font-bold mb-2">{stat.num}</div>
                 <div className="font-bold uppercase tracking-tight">{stat.label}</div>
                 <div className="text-sm text-black/60">{stat.desc}</div>
@@ -180,11 +126,8 @@ const CatalystPage = () => {
       </section>
 
       {/* GUARANTEES */}
-      <section id="guarantees-section" className="relative py-24 px-6 md:px-16 bg-black text-[#E6E6E1] overflow-hidden">
-        <GlowOrb color="rgba(230, 230, 225, 0.04)" size={600} position="bottomLeft" blur={180} />
-        <AnimatedGrid variant="dark" className="opacity-20" />
-
-        <div className="relative z-10 max-w-[1400px] mx-auto">
+      <section id="guarantees-section" className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">What We Guarantee</h2>
             <p className="text-xl font-medium text-[#E6E6E1]/70 max-w-2xl">Every Catalyst engagement includes these non-negotiables.</p>
