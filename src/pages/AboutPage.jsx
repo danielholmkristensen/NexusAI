@@ -12,33 +12,104 @@ const AboutPage = () => {
   const pageRef = useRef(null);
   const { openInquiry } = useInquiry();
 
-  const founders = [
+  const team = [
     {
       initials: "DHK",
-      name: "Daniel Holm Kristensen",
-      title: "Co-Founder",
-      image: "/daniel.jpg",
-      imagePosition: "center 30%",
-      bio: "Daniel is a transformation leader who has guided engineering teams through billion-kroner technology programs at STARK Group, TDC, Telenor, and Adecco. He specializes in aligning leadership, rebuilding momentum in complex programs, and ensuring technology investments deliver real impact.",
+      name: "Daniel H. Kristensen",
+      title: "Founder",
+      pedigree: "STARK Group · TDC · Telenor · Adecco · INSEAD",
+      bio: "Daniel is a transformation leader who has guided engineering teams through billion-kroner technology programmes at STARK Group, TDC, Telenor, and Adecco. He specialises in aligning leadership, rebuilding momentum in complex programmes, and ensuring technology investments deliver real business impact.",
       credentials: [
-        "Led enterprise transformations across 200+ person programs",
-        "Background in M&A (Deloitte) and startup founding (ChefsClub, exited)"
+        "Led enterprise transformations across 200+ person programmes",
+        "Background in M&A (Deloitte) and startup founding (ChefsClub, exited)",
+        "INSEAD Entrepreneurship Bootcamp · CBS MSc Applied"
       ],
-      quote: "There's a gap between AI generating code and AI engineering software. We close that gap — one project at a time."
+      quote: "The gap is no longer generating code. The gap is integrating autonomous agents into complex enterprise architecture — securely, reliably, and profitably. That is what we solve."
     },
     {
-      initials: "ME",
-      name: "Morten Elk",
-      title: "Co-Founder",
-      image: "/morten.jpg",
-      imagePosition: "center top",
-      bio: "Morten combines scientific rigor with entrepreneurial execution. With a PhD in Physics and decades of building technology businesses, he brings analytical depth to understanding what actually works in engineering practice.",
+      initials: "MvK",
+      name: "Mandy van Kesteren",
+      title: "Delivery",
+      pedigree: "Group SVP Digital Channels, The Adecco Group · IMD",
+      bio: "Mandy is a seasoned executive with a strong background in digital transformation, marketing, and IT. At The Adecco Group she led the global transformation of digital channels — including web, app, chatbot, and AI agents — enhancing candidate and client experiences across 60+ countries.",
       credentials: [
-        "PhD Physics, University of Copenhagen",
-        "CEO of SimpleSite; Founder of Nordic Growth Hackers",
-        "Entrepreneur and investor in Copenhagen's technology ecosystem"
+        "Group SVP of Digital Channels and Web Services, The Adecco Group",
+        "Group SVP of Marketing Operations and Transformation",
+        "IT Leadership, IMD · BASc IT Project Management, Fontys University"
       ],
-      quote: "The best engineering practices are discovered through rigorous observation, not invented through theory. We measure what works."
+      quote: "The enterprises that win the next decade will be those that integrate agentic systems into their core operations today — not as experiments, but as production infrastructure."
+    },
+    {
+      initials: "RC",
+      name: "Roger Carvalho",
+      title: "Delivery",
+      pedigree: "Chair of Technical Design Authority, The Adecco Group · MSF Netherlands",
+      bio: "Roger is a senior infrastructure and cloud architect with over 15 years of experience. At The Adecco Group he served as Chair of the Technical Design Authority, governing cloud architecture for 50+ global websites across all Adecco brands. He now serves as Senior Infrastructure Advisor at Artsen zonder Grenzen Nederland (MSF), managing mission-critical systems for field operations.",
+      credentials: [
+        "Microsoft Certified: Cybersecurity Architect Expert · Azure Security Engineer",
+        "VMware Certified Professional (VCP6 & VCP5): Data Center Virtualization",
+        "Certified Master IT Specialist (The Open Group)"
+      ],
+      quote: "Agentic systems are only as reliable as the infrastructure they run on. Getting that layer right is what separates a proof of concept from a production system."
+    },
+    {
+      initials: "CF",
+      name: "Christoph Frei",
+      title: "Delivery",
+      pedigree: "Interim CTO/CIO · DCSO · Twill by Maersk · Berlin",
+      bio: "Christoph is a Berlin-based independent technology executive operating through Frei IT Services & Consulting UG. He brings a career spanning senior engineering leadership, interim CTO/CIO mandates, and security architecture across European technology companies — including Head of Security Engineering at DCSO Deutsche Cyber-Sicherheitsorganisation and Interim CTO at Twill by Maersk.",
+      credentials: [
+        "Head of Security Engineering at DCSO, Germany's premier public-private cybersecurity organisation",
+        "Interim CTO at Twill by Maersk (Maersk's digital freight platform)",
+        "Diplom in Informatik, Karlsruhe Institute of Technology (KIT)"
+      ],
+      quote: "Security in agentic systems is not a feature you add at the end. It is an architectural decision you make at the beginning."
+    },
+    {
+      initials: "SLA",
+      name: "Steffen Lund Andersen",
+      title: "Delivery",
+      pedigree: "Head of Engineering & Chief Architect, Qampo · Aarhus University",
+      bio: "Steffen is an experienced IT consultant and technical leader with a background in secure software development. He currently serves as Head of Engineering & Chief Architect at Qampo, a decision science company, where he leads the engineering organisation and defines the technical architecture for AI-driven decision systems.",
+      credentials: [
+        "Head of Engineering & Chief Architect at Qampo (decision science)",
+        "CSSLP (Certified Secure Software Lifecycle Professional)",
+        "BSc Computer Science, Aarhus University"
+      ],
+      quote: "The difference between a demo and a production system is the engineering discipline behind it. That discipline is what we bring."
+    }
+  ];
+
+  const advisors = [
+    {
+      domain: "Data Science & ML",
+      name: "Prayson Wilfred Daniel",
+      pedigree: "Principal Data Scientist, Norlys · Team _42",
+      bio: "Production-grade data science and autonomous systems. Speaker at GOTO Copenhagen and GOTO Aarhus. MSc Information Technology & Persuasive Design, Aalborg University."
+    },
+    {
+      domain: "Applied Analytics",
+      name: "Simon Eiriksson",
+      pedigree: "Eiriksson Consulting · Technical University of Denmark",
+      bio: "End-to-end analytics and shipped ML systems. MSc Mathematical Modelling & Computation, DTU. Specialist in probabilistic ML, Bayesian inference, and generative modelling."
+    },
+    {
+      domain: "Developer Experience",
+      name: "Kræn Hansen",
+      pedigree: "Developer Experience Engineer, ElevenLabs · MongoDB",
+      bio: "Developer tooling and infrastructure for AI-native products. Contributed to Realm JS at MongoDB and the Node.js Conformance Test Suite. MSc Computer Science, DTU."
+    },
+    {
+      domain: "Security & Trust Architecture",
+      name: "Thomas J. Frivold",
+      pedigree: "Cyber Security Program Manager, Aker BP · WEF contributor",
+      bio: "Cybersecurity, risk evaluation, and zero-trust architecture. Contributed to a World Economic Forum paper on zero-trust models. Cand.Merc International Studies, Copenhagen Business School."
+    },
+    {
+      domain: "Infrastructure & Programme Management",
+      name: "Nana Lin",
+      pedigree: "Director, The LEGO Group · IMD · INSEAD",
+      bio: "Enterprise-scale platform infrastructure and engineering leadership. Director at The LEGO Group since 2021, responsible for platform architecture and the LEGO Play App (7M+ users). IMD executive programme, INSEAD."
     }
   ];
 
@@ -94,12 +165,12 @@ const AboutPage = () => {
         path="/about"
       />
       <OrganizationSchema />
-      {founders.map((founder) => (
+      {team.map((member) => (
         <FounderSchema
-          key={founder.name}
-          name={founder.name}
-          jobTitle={founder.title}
-          description={founder.bio}
+          key={member.name}
+          name={member.name}
+          jobTitle={member.title}
+          description={member.bio}
         />
       ))}
       <BreadcrumbSchema items={[
@@ -182,32 +253,29 @@ const AboutPage = () => {
             Enterprise transformation experience, AI product leadership, and technical depth. We build software for companies who need it done right.
           </p>
 
-          <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {founders.map((founder) => (
+          <div className="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {team.map((member) => (
               <div
-                key={founder.name}
+                key={member.name}
                 className="founder-card bg-[#111] rounded-xl border-4 border-white/20 overflow-hidden group hover:border-white/40 transition-colors"
               >
-                {/* Founder Photo */}
-                <div style={{ height: '320px', backgroundColor: '#1a1a1a', overflow: 'hidden' }}>
-                  <img
-                    src={founder.image}
-                    alt={founder.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: founder.imagePosition }}
-                  />
-                </div>
-
                 {/* Content */}
                 <div className="p-8">
-                  <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-2">{founder.title}</div>
-                  <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">{founder.name}</h3>
+                  {/* Initials badge */}
+                  <div className="inline-block bg-white/10 px-3 py-1.5 rounded mb-4">
+                    <span className="font-mono text-sm font-bold tracking-wider text-[#E6E6E1]">{member.initials}</span>
+                  </div>
+
+                  <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-2">{member.title}</div>
+                  <h3 className="text-2xl font-bold uppercase tracking-tight mb-2">{member.name}</h3>
+                  <p className="text-sm text-[#E6E6E1]/60 font-medium mb-4">{member.pedigree}</p>
                   <p className="text-[#E6E6E1]/70 font-medium text-sm mb-6 leading-relaxed">
-                    {founder.bio}
+                    {member.bio}
                   </p>
 
                   {/* Credentials */}
                   <ul className="space-y-2 mb-6">
-                    {founder.credentials.map((cred, i) => (
+                    {member.credentials.map((cred, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-[#E6E6E1]/50 font-medium">
                         <div className="w-1 h-1 rounded-full bg-[#E6E6E1]/30 mt-1.5 flex-shrink-0"></div>
                         {cred}
@@ -216,10 +284,10 @@ const AboutPage = () => {
                   </ul>
 
                   {/* Quote */}
-                  {founder.quote && (
+                  {member.quote && (
                     <div className="border-t border-white/10 pt-6">
                       <p className="text-sm italic text-[#E6E6E1]/60">
-                        "{founder.quote}"
+                        "{member.quote}"
                       </p>
                     </div>
                   )}
@@ -250,31 +318,55 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* F. BASED IN DENMARK */}
+      {/* F. ADVISORY BOARD */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">Advisory Board</h2>
+          <p className="text-xl text-black/70 font-medium mb-16 max-w-2xl">
+            Domain experts who extend our reach into specialised areas — from ML infrastructure to security architecture.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {advisors.map((advisor) => (
+              <div
+                key={advisor.name}
+                className="bg-white rounded-xl p-6 border-2 border-black/10 hover:border-black/30 transition-colors"
+              >
+                <div className="font-mono text-xs uppercase tracking-wider text-black/40 mb-3">{advisor.domain}</div>
+                <h3 className="text-xl font-bold tracking-tight mb-1">{advisor.name}</h3>
+                <p className="text-sm text-black/60 font-medium mb-3">{advisor.pedigree}</p>
+                <p className="text-sm text-black/70 leading-relaxed">{advisor.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* G. FOUNDED IN DENMARK */}
       <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
-                Based in Denmark
+                Founded in Denmark, Based in Europe
               </h2>
               <p className="text-lg text-[#E6E6E1]/70 font-medium mb-6 leading-relaxed">
-                We're a Danish company building software for enterprises across the Nordics and beyond.
+                We're a Danish company with a distributed team building software for enterprises across Europe.
               </p>
               <p className="text-lg text-[#E6E6E1]/70 font-medium leading-relaxed">
                 Close enough for face-to-face when it matters. Remote-first for everything else.
               </p>
             </div>
             <div className="bg-[#111] rounded-xl p-8 border-4 border-white/20">
-              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-4">Location</div>
-              <p className="text-2xl font-bold mb-2">Copenhagen, Denmark</p>
-              <p className="text-[#E6E6E1]/60 font-medium">Building for enterprises across the Nordics and Europe</p>
+              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-4">Locations</div>
+              <p className="text-2xl font-bold mb-2">Copenhagen · Amsterdam · Zurich · Berlin · Aarhus</p>
+              <p className="text-[#E6E6E1]/60 font-medium">Building for enterprises across Europe</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* G. GET IN TOUCH */}
+      {/* H. GET IN TOUCH */}
       <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white rounded-xl p-12 md:p-16 border-4 border-black shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]">
