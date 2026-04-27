@@ -260,17 +260,11 @@ const ArticleReader = ({ article, practitionerName }) => {
 
         {/* Newsletter signup */}
         <div className="mt-16 p-8 md:p-12 bg-black text-[#E6E6E1] text-center">
-          <h3 className="text-xl md:text-2xl font-bold uppercase tracking-tight mb-4">
-            Don't miss the next interview
-          </h3>
-          <p className="text-[#E6E6E1]/60 mb-6 max-w-md mx-auto">
-            We publish new practitioner interviews regularly. Get notified when the next one drops.
-          </p>
           <a
             href="mailto:daniel.holm@agenticagency.dev?subject=Newsletter%20Signup&body=Sign%20me%20up%20please!"
-            className="inline-block px-8 py-4 bg-[#E6E6E1] text-black font-bold uppercase tracking-wider hover:bg-white transition-colors"
+            className="inline-block px-8 py-4 bg-[#E6E6E1] text-black font-bold tracking-wide hover:bg-white transition-colors text-lg"
           >
-            Subscribe to Updates
+            Send AI practitioner long-form interviews to my inbox, please.
           </a>
         </div>
       </div>
