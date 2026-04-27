@@ -16,7 +16,7 @@ const AboutPage = () => {
     {
       initials: "DHK",
       name: "Daniel Holm Kristensen",
-      title: "Co-Founder",
+      title: "Founder",
       image: "/daniel.jpg",
       imagePosition: "center 30%",
       bio: "Daniel is a transformation leader who has guided engineering teams through billion-kroner technology programs at STARK Group, TDC, Telenor, and Adecco. He specializes in aligning leadership, rebuilding momentum in complex programs, and ensuring technology investments deliver real impact.",
@@ -25,20 +25,6 @@ const AboutPage = () => {
         "Background in M&A (Deloitte) and startup founding (ChefsClub, exited)"
       ],
       quote: "There's a gap between using AI tools and engineering with them systematically. We help teams close that gap."
-    },
-    {
-      initials: "ME",
-      name: "Morten Elk",
-      title: "Co-Founder",
-      image: "/morten.jpg",
-      imagePosition: "center top",
-      bio: "Morten combines scientific rigor with entrepreneurial execution. With a PhD in Physics and decades of building technology businesses, he brings analytical depth to understanding what actually works in engineering practice.",
-      credentials: [
-        "PhD Physics, University of Copenhagen",
-        "CEO of SimpleSite; Founder of Nordic Growth Hackers",
-        "Entrepreneur and investor in Copenhagen's technology ecosystem"
-      ],
-      quote: "The best engineering practices are discovered through rigorous observation, not invented through theory. We measure what works."
     }
   ];
 
