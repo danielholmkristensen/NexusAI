@@ -260,11 +260,14 @@ const ArticleReader = ({ article, practitionerName }) => {
 
         {/* Newsletter signup */}
         <div className="mt-16 p-8 md:p-12 bg-black text-[#E6E6E1] text-center">
+          <p className="text-[#E6E6E1]/50 text-sm mb-4 italic">
+            You've made it this far. Might as well commit.
+          </p>
           <a
             href="mailto:daniel.holm@agenticagency.dev?subject=Newsletter%20Signup&body=Sign%20me%20up%20please!"
-            className="inline-block px-8 py-4 bg-[#E6E6E1] text-black font-bold tracking-wide hover:bg-white transition-colors text-lg"
+            className="inline-block px-8 py-4 bg-[#E6E6E1] text-black font-medium hover:bg-white transition-colors"
           >
-            Send AI practitioner long-form interviews to my inbox, please.
+            Do send me more of this sort of thing.
           </a>
         </div>
       </div>
