@@ -109,38 +109,48 @@ const PractitionerPage = () => {
                 <span className="font-mono text-xs text-[#E6E6E1]/30">10 slides</span>
               </div>
 
-              {/* Mock carousel slide */}
-              <div className="aspect-square bg-[#0a0a0a] p-8 flex flex-col justify-between">
-                <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/30">
-                  01/10 — Cover
+              {practitioner.carouselUrl ? (
+                /* Embedded PDF carousel */
+                <div className="aspect-square bg-[#0a0a0a] relative">
+                  <iframe
+                    src={`${practitioner.carouselUrl}#view=FitH&toolbar=0&navpanes=0`}
+                    className="w-full h-full"
+                    title={`${practitioner.name} Carousel`}
+                  />
                 </div>
-                <div>
-                  <div className="w-12 h-0.5 bg-[#E6E6E1]/30 mb-6"></div>
-                  <p className="text-2xl font-bold leading-tight mb-6">
-                    "{practitioner.pullQuote.split('.')[0]}."
-                  </p>
+              ) : (
+                /* Mock carousel slide */
+                <div className="aspect-square bg-[#0a0a0a] p-8 flex flex-col justify-between">
+                  <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/30">
+                    01/10 — Cover
+                  </div>
                   <div>
-                    <p className="font-bold">{practitioner.name}</p>
-                    <p className="text-sm text-[#E6E6E1]/50">
-                      {practitioner.title}{practitioner.organisation ? `, ${practitioner.organisation}` : ''}
+                    <div className="w-12 h-0.5 bg-[#E6E6E1]/30 mb-6"></div>
+                    <p className="text-2xl font-bold leading-tight mb-6">
+                      "{practitioner.pullQuote.split('.')[0]}."
                     </p>
+                    <div>
+                      <p className="font-bold">{practitioner.name}</p>
+                      <p className="text-sm text-[#E6E6E1]/50">
+                        {practitioner.title}{practitioner.organisation ? `, ${practitioner.organisation}` : ''}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/20">
+                    Agentic Agency
                   </div>
                 </div>
-                <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/20">
-                  Agentic Agency
-                </div>
-              </div>
+              )}
 
               <div className="p-4 border-t border-white/5">
-                {practitioner.reelUrl ? (
+                {practitioner.carouselUrl ? (
                   <a
-                    href={practitioner.reelUrl}
+                    href={practitioner.carouselUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 text-sm font-medium text-[#E6E6E1]/70 hover:text-[#E6E6E1] transition-colors"
                   >
-                    <Linkedin size={16} />
-                    View full carousel on LinkedIn
+                    View full carousel
                     <ArrowUpRight size={14} />
                   </a>
                 ) : (

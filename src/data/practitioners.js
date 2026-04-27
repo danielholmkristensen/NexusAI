@@ -12,28 +12,29 @@ export const practitioners = [
     title: "Principal Data Scientist",
     organisation: "Norlys",
     location: "Denmark",
-    pedigree: "Norlys · Team _42 · GOTO Speaker",
+    pedigree: "Norlys · Team _42 · Data Innovation Summit Speaker",
     portrait: "/practitioners/prayson.jpg",
     linkedInUrl: "https://www.linkedin.com/in/praysonwilfreddaniel/",
+    carouselUrl: "/practitioners/prayson_carousel.pdf",
     reelUrl: null, // LinkedIn reel URL when available
-    tagline: "Production-grade data science and autonomous systems",
-    bio: `Prayson is a Principal Data Scientist at Norlys, one of Denmark's largest energy companies, where he builds production-grade machine learning systems that operate at scale. He's a regular speaker at GOTO Copenhagen and GOTO Aarhus, sharing insights on practical AI implementation.
+    tagline: "Solve the problem. Do not stop due to imperfect conditions.",
+    bio: `Prayson didn't start with code. He started with theology and philosophy — and modelled free will with Bayesian probability. The bridge to data science was shorter than it looks.
 
-His work spans the full lifecycle of ML systems — from experimentation through deployment and monitoring. He brings a practitioner's perspective on what it actually takes to move AI from notebooks to production.`,
+Now he leads Team _42 at Norlys, Denmark's largest energy company serving 1 million homes. His team operates outside standard SAFe cadence with a mandate from the top: idea to production in under 5 days. 5 projects in 3 weeks. They're not running pilots — they're shipping agent-based systems into live infrastructure.`,
     credentials: [
       "Principal Data Scientist at Norlys (Denmark's largest energy company)",
-      "Speaker at GOTO Copenhagen and GOTO Aarhus",
-      "MSc Information Technology & Persuasive Design, Aalborg University",
-      "Core contributor to Team _42 open-source ML tools"
+      "Leads Team _42: 15-person cross-domain squad with executive mandate",
+      "Speaking at Data Innovation Summit, Stockholm, May 2026",
+      "MSc Information Technology & Persuasive Design, Aalborg University"
     ],
     topics: [
       "Production ML systems",
-      "Agent architectures",
-      "MLOps and deployment",
-      "Data engineering at scale"
+      "The Seal Team model",
+      "Data-first decision making",
+      "Agentic systems at scale"
     ],
-    pullQuote: "The gap between a working model and a production system is where most AI projects fail. That's the gap we need to talk about more.",
-    interviewTeaser: "On building ML systems that actually ship, the realities of production AI, and why engineering discipline matters more than model sophistication.",
+    pullQuote: "Do not stop due to imperfect conditions. Solve the problem.",
+    interviewTeaser: "On the Seal Team model at Norlys, why every LLM wears mascara, and why the eureka moments have plateaued — the bottleneck isn't intelligence, it's context.",
     publishedAt: "2024-04-15",
     episode: 1
   },
