@@ -14,7 +14,7 @@ export const practitioners = [
     location: "Denmark",
     pedigree: "Norlys · Team _42 · Data Innovation Summit Speaker",
     portrait: "/practitioners/prayson.jpg",
-    linkedInUrl: "https://www.linkedin.com/in/praysonwilfreddaniel/",
+    linkedInUrl: "https://www.linkedin.com/in/prayson/",
     carouselUrl: "/practitioners/prayson_carousel.pdf",
     reelUrl: null, // LinkedIn reel URL when available
     tagline: "Solve the problem. Do not stop due to imperfect conditions.",
