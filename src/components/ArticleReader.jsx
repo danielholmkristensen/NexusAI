@@ -61,7 +61,6 @@ const formatInline = (text) => {
 };
 
 // Image component for different placement modes
-// All images crop from the right to hide Gemini watermarks
 const ArticleImage = ({ image, mode }) => {
   if (!image) return null;
 
@@ -69,11 +68,11 @@ const ArticleImage = ({ image, mode }) => {
     case 'full-bleed':
       return (
         <figure className="my-12 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32">
-          <div className="relative bg-black overflow-hidden">
+          <div className="relative bg-black">
             <img
               src={image.src}
               alt={image.caption || ''}
-              className="w-[105%] h-auto object-cover object-left"
+              className="w-full h-auto"
             />
           </div>
           {image.caption && (
@@ -86,11 +85,11 @@ const ArticleImage = ({ image, mode }) => {
 
     case 'inset-left':
       return (
-        <figure className="float-left w-[45%] mr-6 mb-4 mt-2 border-r border-[#1A1A1A] overflow-hidden">
+        <figure className="float-left w-[45%] mr-6 mb-4 mt-2 border-r border-[#1A1A1A]">
           <img
             src={image.src}
             alt={image.caption || ''}
-            className="w-[110%] h-auto pr-4 object-cover object-left"
+            className="w-full h-auto pr-4"
           />
           {image.caption && (
             <figcaption className="mt-2 pr-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#5A5A55]">
@@ -102,11 +101,11 @@ const ArticleImage = ({ image, mode }) => {
 
     case 'inset-right':
       return (
-        <figure className="float-right w-[45%] ml-6 mb-4 mt-2 border-l border-[#1A1A1A] overflow-hidden">
+        <figure className="float-right w-[45%] ml-6 mb-4 mt-2 border-l border-[#1A1A1A]">
           <img
             src={image.src}
             alt={image.caption || ''}
-            className="w-[110%] h-auto pl-4 object-cover object-left"
+            className="w-full h-auto pl-4"
           />
           {image.caption && (
             <figcaption className="mt-2 pl-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#5A5A55]">
@@ -159,15 +158,15 @@ const SectionBreak = () => {
   );
 };
 
-// Closer image with fade - crops right edge to hide watermark
+// Closer image with fade
 const CloserImage = ({ image }) => {
   return (
-    <figure className="relative my-16 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32 overflow-hidden">
+    <figure className="relative my-16 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32">
       <div className="relative">
         <img
           src={image.src}
           alt={image.caption || ''}
-          className="w-[105%] h-auto object-cover object-left"
+          className="w-full h-auto"
         />
         {/* Fade to page background at top */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#FAFAF7] to-transparent" />
