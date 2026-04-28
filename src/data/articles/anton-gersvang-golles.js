@@ -142,7 +142,7 @@ It is the line of a 26-year-old who has built and rebuilt small teams more times
       title: "THE NEXT PARADIGM",
       pullquote: {
         text: "I would not bet that Anthropic is the clear winner in the next paradigm too.",
-        backgroundImage: "/practitioners/anton/08-concrete-bed.jpg"
+        backgroundImage: null  // Plain black background
       },
       content: `I asked him what he was watching beyond his backyard. *Are we entering another paradigm?* he says.
 

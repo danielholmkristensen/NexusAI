@@ -61,6 +61,7 @@ const formatInline = (text) => {
 };
 
 // Image component for different placement modes
+// All images crop from the right to hide Gemini watermarks
 const ArticleImage = ({ image, mode }) => {
   if (!image) return null;
 
@@ -68,11 +69,11 @@ const ArticleImage = ({ image, mode }) => {
     case 'full-bleed':
       return (
         <figure className="my-12 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32">
-          <div className="relative bg-black">
+          <div className="relative bg-black overflow-hidden">
             <img
               src={image.src}
               alt={image.caption || ''}
-              className="w-full h-auto"
+              className="w-[105%] h-auto object-cover object-left"
             />
           </div>
           {image.caption && (
@@ -85,11 +86,11 @@ const ArticleImage = ({ image, mode }) => {
 
     case 'inset-left':
       return (
-        <figure className="float-left w-[45%] mr-6 mb-4 mt-2 border-r border-[#1A1A1A]">
+        <figure className="float-left w-[45%] mr-6 mb-4 mt-2 border-r border-[#1A1A1A] overflow-hidden">
           <img
             src={image.src}
             alt={image.caption || ''}
-            className="w-full h-auto pr-4"
+            className="w-[110%] h-auto pr-4 object-cover object-left"
           />
           {image.caption && (
             <figcaption className="mt-2 pr-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#5A5A55]">
@@ -101,11 +102,11 @@ const ArticleImage = ({ image, mode }) => {
 
     case 'inset-right':
       return (
-        <figure className="float-right w-[45%] ml-6 mb-4 mt-2 border-l border-[#1A1A1A]">
+        <figure className="float-right w-[45%] ml-6 mb-4 mt-2 border-l border-[#1A1A1A] overflow-hidden">
           <img
             src={image.src}
             alt={image.caption || ''}
-            className="w-full h-auto pl-4"
+            className="w-[110%] h-auto pl-4 object-cover object-left"
           />
           {image.caption && (
             <figcaption className="mt-2 pl-4 font-mono text-[11px] uppercase tracking-[0.08em] text-[#5A5A55]">
@@ -120,15 +121,23 @@ const ArticleImage = ({ image, mode }) => {
   }
 };
 
-// Pullquote with background image
+// Pullquote with optional background image (plain black if no image)
+// Background crops from right to hide watermarks
 const PullquotePanel = ({ text, backgroundImage }) => {
   return (
-    <div className="relative my-16 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32 min-h-[400px] flex items-center justify-center">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      />
-      <div className="absolute inset-0 bg-black/30" />
+    <div className="relative my-16 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32 min-h-[400px] flex items-center justify-center bg-black overflow-hidden">
+      {backgroundImage && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-left"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundSize: '105% auto'
+            }}
+          />
+          <div className="absolute inset-0 bg-black/30" />
+        </>
+      )}
       <blockquote className="relative z-10 text-white text-center px-8 max-w-[32ch] mx-auto">
         <p className="font-['Space_Grotesk'] font-normal italic text-[44px] md:text-[56px] leading-tight">
           {text}
@@ -150,15 +159,15 @@ const SectionBreak = () => {
   );
 };
 
-// Closer image with fade
+// Closer image with fade - crops right edge to hide watermark
 const CloserImage = ({ image }) => {
   return (
-    <figure className="relative my-16 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32">
+    <figure className="relative my-16 -mx-6 md:-mx-8 lg:-mx-16 xl:-mx-32 overflow-hidden">
       <div className="relative">
         <img
           src={image.src}
           alt={image.caption || ''}
-          className="w-full h-auto"
+          className="w-[105%] h-auto object-cover object-left"
         />
         {/* Fade to page background at top */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#FAFAF7] to-transparent" />
@@ -216,13 +225,13 @@ const ArticleReader = ({ article, practitionerName }) => {
     // Collapsed state - compelling entry point with hero image
     return (
       <section className="bg-[#FAFAF7]">
-        {/* Hero image */}
+        {/* Hero image - centered on subject, crops right edge to hide watermark */}
         {article.heroImage && (
-          <div className="relative w-full pt-20">
+          <div className="relative w-full pt-20 overflow-hidden">
             <img
               src={article.heroImage}
               alt=""
-              className="w-full h-[60vh] md:h-[70vh] object-cover object-top"
+              className="w-[105%] h-[60vh] md:h-[70vh] object-cover object-[center_20%]"
             />
             <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#FAFAF7] to-transparent" />
           </div>
@@ -326,13 +335,13 @@ const ArticleReader = ({ article, practitionerName }) => {
         </div>
       </nav>
 
-      {/* Hero image for expanded state */}
+      {/* Hero image for expanded state - centered on subject, crops right edge */}
       {article.heroImage && (
-        <div className="relative w-full pt-20">
+        <div className="relative w-full pt-20 overflow-hidden">
           <img
             src={article.heroImage}
             alt=""
-            className="w-full h-[50vh] md:h-[60vh] object-cover object-top"
+            className="w-[105%] h-[50vh] md:h-[60vh] object-cover object-[center_20%]"
           />
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent" />
         </div>
