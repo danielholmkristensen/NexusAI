@@ -231,7 +231,7 @@ const ArticleReader = ({ article, practitionerName }) => {
             <img
               src={article.heroImage}
               alt=""
-              className="w-[105%] h-[60vh] md:h-[70vh] object-cover object-[center_20%]"
+              className="w-[105%] h-[75vh] md:h-[85vh] object-cover object-[center_15%]"
             />
             <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#FAFAF7] to-transparent" />
           </div>
@@ -341,7 +341,7 @@ const ArticleReader = ({ article, practitionerName }) => {
           <img
             src={article.heroImage}
             alt=""
-            className="w-[105%] h-[50vh] md:h-[60vh] object-cover object-[center_20%]"
+            className="w-[105%] h-[65vh] md:h-[75vh] object-cover object-[center_15%]"
           />
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAF7] to-transparent" />
         </div>
