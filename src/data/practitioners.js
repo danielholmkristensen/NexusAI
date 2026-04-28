@@ -110,7 +110,7 @@ She brings the perspective of someone who has shipped at massive scale, navigati
     location: "Denmark",
     pedigree: "Simply.TV · Halfspace/Accenture · University of Copenhagen",
     portrait: "/practitioners/anton.jpg",
-    linkedInUrl: "https://www.linkedin.com/in/antongersvang/",
+    linkedInUrl: "https://www.linkedin.com/in/golles/",
     reelUrl: null,
     carouselUrl: null,
     articleSlug: "anton-gersvang-golles",
