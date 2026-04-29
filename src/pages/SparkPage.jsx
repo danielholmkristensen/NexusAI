@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, MessageSquare, Layers } from 'lucide-react';
+import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, Layers } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
@@ -14,12 +14,11 @@ const SparkPage = () => {
   const { openInquiry } = useInquiry();
 
   const sparkFAQs = [
-    { q: "How long does The Spark take?", a: "1-2 weeks depending on project complexity. Simpler projects scope faster. Complex enterprises with many integrations take the full duration." },
     { q: "What do we need to prepare?", a: "Whatever you have — project descriptions, process diagrams, feature specs, screen mockups. Don't have documentation? No problem. Our AI Sync Sessions capture context directly from your stakeholders through structured conversations." },
-    { q: "Is The Spark mandatory before The Catalyst?", a: "Strongly recommended. Without proper scope and context, the build suffers. The Spark ensures we're building the right thing, the right way, from day one." },
+    { q: "Is The Spark mandatory before The Catalyst?", a: "Strongly recommended. Without proper scope and context, the build suffers. The Spark ensures we're building the right thing, the right way, from the start." },
     { q: "What if we already know exactly what we want?", a: "Great — The Spark will be faster. We'll validate your specifications, map integrations, and lock the architecture. Even well-prepared teams benefit from explicit scope documentation." },
     { q: "Who needs to be involved?", a: "Business sponsor who knows the 'why', domain experts who know the 'what', and technical stakeholders who know the 'where' and 'how'. We guide the sessions." },
-    { q: "What do we get at the end?", a: "A complete Development Scope: feature breakdown, screen specifications, technical architecture, integration map, fixed timeline, and fixed price. Everything needed to start The Catalyst immediately." }
+    { q: "What do we get at the end?", a: "A complete Development Scope: feature breakdown, screen specifications, technical architecture, integration map, and fixed price. Everything needed to start The Catalyst immediately." }
   ];
 
   useEffect(() => {
@@ -72,7 +71,7 @@ const SparkPage = () => {
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/50 mb-4">1-2 Weeks</div>
+          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/50 mb-4">{'>'} 01</div>
           <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-4 text-black">
             THE SPARK
           </h1>
@@ -82,16 +81,13 @@ const SparkPage = () => {
           <p className="hero-anim text-lg text-black/60 max-w-2xl mb-12 font-medium">
             Before we write a line of code, we nail the context — what you're building, for who, and why. Alignment now means speed later. This is the foundation for everything that follows.
           </p>
-          <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
+          <div className="hero-anim">
             <MagneticButton
               onClick={() => openInquiry('spark', 'Start onboarding')}
               className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
             >
               Start onboarding <ArrowUpRight size={20} />
             </MagneticButton>
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-black/60 border-l-2 border-black/20 pl-4 py-1">
-              1-2 weeks<br/>Scoped to complexity
-            </span>
           </div>
         </div>
       </section>
@@ -153,13 +149,9 @@ const SparkPage = () => {
               <p className="text-xl text-black/80 font-medium leading-relaxed mb-6">
                 Great software starts with great understanding. Our AI-powered sync sessions capture context directly from your stakeholders — no lengthy interviews, no lost nuance.
               </p>
-              <p className="text-xl text-black/70 font-medium leading-relaxed mb-8">
+              <p className="text-xl text-black/70 font-medium leading-relaxed">
                 Three&nbsp;perspectives. One shared&nbsp;understanding. AI&nbsp;synthesizes, humans&nbsp;validate.
               </p>
-              <div className="flex items-center gap-3 text-sm font-medium text-black/60">
-                <MessageSquare size={18} />
-                <span>Replaces 2-4 weeks of traditional requirements gathering</span>
-              </div>
             </div>
 
             <div className="space-y-4">
@@ -220,7 +212,7 @@ const SparkPage = () => {
                 The Spark ends with something concrete: a fully scoped development engagement. Not a vague proposal — an executable plan.
               </p>
               <p className="text-lg text-[#E6E6E1]/60 font-medium leading-relaxed">
-                Features prioritised. Architecture decided. Timeline fixed. Price locked. You know exactly what you're getting before The Catalyst begins.
+                Features prioritised. Architecture decided. Price locked. You know exactly what you're getting before The Catalyst begins.
               </p>
             </div>
             <div className="bg-white/5 border border-white/10 rounded-xl p-8">
@@ -231,7 +223,6 @@ const SparkPage = () => {
                   "Technical architecture & stack decisions",
                   "Screen inventory with complexity ratings",
                   "Integration map & API contracts",
-                  "Fixed timeline with milestones",
                   "Fixed price — no surprises"
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-[#E6E6E1]/80 font-medium">
@@ -303,11 +294,11 @@ const SparkPage = () => {
               <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-2">Phase 3</div>
               <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-black">Scoping</h3>
               <p className="text-black/70 font-medium mb-6">
-                We lock the scope: timeline, milestones, deliverables. Fixed price. No ambiguity.
+                We lock the scope: deliverables, milestones, fixed price. No ambiguity.
               </p>
               <ul className="space-y-3">
                 {[
-                  "Timeline & milestones",
+                  "Deliverables & milestones",
                   "Acceptance criteria",
                   "Fixed pricing",
                   "Catalyst kickoff plan"
@@ -331,7 +322,7 @@ const SparkPage = () => {
               <div className="font-mono text-xs uppercase tracking-widest text-black/40 mb-4">The Valuable Assets</div>
               <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">Stepping Stones for Success</h2>
               <p className="text-xl font-medium text-black/70 mb-8">
-                In 1-2 weeks, you gain the foundation for a successful project — and perhaps, a long-lasting partnership.
+                You gain the foundation for a successful project — and perhaps, a long-lasting partnership.
               </p>
 
               <div className="space-y-4">
@@ -355,22 +346,9 @@ const SparkPage = () => {
             <div className="bg-black text-[#E6E6E1] rounded-xl p-10">
               <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-4">The Handoff</div>
               <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">Scope Locked. Build Begins.</h3>
-              <p className="text-[#E6E6E1]/80 font-medium mb-8">
-                The Spark ends with complete clarity. You know what's being built, how it's being built, when it ships, and what it costs. The Catalyst is pure execution.
+              <p className="text-[#E6E6E1]/80 font-medium">
+                The Spark ends with complete clarity. You know what's being built, how it's being built, and what it costs. The Catalyst is pure execution.
               </p>
-              <div className="border-t border-white/20 pt-8">
-                <p className="text-sm text-[#E6E6E1]/60 mb-6">Typical timeline:</p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs bg-white/10 px-3 py-1 rounded">1-2 weeks</span>
-                    <span className="font-medium">The Spark → Development Scope</span>
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-xs bg-white/10 px-3 py-1 rounded">Week 3+</span>
-                    <span className="font-medium">The Catalyst → Your Software</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -387,7 +365,7 @@ const SparkPage = () => {
         requirement="The Spark is recommended but not required. Organizations with mature DevOps may proceed directly to The Catalyst with expedited validation."
         alternateTitle="Already have mature infrastructure?"
         alternateItems={[
-          "We can run an expedited validation (2-3 days) instead of full onboarding.",
+          "We can run an expedited validation instead of full onboarding.",
           "If validation passes, proceed directly to The Catalyst.",
           "If gaps emerge, we scope targeted remediation."
         ]}
@@ -424,10 +402,10 @@ const SparkPage = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold uppercase tracking-tight mb-4">Timeline</h3>
+                <h3 className="font-bold uppercase tracking-tight mb-4">Process</h3>
                 <ul className="space-y-3">
                   {[
-                    "1-2 weeks typical duration",
+                    "Scoped to complexity",
                     "Parallel workstreams",
                     "Async collaboration where possible",
                     "Minimal stakeholder time required",
