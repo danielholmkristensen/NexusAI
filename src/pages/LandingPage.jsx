@@ -231,14 +231,16 @@ const LandingPage = () => {
       <section id="pivot-section" className="py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-4xl mx-auto">
           <p className="pivot-anim text-lg md:text-xl text-[#E6E6E1]/50 mb-6 leading-relaxed">
-            The gap is no longer generating code.<br/>
-            Every team can do that now.
+            The knowledge gap is how to effectively integrate agents into the enterprise.
           </p>
           <h2 className="pivot-anim text-4xl md:text-6xl lg:text-7xl font-bold uppercase leading-none tracking-tight mb-8">
-            The gap is<br/>integrating agents<br/>into the enterprise.
+            Co-creation<br/>between people<br/>and agents.
           </h2>
-          <p className="pivot-anim text-lg md:text-xl text-[#E6E6E1]/70 max-w-2xl leading-relaxed">
-            Autonomous systems require a fundamentally different approach to architecture, security, and governance. Getting them into production — reliably, safely, and at enterprise scale — is the hard problem. <strong className="text-[#E6E6E1]">That is what we solve.</strong>
+          <p className="pivot-anim text-lg md:text-xl text-[#E6E6E1]/70 max-w-3xl leading-relaxed mb-6">
+            Autonomous systems require a fundamentally different approach to co-creation between people and agents. The speed made possible changes the dynamics and how different roles interact. Fast code means more alignment is needed up front. The burden is now with product and architects, not development.
+          </p>
+          <p className="pivot-anim text-lg md:text-xl text-[#E6E6E1]/70 max-w-3xl leading-relaxed">
+            Fast code also means you can review something tangible, instead of discussing endlessly in meetings. Nailing this E2E process of delivering helpful agents or software — and getting them into production — reliably, safely, and at enterprise scale — is the hard problem. <strong className="text-[#E6E6E1]">That is what we solve.</strong>
           </p>
         </div>
       </section>
