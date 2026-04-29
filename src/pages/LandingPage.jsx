@@ -188,7 +188,7 @@ const LandingPage = () => {
             Rethink your<br/>Enterprise with<br/>Agents.
           </h1>
           <p className="hero-anim text-lg md:text-xl text-black/60 max-w-2xl mb-10 leading-relaxed">
-            One unifying experience to drive adoption and measure impact, weekly not yearly.
+            One unifying experience to drive adoption and measure impact, weekly not yearly. Move beyond AI assistants. We provide you with the platform that lets you design, build, and operate production-grade agentic systems that transform enterprise workflows — led by industry veterans, delivered with engineering rigour.
           </p>
           <div className="hero-anim flex items-center gap-6 flex-wrap">
             <MagneticButton
