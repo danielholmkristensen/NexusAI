@@ -167,8 +167,8 @@ const LandingPage = () => {
   return (
     <div ref={pageRef}>
       <PageMeta
-        title="Agentic Agency — Rethink your Enterprise with Agentically"
-        description="We help you move beyond AI assistants to design, build and operate agents, custom software and high value human workflows. Led by industry veterans."
+        title="Agentic Agency — Rethink your Enterprise with Agents"
+        description="One unifying experience to drive adoption and measure impact, weekly not yearly."
         path="/"
       />
       <OrganizationSchema />
@@ -185,10 +185,10 @@ const LandingPage = () => {
         <div className="relative z-10">
           <div className="hero-anim font-mono text-base text-black/40 tracking-widest mb-6">{'>>'}</div>
           <h1 className="hero-anim text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tight mb-8 text-black max-w-4xl">
-            Rethink your<br/>Enterprise with<br/>Agentically.
+            Rethink your<br/>Enterprise with<br/>Agents.
           </h1>
           <p className="hero-anim text-lg md:text-xl text-black/60 max-w-2xl mb-10 leading-relaxed">
-            We help you move smoothly beyond AI assistants, so that you can confidently design, build and operate agents, custom software and high value human workflows — where they have maximum impact. Led by industry veterans that have run billion DKK enterprise programs and been the IT backbone of Blue Chip companies.
+            One unifying experience to drive adoption and measure impact, weekly not yearly.
           </p>
           <div className="hero-anim flex items-center gap-6 flex-wrap">
             <MagneticButton
