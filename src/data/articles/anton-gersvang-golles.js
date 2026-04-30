@@ -1,11 +1,11 @@
 export const article = {
   headline: "THE PHYSICIST OF METADATA",
-  dek: "A 26-year-old in Copenhagen runs the AI factory deciding which Christmas Eve cover of Die Hard you'll see in 2027",
+  dek: "A 28-year-old in Copenhagen runs the AI factory deciding which Christmas Eve cover of Die Hard you'll see in 2027",
   byline: "Daniel Holm Kristensen",
   reportedDate: "April 2026",
   readingTime: "12 min read",
-  // Image paths relative to public folder
-  heroImage: "/practitioners/anton/01-hero-physicist.jpg",
+  // No hero image - removed per request
+  heroImage: null,
   sections: [
     {
       number: "I",
@@ -15,15 +15,15 @@ export const article = {
         mode: "full-bleed",
         caption: "The haystack grows. The needle does not."
       },
-      content: `Every December 24th, somewhere between the duck and the marzipan-wrapped almond, a Dane sits down on a sofa, opens his electronic program guide, and finds **Die Hard** on TV2 again. Bruce Willis, dirty-vested. *En juleklassiker*, the Danish description calls it — a Christmas classic, which depending on whom you ask is a fact of life or a national psychiatric condition.
+      content: `On a Danish Christmas Eve, somewhere between the duck and the marzipan-wrapped almond, a Dane sits down on a sofa, opens his electronic program guide, and finds **Die Hard** on TV2 again. Bruce Willis, dirty-vested. *En juleklassiker*, the Danish description calls it — a Christmas classic, which depending on whom you ask is a fact of life or a national psychiatric condition.
 
-The cover he sees is not the cover a viewer in Reykjavík sees, or the one an Austrian aggregator picked from the original German poster. Roughly 65,000 TV channels exist in the world; hundreds of streaming services sit on top. A film like *Die Hard* fans out across maybe 200 of them, in 30 languages. Until recently the work — title, image, genre tag, parental rating, blurb — was done almost entirely by humans: editors, freelancers, tier-three workers in Manila and Bucharest and Cairo, picking Bruce Willis stills at 3 a.m.
+The cover he sees is not the cover a viewer in Reykjavík sees, or the one an Austrian aggregator picked from the original German poster. Across Simply.TV's customer base — operators in roughly sixty countries — the same film carries dozens of titles, hundreds of cover variants, and synopses in every working European language. *Die Hard* alone shows up in around two hundred metadata permutations. Multiply that by every film, series, and live event running on those operators, and the catalogue is several hundred thousand titles deep at any moment. Until recently, the work — title, image, genre tag, parental rating, blurb — was done almost entirely by humans: editors, freelancers, tier-three workers picking Bruce Willis stills at 3 a.m.
 
-In Copenhagen, a 26-year-old computational physicist named **Anton Gersvang Golles** is automating that job away.
+In Copenhagen, a 28-year-old computational physicist named **Anton Gersvang Golles** is automating that job away.
 
 He puts it like this: *How hard is it to find a needle in a haystack? It depends a lot on how big the haystack is.*
 
-I caught Anton on a Friday morning in April, eighteen months out of his master's, four months into running the AI function at **Simply.TV** — the Danish B2B firm supplying that mountain of metadata to operators in roughly sixty countries. His company has, by his account, just crossed a real threshold: 99-point-something accuracy on enough features that the editors are, for the first time, being replaced by software he wrote.`
+I caught Anton on a Friday morning in April, eighteen months out of his master's, four months into running the AI function at **Simply.TV** — the Danish B2B firm supplying that mountain of metadata to operators in roughly sixty countries. His company has, by his account, just crossed a real threshold: 99-point-something precision on enough features that the cost equation around editorial labor has changed for good.`
     },
     {
       number: "II",
@@ -31,7 +31,7 @@ I caught Anton on a Friday morning in April, eighteen months out of his master's
       sectionBreakAfter: true,
       content: `The origin story is short. A third-year physics project at the **University of Copenhagen**: simulate a quantum many-body system, figure out what *phase* it's in. Anton, fresh into Python, started with **principal component analysis** — the linear-algebra hammer of every introductory ML class. PCA was fine. PCA was boring.
 
-Then somebody mentioned an *autoencoder*.
+Then his supervisor, Evert, mentioned an *autoencoder*.
 
 It is a neural network with a waist. Data goes in, gets squeezed through a narrow bottleneck of neurons, and is expanded back out. Training pushes the output toward the input — but the bottleneck is too narrow to memorize, so the network has to learn to compress. ZIP, but for one specific kind of data. ZIP, but learned.
 
@@ -47,11 +47,9 @@ For most engineers it is a useful trick. For Anton it was *the* idea. *In physic
       },
       content: `There is a deflating chapter where Anton tries to do what every ambitious physics-into-AI student in Europe was trying to do in 2024, and the universe says no.
 
-His master's at **Rokoko**, the Danish motion-capture company, was on **text-to-motion**: type "walk forward four steps and do a salsa twirl," get a clean motion sequence to drop into Blender or Unreal. Rokoko had the dataset — 1.2 million clips, 10,000+ hours, 50,000+ subjects. He built a transformer-diffusion model. He hit, in his words, *not enough training compute.*
+His master's at **Rokoko**, the Danish motion-capture company, was on **text-to-motion**: type "walk forward four steps and do a salsa twirl," get a clean motion sequence to drop into Blender or Unreal. Rokoko had the dataset. He built a transformer-diffusion model. He hit, in his words, *not enough training compute.*
 
-The numbers are worth seeing. A single Nvidia H100 SXM5 delivers roughly 4 petaflops at FP8 sparse, with 80 GB of HBM3 and 3.35 TB/s of memory bandwidth. A modest desktop GPU — an RTX 4090 — delivers about 0.66 petaflops, 24 GB, 1 TB/s. Five hundred H100s wired through NVLink and InfiniBand reach roughly 2 *exa*flops aggregate, with 40 TB of pooled memory and an interconnect that lets them cooperate as one machine.
-
-That is not a letter-to-novel ratio. It is closer to **a kayak versus an aircraft-carrier strike group** — a thousands-fold gap in compute, a thousands-fold gap in memory, and a connective tissue the kayak doesn't have. The thesis got top marks. The demo never shipped. The lesson — *find a problem where compute is not the limiting reagent* — is the most important lesson of his career.`
+The desktop GPU under his desk and the kind of cluster a frontier lab spins up for an experiment of this shape are not the same machine in any meaningful sense — closer to **a kayak versus an aircraft-carrier strike group**. A thousands-fold gap in raw compute, a thousands-fold gap in memory, and a connective interconnect the kayak does not have. The thesis got top marks. The demo never shipped. The lesson — *find a problem where compute is not the limiting reagent* — is the most important lesson of his career.`
     },
     {
       number: "IV",
@@ -61,11 +59,11 @@ That is not a letter-to-novel ratio. It is closer to **a kayak versus an aircraf
         mode: "inset-left",
         caption: "A forest of partly-overlapping descriptions."
       },
-      content: `A film is, as a corporate object, ten thousand metadata records. *Die Hard* is one example; *Pulp Fiction*, with its genre-tagging chaos, is another. Every distributor ships a metadata payload. Every channel and streamer enriches it: translates the synopsis, swaps the image, tags it against an internal genre tree, adds a local rating. The result is a forest of partly-overlapping descriptions of the same movie.
+      content: `A film is, as a corporate object, ten thousand metadata records. *Die Hard* is one example; *Pulp Fiction*, with its genre-tagging chaos, is another. Every distributor ships a metadata payload. Many channels and streamers tweak it before exposing it to viewers — translate the synopsis, swap the image, retag against an internal genre tree, add a local rating. The result is a forest of partly-overlapping descriptions of the same movie.
 
 Simply.TV makes sense of that forest. Roughly 450 people across 60 countries; many millions of operations per day. In April 2025, **Summit Partners** took a majority stake and stitched in **Red Bee Media's Content Discovery business**, giving them serious global reach.
 
-The engine, until recently, was human editorial labor: tier-three editors picking the best image for *Frozen* in Romanian, the best title for a Korean drama in Catalan. Each choice took seconds. Repeated billions of times, it became one of the larger pools of structured human-judgment data outside the major labs' RLHF farms — exactly what Anton needs to *evaluate* AI replacements. Most companies trying to deploy LLMs in production die because they have no ground truth. Simply.TV's previous decade is, viewed correctly, a perfectly-labeled best-of-N preference dataset. They did not know they were building it.`
+For most of the company's life, the work was done by editors picking the best image for *Frozen* in Romanian, the best title for a Korean drama in Catalan. Each choice took seconds. Stored, structured, queryable, that accumulated record turns out to be exactly what Anton needs to evaluate AI replacements — best-of-N preference data on every aesthetic axis of TV metadata. Most companies trying to deploy LLMs in production die because they have no ground truth. Simply.TV does.`
     },
     {
       number: "V",
@@ -76,9 +74,9 @@ The engine, until recently, was human editorial labor: tier-three editors pickin
       },
       content: `Process several hundred million metadata operations per day on a frontier model — Opus, GPT-4 Turbo class — and the math does not close. *We need to come down to roughly a hundredth of the price for it to make sense,* Anton says.
 
-A hundredth means **small models**: in April 2026, Google's **Gemini 2 Flash** plus a fleet of open-source models he declines to name on the record but any reader can guess — Llama, Qwen, Mistral. The frontier in this benchmark is not model quality. It is dollars per million tokens.
+A hundredth means **small models**: in April 2026, that means xAI's smaller Grok variants, Xiaomi's open-weight V2 Flash family, DeepSeek's distilled smalls, and a long tail of permissively-licensed open models. The frontier in this benchmark is not model quality. It is dollars per unit of applied agentic intelligence.
 
-The architecture is what gets fun. *The little one tries first*, he says. *It outputs both an answer and a confidence. If the confidence is high, we ship. If not, the master steps in* — a larger, more expensive model — *and tries the same problem.* Most queries — many millions a day — never see a frontier model.
+The architecture is what gets fun. *The little one tries first,* he says. *It outputs both an answer and a confidence. If the confidence is high, we ship. If not, the master steps in* — a larger, more expensive model — *and tries the same problem.* Most queries — many millions a day — never see a frontier model.
 
 This is a **cascade**. Cascades are old. They are also fashionable again, for the obvious reason: most production work is easy, and the expensive model only earns its keep on the hard tail. The work of his team is largely the work of figuring out where each cascade sits on the cost/quality frontier.`
     },
@@ -92,9 +90,7 @@ This is a **cascade**. Cascades are old. They are also fashionable again, for th
       },
       content: `I asked him what is hard. He paused — long enough that I could sense the level of thinking that went on in that pause — and said: *The last few percent of precision are what's hard.*
 
-Here is the thing about generative-AI demos that everyone in the industry knows and nobody admits in marketing copy: 80% is *easy*. 95% is hard. 99-point-something is no trivial feat.
-
-*95 percent is not good enough,* Anton says. *You have to be at 99-point-something to be on a level with a professional editor.* TV2 will accept some quirks. Disney+ has zero tolerance for a wrong image. A sci-fi fan opening Disney+ to find that *Andor* now shows a poster from another show will be on social media within minutes, and Disney+ will be on the phone with Simply.TV. The single wrong image is a contractual matter.
+Here is the thing about generative-AI demos that everyone in the industry knows and nobody admits in marketing copy: 80% is *easy*. 95% is hard. 99-point-something is no trivial feat. *95 percent is not good enough,* Anton says. *You have to be at 99-point-something to be on a level with a professional editor.* Tolerance is not uniform across customers, and an obviously wrong image on a high-profile streaming title can become a contractual matter within the hour.
 
 The interesting move is what he says next: he does not blame the models. He calls it *very much an AI engineering task. How do we handle our context, are we even asking for what we want?* The 2024–2025 frame was: if your product isn't good enough, wait for the next model. Anton's 2026 view is different. The recent gains, in his read, have come more from engineering practice than from the models. *I see no blockers to where we are aiming,* he says. *Put on the work clothes and keep going.*`
     },
@@ -126,7 +122,7 @@ Dream is where Anton's debt to **Andrej Karpathy** is most obvious. Karpathy —
 
 He has no tolerance for generalists. They have to be *good* at their thing. His interview question is the most condensed version of the philosophy I have heard from any modern engineering leader: *When you sit at the office, what is it that the others come over to your desk to ask about?* If the candidate cannot articulate a thing they are visibly the strongest at on the team, they are not the right hire. *We don't really need someone who is average at backend design and can also build a small agent,* he says. *Otherwise I could just do it myself with my Claude.*
 
-The model has, in 2026, become the new junior generalist. The humans worth hiring are durably better than the model at *something*. That floor moves up every quarter.`
+The humans worth hiring, in his framing, are durably better than the model at *something*. That floor moves up every quarter.`
     },
     {
       number: "IX",
@@ -135,7 +131,7 @@ The model has, in 2026, become the new junior generalist. The humans worth hirin
 
 *I would not normally cut below two,* he says — about technical teams, about working pairs. *Because the synergy between two people is enormously productive in all kinds of work — whether it's creative design, what should our brochures look like, or how to build this system. There is something magical that comes out of two brains working together.*
 
-It is the line of a 26-year-old who has built and rebuilt small teams more times in two years than most managers do in a decade.`
+It is the line of a 28-year-old who has thought hard about how a small team works.`
     },
     {
       number: "X",
@@ -146,11 +142,11 @@ It is the line of a 26-year-old who has built and rebuilt small teams more times
       },
       content: `I asked him what he was watching beyond his backyard. *Are we entering another paradigm?* he says.
 
-His read: there was an OpenAI moment — 2022 to 2023 — when ChatGPT was the only product. Then a brief Google moment in 2024. Then Anthropic, 2025 into early 2026, when Claude pulled ahead on the *coding* paradigm. Each era ended.
+His read: there was an OpenAI moment — 2022 to 2023 — when ChatGPT was the only product. Then a Google moment in 2025, when Gemini's long-context and pricing took the lead. Then Anthropic, late 2025 into early 2026, when Claude pulled ahead on the *coding* paradigm. Each era ended.
 
 The next, in his view, is **computer use** — the family of capabilities where an agent operates a graphical interface directly: opens a browser, clicks elements, types into forms, drags files. By autumn 2026, in his read, the technology crosses from tech demo to useful workflow.
 
-The reason it matters: an inferior model with hands-on tools beats a superior model in isolation. *You probably get better code output from a worse model that can really interact with its output*, he says, *than from a better model doing it semi-blind.* *I would not bet that Anthropic is the clear winner in the next paradigm too.* The implication for everyone else: decouple from your provider, run an eval suite, bet on capabilities.`
+The reason it matters: an inferior model with hands-on tools beats a superior model in isolation. *You probably get better code output from a worse model that can really interact with its output,* he says, *than from a better model doing it semi-blind.* *I would not bet that Anthropic is the clear winner in the next paradigm too.* The implication for everyone else: decouple from your provider, run an eval suite, bet on capabilities.`
     },
     {
       number: "XI",
@@ -175,7 +171,7 @@ The Wednesday-recorder anecdote is also a tell. Anton recorded our conversation 
 
 The deeper claim of Anton's career is that the right people for the next decade of AI work are the hybrids — the physicists who learned to ship, the game designers who learned to write evals, the psychologists who learned to draw a system architecture diagram.
 
-Next December 24th, the cover image of *Die Hard* on TV2 will be picked, almost certainly, by software an Anton-shaped person built. Same sweaty Bruce Willis. Nobody watching will think about who decided. That is the trick. That is always the trick. **Compression, when it works, is invisible.**`
+Come the next juleaften, the cover image of *Die Hard* on TV2 will be picked, almost certainly, by software an Anton-shaped person built. Same sweaty Bruce Willis. Wrong, probably, in fewer than one in ten thousand cases. Nobody watching will think about who decided. That is the trick. That is always the trick. **Compression, when it works, is invisible.**`
     }
   ],
   endnote: null,

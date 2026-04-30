@@ -115,7 +115,7 @@ She brings the perspective of someone who has shipped at massive scale, navigati
     carouselUrl: null,
     articleSlug: "anton-gersvang-golles",
     tagline: "Comprehension is compression. Compression is comprehension.",
-    bio: `Anton is a 26-year-old computational physicist running the AI function at Simply.TV — the Danish B2B firm that supplies TV metadata to operators in roughly sixty countries. His company has just crossed a quietly historic threshold: 99-point-x-percent accuracy, on enough of its features, that the editors have started, for real, to be replaced by software he wrote.
+    bio: `Anton is a 28-year-old computational physicist running the AI function at Simply.TV — the Danish B2B firm that supplies TV metadata to operators in roughly sixty countries. His company has just crossed a quietly historic threshold: 99-point-x-percent accuracy, on enough of its features, that the editors have started, for real, to be replaced by software he wrote.
 
 Before Simply.TV, Anton was at Halfspace (acquired by Accenture), advising Nordic enterprises on AI strategy. His master's thesis at University of Copenhagen was on text-to-motion generation. But the defining moment came earlier: a third-year physics project where he met the autoencoder and realized that comprehension and compression are the same thing.`,
     credentials: [
