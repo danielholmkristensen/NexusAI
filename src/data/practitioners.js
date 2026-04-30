@@ -105,7 +105,7 @@ She brings the perspective of someone who has shipped at massive scale, navigati
   {
     slug: "anton-gersvang-golles",
     name: "Anton Gersvang Golles",
-    title: "AI Lead",
+    title: "Head of AI",
     organisation: "Simply.TV",
     location: "Denmark",
     pedigree: "Simply.TV · Halfspace/Accenture · University of Copenhagen",
@@ -119,7 +119,7 @@ She brings the perspective of someone who has shipped at massive scale, navigati
 
 Before Simply.TV, Anton was at Halfspace (acquired by Accenture), advising Nordic enterprises on AI strategy. His master's thesis at University of Copenhagen was on text-to-motion generation. But the defining moment came earlier: a third-year physics project where he met the autoencoder and realized that comprehension and compression are the same thing.`,
     credentials: [
-      "AI Lead at Simply.TV (450 employees, 60 countries)",
+      "Head of AI at Simply.TV (450 employees, 60 countries)",
       "Former consultant at Halfspace/Accenture Nordic AI practice",
       "MSc Computational Physics, University of Copenhagen",
       "Rokoko motion-capture research"
