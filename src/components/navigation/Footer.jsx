@@ -1,31 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { WaitlistForm } from '../common';
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-[#E6E6E1]/60 pt-24 pb-12 px-6 md:px-16">
-      <div className="max-w-[1400px] mx-auto text-center mb-24">
-        <h2 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-6 text-[#E6E6E1]">
-          Ready for AI-powered delivery?
-        </h2>
-        <p className="text-xl font-medium mb-8 max-w-2xl mx-auto">
-          Fixed price. Enterprise quality. Perpetual licence included.
-        </p>
-
-        {/* Waitlist Form */}
-        <div className="max-w-xl mx-auto mb-8">
-          <WaitlistForm variant="dark" />
-        </div>
-
-        <Link
-          to="/about"
-          className="font-bold text-[#E6E6E1]/70 hover:text-[#E6E6E1] hover:underline underline-offset-4 transition-colors"
-        >
-          Questions? Talk to us →
-        </Link>
-      </div>
-
+    <footer className="bg-black text-[#E6E6E1]/60 pt-16 pb-12 px-6 md:px-16">
       <div className="max-w-[1400px] mx-auto">
         {/* Navigation Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm">
