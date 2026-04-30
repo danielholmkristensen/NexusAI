@@ -144,6 +144,21 @@ const LandingPage = () => {
         }
       );
 
+      // CTA
+      gsap.fromTo('.cta-reveal',
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#cta-section',
+            start: 'top 85%'
+          }
+        }
+      );
     }, pageRef);
 
     return () => ctx.revert();
@@ -394,6 +409,32 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* CTA SECTION */}
+      <section id="cta-section" className="py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1] text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="cta-reveal text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight leading-none mb-6">
+            Ready to build<br/>your agentic<br/>enterprise?
+          </h2>
+          <p className="cta-reveal text-[#E6E6E1]/55 mb-10 leading-relaxed">
+            Most engagements start with The Spark — mapping your agentic opportunity and defining the architecture. Fixed price. Full clarity.
+          </p>
+          <div className="cta-reveal flex flex-col items-center gap-6">
+            <MagneticButton
+              onClick={() => openInquiry('spark', 'Book a Strategy Session')}
+              className="bg-[#22c55e] text-black px-10 py-5 text-sm font-bold uppercase tracking-wider"
+            >
+              Book a Strategy Session <ArrowUpRight size={18} />
+            </MagneticButton>
+            <p className="text-xs text-[#E6E6E1]/30">No spam. We'll only contact you about your engagement.</p>
+            <a
+              href="mailto:hello@agenticagency.dev"
+              className="text-sm text-[#E6E6E1]/50 border-b border-[#E6E6E1]/20 pb-0.5 hover:text-[#E6E6E1] hover:border-[#E6E6E1] transition-colors"
+            >
+              Questions? Talk to us <ArrowUpRight size={12} className="inline ml-1" />
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
