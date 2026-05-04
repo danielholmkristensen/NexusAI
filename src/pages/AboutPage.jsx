@@ -222,7 +222,7 @@ const AboutPage = () => {
       <section id="values-section" className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">What we believe.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">Built into the Agentic OS.</h2>
             <p className="text-xl text-black/60 max-w-2xl mx-auto">
               Three principles that separate demos from production systems.
             </p>
@@ -238,16 +238,16 @@ const AboutPage = () => {
             </div>
             <div className="value-item bg-white rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <div className="font-mono text-sm text-black/30 mb-4">02</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Methodology over tools.</h3>
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Structure beats prompting.</h3>
               <p className="text-black/70">
-                Tools change every quarter. The discipline of engineering systematically with AI persists. Our process outlasts any single product.
+                Tools change every quarter. The Agentic OS encodes methodology into software. Your team inherits discipline, not documents.
               </p>
             </div>
             <div className="value-item bg-white rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <div className="font-mono text-sm text-black/30 mb-4">03</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Ship or it didn't happen.</h3>
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Production or it doesn't count.</h3>
               <p className="text-black/70">
-                We deliver production code, not slide decks. Real software. Real test coverage. Real documentation as a byproduct. The work speaks for itself.
+                The Agentic OS ships real software — tested, documented, deployed. Not slide decks. Not prototypes. The output speaks for itself.
               </p>
             </div>
           </div>
