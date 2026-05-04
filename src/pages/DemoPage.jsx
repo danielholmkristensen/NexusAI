@@ -273,6 +273,14 @@ export default function DemoPage() {
                 </p>
               </div>
             </div>
+
+            {/* Animated connector lines */}
+            <svg className="arch-connectors" viewBox="0 0 700 20" preserveAspectRatio="none">
+              <path className="connector-line line-1" d="M0,10 L700,10" />
+              <circle className="connector-dot dot-1" cx="175" cy="10" r="4" />
+              <circle className="connector-dot dot-2" cx="350" cy="10" r="4" />
+              <circle className="connector-dot dot-3" cx="525" cy="10" r="4" />
+            </svg>
           </div>
         </div>
       </section>
