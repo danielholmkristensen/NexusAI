@@ -8,7 +8,7 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm">
           <div>
-            <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Platform</h4>
+            <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Agentic OS</h4>
             <ul className="space-y-2">
               <li><Link to="/discover" className="hover:text-[#E6E6E1] transition-colors">Discover</Link></li>
               <li><Link to="/build" className="hover:text-[#E6E6E1] transition-colors">Build</Link></li>
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-3 bg-white/10 px-4 py-2 border border-white/20">
             <div className="w-2 h-2 rounded-full bg-[#E6E6E1]"></div>
-            <span className="font-mono text-xs tracking-wider uppercase">Accepting engagements for Q2 2026</span>
+            <span className="font-mono text-xs tracking-wider uppercase">Accepting design partners for Q2 2026</span>
           </div>
         </div>
       </div>

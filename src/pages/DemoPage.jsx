@@ -134,7 +134,7 @@ export default function DemoPage() {
             Not copilots. Not assistants. <strong>AA Operators support the journey towards autonomy — improving the Agentic OS every day.</strong>
           </p>
           <p className="demo-hero-status">
-            Pre-revenue. Building the platform. Looking for design partners.
+            Pre-revenue. Building the Agentic OS. Looking for design partners.
           </p>
         </div>
         <div className="demo-scroll-indicator">

@@ -11,33 +11,36 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
 
   const products = [
     {
-      id: 'spark',
-      name: 'THE SPARK',
-      duration: '1-2 Weeks',
+      id: 'discover',
+      name: 'DISCOVER',
+      subtitle: 'Agentic Studio',
+      duration: 'Phase 1',
       tagline: 'Scope it right. Build it once.',
       description: "Before development begins, we nail the context — what you're building, for who, and why. The foundation for AI Development as a Service.",
-      price: 'Scoped engagement',
-      to: '/the-spark',
+      price: 'Scoped phase',
+      to: '/discover',
       cta: 'Learn more'
     },
     {
-      id: 'catalyst',
-      name: 'THE CATALYST',
-      duration: '8-12 Weeks',
+      id: 'build',
+      name: 'BUILD',
+      subtitle: 'Agentic Studio',
+      duration: 'Phase 2',
       tagline: 'Enterprise software, delivered',
       description: 'Fixed-price AI-powered software development. Production-grade code with 80%+ test coverage, full documentation. Perpetual licence included.',
       price: 'Fixed price',
-      to: '/the-catalyst',
+      to: '/build',
       cta: 'Learn more'
     },
     {
-      id: 'core',
-      name: 'THE CORE',
-      duration: 'Ongoing',
+      id: 'operate',
+      name: 'OPERATE',
+      subtitle: 'Command Center',
+      duration: 'Phase 3',
       tagline: 'Visibility. Control. Continuity.',
-      description: 'The Command Center for AI-driven development. Real-time dashboards, session management, and operational control across all engagements.',
+      description: 'The Command Center for AI-driven development. Real-time dashboards, session management, and operational control across all phases.',
       price: 'Yearly SLA',
-      to: '/the-core',
+      to: '/operate',
       cta: 'Learn more'
     }
   ];
@@ -126,24 +129,24 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
           {/* Contextual CTAs */}
           {currentProduct && (
             <div className="mt-8 text-center">
-              {currentProduct === 'spark' && (
+              {currentProduct === 'discover' && (
                 <p className="text-black/70 font-medium">
-                  Ready for delivery? <Link to="/the-catalyst" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore The Catalyst →</Link>
+                  Ready for delivery? <Link to="/build" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore Build →</Link>
                 </p>
               )}
-              {currentProduct === 'catalyst' && (
+              {currentProduct === 'build' && (
                 <div className="space-y-2">
                   <p className="text-black/70 font-medium">
-                    Need onboarding first? <Link to="/the-spark" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with The Spark →</Link>
+                    Need onboarding first? <Link to="/discover" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with Discover →</Link>
                   </p>
                   <p className="text-black/70 font-medium">
-                    Want ongoing visibility? <Link to="/the-core" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore The Core →</Link>
+                    Want ongoing visibility? <Link to="/operate" className="font-bold text-black underline underline-offset-4 hover:no-underline">Explore Operate →</Link>
                   </p>
                 </div>
               )}
-              {currentProduct === 'core' && (
+              {currentProduct === 'operate' && (
                 <p className="text-black/70 font-medium">
-                  Need a new engagement? <Link to="/the-catalyst" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with The Catalyst →</Link>
+                  Need a new phase? <Link to="/build" className="font-bold text-black underline underline-offset-4 hover:no-underline">Start with Build →</Link>
                 </p>
               )}
             </div>
@@ -172,7 +175,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
                 className="product-ladder-card group bg-white p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-300 flex flex-col"
               >
                 <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-2">
-                  {product.duration}
+                  {product.subtitle} • {product.duration}
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">
                   {product.name}

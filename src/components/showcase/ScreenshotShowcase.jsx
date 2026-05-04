@@ -16,7 +16,7 @@ const PHASE_COLORS = {
 };
 
 export function ScreenshotShowcase({
-  title = 'See the Platform in Action',
+  title = 'See the Agentic OS in Action',
   subtitle = 'From discovery to delivery',
   screenshots,
 }) {

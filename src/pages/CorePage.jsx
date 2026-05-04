@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Monitor, Check, Eye, ChevronDown, MessageCircle, Play } from 'lucide-react';
+import { ArrowUpRight, TrendingUp, Check, Shield, Clock, Activity, ChevronDown, MessageCircle, Zap, BarChart3, HeartPulse, Target } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { ProductLadderSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
@@ -14,13 +14,41 @@ const CorePage = () => {
   const { openInquiry } = useInquiry();
   const [expandedItem, setExpandedItem] = useState(null);
 
-  const coreFAQs = [
-    { q: "What is The Core?", a: "The Core is the Command Center for AI-driven development. Today: real-time dashboards, session management, and SLA-backed support. Tomorrow: a system that learns your preferences and anticipates your needs." },
-    { q: "Do we need it after The Catalyst?", a: "Optional but recommended. The Core provides ongoing visibility, support, and the ability to quickly spin up new engagements without re-onboarding." },
-    { q: "What's the vision?", a: "A Command Center that learns you. Where we author, you edit. Where we anticipate, you confirm. Each engagement makes the next one smoother. Friction approaches zero over time." },
-    { q: "What's included?", a: "One tier. High standards for all. Dashboard access, rapid response times, direct escalation, screen spec reviews, look & feel acceptance, and delivery sign-off. No feature gates." },
-    { q: "How is pricing structured?", a: "Yearly retainer based on scope of coverage. Contact us for a quote tailored to your operational needs." },
-    { q: "Can we add new Catalyst engagements through The Core?", a: "Yes — that's a key benefit. The Core maintains your organizational context, so new engagements start faster and integrate seamlessly." }
+  const operateFAQs = [
+    { q: "What is the Command Center?", a: "Your cockpit for everything we've built together. Real-time visibility into system health, ROI tracking, and operational metrics. Different stakeholders see different signals — but everyone sees what matters to them." },
+    { q: "Do we need Operate after Build?", a: "Optional but powerful. Without Operate, you take over maintenance. With Operate, you get SLA-backed support, continuous optimization, and the ability to spin up new engagements without re-onboarding." },
+    { q: "How does it work for our CFO?", a: "Henrik sees quarterly ROI dashboards, cost-per-feature metrics, and investment tracking. No technical jargon — just business outcomes mapped to dollars spent." },
+    { q: "How does it work for Operations?", a: "Hugo sees system health, uptime metrics, maintenance logs, and security posture. Real-time status, historical trends, and one-tap support requests." },
+    { q: "What's included in the retainer?", a: "Dashboard access for all stakeholders, SLA-backed response times, proactive monitoring, security patches, performance optimization, and priority access for new Build engagements." },
+    { q: "Can we add new features through Operate?", a: "Yes — that's a key benefit. Your organizational context is preserved, so new Build engagements start faster and integrate seamlessly with existing systems." }
+  ];
+
+  // The cast for Operate phase (icon badges, no color)
+  const operateCast = [
+    {
+      initials: "HC",
+      role: "Your CFO",
+      title: "Sponsor",
+      icon: TrendingUp,
+      signal: "ROI on track",
+      view: "Quarterly business outcomes"
+    },
+    {
+      initials: "HO",
+      role: "Your Ops Lead",
+      title: "Operations",
+      icon: Activity,
+      signal: "99.9% uptime",
+      view: "System health & maintenance"
+    },
+    {
+      initials: "SL",
+      role: "Your Product Owner",
+      title: "Product",
+      icon: Target,
+      signal: "4 features this quarter",
+      view: "Continuous improvement backlog"
+    }
   ];
 
   useEffect(() => {
@@ -30,33 +58,32 @@ const CorePage = () => {
         { y: 0, opacity: 1, duration: 1.2, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
       );
 
-      gsap.fromTo('.feature-card',
-        { y: 40, opacity: 0 },
+      gsap.fromTo('.quarter-card',
+        { y: 30, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.6, stagger: 0.12, ease: 'power3.out',
-          scrollTrigger: { trigger: '.feature-card', start: 'top 80%' }
+          y: 0, opacity: 1, duration: 0.6, stagger: 0.15, ease: 'power3.out',
+          scrollTrigger: { trigger: '#henrik-section', start: 'top 70%' }
         }
       );
 
-      // Morning demo animations
-      gsap.fromTo('.morning-card',
-        { x: -30, opacity: 0 },
+      gsap.fromTo('.ops-stat',
+        { scale: 0.9, opacity: 0 },
         {
-          x: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out',
-          scrollTrigger: { trigger: '#morning-demo', start: 'top 60%' }
+          scale: 1, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'back.out(1.4)',
+          scrollTrigger: { trigger: '#hugo-section', start: 'top 70%' }
         }
       );
 
-      gsap.fromTo('.morning-stat',
-        { y: 20, opacity: 0 },
+      gsap.fromTo('.cast-card',
+        { x: -20, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out',
-          scrollTrigger: { trigger: '#morning-demo', start: 'top 50%' }
+          x: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: '#stakeholders-section', start: 'top 70%' }
         }
       );
 
-      // Continuous pulse for live indicator
-      gsap.to('.morning-pulse', {
+      // Continuous pulse for live indicators
+      gsap.to('.live-pulse', {
         scale: 1.5,
         opacity: 0.3,
         duration: 1.2,
@@ -64,15 +91,6 @@ const CorePage = () => {
         repeat: -1,
         yoyo: true
       });
-
-      // Operations demo animations
-      gsap.fromTo('.ops-card',
-        { x: -20, opacity: 0 },
-        {
-          x: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '#ops-demo', start: 'top 60%' }
-        }
-      );
     }, pageRef);
 
     return () => ctx.revert();
@@ -81,690 +99,437 @@ const CorePage = () => {
   return (
     <div ref={pageRef}>
       <PageMeta
-        title="The Core — Command Center for AI Development"
-        description="Real-time visibility into AI-driven development. Dashboards, session management, operational control, and SLA-backed support."
-        path="/the-core"
+        title="Operate — Command Center | Where ROI Becomes Visible"
+        description="Your cockpit for everything we've built. Henrik sees ROI. Hugo sees uptime. Everyone sees proof it worked. SLA-backed support and continuous improvement."
+        path="/operate"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },
-        { name: 'The Core', path: '/the-core' }
+        { name: 'Operate', path: '/operate' }
       ]} />
 
-      {/* HERO */}
-      <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-[#111] text-[#E6E6E1]">
+      {/* HERO - Henrik's Quarterly Review */}
+      <section className="relative min-h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-[#111] text-[#E6E6E1]">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0" style={{
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
             backgroundSize: '64px 64px'
           }}></div>
-          {/* Subtle glow effect */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#E6E6E1]/5 rounded-full blur-[200px]"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#8B5CF6]/5 rounded-full blur-[200px]"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl">
-          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-[#E6E6E1]/50 mb-4">Ongoing</div>
-          <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-4">
-            THE CORE
+          <div className="hero-anim flex items-center gap-3 mb-6">
+            <TrendingUp size={20} className="text-[#A78BFA]" />
+            <span className="font-mono text-sm uppercase tracking-widest text-[#E6E6E1]/50">
+              Henrik's quarterly review
+            </span>
+          </div>
+
+          <h1 className="hero-anim text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tighter mb-6">
+            "Show me the<br/>
+            <span className="text-[#A78BFA]">ROI."</span>
           </h1>
-          <p className="hero-anim text-xl md:text-2xl text-[#E6E6E1]/80 max-w-3xl mb-6 font-medium leading-snug">
-            Working with us should feel like nothing you've experienced before. <strong className="text-[#E6E6E1]">Effortless. Transparent. Delightful.</strong>
+
+          <p className="hero-anim text-xl md:text-2xl text-[#E6E6E1]/80 max-w-3xl mb-4 font-medium leading-snug">
+            Henrik opens the Command Center. Q2 results: <strong className="text-[#E6E6E1]">4 features shipped.</strong>
+            <br/>Cost per feature: 62% below industry benchmark. 99.9% uptime. Zero escalations.
           </p>
-          <p className="hero-anim text-lg text-[#E6E6E1]/60 max-w-2xl mb-12 font-medium">
-            We author. You edit. Real-time visibility. One-tap approvals. The more we work together, the less effort each interaction takes.
+
+          <p className="hero-anim text-lg text-[#E6E6E1]/50 max-w-2xl mb-12 font-medium">
+            This is what "it worked" looks like when the CFO can see it.
           </p>
+
           <div className="hero-anim flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <MagneticButton
-              onClick={() => openInquiry('core', 'Learn more')}
+              onClick={() => openInquiry('operate', 'See the Command Center')}
               className="bg-[#E6E6E1] text-black px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-white"
             >
-              Learn more <ArrowUpRight size={20} />
+              See the Command Center <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#E6E6E1]/60 border-l-2 border-[#E6E6E1]/20 pl-4 py-1">
-              SLA-based<br/>Yearly retainer
+              SLA-backed<br/>Yearly retainer
             </span>
           </div>
         </div>
       </section>
 
-      {/* PHASE 1: DEVELOPMENT — PRODUCT OWNER MORNING VIEW */}
-      <section id="morning-demo" className="py-24 px-6 md:px-16 bg-[#E6E6E1] overflow-hidden">
+      {/* HENRIK'S VIEW - The ROI Dashboard */}
+      <section id="henrik-section" className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <div className="font-mono text-xs uppercase tracking-widest text-black/40 mb-4">During Development</div>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-black mb-6">
-              Your Morning View
+          <div className="max-w-3xl mb-16">
+            <p className="font-mono text-sm uppercase tracking-widest text-black/50 mb-4">The Henrik View</p>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+              "The board wanted proof.<br/>I showed them this."
             </h2>
-            <p className="text-xl text-black/70 font-medium max-w-2xl mx-auto">
-              Open your dashboard. See what needs your attention. Three&nbsp;taps,&nbsp;done.
+            <p className="text-xl text-black/70 font-medium leading-relaxed">
+              Henrik doesn't care about sprint velocity or test coverage. He cares about business outcomes.
+              The Command Center speaks his language: features shipped, cost per feature, time to value.
             </p>
           </div>
 
-          {/* Command Center Demo - Development Phase */}
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-2xl border border-black/10">
-              {/* Nav Bar */}
-              <div className="bg-black text-[#E6E6E1] px-6 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <span className="font-bold text-sm">{'>>'} COMMAND CENTER</span>
-                  <span className="text-xs text-[#E6E6E1]/40">|</span>
-                  <span className="text-xs text-[#E6E6E1]/50">Development Phase</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-1">
-                    <span className="text-xs text-[#E6E6E1]/50">View:</span>
-                    <span className="text-xs font-medium">Product Owner</span>
-                  </div>
-                  <div className="flex gap-1">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span className="text-xs text-green-400">Live</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Welcome Banner */}
-              <div className="px-6 py-4 bg-gradient-to-r from-black/[0.03] to-transparent border-b border-black/5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-lg font-semibold text-black">Good morning, Product Owner</span>
-                    <p className="text-sm text-black/50 mt-0.5">3 items need your attention today</p>
-                  </div>
-                  <div className="text-right">
-                    <span className="text-xs text-black/40 font-mono">Week 6 of 8</span>
-                    <div className="h-1.5 w-32 bg-black/10 rounded-full mt-1.5 overflow-hidden">
-                      <div className="h-full bg-black rounded-full" style={{ width: '75%' }}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 grid lg:grid-cols-3 gap-6">
-                {/* Left: Feedback Queue */}
-                <div className="lg:col-span-2 space-y-4">
-                  <div className="bg-white rounded-xl border border-black/10 overflow-hidden">
-                    <div className="px-4 py-3 border-b border-black/5 flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <h4 className="font-semibold text-sm">Feedback Queue</h4>
-                        <span className="text-xs text-black/40">Your reviews</span>
-                      </div>
-                      <span className="px-2 py-0.5 bg-black text-[#E6E6E1] text-xs rounded-full font-bold">3 pending</span>
-                    </div>
-
-                    <div className="divide-y divide-black/5">
-                      {/* Feedback Item 1 - HIGH PRIORITY - EXPANDABLE */}
-                      <div className="morning-card border-l-4 border-amber-500 transition-all duration-300">
-                        <div
-                          className="p-4 hover:bg-black/[0.02] cursor-pointer"
-                          onClick={() => setExpandedItem(expandedItem === 'A1' ? null : 'A1')}
-                        >
-                          <div className="flex items-start gap-4">
-                            <div className="relative">
-                              <span className="w-8 h-8 bg-black/5 text-black text-xs font-bold rounded flex items-center justify-center shrink-0">A1</span>
-                              <span className="absolute -top-1 -right-1 w-2 h-2 bg-amber-500 rounded-full"></span>
-                            </div>
-                            <div className="flex-1 min-w-0">
-                              <div className="flex items-center gap-2 mb-1">
-                                <span className="font-medium text-sm">Dashboard Filters</span>
-                                <span className="px-1.5 py-0.5 bg-amber-500/10 text-amber-700 text-[10px] rounded font-medium">Blocking</span>
-                                <span className="text-xs text-black/40">10 min ago</span>
-                              </div>
-                              <p className="text-sm text-black/70">"Priority filter added as requested. Sort by urgency enabled."</p>
-                              <div className="text-xs text-black/40 mt-1">Your preferences pre-applied • <span className="text-amber-600">Blocks 2 other items</span></div>
-                            </div>
-                            <ChevronDown
-                              size={20}
-                              className={`text-black/30 transition-transform duration-300 ${expandedItem === 'A1' ? 'rotate-180' : ''}`}
-                            />
-                          </div>
-                        </div>
-
-                        {/* Expanded View */}
-                        <div className={`overflow-hidden transition-all duration-500 ease-out ${expandedItem === 'A1' ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                          <div className="bg-[#111] text-[#E6E6E1] p-6">
-                            {/* PiP Frame - Real Screenshot */}
-                            <div className="bg-black rounded-xl overflow-hidden mb-6 border border-white/10">
-                              <div className="bg-black/50 px-4 py-2 border-b border-white/10 flex items-center justify-between">
-                                <span className="text-xs text-white/50 font-mono">Preview: Invoice Discrepancy Queue</span>
-                                <div className="flex items-center gap-2">
-                                  <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                                  <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
-                                  <span className="w-2 h-2 rounded-full bg-green-500"></span>
-                                </div>
-                              </div>
-                              {/* Real Screenshot - No Blur */}
-                              <div className="relative overflow-hidden">
-                                <img
-                                  src="/preview-invoices-blurred.png"
-                                  alt="Dashboard preview"
-                                  className="w-full h-auto"
-                                />
-                                {/* Live indicator */}
-                                <div className="absolute bottom-4 right-4 bg-black/90 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/20 shadow-lg">
-                                  <span className="text-[10px] text-green-400 font-mono uppercase tracking-wider flex items-center gap-1.5">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                                    Live Preview
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Netflix-style Actions */}
-                            <div className="flex items-center gap-4">
-                              <button
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  setExpandedItem(null);
-                                }}
-                                className="flex-1 bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 transition-all duration-200 group"
-                              >
-                                <Check size={20} />
-                                <span>Looks Good</span>
-                                <span className="text-white/60 group-hover:text-white transition-colors">→ Next</span>
-                              </button>
-                              <a
-                                href="mailto:hello@agenticagency.dev?subject=I%20clicked%20Discuss%20%F0%9F%91%80&body=Hi%20Agentic%20Agency%2C%0A%0AI%20found%20your%20interactive%20Command%20Center%20demo%20and%20clicked%20%22Discuss%22%20%E2%80%94%20which%20means%20I%E2%80%99m%20curious%20about%20what%20it%E2%80%99s%20like%20to%20experience%20your%20AI-powered%20product%20feedback%20agent%20for%20real.%0A%0AI%E2%80%99d%20love%20to%20see%20a%20live%20demo%20%E2%80%94%20video%20call%20or%20in-person%2C%20whatever%20works.%0A%0ALooks%20good%20%E2%86%92%20Next.%0A%0A%5BJust%20press%20send%5D"
-                                onClick={(e) => e.stopPropagation()}
-                                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-medium py-4 px-6 rounded-xl transition-all duration-200"
-                              >
-                                <MessageCircle size={18} />
-                                <span>Discuss</span>
-                              </a>
-                            </div>
-
-                            {/* Quick feedback hint */}
-                            <p className="text-center text-white/30 text-xs mt-4">
-                              Approve to unblock 2 dependent items • Or start a conversation
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Feedback Item 2 */}
-                      <div className="morning-card p-4 border-l-4 border-purple-500 hover:bg-black/[0.02] transition-colors cursor-pointer group">
-                        <div className="flex items-start gap-4">
-                          <span className="w-8 h-8 bg-black/5 text-black text-xs font-bold rounded flex items-center justify-center shrink-0">B4</span>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className="font-medium text-sm">Invoice Module</span>
-                              <span className="px-1.5 py-0.5 bg-purple-500/10 text-purple-600 text-[10px] rounded font-medium">Look & Feel</span>
-                              <span className="text-xs text-black/40">2 hrs ago</span>
-                            </div>
-                            <p className="text-sm text-black/70">"Colour scheme aligned with your brand guidelines."</p>
-                            <div className="text-xs text-black/40 mt-1">Based on your previous approvals</div>
-                          </div>
-                          <button className="px-3 py-1.5 rounded-lg bg-green-500 text-white font-bold text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                            Looks Good →
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Feedback Item 3 - READY FOR SIGN-OFF */}
-                      <div className="morning-card p-4 border-l-4 border-green-500 hover:bg-black/[0.02] transition-colors cursor-pointer group">
-                        <div className="flex items-start gap-4">
-                          <div className="relative">
-                            <span className="w-8 h-8 bg-black/5 text-black text-xs font-bold rounded flex items-center justify-center shrink-0">D2</span>
-                            <span className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full"></span>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className="font-medium text-sm">Reporting Feature</span>
-                              <span className="px-1.5 py-0.5 bg-green-500/10 text-green-600 text-[10px] rounded font-medium">Ready</span>
-                              <span className="text-xs text-black/40">1 day ago</span>
-                            </div>
-                            <p className="text-sm text-black/70">"Feature complete. 94% test coverage. Ready for sign-off."</p>
-                            <div className="text-xs text-black/40 mt-1">All acceptance criteria met</div>
-                          </div>
-                          <button className="px-3 py-1.5 rounded-lg bg-green-500 text-white font-bold text-xs opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                            Accept →
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Resolved Item */}
-                      <div className="p-4 bg-black/[0.02]">
-                        <div className="flex items-start gap-4">
-                          <span className="w-8 h-8 bg-green-100 text-green-700 text-xs font-bold rounded flex items-center justify-center shrink-0">C1</span>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className="font-medium text-sm text-black/50">API Integration</span>
-                              <span className="text-xs text-black/30">2 days ago</span>
-                            </div>
-                            <p className="text-sm text-black/50">"Endpoint validation added per your feedback."</p>
-                            <div className="flex items-center gap-2 mt-2">
-                              <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded font-medium">Resolved</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right: Stats & Activity */}
-                <div className="space-y-4">
-                  {/* Sprint Progress */}
-                  <div className="bg-white rounded-xl border border-black/10 p-4">
-                    <h4 className="font-semibold text-sm mb-4">Sprint Progress</h4>
-                    <div className="grid grid-cols-3 gap-2 mb-4">
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-black">12</div>
-                        <div className="text-[10px] text-black/40 uppercase">Features</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-blue-600">3</div>
-                        <div className="text-[10px] text-black/40 uppercase">In Review</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-green-600">9</div>
-                        <div className="text-[10px] text-black/40 uppercase">Accepted</div>
-                      </div>
-                    </div>
-                    <div className="h-2 bg-black/10 rounded-full overflow-hidden">
-                      <div className="h-full bg-green-500 rounded-full" style={{ width: '75%' }}></div>
-                    </div>
-                  </div>
-
-                  {/* Activity Feed */}
-                  <div className="bg-white rounded-xl border border-black/10 overflow-hidden">
-                    <div className="px-4 py-3 border-b border-black/5 flex items-center justify-between">
-                      <h4 className="font-semibold text-sm">Activity Feed</h4>
-                      <div className="flex items-center gap-1">
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                        </span>
-                        <span className="text-[10px] text-green-600">Live</span>
-                      </div>
-                    </div>
-                    <div className="divide-y divide-black/5 text-xs">
-                      {[
-                        { time: "10:34", type: "feedback", text: "New spec ready for review" },
-                        { time: "10:32", type: "code", text: "Dashboard filters implemented" },
-                        { time: "10:28", type: "test", text: "287 tests passing (100%)" },
-                        { time: "09:45", type: "approved", text: "Invoice module approved" }
-                      ].map((item, i) => (
-                        <div key={i} className="morning-stat px-4 py-2 flex items-center gap-3">
-                          <span className="text-black/30 w-10 font-mono">{item.time}</span>
-                          <span className={`px-1.5 py-0.5 rounded text-[9px] font-medium ${
-                            item.type === 'feedback' ? 'bg-blue-100 text-blue-700' :
-                            item.type === 'approved' ? 'bg-green-100 text-green-700' :
-                            item.type === 'test' ? 'bg-purple-100 text-purple-700' :
-                            'bg-black/5 text-black/60'
-                          }`}>{item.type}</span>
-                          <span className="text-black/70 truncate">{item.text}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Response Time */}
-                  <div className="bg-black text-[#E6E6E1] rounded-xl p-4">
-                    <div className="text-[10px] uppercase tracking-wider text-[#E6E6E1]/50 mb-1">Avg Response</div>
-                    <div className="text-3xl font-bold">1.5 hrs</div>
-                    <div className="text-xs text-[#E6E6E1]/50 mt-1">Same-day turnaround</div>
-                  </div>
-                </div>
-              </div>
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
+              <div className="text-5xl font-black text-[#10B981] mb-2">4</div>
+              <div className="font-bold uppercase tracking-tight text-sm mb-1">Features Shipped</div>
+              <p className="text-xs text-black/50">This quarter</p>
             </div>
-
-            {/* Caption */}
-            <div className="text-center mt-8">
-              <p className="text-black/50 text-sm italic">
-                "Three taps. Done before your coffee gets cold."
-              </p>
+            <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
+              <div className="text-5xl font-black text-green-600 mb-2">62%</div>
+              <div className="font-bold uppercase tracking-tight text-sm mb-1">Below Benchmark</div>
+              <p className="text-xs text-black/50">Cost per feature</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BRIDGE: HANDOVER TO OPERATIONS */}
-      <section className="py-16 px-6 md:px-16 bg-black text-[#E6E6E1]">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#E6E6E1]/20"></div>
-            <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40">Then</div>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#E6E6E1]/20"></div>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-6">
-            Handover to Operations
-          </h2>
-          <p className="text-xl text-[#E6E6E1]/60 font-medium max-w-2xl mx-auto">
-            Development complete. Your software is live. Now it's about keeping it in peak condition — and that should be just as effortless.
-          </p>
-        </div>
-      </section>
-
-      {/* PHASE 2: OPERATIONS — PEAK CONDITION */}
-      <section id="ops-demo" className="py-24 px-6 md:px-16 bg-[#E6E6E1] overflow-hidden">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <div className="font-mono text-xs uppercase tracking-widest text-black/40 mb-4">During Operations</div>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter text-black mb-6">
-              Peak Condition
-            </h2>
-            <p className="text-xl text-black/70 font-medium max-w-2xl mx-auto">
-              Your operational dashboard — peace of mind at a glance. Everything running smoothly, always visible.
-            </p>
-          </div>
-
-          {/* Command Center Demo - Operations Phase */}
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-gray-100 rounded-2xl overflow-hidden shadow-2xl border border-black/10">
-              {/* Nav Bar */}
-              <div className="bg-black text-[#E6E6E1] px-6 py-3 flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <span className="font-bold text-sm">{'>>'} COMMAND CENTER</span>
-                  <span className="text-xs text-[#E6E6E1]/40">|</span>
-                  <span className="text-xs text-[#E6E6E1]/50">Operations</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-2 bg-white/10 rounded-lg px-3 py-1">
-                    <span className="text-xs text-[#E6E6E1]/50">View:</span>
-                    <span className="text-xs font-medium">Operations</span>
-                  </div>
-                  <div className="flex gap-1 items-center">
-                    <span className="relative flex h-2 w-2">
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <span className="text-xs text-green-400">All Systems Nominal</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Welcome Banner - Operations */}
-              <div className="px-6 py-4 bg-gradient-to-r from-green-500/5 to-transparent border-b border-black/5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-lg font-semibold text-black">Good morning, Operations</span>
-                    <p className="text-sm text-black/50 mt-0.5">Everything running smoothly. 0 issues.</p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="text-center px-4 py-2 bg-green-500/10 rounded-lg">
-                      <span className="text-xs text-green-700 font-medium">99.9% uptime</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6 grid lg:grid-cols-3 gap-6">
-                {/* Left: System Status */}
-                <div className="lg:col-span-2 space-y-4">
-                  {/* Health Overview */}
-                  <div className="bg-white rounded-xl border border-black/10 overflow-hidden">
-                    <div className="px-4 py-3 border-b border-black/5 flex items-center justify-between">
-                      <h4 className="font-semibold text-sm">System Health</h4>
-                      <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded-full font-bold">Healthy</span>
-                    </div>
-                    <div className="p-4 grid grid-cols-4 gap-4">
-                      {[
-                        { label: "API", status: "operational" },
-                        { label: "Database", status: "operational" },
-                        { label: "Auth", status: "operational" },
-                        { label: "CDN", status: "operational" }
-                      ].map((sys, i) => (
-                        <div key={i} className="ops-card text-center p-3 bg-green-50 rounded-lg">
-                          <div className="w-3 h-3 bg-green-500 rounded-full mx-auto mb-2"></div>
-                          <span className="text-xs font-medium text-black/70">{sys.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Recent Activity - Operations Focus */}
-                  <div className="bg-white rounded-xl border border-black/10 overflow-hidden">
-                    <div className="px-4 py-3 border-b border-black/5">
-                      <h4 className="font-semibold text-sm">Maintenance Log</h4>
-                    </div>
-                    <div className="divide-y divide-black/5">
-                      <div className="ops-card p-4 flex items-center gap-4">
-                        <div className="w-8 h-8 bg-green-100 rounded flex items-center justify-center">
-                          <Check size={14} className="text-green-700" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium text-sm">Security patch applied</span>
-                            <span className="text-xs text-black/40">2 days ago</span>
-                          </div>
-                          <p className="text-sm text-black/50">v2.4.1 — No downtime required</p>
-                        </div>
-                      </div>
-                      <div className="ops-card p-4 flex items-center gap-4">
-                        <div className="w-8 h-8 bg-blue-100 rounded flex items-center justify-center">
-                          <Monitor size={14} className="text-blue-700" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium text-sm">Performance optimization</span>
-                            <span className="text-xs text-black/40">1 week ago</span>
-                          </div>
-                          <p className="text-sm text-black/50">API response time improved 23%</p>
-                        </div>
-                      </div>
-                      <div className="ops-card p-4 flex items-center gap-4">
-                        <div className="w-8 h-8 bg-green-100 rounded flex items-center justify-center">
-                          <Check size={14} className="text-green-700" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium text-sm">Database backup verified</span>
-                            <span className="text-xs text-black/40">Today, 03:00</span>
-                          </div>
-                          <p className="text-sm text-black/50">Automated • Next backup in 21 hours</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right: Ops Stats */}
-                <div className="space-y-4">
-                  {/* Uptime */}
-                  <div className="bg-white rounded-xl border border-black/10 p-4">
-                    <h4 className="font-semibold text-sm mb-4">Uptime (30 days)</h4>
-                    <div className="text-center mb-4">
-                      <div className="text-4xl font-bold text-green-600">99.9%</div>
-                      <div className="text-xs text-black/40 mt-1">2 min total downtime</div>
-                    </div>
-                    <div className="flex gap-0.5">
-                      {[...Array(30)].map((_, i) => (
-                        <div key={i} className={`flex-1 h-6 rounded-sm ${i === 14 ? 'bg-amber-400' : 'bg-green-500'}`}></div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Quick Actions */}
-                  <div className="bg-white rounded-xl border border-black/10 p-4">
-                    <h4 className="font-semibold text-sm mb-3">Quick Actions</h4>
-                    <div className="space-y-2">
-                      <button className="ops-card w-full px-3 py-2 text-left text-sm bg-black/5 hover:bg-black/10 rounded-lg transition-colors">
-                        Request support ticket
-                      </button>
-                      <button className="ops-card w-full px-3 py-2 text-left text-sm bg-black/5 hover:bg-black/10 rounded-lg transition-colors">
-                        Schedule maintenance window
-                      </button>
-                      <button className="ops-card w-full px-3 py-2 text-left text-sm bg-black/5 hover:bg-black/10 rounded-lg transition-colors">
-                        Download monthly report
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* SLA Status */}
-                  <div className="bg-black text-[#E6E6E1] rounded-xl p-4">
-                    <div className="text-[10px] uppercase tracking-wider text-[#E6E6E1]/50 mb-1">SLA Status</div>
-                    <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-                      <span className="text-lg font-bold">All commitments met</span>
-                    </div>
-                    <div className="text-xs text-[#E6E6E1]/50 mt-2">Last incident: 47 days ago</div>
-                  </div>
-                </div>
-              </div>
+            <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
+              <div className="text-5xl font-black text-black mb-2">8</div>
+              <div className="font-bold uppercase tracking-tight text-sm mb-1">Weeks Average</div>
+              <p className="text-xs text-black/50">Idea to production</p>
             </div>
-
-            {/* Caption */}
-            <div className="text-center mt-8">
-              <p className="text-black/50 text-sm italic">
-                "Peace of mind. At a glance."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* THE DIFFERENCE — Experiential Flip */}
-      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
-        <div className="max-w-[1400px] mx-auto">
-          {/* The Flip Concept */}
-          <div className="grid lg:grid-cols-2 gap-16 mb-20">
-            {/* The Old Way - Crossed Out */}
-            <div className="relative">
-              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-black/10"></div>
-              <div className="font-mono text-xs uppercase tracking-widest text-black/30 mb-6">The Old Way</div>
-              <div className="space-y-4 opacity-50">
-                <div className="flex items-center gap-4 line-through decoration-black/40 decoration-2">
-                  <span className="text-2xl">📝</span>
-                  <span className="text-lg text-black/60">You write the requirements</span>
-                </div>
-                <div className="flex items-center gap-4 line-through decoration-black/40 decoration-2">
-                  <span className="text-2xl">📊</span>
-                  <span className="text-lg text-black/60">You manage the timelines</span>
-                </div>
-                <div className="flex items-center gap-4 line-through decoration-black/40 decoration-2">
-                  <span className="text-2xl">📞</span>
-                  <span className="text-lg text-black/60">You chase the updates</span>
-                </div>
-                <div className="flex items-center gap-4 line-through decoration-black/40 decoration-2">
-                  <span className="text-2xl">🔍</span>
-                  <span className="text-lg text-black/60">You review from scratch</span>
-                </div>
-              </div>
-            </div>
-
-            {/* The Agentic Way */}
-            <div className="relative">
-              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-black"></div>
-              <div className="font-mono text-xs uppercase tracking-widest text-black/60 mb-6">The Agentic Way</div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">
-                We Author.<br/>You Edit.
-              </h2>
-              <p className="text-xl text-black/70 font-medium leading-relaxed">
-                You receive polished work. You confirm or adjust. Done.
-              </p>
+            <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
+              <div className="text-5xl font-black text-black mb-2">0</div>
+              <div className="font-bold uppercase tracking-tight text-sm mb-1">Escalations</div>
+              <p className="text-xs text-black/50">This quarter</p>
             </div>
           </div>
 
-          {/* Interactive Flow — Three Taps */}
-          <div className="bg-black text-[#E6E6E1] rounded-2xl p-8 md:p-12 mb-16">
-            <div className="text-center mb-12">
-              <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40 mb-4">Your Workflow</div>
-              <h3 className="text-2xl md:text-3xl font-bold">Three moments. Three taps. You're done.</h3>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Step 1: Specs */}
-              <div className="group relative bg-[#1a1a1a] rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                <div className="absolute top-4 right-4 font-mono text-xs text-white/20">01</div>
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                  <Monitor size={24} className="text-white/70" />
-                </div>
-                <h4 className="text-lg font-bold uppercase tracking-tight mb-3">Screen Specs Arrive</h4>
-                <p className="text-[#E6E6E1]/60 text-sm mb-6">Complete specs. Your preferences pre-applied.</p>
-                <div className="flex items-center gap-2">
-                  <button className="flex-1 bg-green-500/20 text-green-400 py-2 px-4 rounded-lg text-sm font-medium hover:bg-green-500/30 transition-colors">
-                    Looks Good ✓
-                  </button>
-                  <button className="bg-white/10 text-white/60 py-2 px-4 rounded-lg text-sm hover:bg-white/20 transition-colors">
-                    Adjust
-                  </button>
-                </div>
-              </div>
-
-              {/* Step 2: Look & Feel */}
-              <div className="group relative bg-[#1a1a1a] rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                <div className="absolute top-4 right-4 font-mono text-xs text-white/20">02</div>
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                  <Eye size={24} className="text-white/70" />
-                </div>
-                <h4 className="text-lg font-bold uppercase tracking-tight mb-3">Designs Match Your Brand</h4>
-                <p className="text-[#E6E6E1]/60 text-sm mb-6">Familiar patterns. No surprises.</p>
-                <div className="flex items-center gap-2">
-                  <button className="flex-1 bg-green-500/20 text-green-400 py-2 px-4 rounded-lg text-sm font-medium hover:bg-green-500/30 transition-colors">
-                    Looks Good ✓
-                  </button>
-                  <button className="bg-white/10 text-white/60 py-2 px-4 rounded-lg text-sm hover:bg-white/20 transition-colors">
-                    Adjust
-                  </button>
-                </div>
-              </div>
-
-              {/* Step 3: Delivery */}
-              <div className="group relative bg-[#1a1a1a] rounded-xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300">
-                <div className="absolute top-4 right-4 font-mono text-xs text-white/20">03</div>
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
-                  <Check size={24} className="text-white/70" />
-                </div>
-                <h4 className="text-lg font-bold uppercase tracking-tight mb-3">Feature Ready</h4>
-                <p className="text-[#E6E6E1]/60 text-sm mb-6">Tested. Documented. Production-ready.</p>
-                <div className="flex items-center gap-2">
-                  <button className="flex-1 bg-green-500/20 text-green-400 py-2 px-4 rounded-lg text-sm font-medium hover:bg-green-500/30 transition-colors">
-                    Accept ✓
-                  </button>
-                  <button className="bg-white/10 text-white/60 py-2 px-4 rounded-lg text-sm hover:bg-white/20 transition-colors">
-                    Feedback
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-center text-[#E6E6E1]/40 text-sm mt-8">
-              That's it. We do the hard work. You stay in control.
-            </p>
-          </div>
-
-          {/* One Tier */}
-          <div className="bg-black text-[#E6E6E1] rounded-2xl p-10 md:p-16">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="bg-black text-[#E6E6E1] rounded-xl p-8 md:p-10">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40 mb-4">Service Level</div>
-                <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-6">
-                  One Tier. High Standards for All.
-                </h3>
-                <p className="text-lg text-[#E6E6E1]/70 font-medium leading-relaxed mb-6">
-                  No tiers to navigate. No feature gates. With us, you get a highly responsive feedback loop and a team that works closely with you.
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-black font-mono text-sm font-bold mb-1">HC</div>
+                    <TrendingUp size={12} className="text-[#E6E6E1]/40" />
+                  </div>
+                  <div>
+                    <div className="font-bold">Your CFO</div>
+                    <div className="text-sm text-[#E6E6E1]/50">Sponsor</div>
+                  </div>
+                </div>
+                <p className="text-xl text-[#E6E6E1]/80 leading-relaxed mb-4">
+                  "I don't need to understand how agents work. I need to see that the investment is paying off.
+                  The Command Center shows me exactly that — in language I can present to the board."
                 </p>
-                <p className="text-[#E6E6E1]/50 font-medium">
-                  That's the advantage of a small team — tight feedback loops, fast responses, real partnership.
+                <div className="flex items-center gap-2 text-[#A78BFA]">
+                  <BarChart3 size={16} />
+                  <span className="text-sm font-medium">Quarterly ROI dashboard</span>
+                </div>
+              </div>
+              <div className="bg-[#1a1a1a] rounded-lg p-6 border border-white/10">
+                <div className="font-mono text-xs text-[#E6E6E1]/50 uppercase mb-4">CFO Dashboard</div>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-[#E6E6E1]/60">Investment to date</span>
+                    <span className="font-bold">DKK 450K</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-[#E6E6E1]/60">Features delivered</span>
+                    <span className="font-bold">12</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-[#E6E6E1]/60">Cost per feature</span>
+                    <span className="font-bold text-green-400">DKK 37.5K</span>
+                  </div>
+                  <div className="border-t border-white/10 pt-3 mt-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-[#E6E6E1]/60">vs. Industry benchmark</span>
+                      <span className="font-bold text-green-400">-62%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HUGO'S VIEW - Operations Dashboard */}
+      <section id="hugo-section" className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-3xl mb-16">
+            <p className="font-mono text-sm uppercase tracking-widest text-[#E6E6E1]/50 mb-4">The Hugo View</p>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+              "Everything's green.<br/>That's all I need to know."
+            </h2>
+            <p className="text-xl text-[#E6E6E1]/70 font-medium leading-relaxed">
+              Hugo's job is keeping systems running. The Command Center gives him real-time health,
+              maintenance logs, and one-tap support requests. No surprises. Just peace of mind.
+            </p>
+          </div>
+
+          {/* Operations Dashboard Demo */}
+          <div className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-white/10">
+            <div className="bg-black px-6 py-3 flex items-center justify-between border-b border-white/10">
+              <div className="flex items-center gap-4">
+                <span className="font-bold text-sm">{'>>'} COMMAND CENTER</span>
+                <span className="text-xs text-[#E6E6E1]/40">|</span>
+                <span className="text-xs text-[#E6E6E1]/50">Operations View</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="live-pulse absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-xs text-green-400">All Systems Nominal</span>
+              </div>
+            </div>
+
+            <div className="p-6">
+              <div className="grid md:grid-cols-4 gap-4 mb-6">
+                <div className="ops-stat bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
+                  <HeartPulse size={24} className="text-green-400 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-green-400">99.9%</div>
+                  <div className="text-xs text-[#E6E6E1]/50">Uptime (30d)</div>
+                </div>
+                <div className="ops-stat bg-[#222] rounded-xl p-4 text-center">
+                  <Activity size={24} className="text-[#E6E6E1]/60 mx-auto mb-2" />
+                  <div className="text-2xl font-bold">142ms</div>
+                  <div className="text-xs text-[#E6E6E1]/50">Avg Response</div>
+                </div>
+                <div className="ops-stat bg-[#222] rounded-xl p-4 text-center">
+                  <Shield size={24} className="text-[#E6E6E1]/60 mx-auto mb-2" />
+                  <div className="text-2xl font-bold">A+</div>
+                  <div className="text-xs text-[#E6E6E1]/50">Security Score</div>
+                </div>
+                <div className="ops-stat bg-[#222] rounded-xl p-4 text-center">
+                  <Clock size={24} className="text-[#E6E6E1]/60 mx-auto mb-2" />
+                  <div className="text-2xl font-bold">47d</div>
+                  <div className="text-xs text-[#E6E6E1]/50">Since Last Incident</div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-[#222] rounded-xl p-6">
+                  <h4 className="font-bold text-sm mb-4 flex items-center gap-2">
+                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                    System Health
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['API', 'Database', 'Auth', 'CDN', 'Queue', 'Cache'].map((sys) => (
+                      <div key={sys} className="flex items-center gap-2 text-sm">
+                        <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span className="text-[#E6E6E1]/70">{sys}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="bg-[#222] rounded-xl p-6">
+                  <h4 className="font-bold text-sm mb-4">Recent Maintenance</h4>
+                  <div className="space-y-3 text-sm">
+                    <div className="flex items-center gap-3">
+                      <Check size={14} className="text-green-400" />
+                      <span className="text-[#E6E6E1]/70">Security patch v2.4.1</span>
+                      <span className="text-xs text-[#E6E6E1]/40 ml-auto">2d ago</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check size={14} className="text-green-400" />
+                      <span className="text-[#E6E6E1]/70">Performance optimization</span>
+                      <span className="text-xs text-[#E6E6E1]/40 ml-auto">1w ago</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Check size={14} className="text-green-400" />
+                      <span className="text-[#E6E6E1]/70">Database backup verified</span>
+                      <span className="text-xs text-[#E6E6E1]/40 ml-auto">Today</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <p className="text-[#E6E6E1]/50 text-sm italic">
+              "Green means I can focus on what's next, not what's broken."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* EVERYONE'S VIEW - Stakeholder Sections */}
+      <section id="stakeholders-section" className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-3xl mb-16">
+            <p className="font-mono text-sm uppercase tracking-widest text-black/50 mb-4">The Operate Ensemble</p>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+              Different roles.<br/>Same source of truth.
+            </h2>
+            <p className="text-xl text-black/70 font-medium">
+              The Command Center adapts to who's looking. Your CFO sees business outcomes.
+              Your Ops Lead sees system health. Your Product Owner sees the improvement backlog. Everyone sees what they need.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {operateCast.map((person, i) => (
+              <div key={i} className="cast-card bg-white rounded-xl p-8 border-2 border-black/5">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="flex flex-col items-center">
+                    <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-[#E6E6E1] font-mono text-sm font-bold mb-1">
+                      {person.initials}
+                    </div>
+                    <person.icon size={12} className="text-black/40" />
+                  </div>
+                  <div>
+                    <div className="font-bold text-lg">{person.role}</div>
+                    <div className="text-sm text-black/50">{person.title}</div>
+                  </div>
+                </div>
+
+                <div className="bg-black/5 rounded-lg px-4 py-3 mb-4">
+                  <div className="font-mono text-xs text-black/50 uppercase mb-1">Signal</div>
+                  <div className="font-medium text-black">{person.signal}</div>
+                </div>
+
+                <p className="text-black/60 text-sm">{person.view}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-black text-[#E6E6E1] rounded-xl p-8 md:p-10">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">The paradigm continues.</h3>
+                <p className="text-[#E6E6E1]/70 leading-relaxed mb-4">
+                  In Discover, agents interviewed. In Build, agents authored code.
+                  In Operate, agents monitor, optimize, and maintain.
+                  <strong className="text-[#E6E6E1]"> The pattern never changes: we author, you edit.</strong>
+                </p>
+                <p className="text-[#E6E6E1]/50">
+                  Every security patch, every performance improvement, every maintenance task —
+                  prepared by agents, approved by you.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="flex items-center justify-center">
+                <div className="text-center">
+                  <Zap size={48} className="text-[#A78BFA] mx-auto mb-4" />
+                  <div className="text-2xl font-bold">Agents maintain.</div>
+                  <div className="text-lg text-[#E6E6E1]/60">Humans approve.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE FULL JOURNEY */}
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-mono text-sm uppercase tracking-widest text-[#E6E6E1]/50 mb-4">The Complete Journey</p>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+              Discover → Build → Operate
+            </h2>
+            <p className="text-xl text-[#E6E6E1]/70 max-w-2xl mx-auto font-medium">
+              From first conversation to ongoing excellence. Each phase builds on the last.
+              Context compounds. Friction decreases. Value accumulates.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-8">
+              <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/50 mb-4">Phase 1</div>
+              <h3 className="text-2xl font-bold mb-4">Discover</h3>
+              <p className="text-[#E6E6E1]/60 mb-6">
+                Echo interviews your stakeholders. Goals lock. Personas map. Everyone aligns on what to build.
+              </p>
+              <div className="flex items-center gap-2 text-[#E6E6E1]/40">
+                <Check size={16} />
+                <span className="text-sm">Requirements crystallized</span>
+              </div>
+            </div>
+
+            <div className="bg-[#1a1a1a] border border-white/10 rounded-xl p-8">
+              <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/50 mb-4">Phase 2</div>
+              <h3 className="text-2xl font-bold mb-4">Build</h3>
+              <p className="text-[#E6E6E1]/60 mb-6">
+                Agents author code overnight. Sara approves screens each morning. Christian validates architecture. Ship weekly.
+              </p>
+              <div className="flex items-center gap-2 text-[#E6E6E1]/40">
+                <Check size={16} />
+                <span className="text-sm">Production-grade delivery</span>
+              </div>
+            </div>
+
+            <div className="bg-[#10B981]/10 border border-[#10B981]/30 rounded-xl p-8">
+              <div className="font-mono text-xs uppercase tracking-widest text-[#10B981] mb-4">Phase 3</div>
+              <h3 className="text-2xl font-bold text-[#10B981] mb-4">Operate</h3>
+              <p className="text-[#E6E6E1]/60 mb-6">
+                Your CFO sees ROI. Your Ops lead sees uptime. Your Product Owner plans what's next. The system learns your preferences.
+              </p>
+              <div className="flex items-center gap-2 text-[#10B981]">
+                <Zap size={16} />
+                <span className="text-sm">Continuous improvement</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-[#E6E6E1]/50 mb-6">
+              Each phase makes the next one smoother. Context compounds. Friction approaches zero.
+            </p>
+            <MagneticButton
+              onClick={() => openInquiry('operate', 'Start the journey')}
+              className="bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold"
+            >
+              Start with Discover <ArrowUpRight size={18} />
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
+
+      {/* ONE TIER */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="font-mono text-sm uppercase tracking-widest text-black/50 mb-4">Service Level</p>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+                One tier.<br/>High standards for all.
+              </h2>
+              <p className="text-xl font-medium text-black/70 mb-6 leading-relaxed">
+                No tiers to navigate. No feature gates. You get a highly responsive feedback loop
+                and a team that works closely with you.
+              </p>
+              <p className="text-lg text-black/60 font-medium">
+                That's the advantage of a small team — tight feedback loops, fast responses, real partnership.
+              </p>
+            </div>
+
+            <div className="bg-black text-[#E6E6E1] rounded-xl p-10 md:p-12">
+              <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
                   { value: "Same Day", label: "Response Time" },
                   { value: "Direct", label: "Escalation Path" },
                   { value: "Weekly", label: "Sync Cadence" },
                   { value: "24/7", label: "Dashboard Access" }
                 ].map((stat, i) => (
-                  <div key={i} className="bg-white/5 rounded-xl p-6 text-center">
-                    <div className="font-mono text-2xl font-bold text-[#E6E6E1] mb-1">{stat.value}</div>
+                  <div key={i} className="bg-white/5 rounded-xl p-4 text-center">
+                    <div className="font-mono text-xl font-bold mb-1">{stat.value}</div>
                     <div className="text-xs text-[#E6E6E1]/40 uppercase tracking-wider">{stat.label}</div>
                   </div>
                 ))}
               </div>
+
+              <MagneticButton
+                onClick={() => openInquiry('operate', 'Discuss Operate')}
+                className="bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold w-full justify-center"
+              >
+                Discuss Operate <ArrowUpRight size={18} />
+              </MagneticButton>
             </div>
           </div>
         </div>
       </section>
 
-      {/* THE VISION — BRIEF */}
+      {/* THE VISION */}
       <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-4xl mx-auto text-center">
           <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40 mb-4">Where We're Going</div>
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-8">
-            A System That Learns You
+            A system that learns you.
           </h2>
           <p className="text-xl text-[#E6E6E1]/70 font-medium leading-relaxed mb-12">
-            Each interaction trains us. Your preferences get pre-applied. Friction approaches zero over time. The more we work together, the less effort each review takes.
+            Each interaction trains us. Your preferences get pre-applied. Friction approaches zero over time.
+            The more we work together, the less effort each review takes.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
@@ -774,9 +539,9 @@ const CorePage = () => {
                 <span className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50">Now</span>
               </div>
               <ul className="space-y-2 text-sm text-[#E6E6E1]/70">
-                <li>• Real-time dashboards</li>
-                <li>• Screen spec reviews</li>
-                <li>• Look & feel acceptance</li>
+                <li>• ROI dashboards for sponsors</li>
+                <li>• System health for operations</li>
+                <li>• Backlog views for product</li>
                 <li>• SLA-backed support</li>
               </ul>
             </div>
@@ -787,9 +552,9 @@ const CorePage = () => {
               </div>
               <ul className="space-y-2 text-sm text-[#E6E6E1]/50">
                 <li>• Preference learning</li>
-                <li>• One-tap approvals</li>
+                <li>• Predictive maintenance</li>
                 <li>• Multi-phase orchestration</li>
-                <li>• Security posture dashboards</li>
+                <li>• Industry benchmarking</li>
               </ul>
             </div>
           </div>
@@ -797,10 +562,10 @@ const CorePage = () => {
       </section>
 
       {/* FAQ */}
-      <FAQSection faqs={coreFAQs} />
+      <FAQSection faqs={operateFAQs} />
 
       {/* PRODUCT LADDER */}
-      <ProductLadderSection currentProduct="core" variant="journey" />
+      <ProductLadderSection currentProduct="operate" variant="journey" />
     </div>
   );
 };

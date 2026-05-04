@@ -1,9 +1,9 @@
 export { default as PageMeta } from './PageMeta';
 export {
   OrganizationSchema,
-  SparkCourseSchema,
-  CatalystCourseSchema,
-  CoreServiceSchema,
+  DiscoverServiceSchema,
+  BuildServiceSchema,
+  OperateServiceSchema,
   FounderSchema,
   FAQSchema,
   BreadcrumbSchema
