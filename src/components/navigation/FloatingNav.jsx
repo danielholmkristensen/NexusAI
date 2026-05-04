@@ -21,12 +21,11 @@ const FloatingNav = () => {
   }, [location]);
 
   const navLinks = [
-    { to: '/the-spark', label: 'The Spark' },
-    { to: '/the-catalyst', label: 'The Catalyst' },
-    { to: '/the-core', label: 'The Core' },
+    { to: '/discover', label: 'Discover' },
+    { to: '/build', label: 'Build' },
+    { to: '/operate', label: 'Operate' },
     { to: '/practitioners', label: 'Practitioners' },
     { to: '/about', label: 'About' },
-    { to: '/method', label: 'Method' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -34,20 +33,18 @@ const FloatingNav = () => {
   // Contextual CTA based on current page
   const getCTA = () => {
     switch (location.pathname) {
-      case '/the-spark':
-        return { label: 'Get started', product: 'spark' };
-      case '/the-catalyst':
-        return { label: 'Get a quote', product: 'catalyst' };
-      case '/the-core':
-        return { label: 'Learn more', product: 'core' };
+      case '/discover':
+        return { label: 'Book a walkthrough', product: 'discover' };
+      case '/build':
+        return { label: 'Book a walkthrough', product: 'build' };
+      case '/operate':
+        return { label: 'Book a walkthrough', product: 'operate' };
       case '/about':
         return { label: 'Get in touch', product: 'general' };
-      case '/method':
-        return { label: 'Get started', product: 'spark' };
       case '/practitioners':
         return { label: 'Get in touch', product: 'general' };
       default:
-        return { label: 'Get started', product: 'spark' };
+        return { label: 'Book a walkthrough', product: 'general' };
     }
   };
 

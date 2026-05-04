@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'the-spark',
+        path: 'discover',
         element: (
           <React.Suspense fallback={<PageLoader />}>
             <SparkPage />
@@ -73,7 +73,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'the-catalyst',
+        path: 'build',
         element: (
           <React.Suspense fallback={<PageLoader />}>
             <CatalystPage />
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: 'the-core',
+        path: 'operate',
         element: (
           <React.Suspense fallback={<PageLoader />}>
             <CorePage />
