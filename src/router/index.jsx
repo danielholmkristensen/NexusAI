@@ -14,6 +14,7 @@ const PractitionersPage = React.lazy(() => import('../pages/PractitionersPage'))
 const PractitionerPage = React.lazy(() => import('../pages/PractitionerPage'));
 const ProtectedDeck = React.lazy(() => import('../components/ProtectedDeck'));
 const ProtectedSTARK = React.lazy(() => import('../components/ProtectedSTARK'));
+const ProtectedDemo = React.lazy(() => import('../components/ProtectedDemo'));
 const FlowSlides = React.lazy(() => import('../components/FlowSlides'));
 
 // Loading fallback component
@@ -48,6 +49,14 @@ const router = createBrowserRouter([
     element: (
       <React.Suspense fallback={<PageLoader />}>
         <ProtectedSTARK />
+      </React.Suspense>
+    ),
+  },
+  {
+    path: '/demo',
+    element: (
+      <React.Suspense fallback={<PageLoader />}>
+        <ProtectedDemo />
       </React.Suspense>
     ),
   },
