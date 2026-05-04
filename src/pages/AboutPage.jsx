@@ -158,7 +158,7 @@ const AboutPage = () => {
     <div ref={pageRef}>
       <PageMeta
         title="About — Agentic Agency | The Agentic OS Pioneers"
-        description="Consultants turned product pioneers. We're building the operating system for AI-native enterprises — where agents author and humans edit."
+        description="Operators building the operating system for AI-native enterprises — where agents author and humans edit."
         path="/about"
       />
       <OrganizationSchema />
@@ -185,10 +185,10 @@ const AboutPage = () => {
         <div className="relative z-10 max-w-5xl">
           <div className="hero-anim font-mono text-sm text-black/40 tracking-widest mb-4">{'>>'} OUR STORY</div>
           <h1 className="hero-anim text-5xl md:text-7xl lg:text-8xl font-bold uppercase leading-[0.95] tracking-tight mb-6 text-black">
-            Consultants turned<br/>product pioneers.
+            Operators.
           </h1>
           <p className="hero-anim text-xl md:text-2xl text-black/70 max-w-3xl leading-snug">
-            We spent years inside enterprise transformations. We saw AI that demos well but doesn't ship. So we stopped consulting and started building the <strong className="text-black">Agentic OS</strong>.
+            We spent years inside enterprise transformations. We saw AI that demos well but doesn't ship. So we stopped advising and started building the <strong className="text-black">Agentic OS</strong>.
           </p>
         </div>
       </section>

@@ -10,12 +10,6 @@ import { useInquiry } from '../context/InquiryContext';
 
 const SCREENSHOTS = [
   {
-    src: '/screenshots/01-discover-echo-henrik.png',
-    phase: 'Discover',
-    title: 'Echo Interviews the CFO',
-    description: 'AI conducts structured stakeholder interviews. Triangulates answers. Extracts requirements automatically.',
-  },
-  {
     src: '/screenshots/02-discover-charter-goals.png',
     phase: 'Discover',
     title: 'Charter Goals Locked',
@@ -326,9 +320,43 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* ECHO FEATURE — The AI Interviewer */}
+      <section className="py-24 md:py-32 px-6 md:px-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="font-mono text-sm tracking-widest text-black/35 mb-4">AGENTIC STUDIO</div>
+              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-6">
+                Echo interviews<br/>the CFO.
+              </h2>
+              <p className="text-lg text-black/70 mb-6 leading-relaxed">
+                Before a single line of code, Echo — our AI interviewer — talks to Henrik about budget, Sara about features, and Christian about architecture.
+              </p>
+              <p className="text-black/60 leading-relaxed">
+                AI conducts structured stakeholder interviews. Triangulates answers across roles. Extracts requirements automatically. Surfaces conflicts before they become blockers.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="bg-black rounded-xl overflow-hidden shadow-[16px_16px_0px_0px_rgba(0,0,0,0.15)]">
+                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <img
+                  src="/screenshots/01-discover-echo-henrik.png"
+                  alt="Echo AI interviewing Henrik, the CFO"
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* SCREENSHOT SHOWCASE — Netflix-style carousel */}
       <ScreenshotShowcase
-        title="See the Agentic OS in Action"
+        title="See the Agentic OS in Stills"
         subtitle="From discovery to delivery"
         screenshots={SCREENSHOTS}
       />
@@ -458,12 +486,12 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* THE STORY — FROM CONSULTANTS TO PRODUCT PIONEERS */}
+      {/* THE STORY — OPERATORS */}
       <section className="py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-4xl mx-auto">
           <div className="font-mono text-sm text-[#E6E6E1]/40 mb-6 text-center">OUR STORY</div>
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-8 text-center">
-            Consultants turned product pioneers.
+            Operators.
           </h2>
           <div className="space-y-6 text-lg text-[#E6E6E1]/70 leading-relaxed">
             <p>
