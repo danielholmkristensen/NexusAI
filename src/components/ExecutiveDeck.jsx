@@ -349,7 +349,7 @@ export default function ExecutiveDeck() {
             <div className="border-t-4 border-black/30 pt-8 stagger-item bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-black/10">
               <h2 className="text-6xl font-mono font-black text-black/20 mb-6">02</h2>
               <h3 className="text-4xl font-bold uppercase mb-6 tracking-tight">Scope control</h3>
-              <p className="text-xl font-medium text-black/80 leading-relaxed">How we scope large undertakings without drift — the specification keeps delivery on track.</p>
+              <p className="text-xl font-medium text-black/80 leading-relaxed">How large implementations stay on track — the specification prevents drift.</p>
             </div>
             <div className="border-t-4 border-black/30 pt-8 stagger-item bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-black/10">
               <h2 className="text-6xl font-mono font-black text-black/20 mb-6">03</h2>

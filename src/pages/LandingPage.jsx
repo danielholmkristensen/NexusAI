@@ -460,7 +460,7 @@ const LandingPage = () => {
           <div className="mt-16 flex items-center justify-between border-t border-white/10 pt-8">
             <div>
               <p className="text-sm font-bold text-[#E6E6E1] uppercase tracking-wider">In early use</p>
-              <p className="text-xs text-[#E6E6E1]/50 mt-1">Running on real client engagements</p>
+              <p className="text-xs text-[#E6E6E1]/50 mt-1">Running on real client implementations</p>
             </div>
             <Link to="/build" className="text-sm font-bold text-[#E6E6E1] flex items-center gap-2 hover:gap-3 transition-all">
               Explore Build <ArrowRight size={16} />

@@ -16,11 +16,11 @@ const CorePage = () => {
 
   const operateFAQs = [
     { q: "What is the Command Center?", a: "Your cockpit for everything we've built together. Real-time visibility into system health, ROI tracking, and operational metrics. Different stakeholders see different signals — but everyone sees what matters to them." },
-    { q: "Do we need Operate after Build?", a: "Optional but powerful. Without Operate, you take over maintenance. With Operate, you get SLA-backed support, continuous optimization, and the ability to spin up new engagements without re-onboarding." },
+    { q: "Do we need Operate after Build?", a: "Optional but powerful. Without Operate, you take over maintenance. With Operate, you get SLA-backed support, continuous optimization, and the ability to spin up new implementations without re-onboarding." },
     { q: "How does it work for our CFO?", a: "Henrik sees quarterly ROI dashboards, cost-per-feature metrics, and investment tracking. No technical jargon — just business outcomes mapped to dollars spent." },
     { q: "How does it work for Operations?", a: "Hugo sees system health, uptime metrics, maintenance logs, and security posture. Real-time status, historical trends, and one-tap support requests." },
-    { q: "What's included in the retainer?", a: "Dashboard access for all stakeholders, SLA-backed response times, proactive monitoring, security patches, performance optimization, and priority access for new Build engagements." },
-    { q: "Can we add new features through Operate?", a: "Yes — that's a key benefit. Your organizational context is preserved, so new Build engagements start faster and integrate seamlessly with existing systems." }
+    { q: "What's included in the subscription?", a: "Dashboard access for all stakeholders, SLA-backed response times, proactive monitoring, security patches, performance optimization, and priority access for new Build implementations." },
+    { q: "Can we add new features through Operate?", a: "Yes — that's a key benefit. Your organizational context is preserved, so new Build implementations start faster and integrate seamlessly with existing systems." }
   ];
 
   // The cast for Operate phase (icon badges, no color)
@@ -148,7 +148,7 @@ const CorePage = () => {
               See the Command Center <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#E6E6E1]/60 border-l-2 border-[#E6E6E1]/20 pl-4 py-1">
-              SLA-backed<br/>Yearly retainer
+              SLA-backed<br/>Annual subscription
             </span>
           </div>
         </div>

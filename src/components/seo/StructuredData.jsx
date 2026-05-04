@@ -60,7 +60,7 @@ export const BuildServiceSchema = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Build — Agentic Studio | AI Development as a Service",
-    "description": "Fixed-price enterprise software delivery. Production-grade code with 80%+ test coverage, full documentation. Code built for YOU. 8-12 weeks from kickoff to production.",
+    "description": "Enterprise software implementation with the Agentic OS. Production-grade code with 80%+ test coverage, full documentation. Perpetual licence. Your code, your infrastructure.",
     "provider": {
       "@type": "Organization",
       "name": "Agentic Agency"
@@ -83,7 +83,7 @@ export const OperateServiceSchema = () => {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "Operate — Command Center | Support & Operations",
-    "description": "The Command Center for AI-driven development. Real-time dashboards, session management, operational control, and SLA-backed support across all your Build engagements.",
+    "description": "The Command Center for AI-driven development. Real-time dashboards, session management, operational control, and SLA-backed support across all your Build implementations.",
     "provider": {
       "@type": "Organization",
       "name": "Agentic Agency"

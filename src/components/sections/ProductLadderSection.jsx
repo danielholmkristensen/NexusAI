@@ -27,8 +27,8 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
       subtitle: 'Agentic Studio',
       duration: 'Phase 2',
       tagline: 'Enterprise software, delivered',
-      description: 'Fixed-price AI-powered software development. Production-grade code with 80%+ test coverage, full documentation. Perpetual licence included.',
-      price: 'Fixed price',
+      description: 'AI-powered software implementation. Production-grade code with 80%+ test coverage, full documentation. Perpetual licence included.',
+      price: 'One licence',
       to: '/build',
       cta: 'Learn more'
     },
@@ -203,7 +203,7 @@ const ProductLadderSection = ({ currentProduct = null, variant = 'full' }) => {
 
         <div className="mt-12 text-center">
           <p className="text-black/60 font-medium text-lg">
-            Fixed price. Enterprise quality. Perpetual licence.
+            One licence. Enterprise quality. Yours forever.
           </p>
         </div>
       </div>
