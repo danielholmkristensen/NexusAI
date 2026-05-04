@@ -131,7 +131,7 @@ export default function DemoPage() {
           </h1>
           <p className="demo-hero-subtitle">
             AI agents that discover requirements, build features, and operate production systems.
-            Not copilots. Not assistants. <strong>Autonomous delivery.</strong>
+            Not copilots. Not assistants. <strong>AA Operators support the journey towards autonomy — improving the Agentic OS every day.</strong>
           </p>
           <p className="demo-hero-status">
             Pre-revenue. Building the platform. Looking for design partners.
