@@ -5,7 +5,65 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, ArrowRight, Check, Play, Target, TrendingUp, Code2, Layers, Activity } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { PageMeta, OrganizationSchema, BreadcrumbSchema } from '../components/seo';
+import { ScreenshotShowcase } from '../components/showcase';
 import { useInquiry } from '../context/InquiryContext';
+
+const SCREENSHOTS = [
+  {
+    src: '/screenshots/01-discover-echo-henrik.png',
+    phase: 'Discover',
+    title: 'Echo Interviews the CFO',
+    description: 'AI conducts structured stakeholder interviews. Triangulates answers. Extracts requirements automatically.',
+  },
+  {
+    src: '/screenshots/02-discover-charter-goals.png',
+    phase: 'Discover',
+    title: 'Charter Goals Locked',
+    description: 'Strategic goals from interviews. Each goal has measurable success criteria. No ambiguity.',
+  },
+  {
+    src: '/screenshots/03-discover-home-sara.png',
+    phase: 'Discover',
+    title: 'Product Owner Dashboard',
+    description: 'Real-time progress: sessions completed, chapters validated, stakeholders pending.',
+  },
+  {
+    src: '/screenshots/04-discover-recommendation-paths.png',
+    phase: 'Discover',
+    title: 'Implementation Paths',
+    description: 'AI generates ranked options with trade-offs: timeline vs. cost vs. risk.',
+  },
+  {
+    src: '/screenshots/05-discover-workflow-analyzer.png',
+    phase: 'Discover',
+    title: 'Workflow Analysis',
+    description: 'Automated process mining from transcripts. Bottlenecks identified before code.',
+  },
+  {
+    src: '/screenshots/06-build-home-sara.png',
+    phase: 'Build',
+    title: 'Morning Review Queue',
+    description: 'Agents worked overnight. Screens ready for review. Three taps to ship.',
+  },
+  {
+    src: '/screenshots/07-build-review-screens.png',
+    phase: 'Build',
+    title: 'Async Screen Review',
+    description: 'No meetings. Review when convenient. Feedback flows to agents instantly.',
+  },
+  {
+    src: '/screenshots/10-operate-home-sponsor.png',
+    phase: 'Operate',
+    title: 'CFO Dashboard',
+    description: 'ROI tracking, goal attainment, monthly run cost. One screen. Full picture.',
+  },
+  {
+    src: '/screenshots/08-operate-outcomes.png',
+    phase: 'Operate',
+    title: 'Goal Outcomes',
+    description: 'Track against charter goals. Green = achieved. Direct line to Discovery.',
+  },
+];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -268,6 +326,13 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* SCREENSHOT SHOWCASE — Netflix-style carousel */}
+      <ScreenshotShowcase
+        title="See the Agentic OS in Action"
+        subtitle="From discovery to delivery"
+        screenshots={SCREENSHOTS}
+      />
+
       {/* DISCOVER — AGENTIC STUDIO */}
       <section id="discover" className="py-24 md:py-32 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -283,25 +348,8 @@ const LandingPage = () => {
             </p>
           </div>
 
-          {/* Hero screenshot with story context */}
-          <div className="screenshot-reveal mb-8 relative">
-            <div className="absolute top-4 left-4 z-10 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              Live: Echo interviewing Henrik (CFO)
-            </div>
-            <img
-              src="/screenshots/01-discover-echo-henrik.png"
-              alt="Echo conducts stakeholder interviews"
-              className="w-full rounded-lg border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-            />
-            <div className="mt-4 flex items-center justify-between">
-              <p className="text-sm text-black/50">Echo asks the hard questions: "What does success look like in 90 days? What's the budget if we don't hit it?"</p>
-              <span className="text-xs text-black/30 font-mono">01/05</span>
-            </div>
-          </div>
-
           {/* Story beats */}
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="border-l-4 border-black pl-6">
               <div className="text-base font-bold text-black mb-2">Goals with numbers</div>
               <p className="text-sm text-black/60">"Reduce fulfillment time 30%" not "improve operations." Agents need measurable targets.</p>
@@ -316,58 +364,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Screenshot grid with narrative */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="screenshot-reveal group">
-              <img
-                src="/screenshots/02-discover-charter-goals.png"
-                alt="Charter goals locked"
-                className="w-full rounded-lg border border-black/10 shadow-md group-hover:shadow-xl transition-shadow"
-              />
-              <div className="mt-3 flex items-start justify-between">
-                <p className="text-sm text-black/50">Goals lock when all stakeholders align. Henrik signed off on budget. Sara confirmed features. Christian approved architecture.</p>
-                <span className="text-xs text-black/30 font-mono">02/05</span>
-              </div>
-            </div>
-            <div className="screenshot-reveal group">
-              <img
-                src="/screenshots/03-discover-home-sara.png"
-                alt="Sara's persona-aware home view"
-                className="w-full rounded-lg border border-black/10 shadow-md group-hover:shadow-xl transition-shadow"
-              />
-              <div className="mt-3 flex items-start justify-between">
-                <p className="text-sm text-black/50">Sara's morning view: Quality ring, attention queue, screens needing review. Henrik would see ROI metrics instead.</p>
-                <span className="text-xs text-black/30 font-mono">03/05</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="screenshot-reveal group">
-              <img
-                src="/screenshots/04-discover-recommendation-paths.png"
-                alt="Path comparison"
-                className="w-full rounded-lg border border-black/10 shadow-md group-hover:shadow-xl transition-shadow"
-              />
-              <div className="mt-3 flex items-start justify-between">
-                <p className="text-sm text-black/50">Four paths compared. Agent scored each on cost, time, fit, risk. Recommended path highlighted. Henrik taps "Approve."</p>
-                <span className="text-xs text-black/30 font-mono">04/05</span>
-              </div>
-            </div>
-            <div className="screenshot-reveal group">
-              <img
-                src="/screenshots/05-discover-workflow-analyzer.png"
-                alt="Workflow analyzer"
-                className="w-full rounded-lg border border-black/10 shadow-md group-hover:shadow-xl transition-shadow"
-              />
-              <div className="mt-3 flex items-start justify-between">
-                <p className="text-sm text-black/50">9 workflows analyzed for agent fit. 71% automation potential. The agent did the analysis. Christian just reviews.</p>
-                <span className="text-xs text-black/30 font-mono">05/05</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-16 flex items-center justify-between border-t border-black/10 pt-8">
+          <div className="mt-12 flex items-center justify-between border-t border-black/10 pt-8">
             <div>
               <p className="text-sm font-bold text-black uppercase tracking-wider">Building in public</p>
               <p className="text-xs text-black/50 mt-1">Early access available for design partners</p>
@@ -388,42 +385,10 @@ const LandingPage = () => {
               <span className="text-[#E6E6E1]/50">AGENTIC STUDIO</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">Build</h2>
-            <p className="text-xl font-semibold text-[#E6E6E1] mb-4">Sara's morning ritual: coffee, Command Center, three taps.</p>
+            <p className="text-xl font-semibold text-[#E6E6E1] mb-4">Your Product Owner's morning ritual: coffee, Agentic Studio, three taps.</p>
             <p className="text-[#E6E6E1]/65 leading-relaxed max-w-2xl">
               Agents built 5 screens overnight. Sara reviews each in her queue. "Looks good" or "Adjust." No meetings. No status updates. Just decisions at the speed of thought.
             </p>
-          </div>
-
-          {/* Screenshot grid with story */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="screenshot-reveal group">
-              <div className="relative">
-                <div className="absolute top-4 left-4 z-10 bg-white text-black px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#8B5CF6] rounded-full"></div>
-                  Sara's View — Product Owner
-                </div>
-                <img
-                  src="/screenshots/06-build-home-sara.png"
-                  alt="Build home view"
-                  className="w-full rounded-lg border border-white/10 shadow-lg group-hover:shadow-2xl transition-shadow"
-                />
-              </div>
-              <p className="text-sm text-[#E6E6E1]/50 mt-4">5 screens ready for review. 92% quality score. Iteration 3 of 4. Sara sees exactly what needs her attention.</p>
-            </div>
-            <div className="screenshot-reveal group">
-              <div className="relative">
-                <div className="absolute top-4 left-4 z-10 bg-white text-black px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  Review Tab — Approvals
-                </div>
-                <img
-                  src="/screenshots/07-build-review-screens.png"
-                  alt="Review tab with screens"
-                  className="w-full rounded-lg border border-white/10 shadow-lg group-hover:shadow-2xl transition-shadow"
-                />
-              </div>
-              <p className="text-sm text-[#E6E6E1]/50 mt-4">Every screen traced to a goal. Every approval tracked to a stakeholder. Christian's architecture gates auto-checked.</p>
-            </div>
           </div>
 
           {/* The "Three Taps" moment */}
@@ -475,45 +440,13 @@ const LandingPage = () => {
               <span className="text-black/50">COMMAND CENTER</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">Operate</h2>
-            <p className="text-xl font-semibold text-black mb-4">Henrik's quarterly review just got very short.</p>
+            <p className="text-xl font-semibold text-black mb-4">Your CFO's quarterly review just got very short.</p>
             <p className="text-black/65 leading-relaxed max-w-2xl">
-              Remember those goals Echo locked in Discover? Operate shows if they landed. Henrik opens his CFO dashboard: 4 of 5 goals on track. GOAL-01 promised 30% faster fulfillment. Current: 3.1 hours. 93% of target. One glance. Full accountability.
+              Remember those goals Echo locked in Discover? Operate shows if they landed. Your CFO opens the dashboard: 4 of 5 goals on track. GOAL-01 promised 30% faster fulfillment. Current: 3.1 hours. 93% of target. One glance. Full accountability.
             </p>
           </div>
 
-          {/* Screenshot grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="screenshot-reveal group">
-              <div className="relative">
-                <div className="absolute top-4 left-4 z-10 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#10B981] rounded-full"></div>
-                  Goal Outcomes — Live
-                </div>
-                <img
-                  src="/screenshots/08-operate-outcomes.png"
-                  alt="Outcomes tab"
-                  className="w-full rounded-lg border-2 border-black shadow-md group-hover:shadow-xl transition-shadow"
-                />
-              </div>
-              <p className="text-sm text-black/50 mt-4">GOAL-01: "Reduce fulfillment time 30%." Baseline: 4.5hrs. Target: 3.15hrs. Current: 3.1hrs. Green checkmark.</p>
-            </div>
-            <div className="screenshot-reveal group">
-              <div className="relative">
-                <div className="absolute top-4 left-4 z-10 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
-                  <div className="w-2 h-2 bg-[#10B981] rounded-full"></div>
-                  Sponsor View — CFO Dashboard
-                </div>
-                <img
-                  src="/screenshots/10-operate-home-sponsor.png"
-                  alt="CFO sponsor dashboard"
-                  className="w-full rounded-lg border-2 border-black shadow-md group-hover:shadow-xl transition-shadow"
-                />
-              </div>
-              <p className="text-sm text-black/50 mt-4">Your CFO sees what sponsors care about: goal attainment, monthly run cost, ROI tracking. One screen. Full picture.</p>
-            </div>
-          </div>
-
-          <div className="mt-16 flex items-center justify-between border-t border-black/10 pt-8">
+          <div className="flex items-center justify-between border-t border-black/10 pt-8">
             <div>
               <p className="text-sm font-bold text-black uppercase tracking-wider">In development</p>
               <p className="text-xs text-black/50 mt-1">Command Center design complete, engineering underway</p>
