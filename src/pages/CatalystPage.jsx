@@ -14,7 +14,7 @@ const CatalystPage = () => {
   const { openInquiry } = useInquiry();
 
   const buildFAQs = [
-    { q: "What does 'fixed price' mean?", a: "We scope the Build phase, agree on deliverables, and quote a fixed price. No hourly billing. No scope creep. You know the total cost before we start." },
+    { q: "What does the Build licence include?", a: "A complete implementation of your scoped system — production code, tests, documentation, training materials. One licence fee. No hourly billing. No scope creep." },
     { q: "How do you deliver so fast?", a: "Agents author the code while you sleep. Engineers review every line. The Agentic OS keeps everyone in sync. It's not magic — it's methodology." },
     { q: "Do we need Discover first?", a: "Recommended. Discover locks your goals, user journeys, designed screens, architecture, and integrations. The foundation agents execute against." },
     { q: "Who actually writes the code?", a: "Agents author. Humans edit. Every feature is AI-generated, then reviewed by senior engineers for architecture, security, and maintainability. 80%+ test coverage is non-negotiable." },
@@ -93,7 +93,7 @@ const CatalystPage = () => {
     <div ref={pageRef}>
       <PageMeta
         title="Build — Agentic Studio | Where Agents Author, Humans Edit"
-        description="Wake up to finished screens. Review in minutes. Ship by lunch. AI-powered development with human oversight. Fixed price. Production-grade."
+        description="Wake up to finished screens. Review in minutes. Ship by lunch. AI-powered development with human oversight. One licence. Production-grade."
         path="/build"
       />
       <BreadcrumbSchema items={[
@@ -140,7 +140,7 @@ const CatalystPage = () => {
               See Build in action <ArrowUpRight size={20} />
             </MagneticButton>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-[#E6E6E1]/60 border-l-2 border-[#E6E6E1]/20 pl-4 py-1">
-              Fixed price<br/>Production-grade
+              One licence<br/>Production-grade
             </span>
           </div>
         </div>
@@ -336,8 +336,8 @@ const CatalystPage = () => {
               },
               {
                 icon: Clock,
-                title: "Fixed Timeline",
-                desc: "Agreed delivery date. Regular demos. No scope creep. No surprises."
+                title: "Deliver on Time",
+                desc: "Your team uses the Agentic OS to hit your target date. Regular demos. No scope creep. No surprises."
               },
               {
                 icon: Check,
@@ -443,14 +443,14 @@ const CatalystPage = () => {
             <div>
               <p className="font-mono text-sm uppercase tracking-widest text-black/50 mb-4">The Commercial Model</p>
               <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
-                Fixed price.<br/>Zero surprises.
+                One licence.<br/>Zero surprises.
               </h2>
               <p className="text-xl font-medium text-black/70 mb-6 leading-relaxed">
-                No hourly billing. No scope creep charges. We scope your project,
-                agree on deliverables, and quote a fixed price before any work begins.
+                No hourly billing. No scope creep charges. Your implementation is scoped,
+                deliverables are defined, and you pay one licence fee.
               </p>
               <p className="text-lg text-black/60 font-medium">
-                You know the total cost before the first agent writes the first line of code.
+                You know the cost before the first agent writes the first line of code.
               </p>
             </div>
 
@@ -478,10 +478,10 @@ const CatalystPage = () => {
               </div>
 
               <MagneticButton
-                onClick={() => openInquiry('build', 'Get a quote')}
+                onClick={() => openInquiry('build', 'Start implementation')}
                 className="bg-[#E6E6E1] text-black px-8 py-4 text-lg font-bold w-full justify-center"
               >
-                Get a quote <ArrowUpRight size={18} />
+                Start implementation <ArrowUpRight size={18} />
               </MagneticButton>
             </div>
           </div>
