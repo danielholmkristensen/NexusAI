@@ -163,11 +163,8 @@ const LandingPage = () => {
             Humans edit.<br/>
             <span className="text-black/40">Categories won.</span>
           </h1>
-          <p className="hero-anim text-lg md:text-xl text-black/60 max-w-2xl mb-4 leading-relaxed">
-            The operating system for AI-native enterprises. Where your Product Owner reviews screens, your CFO tracks ROI, and your Architect governs integrations — while agents do the heavy lifting.
-          </p>
-          <p className="hero-anim text-base text-black/45 max-w-xl mb-10">
-            We're consultants who got tired of the gap between AI promises and enterprise reality. So we built the bridge.
+          <p className="hero-anim text-lg md:text-xl text-black/60 max-w-2xl mb-12 leading-relaxed">
+            The operating system for AI-native enterprises. Your stakeholders review. Your agents deliver. Your category wins.
           </p>
           <div className="hero-anim flex items-center gap-6 flex-wrap">
             <MagneticButton
@@ -188,7 +185,7 @@ const LandingPage = () => {
       </section>
 
       {/* SOCIAL PROOF STRIP */}
-      <div className="bg-black py-5 px-6 md:px-16">
+      <div className="bg-black py-8 px-6 md:px-16">
         <div className="flex items-center gap-4 flex-wrap">
           <span className="text-[11px] uppercase tracking-widest text-white/40 whitespace-nowrap">Team pedigree from</span>
           <div className="w-px h-4 bg-white/20"></div>
@@ -203,7 +200,7 @@ const LandingPage = () => {
       </div>
 
       {/* THE PARADIGM SHIFT */}
-      <section id="paradigm-section" className="py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
+      <section id="paradigm-section" className="py-32 md:py-40 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -235,7 +232,7 @@ const LandingPage = () => {
       </section>
 
       {/* THE CAST — MEET YOUR TEAM */}
-      <section id="cast" className="py-24 md:py-32 px-6 md:px-16 bg-[#E6E6E1]">
+      <section id="cast" className="py-32 md:py-40 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <div className="font-mono text-sm tracking-widest text-black/35 mb-4">MEET THE CAST</div>
