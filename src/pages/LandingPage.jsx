@@ -5,59 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, ArrowRight, Check, Play, Target, TrendingUp, Code2, Layers, Activity } from 'lucide-react';
 import { MagneticButton } from '../components/common';
 import { PageMeta, OrganizationSchema, BreadcrumbSchema } from '../components/seo';
-import { ScreenshotShowcase } from '../components/showcase';
 import { useInquiry } from '../context/InquiryContext';
-
-const SCREENSHOTS = [
-  {
-    src: '/screenshots/02-discover-charter-goals.png',
-    phase: 'Discover',
-    title: 'Charter Goals Locked',
-    description: 'Strategic goals from interviews. Each goal has measurable success criteria. No ambiguity.',
-  },
-  {
-    src: '/screenshots/03-discover-home-sara.png',
-    phase: 'Discover',
-    title: 'Product Owner Dashboard',
-    description: 'Real-time progress: sessions completed, chapters validated, stakeholders pending.',
-  },
-  {
-    src: '/screenshots/04-discover-recommendation-paths.png',
-    phase: 'Discover',
-    title: 'Implementation Paths',
-    description: 'AI generates ranked options with trade-offs: timeline vs. cost vs. risk.',
-  },
-  {
-    src: '/screenshots/05-discover-workflow-analyzer.png',
-    phase: 'Discover',
-    title: 'Workflow Analysis',
-    description: 'Automated process mining from transcripts. Bottlenecks identified before code.',
-  },
-  {
-    src: '/screenshots/06-build-home-sara.png',
-    phase: 'Build',
-    title: 'Morning Review Queue',
-    description: 'Agents worked overnight. Screens ready for review. Three taps to ship.',
-  },
-  {
-    src: '/screenshots/07-build-review-screens.png',
-    phase: 'Build',
-    title: 'Async Screen Review',
-    description: 'No meetings. Review when convenient. Feedback flows to agents instantly.',
-  },
-  {
-    src: '/screenshots/10-operate-home-sponsor.png',
-    phase: 'Operate',
-    title: 'CFO Dashboard',
-    description: 'ROI tracking, goal attainment, monthly run cost. One screen. Full picture.',
-  },
-  {
-    src: '/screenshots/08-operate-outcomes.png',
-    phase: 'Operate',
-    title: 'Goal Outcomes',
-    description: 'Track against charter goals. Green = achieved. Direct line to Discovery.',
-  },
-];
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -320,51 +268,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* ECHO FEATURE — The AI Interviewer */}
-      <section className="py-24 md:py-32 px-6 md:px-16 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="font-mono text-sm tracking-widest text-black/35 mb-4">AGENTIC STUDIO</div>
-              <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-6">
-                Echo interviews<br/>the CFO.
-              </h2>
-              <p className="text-lg text-black/70 mb-6 leading-relaxed">
-                Before a single line of code, Echo — our AI interviewer — talks to Henrik about budget, Sara about features, and Christian about architecture.
-              </p>
-              <p className="text-black/60 leading-relaxed">
-                AI conducts structured stakeholder interviews. Triangulates answers across roles. Extracts requirements automatically. Surfaces conflicts before they become blockers.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="bg-black rounded-xl overflow-hidden shadow-[16px_16px_0px_0px_rgba(0,0,0,0.15)]">
-                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-                </div>
-                <img
-                  src="/screenshots/01-discover-echo-henrik.png"
-                  alt="Echo AI interviewing Henrik, the CFO"
-                  className="w-full"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SCREENSHOT SHOWCASE — Netflix-style carousel */}
-      <ScreenshotShowcase
-        title="See the Agentic OS in Stills"
-        subtitle="From discovery to delivery"
-        screenshots={SCREENSHOTS}
-      />
-
       {/* DISCOVER — AGENTIC STUDIO */}
       <section id="discover" className="py-24 md:py-32 px-6 md:px-16 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="service-reveal mb-16">
+          <div className="service-reveal mb-12">
             <div className="font-mono text-sm tracking-widest text-black/35 mb-6 flex items-center gap-3">
               <span className="bg-black text-white px-2 py-1 rounded text-xs">01</span>
               <span className="text-black/50">AGENTIC STUDIO</span>
@@ -376,23 +283,75 @@ const LandingPage = () => {
             </p>
           </div>
 
-          {/* Story beats */}
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="border-l-4 border-black pl-6">
-              <div className="text-base font-bold text-black mb-2">Goals with numbers</div>
-              <p className="text-sm text-black/60">"Reduce fulfillment time 30%" not "improve operations." Agents need measurable targets.</p>
+          {/* Screenshot showcase */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Main screenshot */}
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2 flex items-center gap-2">
+                <span className="text-green-600">Live:</span> Echo interviewing Henrik (CFO)
+                <span className="text-black/30 ml-auto">01/05</span>
+              </div>
+              <div className="bg-black rounded-xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,0.15)]">
+                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <img src="/screenshots/01-discover-echo-henrik.png" alt="Echo interviewing Henrik" className="w-full" />
+              </div>
+              <p className="text-sm text-black/60 mt-3">Echo asks the hard questions: "What does success look like in 90 days? What's the budget if we don't hit it?"</p>
             </div>
-            <div className="border-l-4 border-black pl-6">
-              <div className="text-base font-bold text-black mb-2">Conflicts surfaced early</div>
-              <p className="text-sm text-black/60">Henrik wants fast. Emma wants compliant. Echo flags it before it derails the build.</p>
-            </div>
-            <div className="border-l-4 border-black pl-6">
-              <div className="text-base font-bold text-black mb-2">Locked scope, traced outcomes</div>
-              <p className="text-sm text-black/60">Every goal gets a baseline, a target, and an owner. Nothing ships without knowing what success looks like.</p>
+
+            {/* Story beats */}
+            <div className="space-y-6">
+              <div className="border-l-4 border-black pl-6">
+                <div className="text-base font-bold text-black mb-2">Goals with numbers</div>
+                <p className="text-sm text-black/60">"Reduce fulfillment time 30%" not "improve operations." Agents need measurable targets.</p>
+              </div>
+              <div className="border-l-4 border-black pl-6">
+                <div className="text-base font-bold text-black mb-2">Conflicts surfaced early</div>
+                <p className="text-sm text-black/60">Henrik wants fast. Emma wants compliant. Echo flags it before it derails the build.</p>
+              </div>
+              <div className="border-l-4 border-black pl-6">
+                <div className="text-base font-bold text-black mb-2">Locked scope, traced outcomes</div>
+                <p className="text-sm text-black/60">Every goal gets a baseline, a target, and an owner. Nothing ships without knowing what success looks like.</p>
+              </div>
             </div>
           </div>
 
-          <div className="mt-12 flex items-center justify-between border-t border-black/10 pt-8">
+          {/* Secondary screenshots grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2">Charter goals locked <span className="text-black/30 ml-1">02/05</span></div>
+              <div className="bg-black rounded-lg overflow-hidden">
+                <img src="/screenshots/02-discover-charter-goals.png" alt="Charter goals" className="w-full" />
+              </div>
+              <p className="text-xs text-black/50 mt-2">Goals lock when all stakeholders align. Henrik signed off on budget. Sara confirmed features.</p>
+            </div>
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2">Sara's persona-aware home <span className="text-black/30 ml-1">03/05</span></div>
+              <div className="bg-black rounded-lg overflow-hidden">
+                <img src="/screenshots/03-discover-home-sara.png" alt="Sara's home view" className="w-full" />
+              </div>
+              <p className="text-xs text-black/50 mt-2">Quality ring, attention queue, screens needing review. Henrik would see ROI metrics instead.</p>
+            </div>
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2">Path comparison <span className="text-black/30 ml-1">04/05</span></div>
+              <div className="bg-black rounded-lg overflow-hidden">
+                <img src="/screenshots/04-discover-recommendation-paths.png" alt="Path comparison" className="w-full" />
+              </div>
+              <p className="text-xs text-black/50 mt-2">Four paths compared. Agent scored each on cost, time, fit, risk. Recommended path highlighted.</p>
+            </div>
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2">Workflow analyzer <span className="text-black/30 ml-1">05/05</span></div>
+              <div className="bg-black rounded-lg overflow-hidden">
+                <img src="/screenshots/05-discover-workflow-analyzer.png" alt="Workflow analyzer" className="w-full" />
+              </div>
+              <p className="text-xs text-black/50 mt-2">9 workflows analyzed for agent fit. 71% automation potential. The agent did the analysis.</p>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between border-t border-black/10 pt-8">
             <div>
               <p className="text-sm font-bold text-black uppercase tracking-wider">Building in public</p>
               <p className="text-xs text-black/50 mt-1">Early access available for design partners</p>
@@ -407,20 +366,55 @@ const LandingPage = () => {
       {/* BUILD — AGENTIC STUDIO */}
       <section id="build" className="py-24 md:py-32 px-6 md:px-16 bg-black text-[#E6E6E1]">
         <div className="max-w-6xl mx-auto">
-          <div className="service-reveal mb-16">
+          <div className="service-reveal mb-12">
             <div className="font-mono text-sm tracking-widest text-[#E6E6E1]/35 mb-6 flex items-center gap-3">
               <span className="bg-white text-black px-2 py-1 rounded text-xs">02</span>
               <span className="text-[#E6E6E1]/50">AGENTIC STUDIO</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">Build</h2>
-            <p className="text-xl font-semibold text-[#E6E6E1] mb-4">Your Product Owner's morning ritual: coffee, Agentic Studio, three taps.</p>
+            <p className="text-xl font-semibold text-[#E6E6E1] mb-4">Sara's morning ritual: coffee, Command Center, three taps.</p>
             <p className="text-[#E6E6E1]/65 leading-relaxed max-w-2xl">
               Agents built 5 screens overnight. Sara reviews each in her queue. "Looks good" or "Adjust." No meetings. No status updates. Just decisions at the speed of thought.
             </p>
           </div>
 
+          {/* Screenshot showcase */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Main screenshot - Sara's View */}
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-[#E6E6E1]/40 mb-2 flex items-center gap-2">
+                <span className="text-green-400">Sara's View</span> — Product Owner
+              </div>
+              <div className="bg-[#111] rounded-xl overflow-hidden border border-white/10">
+                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <img src="/screenshots/06-build-home-sara.png" alt="Sara's build home view" className="w-full" />
+              </div>
+              <p className="text-sm text-[#E6E6E1]/50 mt-3">5 screens ready for review. 92% quality score. Iteration 3 of 4. Sara sees exactly what needs her attention.</p>
+            </div>
+
+            {/* Review Tab screenshot */}
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-[#E6E6E1]/40 mb-2 flex items-center gap-2">
+                <span className="text-green-400">Review Tab</span> — Approvals
+              </div>
+              <div className="bg-[#111] rounded-xl overflow-hidden border border-white/10">
+                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <img src="/screenshots/07-build-review-screens.png" alt="Review tab with screens" className="w-full" />
+              </div>
+              <p className="text-sm text-[#E6E6E1]/50 mt-3">Every screen traced to a goal. Every approval tracked to a stakeholder. Christian's architecture gates auto-checked.</p>
+            </div>
+          </div>
+
           {/* The "Three Taps" moment */}
-          <div className="mt-16 bg-white/5 rounded-2xl p-8 md:p-12 border border-white/10">
+          <div className="bg-white/5 rounded-2xl p-8 md:p-12 border border-white/10 mb-12">
             <div className="text-center mb-8">
               <div className="font-mono text-xs text-[#E6E6E1]/40 uppercase tracking-wider mb-2">The Daily Ritual</div>
               <h3 className="text-2xl md:text-3xl font-bold">Three taps. Done before the coffee gets cold.</h3>
@@ -447,7 +441,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          <div className="mt-16 flex items-center justify-between border-t border-white/10 pt-8">
+          <div className="flex items-center justify-between border-t border-white/10 pt-8">
             <div>
               <p className="text-sm font-bold text-[#E6E6E1] uppercase tracking-wider">In early use</p>
               <p className="text-xs text-[#E6E6E1]/50 mt-1">Running on real client implementations</p>
@@ -462,16 +456,51 @@ const LandingPage = () => {
       {/* OPERATE — COMMAND CENTER */}
       <section id="operate" className="py-24 md:py-32 px-6 md:px-16 bg-[#E6E6E1]">
         <div className="max-w-6xl mx-auto">
-          <div className="service-reveal mb-16">
+          <div className="service-reveal mb-12">
             <div className="font-mono text-sm tracking-widest text-black/35 mb-6 flex items-center gap-3">
               <span className="bg-black text-white px-2 py-1 rounded text-xs">03</span>
               <span className="text-black/50">COMMAND CENTER</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">Operate</h2>
-            <p className="text-xl font-semibold text-black mb-4">Your CFO's quarterly review just got very short.</p>
+            <p className="text-xl font-semibold text-black mb-4">Henrik's quarterly review just got very short.</p>
             <p className="text-black/65 leading-relaxed max-w-2xl">
-              Remember those goals Echo locked in Discover? Operate shows if they landed. Your CFO opens the dashboard: 4 of 5 goals on track. GOAL-01 promised 30% faster fulfillment. Current: 3.1 hours. 93% of target. One glance. Full accountability.
+              Remember those goals Echo locked in Discover? Operate shows if they landed. Henrik opens his CFO dashboard: 4 of 5 goals on track. GOAL-01 promised 30% faster fulfillment. Current: 3.1 hours. 93% of target. One glance. Full accountability.
             </p>
+          </div>
+
+          {/* Screenshot showcase */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            {/* Goal Outcomes screenshot */}
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2 flex items-center gap-2">
+                <span className="text-green-600">Goal Outcomes</span> — Live
+              </div>
+              <div className="bg-black rounded-xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,0.15)]">
+                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <img src="/screenshots/08-operate-outcomes.png" alt="Goal outcomes dashboard" className="w-full" />
+              </div>
+              <p className="text-sm text-black/60 mt-3">GOAL-01: "Reduce fulfillment time 30%". Baseline: 4.5 hours. Target: 3.15 hours. Current: 3.1 hours. 93% achieved.</p>
+            </div>
+
+            {/* CFO Dashboard screenshot */}
+            <div className="screenshot-reveal">
+              <div className="text-xs font-mono text-black/40 mb-2 flex items-center gap-2">
+                <span className="text-green-600">Henrik's View</span> — CFO Dashboard
+              </div>
+              <div className="bg-black rounded-xl overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,0.15)]">
+                <div className="bg-black/90 px-4 py-2 flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+                </div>
+                <img src="/screenshots/10-operate-home-sponsor.png" alt="CFO dashboard" className="w-full" />
+              </div>
+              <p className="text-sm text-black/60 mt-3">ROI tracking, goal attainment, monthly run cost. One screen. Full picture. Board-ready.</p>
+            </div>
           </div>
 
           <div className="flex items-center justify-between border-t border-black/10 pt-8">
