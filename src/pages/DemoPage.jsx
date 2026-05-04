@@ -314,30 +314,30 @@ export default function DemoPage() {
         screenshots={SCREENSHOTS}
       />
 
-      {/* The Difference */}
+      {/* How It's Different */}
       <section className="demo-difference">
         <div className="demo-difference-content">
-          <p className="demo-eyebrow">The Difference</p>
-          <h2 className="demo-section-title">Not a better agency.<br />A different approach.</h2>
+          <p className="demo-eyebrow">How It's Different</p>
+          <h2 className="demo-section-title">A fundamental shift.</h2>
           <div className="demo-difference-grid">
             <div className="demo-diff-card">
-              <h3>Traditional Delivery</h3>
+              <h3>Traditional Lifecycle</h3>
               <ul>
-                <li>Manual discovery workshops</li>
-                <li>Human-gated approvals at every step</li>
-                <li>Progress measured in sprints</li>
-                <li>Scope documented in Confluence</li>
-                <li>Success measured at project end</li>
+                <li>Requirements gathered in workshops</li>
+                <li>Humans coordinate humans</li>
+                <li>Progress measured in meetings</li>
+                <li>Feedback queued for next sprint</li>
+                <li>Months from idea to production</li>
               </ul>
             </div>
             <div className="demo-diff-card highlight">
-              <h3>Agentic Delivery</h3>
+              <h3>Agentic OS</h3>
               <ul>
-                <li>AI-led stakeholder interviews</li>
-                <li>Autonomous execution, async review</li>
-                <li>Progress measured in hours</li>
-                <li>Scope locked in Charter goals</li>
-                <li>Success tracked continuously</li>
+                <li>Requirements extracted by AI</li>
+                <li>Humans approve, agents execute</li>
+                <li>Progress measured in commits</li>
+                <li>Feedback triggers immediate rework</li>
+                <li>Weeks from idea to production</li>
               </ul>
             </div>
           </div>
