@@ -65,11 +65,11 @@ const SCREENSHOTS = [
     url: 'portal.client.com/outcomes',
   },
   {
-    src: '/screenshots/09-operate-home-hugo.png',
+    src: '/screenshots/09-operate-home-sara.png',
     phase: 'Operate',
-    title: 'CFO Dashboard',
-    description: 'Henrik sees what CFOs care about: goal attainment, budget burn rate, ROI tracking. One screen. Full picture.',
-    url: 'portal.client.com/executive/roi',
+    title: 'Product Owner in Operate',
+    description: 'Sara monitors the live system: 99.94% uptime, feature adoption at 78%, feedback queue, NPS tracking. Full operational picture.',
+    url: 'portal.client.com/home',
   },
 ];
 
