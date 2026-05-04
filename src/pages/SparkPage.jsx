@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, Shield, GitBranch, Users, FileCheck, Zap, Check, Layers } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Check, Users, Target, FileCheck, Zap, Play } from 'lucide-react';
 import { MagneticButton } from '../components/common';
-import { ProductLadderSection, TargetAudienceSection, FAQSection } from '../components/sections';
+import { ProductLadderSection, FAQSection } from '../components/sections';
 import { PageMeta, BreadcrumbSchema } from '../components/seo';
 import { useInquiry } from '../context/InquiryContext';
 
@@ -13,12 +14,12 @@ const SparkPage = () => {
   const pageRef = useRef(null);
   const { openInquiry } = useInquiry();
 
-  const sparkFAQs = [
-    { q: "What do we need to prepare?", a: "Whatever you have — project descriptions, process diagrams, feature specs, screen mockups. Don't have documentation? No problem. Our AI Sync Sessions capture context directly from your stakeholders through structured conversations." },
-    { q: "Is The Spark mandatory before The Catalyst?", a: "Strongly recommended. Without proper scope and context, the build suffers. The Spark ensures we're building the right thing, the right way, from the start." },
-    { q: "What if we already know exactly what we want?", a: "Great — The Spark will be faster. We'll validate your specifications, map integrations, and lock the architecture. Even well-prepared teams benefit from explicit scope documentation." },
-    { q: "Who needs to be involved?", a: "Business sponsor who knows the 'why', domain experts who know the 'what', and technical stakeholders who know the 'where' and 'how'. We guide the sessions." },
-    { q: "What do we get at the end?", a: "A complete Development Scope: feature breakdown, screen specifications, technical architecture, integration map, and fixed price. Everything needed to start The Catalyst immediately." }
+  const discoverFAQs = [
+    { q: "What happens in a Discover phase?", a: "Echo — our AI interviewer — conducts structured conversations with your stakeholders: sponsors, domain experts, architects, engineers. It surfaces conflicts, locks goals with numbers, and creates a scope document that agents can actually execute against." },
+    { q: "Who needs to be involved?", a: "Your sponsor who owns the budget, your product owner who owns the features, and your technical stakeholders who own the architecture. Echo handles the coordination and conflict resolution." },
+    { q: "How is this different from traditional discovery?", a: "Traditional discovery produces documents that get interpreted. Discover produces specifications that agents can execute. Every goal has a baseline, a target, and an owner. Nothing is ambiguous." },
+    { q: "What if we already have clear requirements?", a: "Great — Echo will validate them faster. But even well-prepared teams find conflicts when the agent asks 'What happens if we don't hit this goal?' and the CFO and Product Owner give different answers." },
+    { q: "Can we skip Discover and go straight to Build?", a: "You can. But Build without Discover means agents working against unclear goals. Every failed AI initiative shares the same root cause: unclear goals, unmeasured outcomes. Discover prevents that." }
   ];
 
   useEffect(() => {
@@ -28,19 +29,47 @@ const SparkPage = () => {
         { y: 0, opacity: 1, duration: 1.2, stagger: 0.08, ease: 'power3.out', delay: 0.2 }
       );
 
-      gsap.fromTo('.phase-card',
-        { y: 40, opacity: 0 },
+      gsap.fromTo('.section-reveal',
+        { y: 60, opacity: 0 },
         {
-          y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-          scrollTrigger: { trigger: '#phases-section', start: 'top 70%' }
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.section-reveal',
+            start: 'top 75%'
+          }
         }
       );
 
-      gsap.fromTo('.output-item',
-        { x: -20, opacity: 0 },
+      gsap.fromTo('.screenshot-reveal',
+        { y: 30, opacity: 0 },
         {
-          x: 0, opacity: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out',
-          scrollTrigger: { trigger: '#outputs-section', start: 'top 70%' }
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.screenshot-reveal',
+            start: 'top 80%'
+          }
+        }
+      );
+
+      gsap.fromTo('.step-card',
+        { y: 40, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '#process-section',
+            start: 'top 70%'
+          }
         }
       );
     }, pageRef);
@@ -51,390 +80,324 @@ const SparkPage = () => {
   return (
     <div ref={pageRef}>
       <PageMeta
-        title="The Spark — Scope & Context for AI Development"
-        description="Before development begins, we nail the context — what you're building, for who, and why. The foundation for AI Development as a Service. Alignment now, speed later."
-        path="/the-spark"
+        title="Discover — Agentic Studio | Where Echo interviews your stakeholders"
+        description="Before a single line of code, Echo captures what humans forget to ask. Goals with numbers, stakeholder alignment, locked scope. The foundation for agentic delivery."
+        path="/discover"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },
-        { name: 'The Spark', path: '/the-spark' }
+        { name: 'Discover', path: '/discover' }
       ]} />
 
-      {/* HERO */}
-      <section className="relative h-[100dvh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-[#E6E6E1]">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#E6E6E1] via-[#E6E6E1] to-[#d4d4cf]"></div>
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.03) 1px, transparent 0)',
-            backgroundSize: '32px 32px'
-          }}></div>
-        </div>
+      {/* HERO — THE HENRIK MOMENT */}
+      <section className="relative min-h-[90vh] w-full flex items-end pb-24 px-6 md:px-16 overflow-hidden bg-[#E6E6E1]">
+        <div className="absolute inset-0 z-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(0,0,0,0.03) 1px, transparent 0)',
+          backgroundSize: '32px 32px'
+        }}></div>
 
         <div className="relative z-10 max-w-5xl">
-          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/50 mb-4">{'>'} 01</div>
-          <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-4 text-black">
-            THE SPARK
+          <div className="hero-anim font-mono text-sm uppercase tracking-widest text-black/40 mb-4">
+            {'>>'} AGENTIC STUDIO
+          </div>
+          <h1 className="hero-anim text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-none tracking-tighter mb-6 text-black">
+            DISCOVER
           </h1>
-          <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-6 font-medium leading-snug">
-            Scope it right. <strong>Build it once.</strong>
+          <p className="hero-anim text-xl md:text-2xl text-black/80 max-w-3xl mb-4 font-medium leading-snug">
+            Your CFO thinks they know what they want. Then Echo asks: <em className="text-black">"What happens to the budget if we don't hit the 30% target?"</em>
           </p>
-          <p className="hero-anim text-lg text-black/60 max-w-2xl mb-12 font-medium">
-            Before we write a line of code, we nail the context — what you're building, for who, and why. Alignment now means speed later. This is the foundation for everything that follows.
+          <p className="hero-anim text-lg text-black/60 max-w-2xl mb-12">
+            Echo — our AI interviewer — asks the questions humans forget. Surfaces conflicts before they become blockers. Locks goals, user journeys, and architecture with numbers, not wishes. This is where agentic delivery begins.
           </p>
-          <div className="hero-anim">
+          <div className="hero-anim flex items-center gap-6 flex-wrap">
             <MagneticButton
-              onClick={() => openInquiry('spark', 'Start onboarding')}
+              onClick={() => openInquiry('discover', 'See Discover in action')}
               className="bg-black text-[#E6E6E1] px-8 py-5 text-lg font-bold flex items-center gap-2 hover:bg-black/90"
             >
-              Start onboarding <ArrowUpRight size={20} />
+              <Play size={18} /> See Discover in action
             </MagneticButton>
+            <a href="#process" className="text-black/60 hover:text-black text-sm font-medium flex items-center gap-2 transition-colors">
+              How it works <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* WHY ONBOARDING MATTERS */}
+      {/* THE PROBLEM — WHY DISCOVER EXISTS */}
       <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="max-w-3xl">
-            <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40 mb-4">Why This Matters</div>
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">Context Is Everything</h2>
-            <p className="text-xl text-[#E6E6E1]/80 font-medium leading-relaxed mb-8">
-              AI-powered development moves fast. But speed without context is waste. Without knowing what you're building, for who, and why — the end result suffers.
-            </p>
-            <p className="text-xl text-[#E6E6E1]/80 font-medium leading-relaxed">
-              <strong className="text-[#E6E6E1]">The Spark</strong> captures the context that makes The Catalyst succeed. Specification. Alignment. A shared understanding of what "done" looks like. Time spent here is time saved later.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-4 gap-6 mt-16">
-            {[
-              {
-                icon: Users,
-                title: "Who & Why",
-                desc: "Users, stakeholders, business goals. The human context that shapes every decision."
-              },
-              {
-                icon: Layers,
-                title: "What & How",
-                desc: "Features, workflows, technical approach. The blueprint for what we're building."
-              },
-              {
-                icon: GitBranch,
-                title: "Where",
-                desc: "Existing systems, integrations, infrastructure. The landscape we're building into."
-              },
-              {
-                icon: Shield,
-                title: "Constraints",
-                desc: "Security, compliance, deployment paths. The boundaries that shape the solution."
-              }
-            ].map((item, i) => (
-              <div key={i} className="border border-white/10 rounded-xl p-6">
-                <item.icon size={28} className="text-[#E6E6E1]/60 mb-4" />
-                <h3 className="text-lg font-bold uppercase tracking-tight mb-2">{item.title}</h3>
-                <p className="text-[#E6E6E1]/70 font-medium text-sm">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* AI SYNC SESSIONS - SCOPE CREATION */}
-      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-4">No scope docs? No problem.</div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">AI Sync Sessions</h2>
-              <p className="text-xl text-black/80 font-medium leading-relaxed mb-6">
-                Great software starts with great understanding. Our AI-powered sync sessions capture context directly from your stakeholders — no lengthy interviews, no lost nuance.
-              </p>
-              <p className="text-xl text-black/70 font-medium leading-relaxed">
-                Three&nbsp;perspectives. One shared&nbsp;understanding. AI&nbsp;synthesizes, humans&nbsp;validate.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {/* The Why */}
-              <div className="bg-white rounded-xl p-6 border-2 border-black">
-                <div className="mb-3">
-                  <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 1</div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight">The Why</h3>
-                </div>
-                <p className="text-black/70 font-medium text-sm mb-3">Strategy, ambition, customer promises. What success looks like.</p>
-                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Sponsors & Leadership</div>
-              </div>
-
-              {/* The What */}
-              <div className="bg-white rounded-xl p-6 border-2 border-black">
-                <div className="mb-3">
-                  <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 2</div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight">The What</h3>
-                </div>
-                <p className="text-black/70 font-medium text-sm mb-3">Operational reality, process truth. How the work actually happens today.</p>
-                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Domain Experts</div>
-              </div>
-
-              {/* The Where */}
-              <div className="bg-white rounded-xl p-6 border-2 border-black">
-                <div className="mb-3">
-                  <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 3</div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight">The Where</h3>
-                </div>
-                <p className="text-black/70 font-medium text-sm mb-3">Infrastructure, existing systems, integration paths. The technical landscape.</p>
-                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Architects & DevOps</div>
-              </div>
-
-              {/* The How */}
-              <div className="bg-white rounded-xl p-6 border-2 border-black">
-                <div className="mb-3">
-                  <div className="font-mono text-xs tracking-wider uppercase text-black/50">Session 4</div>
-                  <h3 className="text-xl font-bold uppercase tracking-tight">The How</h3>
-                </div>
-                <p className="text-black/70 font-medium text-sm mb-3">Technical approach, stack decisions, deployment strategy. How we build it.</p>
-                <div className="text-xs font-medium text-black/50 uppercase tracking-wide">With: Engineers & Tech Leads</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* DEVELOPMENT SCOPE */}
-      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/40 mb-4">The Main Event</div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
-                Your Development Scope
+            <div className="section-reveal">
+              <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40 mb-4">THE PROBLEM</div>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">
+                Every failed AI initiative shares the same root cause.
               </h2>
-              <p className="text-xl text-[#E6E6E1]/80 font-medium leading-relaxed mb-6">
-                The Spark ends with something concrete: a fully scoped development engagement. Not a vague proposal — an executable plan.
+              <p className="text-xl text-[#E6E6E1]/70 font-medium leading-relaxed mb-6">
+                Unclear goals. Unmeasured outcomes. Humans as bottlenecks.
               </p>
-              <p className="text-lg text-[#E6E6E1]/60 font-medium leading-relaxed">
-                Features prioritised. Architecture decided. Price locked. You know exactly what you're getting before The Catalyst begins.
+              <p className="text-lg text-[#E6E6E1]/60">
+                Agents don't need more prompts. <strong className="text-[#E6E6E1]">They need clearer missions.</strong>
               </p>
             </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-8">
-              <h3 className="font-bold text-xl uppercase tracking-tight mb-6">Your Scope Document</h3>
+            <div className="section-reveal bg-white/5 rounded-2xl p-8 border border-white/10">
+              <h3 className="text-2xl font-bold uppercase tracking-tight mb-6">Discover solves this.</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Target size={16} />
+                  </div>
+                  <div>
+                    <div className="font-bold mb-1">Goals with numbers</div>
+                    <p className="text-sm text-[#E6E6E1]/60">"Reduce fulfillment time 30%" not "improve operations"</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <Users size={16} />
+                  </div>
+                  <div>
+                    <div className="font-bold mb-1">Stakeholder alignment</div>
+                    <p className="text-sm text-[#E6E6E1]/60">Echo interviews your CFO, Product Owner, Architect — surfacing conflicts early</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <FileCheck size={16} />
+                  </div>
+                  <div>
+                    <div className="font-bold mb-1">Locked scope</div>
+                    <p className="text-sm text-[#E6E6E1]/60">Every goal gets a baseline, a target, and an owner</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ECHO IN ACTION — HERO SCREENSHOT */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-6xl mx-auto">
+          <div className="section-reveal text-center mb-12">
+            <div className="font-mono text-sm tracking-widest text-black/35 mb-4">ECHO IN ACTION</div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">
+              "What does success look like in 90 days?"
+            </h2>
+            <p className="text-lg text-black/60 max-w-2xl mx-auto">
+              Echo asks the questions that surface real constraints. Watch your CFO's expression when the budget question lands.
+            </p>
+          </div>
+
+          <div className="screenshot-reveal relative">
+            <div className="absolute top-4 left-4 z-10 bg-black text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              Live: Echo interviewing your CFO
+            </div>
+            <img
+              src="/screenshots/01-discover-echo-henrik.png"
+              alt="Echo interviews Henrik"
+              className="w-full rounded-xl border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]"
+            />
+            <p className="text-sm text-black/50 mt-6 text-center italic">
+              "I've been in discovery workshops for 20 years. Echo asked a question in minute five that no consultant has ever asked."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* THE PROCESS — HOW DISCOVER WORKS */}
+      <section id="process" className="py-24 px-6 md:px-16 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="font-mono text-sm tracking-widest text-black/35 mb-4">HOW IT WORKS</div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">Agent-led conversations. One locked scope.</h2>
+            <p className="text-lg text-black/60 max-w-2xl mx-auto">
+              15-minute sessions — voice or chat. Echo interviews each stakeholder and transforms conversations into consistent artefacts. Goals, user journeys, screens, architecture, and integrations lock when everyone aligns.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="step-card bg-[#E6E6E1] rounded-xl p-6 border-2 border-black">
+              <div className="font-mono text-xs text-black/40 mb-3">CONVERSATION 01</div>
+              <h3 className="text-xl font-bold uppercase tracking-tight mb-3">The Why</h3>
+              <p className="text-sm text-black/70 mb-4">Strategy, ambition, success criteria. What does winning look like?</p>
+              <div className="text-xs font-medium text-black/50 uppercase tracking-wide bg-white px-3 py-1.5 rounded inline-block">
+                With: Your Sponsor
+              </div>
+            </div>
+            <div className="step-card bg-[#E6E6E1] rounded-xl p-6 border-2 border-black">
+              <div className="font-mono text-xs text-black/40 mb-3">CONVERSATION 02</div>
+              <h3 className="text-xl font-bold uppercase tracking-tight mb-3">The What</h3>
+              <p className="text-sm text-black/70 mb-4">Features, workflows, user needs. How does the work actually happen today?</p>
+              <div className="text-xs font-medium text-black/50 uppercase tracking-wide bg-white px-3 py-1.5 rounded inline-block">
+                With: Your Product Owner
+              </div>
+            </div>
+            <div className="step-card bg-[#E6E6E1] rounded-xl p-6 border-2 border-black">
+              <div className="font-mono text-xs text-black/40 mb-3">CONVERSATION 03</div>
+              <h3 className="text-xl font-bold uppercase tracking-tight mb-3">The Where</h3>
+              <p className="text-sm text-black/70 mb-4">Infrastructure, integrations, constraints. What does the technical landscape look like?</p>
+              <div className="text-xs font-medium text-black/50 uppercase tracking-wide bg-white px-3 py-1.5 rounded inline-block">
+                With: Your Enterprise Architect
+              </div>
+            </div>
+            <div className="step-card bg-black text-[#E6E6E1] rounded-xl p-6 border-2 border-black">
+              <div className="font-mono text-xs text-[#E6E6E1]/40 mb-3">CONVERSATION 04</div>
+              <h3 className="text-xl font-bold uppercase tracking-tight mb-3">The How</h3>
+              <p className="text-sm text-[#E6E6E1]/70 mb-4">Technical approach, stack decisions, build strategy. How do we execute?</p>
+              <div className="text-xs font-medium text-[#E6E6E1]/50 uppercase tracking-wide bg-white/10 px-3 py-1.5 rounded inline-block">
+                With: Your Lead Developer
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE OUTPUTS — WHAT YOU GET */}
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="section-reveal">
+              <div className="font-mono text-xs uppercase tracking-widest text-[#E6E6E1]/40 mb-4">THE OUTPUT</div>
+              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+                Goals that agents can execute against.
+              </h2>
+              <p className="text-xl text-[#E6E6E1]/70 font-medium leading-relaxed mb-8">
+                Discover ends with a locked scope document. Every goal has a baseline, a target, and an owner. Build can begin immediately — no ambiguity, no drift.
+              </p>
               <ul className="space-y-4">
                 {[
-                  "Feature breakdown with acceptance criteria",
-                  "Technical architecture & stack decisions",
-                  "Screen inventory with complexity ratings",
-                  "Integration map & API contracts",
-                  "Fixed price — no surprises"
+                  "Charter with numbered goals",
+                  "Stakeholder alignment captured",
+                  "Conflict resolutions documented",
+                  "Workflow analysis with automation potential",
+                  "Recommended path with cost/time/risk scores"
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[#E6E6E1]/80 font-medium">
+                  <li key={i} className="flex items-center gap-3 text-[#E6E6E1]/80">
                     <Check size={16} className="text-green-400 flex-shrink-0" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* THE THREE PHASES */}
-      <section id="phases-section" className="py-24 px-6 md:px-16 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-4">How We Get There</h2>
-            <p className="text-xl font-medium text-black/70 max-w-2xl">Three phases that converge into your Development Scope.</p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-6">
-            {/* Phase 1 */}
-            <div className="phase-card bg-[#E6E6E1] rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-              <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-2">Phase 1</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-black">Discovery</h3>
-              <p className="text-black/70 font-medium mb-6">
-                We map what you need: features, workflows, users, integrations. The blueprint for your software.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Feature prioritisation",
-                  "User journey mapping",
-                  "Integration inventory",
-                  "Complexity assessment"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/80">
-                    <Check size={16} className="text-black" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Phase 2 */}
-            <div className="phase-card bg-black text-[#E6E6E1] rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,0.3)]">
-              <div className="font-mono text-xs tracking-wider uppercase text-[#E6E6E1]/50 mb-2">Phase 2</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4">Architecture</h3>
-              <p className="text-[#E6E6E1]/70 font-medium mb-6">
-                We design how it's built: stack, structure, security. Technical decisions locked before code begins.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Technology selection",
-                  "System architecture",
-                  "Security framework",
-                  "Infrastructure plan"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium text-[#E6E6E1]/80">
-                    <Check size={16} className="text-[#E6E6E1]" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Phase 3 */}
-            <div className="phase-card bg-[#E6E6E1] rounded-xl p-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-              <div className="font-mono text-xs tracking-wider uppercase text-black/50 mb-2">Phase 3</div>
-              <h3 className="text-2xl font-bold uppercase tracking-tight mb-4 text-black">Scoping</h3>
-              <p className="text-black/70 font-medium mb-6">
-                We lock the scope: deliverables, milestones, fixed price. No ambiguity.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  "Deliverables & milestones",
-                  "Acceptance criteria",
-                  "Fixed pricing",
-                  "Catalyst kickoff plan"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/80">
-                    <Check size={16} className="text-black" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="screenshot-reveal space-y-6">
+              <div className="relative group">
+                <img
+                  src="/screenshots/02-discover-charter-goals.png"
+                  alt="Charter with locked goals"
+                  className="w-full rounded-lg border border-white/10 shadow-lg group-hover:shadow-2xl transition-shadow"
+                />
+                <p className="text-sm text-[#E6E6E1]/50 mt-3">Goals lock when all stakeholders align. GOAL-01 through GOAL-05: numbered, measured, owned.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* OUTPUTS */}
-      <section id="outputs-section" className="py-24 px-6 md:px-16 bg-white">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="font-mono text-xs uppercase tracking-widest text-black/40 mb-4">The Valuable Assets</div>
-              <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-8">Stepping Stones for Success</h2>
-              <p className="text-xl font-medium text-black/70 mb-8">
-                You gain the foundation for a successful project — and perhaps, a long-lasting partnership.
-              </p>
+      {/* THE DASHBOARD — PERSONA-AWARE VIEWS */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-6xl mx-auto">
+          <div className="section-reveal text-center mb-12">
+            <div className="font-mono text-sm tracking-widest text-black/35 mb-4">EVERY STAKEHOLDER. ONE AGENTIC OS.</div>
+            <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-4">
+              Your Product Owner sees features. Your CFO sees ROI.
+            </h2>
+            <p className="text-lg text-black/60 max-w-2xl mx-auto">
+              Same data. Different views. Each stakeholder sees exactly what they need to make their decision.
+            </p>
+          </div>
 
-              <div className="space-y-4">
-                {[
-                  { icon: Layers, title: "Development Scope", desc: "Feature breakdown, architecture, timeline, fixed price. The complete plan for The Catalyst." },
-                  { icon: FileCheck, title: "Screen Specifications", desc: "Every screen inventoried with complexity ratings and acceptance criteria." },
-                  { icon: Shield, title: "Technical Architecture", desc: "Stack decisions, integration contracts, security framework, infrastructure plan." },
-                  { icon: Zap, title: "Catalyst Kickoff", desc: "Day-one ready. No ramp-up. Development starts immediately." }
-                ].map((item, i) => (
-                  <div key={i} className="output-item flex items-start gap-4 p-4 bg-[#E6E6E1]/30 rounded-lg">
-                    <item.icon size={24} className="text-black mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-bold text-lg">{item.title}</h3>
-                      <p className="text-black/70 font-medium text-sm">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="screenshot-reveal group">
+              <div className="relative">
+                <div className="absolute top-4 left-4 z-10 bg-[#8B5CF6] text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                  Product Owner View
+                </div>
+                <img
+                  src="/screenshots/03-discover-home-sara.png"
+                  alt="Sara's dashboard"
+                  className="w-full rounded-lg border-2 border-black shadow-md group-hover:shadow-xl transition-shadow"
+                />
               </div>
+              <p className="text-sm text-black/50 mt-4">Quality ring, attention queue, screens ready for review. Your Product Owner sees their work.</p>
             </div>
+            <div className="screenshot-reveal group">
+              <div className="relative">
+                <div className="absolute top-4 left-4 z-10 bg-[#8B5CF6] text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                  Path Comparison — Decision Time
+                </div>
+                <img
+                  src="/screenshots/04-discover-recommendation-paths.png"
+                  alt="Path recommendations"
+                  className="w-full rounded-lg border-2 border-black shadow-md group-hover:shadow-xl transition-shadow"
+                />
+              </div>
+              <p className="text-sm text-black/50 mt-4">Four paths compared. Cost, time, fit, risk — all scored. Your Sponsor taps "Approve" on the recommended path.</p>
+            </div>
+          </div>
 
-            <div className="bg-black text-[#E6E6E1] rounded-xl p-10">
-              <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-4">The Handoff</div>
-              <h3 className="text-3xl font-bold uppercase tracking-tight mb-6">Scope Locked. Build Begins.</h3>
-              <p className="text-[#E6E6E1]/80 font-medium">
-                The Spark ends with complete clarity. You know what's being built, how it's being built, and what it costs. The Catalyst is pure execution.
-              </p>
+          <div className="mt-8">
+            <div className="screenshot-reveal group">
+              <div className="relative">
+                <div className="absolute top-4 left-4 z-10 bg-[#A78BFA] text-white px-3 py-1.5 rounded-full text-xs font-bold">
+                  Workflow Analysis — Automation Potential
+                </div>
+                <img
+                  src="/screenshots/05-discover-workflow-analyzer.png"
+                  alt="Workflow analyzer"
+                  className="w-full rounded-lg border-2 border-black shadow-md group-hover:shadow-xl transition-shadow"
+                />
+              </div>
+              <p className="text-sm text-black/50 mt-4">9 workflows analyzed. 71% automation potential. The agent did the analysis. Your Lead Developer just reviews.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TARGET AUDIENCE */}
-      <TargetAudienceSection
-        forItems={[
-          "Organizations planning their first AI-powered software delivery.",
-          "Teams with complex infrastructure or compliance requirements.",
-          "Enterprises requiring formal governance documentation.",
-          "Anyone who wants a clean start with The Catalyst."
-        ]}
-        requirement="The Spark is recommended but not required. Organizations with mature DevOps may proceed directly to The Catalyst with expedited validation."
-        alternateTitle="Already have mature infrastructure?"
-        alternateItems={[
-          "We can run an expedited validation instead of full onboarding.",
-          "If validation passes, proceed directly to The Catalyst.",
-          "If gaps emerge, we scope targeted remediation."
-        ]}
-        alternateCTA={{ text: "Discuss your situation", onClick: () => openInquiry('spark', "Discuss readiness") }}
-      />
-
-      {/* PRICING */}
-      <section className="py-24 bg-[#E6E6E1] px-6 md:px-16">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-xl p-10 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
-            <div className="text-center mb-8">
-              <div className="font-mono text-xs uppercase tracking-wider text-black/50 mb-2">Engagement</div>
-              <h2 className="text-4xl font-bold uppercase tracking-tighter mb-2">The Spark</h2>
-              <p className="text-xl text-black/80 font-medium mt-2">Scoped to organizational complexity</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="font-bold uppercase tracking-tight mb-4">Includes</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Full infrastructure assessment",
-                    "Security & compliance review",
-                    "Stakeholder alignment sessions",
-                    "Governance framework documentation",
-                    "Environment preparation",
-                    "Catalyst kickoff brief"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/80">
-                      <Check size={16} className="text-black" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold uppercase tracking-tight mb-4">Process</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Scoped to complexity",
-                    "Parallel workstreams",
-                    "Async collaboration where possible",
-                    "Minimal stakeholder time required",
-                    "Formal handoff to Catalyst"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-sm font-medium text-black/80">
-                      <Check size={16} className="text-black" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            <MagneticButton
-              onClick={() => openInquiry('spark', 'Start onboarding')}
-              className="w-full bg-black text-[#E6E6E1] px-8 py-4 text-lg font-bold justify-center"
-            >
-              Start onboarding <ArrowUpRight size={18} />
-            </MagneticButton>
-          </div>
+      {/* NEXT STEP — BUILD */}
+      <section className="py-24 px-6 md:px-16 bg-black text-[#E6E6E1]">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="font-mono text-sm text-[#E6E6E1]/40 mb-4">WHAT HAPPENS NEXT</div>
+          <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-tight mb-6">
+            Discover locks the goals.<br/>Build executes them.
+          </h2>
+          <p className="text-xl text-[#E6E6E1]/60 max-w-2xl mx-auto mb-8">
+            Once your Sponsor signs off on the charter, the scope is locked. Build can begin immediately — agents working against clear goals, your Product Owner reviewing screens, your Architect governing integrations.
+          </p>
+          <Link
+            to="/build"
+            className="inline-flex items-center gap-3 bg-[#E6E6E1] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-white transition-colors"
+          >
+            Explore Build <ArrowRight size={20} />
+          </Link>
         </div>
       </section>
 
       {/* FAQ */}
-      <FAQSection faqs={sparkFAQs} />
+      <FAQSection faqs={discoverFAQs} />
 
       {/* PRODUCT LADDER */}
-      <ProductLadderSection currentProduct="spark" variant="journey" />
+      <ProductLadderSection currentProduct="discover" variant="journey" />
+
+      {/* CTA */}
+      <section className="py-24 px-6 md:px-16 bg-[#E6E6E1]">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white rounded-xl p-12 border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-4">
+              See Echo in action.
+            </h2>
+            <p className="text-lg text-black/70 mb-8">
+              Watch how Echo interviews stakeholders, surfaces conflicts, and locks goals. 30 minutes. Live product.
+            </p>
+            <MagneticButton
+              onClick={() => openInquiry('discover', 'Book a Discover demo')}
+              className="bg-black text-[#E6E6E1] px-10 py-5 text-lg font-bold"
+            >
+              <Play size={18} className="mr-2" /> Book a demo
+            </MagneticButton>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

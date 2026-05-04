@@ -24,12 +24,12 @@ export const OrganizationSchema = () => {
   );
 };
 
-// Service schema for The Spark
-export const SparkCourseSchema = () => {
+// Service schema for Discover (Agentic Studio)
+export const DiscoverServiceSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "The Spark — Onboarding & Readiness",
+    "name": "Discover — Agentic Studio | Onboarding & Readiness",
     "description": "Structured onboarding that prepares your organization to receive and benefit from AI Development as a Service. Infrastructure, governance, team alignment.",
     "provider": {
       "@type": "Organization",
@@ -54,12 +54,12 @@ export const SparkCourseSchema = () => {
   );
 };
 
-// Service schema for The Catalyst
-export const CatalystCourseSchema = () => {
+// Service schema for Build (Agentic Studio)
+export const BuildServiceSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "The Catalyst — AI Development as a Service",
+    "name": "Build — Agentic Studio | AI Development as a Service",
     "description": "Fixed-price enterprise software delivery. Production-grade code with 80%+ test coverage, full documentation. Code built for YOU. 8-12 weeks from kickoff to production.",
     "provider": {
       "@type": "Organization",
@@ -77,13 +77,13 @@ export const CatalystCourseSchema = () => {
   );
 };
 
-// Service schema for The Core
-export const CoreServiceSchema = () => {
+// Service schema for Operate (Command Center)
+export const OperateServiceSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "The Core — Command Center & Support",
-    "description": "The Command Center for AI-driven development. Real-time dashboards, session management, operational control, and SLA-backed support across all your Catalyst engagements.",
+    "name": "Operate — Command Center | Support & Operations",
+    "description": "The Command Center for AI-driven development. Real-time dashboards, session management, operational control, and SLA-backed support across all your Build engagements.",
     "provider": {
       "@type": "Organization",
       "name": "Agentic Agency"
@@ -159,9 +159,9 @@ export const BreadcrumbSchema = ({ items }) => {
 
 export default {
   OrganizationSchema,
-  SparkCourseSchema,
-  CatalystCourseSchema,
-  CoreServiceSchema,
+  DiscoverServiceSchema,
+  BuildServiceSchema,
+  OperateServiceSchema,
   FounderSchema,
   FAQSchema,
   BreadcrumbSchema
