@@ -6,9 +6,9 @@ const HUBSPOT_FORM_GUID = import.meta.env.VITE_HUBSPOT_INQUIRY_FORM_GUID || '';
 const HUBSPOT_REGION = import.meta.env.VITE_HUBSPOT_REGION || '';
 
 const PRODUCT_OPTIONS = [
-  { value: 'spark', label: 'The Spark — Onboarding & Readiness' },
-  { value: 'catalyst', label: 'The Catalyst — AI Development as a Service' },
-  { value: 'core', label: 'The Core — Command Center & Support' },
+  { value: 'discover', label: 'Discover — Agentic Studio' },
+  { value: 'build', label: 'Build — Agentic Studio' },
+  { value: 'operate', label: 'Operate — Command Center' },
   { value: 'general', label: 'General Inquiry' },
 ];
 
@@ -113,9 +113,9 @@ const InquiryModal = ({ isOpen, onClose, product = 'general', ctaLabel = '' }) =
 
   // Fallback when HubSpot isn't configured
   const productEmail = {
-    spark: 'spark@agenticagency.dev',
-    catalyst: 'catalyst@agenticagency.dev',
-    core: 'core@agenticagency.dev',
+    discover: 'discover@agenticagency.dev',
+    build: 'build@agenticagency.dev',
+    operate: 'operate@agenticagency.dev',
     general: 'contact@agenticagency.dev',
   }[formData.product] || 'contact@agenticagency.dev';
 

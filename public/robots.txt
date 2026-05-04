@@ -6,18 +6,24 @@ Disallow: /STARK-procurement/
 Disallow: /STARK-Procurement
 Disallow: /STARK-procurement-auth
 Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /demo/
 
 # Google
 User-agent: Googlebot
 Disallow: /STARK-procurement
 Disallow: /STARK-procurement/
 Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /demo/
 
 # Bing
 User-agent: Bingbot
 Disallow: /STARK-procurement
 Disallow: /STARK-procurement/
 Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /demo/
 
 # OpenAI
 User-agent: GPTBot

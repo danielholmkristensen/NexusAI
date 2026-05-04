@@ -8,11 +8,11 @@ const Footer = () => {
         {/* Navigation Links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 text-sm">
           <div>
-            <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Services</h4>
+            <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Platform</h4>
             <ul className="space-y-2">
-              <li><Link to="/the-spark" className="hover:text-[#E6E6E1] transition-colors">The Spark</Link></li>
-              <li><Link to="/the-catalyst" className="hover:text-[#E6E6E1] transition-colors">The Catalyst</Link></li>
-              <li><Link to="/the-core" className="hover:text-[#E6E6E1] transition-colors">The Core</Link></li>
+              <li><Link to="/discover" className="hover:text-[#E6E6E1] transition-colors">Discover</Link></li>
+              <li><Link to="/build" className="hover:text-[#E6E6E1] transition-colors">Build</Link></li>
+              <li><Link to="/operate" className="hover:text-[#E6E6E1] transition-colors">Operate</Link></li>
             </ul>
           </div>
           <div>
@@ -25,9 +25,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-[#E6E6E1] uppercase tracking-wider mb-4">Resources</h4>
             <ul className="space-y-2">
-              <li><Link to="/the-catalyst#faq" className="hover:text-[#E6E6E1] transition-colors">FAQ</Link></li>
-              <li><Link to="/the-spark" className="hover:text-[#E6E6E1] transition-colors">Onboarding</Link></li>
-              <li><Link to="/the-catalyst" className="hover:text-[#E6E6E1] transition-colors">AI Development</Link></li>
+              <li><Link to="/build#faq" className="hover:text-[#E6E6E1] transition-colors">FAQ</Link></li>
+              <li><Link to="/discover" className="hover:text-[#E6E6E1] transition-colors">Agentic Studio</Link></li>
+              <li><Link to="/operate" className="hover:text-[#E6E6E1] transition-colors">Command Center</Link></li>
             </ul>
           </div>
           <div>
