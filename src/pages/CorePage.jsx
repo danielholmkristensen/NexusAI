@@ -180,7 +180,7 @@ const CorePage = () => {
               <p className="text-xs text-black/50">Cost per feature</p>
             </div>
             <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
-              <div className="text-5xl font-black text-black mb-2">8</div>
+              <div className="text-5xl font-black text-black mb-2">3</div>
               <div className="font-bold uppercase tracking-tight text-sm mb-1">Weeks Average</div>
               <p className="text-xs text-black/50">Idea to production</p>
             </div>
