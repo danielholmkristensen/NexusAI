@@ -220,10 +220,6 @@ const CorePage = () => {
                     <span className="text-sm text-[#E6E6E1]/60">Features delivered</span>
                     <span className="font-bold">12</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#E6E6E1]/60">Cost per feature</span>
-                    <span className="font-bold text-green-400">DKK 37.5K</span>
-                  </div>
                   <div className="border-t border-white/10 pt-3 mt-3">
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-[#E6E6E1]/60">vs. Industry benchmark</span>
