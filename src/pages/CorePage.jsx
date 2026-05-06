@@ -132,7 +132,7 @@ const CorePage = () => {
           </h1>
 
           <p className="hero-anim text-xl md:text-2xl text-[#E6E6E1]/80 max-w-3xl mb-4 font-medium leading-snug">
-            Henrik opens the Command Center. Q2 results: <strong className="text-[#E6E6E1]">4 features shipped.</strong>
+            Henrik opens the Command Center. Q2 results: <strong className="text-[#E6E6E1]">12 features shipped.</strong>
             <br/>Cost per feature: 62% below industry benchmark. 99.9% uptime. Zero escalations.
           </p>
 
