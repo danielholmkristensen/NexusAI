@@ -217,10 +217,6 @@ const CorePage = () => {
                 <div className="font-mono text-xs text-[#E6E6E1]/50 uppercase mb-4">CFO Dashboard</div>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-[#E6E6E1]/60">Investment to date</span>
-                    <span className="font-bold">DKK 450K</span>
-                  </div>
-                  <div className="flex justify-between items-center">
                     <span className="text-sm text-[#E6E6E1]/60">Features delivered</span>
                     <span className="font-bold">12</span>
                   </div>
