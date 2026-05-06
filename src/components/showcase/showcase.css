@@ -58,7 +58,19 @@
 .address-bar .url {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
+  /* Intentional privacy blur with rounded pill shape */
+  display: inline-block;
+  padding: 2px 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  filter: blur(4px);
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+.showcase-card:hover .address-bar .url {
+  filter: blur(3px);
 }
 
 .chrome-actions {
@@ -409,6 +421,11 @@
 
 .lightbox .url {
   font-size: 12px;
+  /* Same privacy blur as cards */
+  padding: 3px 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  filter: blur(4px);
 }
 
 .close-btn {
