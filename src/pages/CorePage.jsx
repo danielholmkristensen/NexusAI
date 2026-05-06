@@ -46,7 +46,7 @@ const CorePage = () => {
       role: "Your Product Owner",
       title: "Product",
       icon: Target,
-      signal: "4 features this quarter",
+      signal: "12 features this quarter",
       view: "Continuous improvement backlog"
     }
   ];
@@ -170,9 +170,9 @@ const CorePage = () => {
 
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
-              <div className="text-5xl font-black text-[#10B981] mb-2">4</div>
+              <div className="text-5xl font-black text-[#10B981] mb-2">12</div>
               <div className="font-bold uppercase tracking-tight text-sm mb-1">Features Shipped</div>
-              <p className="text-xs text-black/50">This quarter</p>
+              <p className="text-xs text-black/50">A feature a week</p>
             </div>
             <div className="quarter-card bg-white rounded-xl p-6 border-2 border-black/5 text-center">
               <div className="text-5xl font-black text-green-600 mb-2">62%</div>
