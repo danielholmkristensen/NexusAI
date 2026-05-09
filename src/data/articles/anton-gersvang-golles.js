@@ -15,11 +15,11 @@ export const article = {
         mode: "full-bleed",
         caption: "The haystack grows. The needle does not."
       },
-      content: `On a Danish Christmas Eve, somewhere between the duck and the marzipan-wrapped almond, a Dane sits down on a sofa, opens his electronic program guide, and finds **Die Hard** on TV2 again. Bruce Willis, dirty-vested. *En juleklassiker*, the Danish description calls it — a Christmas classic, which depending on whom you ask is a fact of life or a national psychiatric condition.
+      content: `On a Danish Christmas Eve, somewhere between the duck and the marzipan-wrapped almond, a Dane sits down on a sofa, opens his electronic program guide, and finds **Die Hard** on a Danish broadcaster again. Bruce Willis, dirty-vested. *En juleklassiker*, the Danish description calls it — a Christmas classic, which depending on whom you ask is a fact of life or a national psychiatric condition.
 
-The cover he sees is not the cover a viewer in Reykjavík sees, or the one an Austrian aggregator picked from the original German poster. Across Simply.TV's customer base — operators in roughly sixty countries — the same film carries dozens of titles, hundreds of cover variants, and synopses in every working European language. *Die Hard* alone shows up in around two hundred metadata permutations. Multiply that by every film, series, and live event running on those operators, and the catalogue is several hundred thousand titles deep at any moment. Until recently, that work — title, image, genre tag, parental rating, blurb — was done entirely by editorial teams working around the clock, across time zones, against very challenging deadlines.
+The cover he sees is not the cover a viewer in Reykjavík sees, or the one an Austrian aggregator picked from the original German poster. Across roughly sixty markets, the same film carries dozens of titles, hundreds of cover variants, and synopses in every working European language. *Die Hard* alone shows up in around two hundred metadata permutations. Multiply that by every film, series, and live event running on those operators, and the catalogue is several hundred thousand titles deep at any moment. Until recently, that work — title, image, genre tag, parental rating, blurb — was done entirely by editorial teams working around the clock, across time zones, against very challenging deadlines.
 
-In Copenhagen, a 28-year-old computational physicist named **Anton Gersvang Golles** is building the AI that handles it at scale.
+In Copenhagen, a 28-year-old computational physicist named **Anton Gersvang Golles** is raising the precision floor on work that used to consume thousands of editorial hours.
 
 He puts it like this: *How hard is it to find a needle in a haystack? It depends a lot on how big the haystack is.*
 
@@ -90,7 +90,7 @@ This is a **cascade**. Cascades are old. They are also fashionable again, for th
       },
       content: `I asked him what is hard. He paused — long enough that I could sense the level of thinking that went on in that pause — and said: *The last few percent of precision are what's hard.*
 
-Here is the thing about generative-AI demos that everyone in the industry knows and nobody admits in marketing copy: 80% is *easy*. 95% is hard. 99-point-something is no trivial feat. *95 percent is not good enough,* Anton says. *You have to be at 99-point-something to be on a level with a professional editor.* Tolerance is not uniform across customers, and an obviously wrong image on a high-profile streaming title can become a contractual matter within the hour.
+Here is the thing about generative-AI demos that everyone in the industry knows and nobody admits in marketing copy: 80% is *easy*. 95% is hard. 99-point-something is no trivial feat. *95 percent is not good enough,* Anton says. *You have to be at 99-point-something to be on a level with a professional editor.* Tolerance is not uniform, and an obviously wrong image on a high-profile streaming title matters.
 
 The interesting move is what he says next: he does not blame the models. He calls it *very much an AI engineering task. How do we handle our context, are we even asking for what we want?* The 2024–2025 frame was: if your product isn't good enough, wait for the next model. Anton's 2026 view is different. The recent gains, in his read, have come more from engineering practice than from the models. *I see no blockers to where we are aiming,* he says. *Put on the work clothes and keep going.*`
     },
