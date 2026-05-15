@@ -170,6 +170,12 @@ const PractitionerPage = () => {
         title={`${practitioner.name} — The Practitioners | Agentic Agency`}
         description={practitioner.interviewTeaser}
         path={`/practitioners/${practitioner.slug}`}
+        image={article?.sections?.[0]?.image?.src
+          ? `https://agenticagency.dev${article.sections[0].image.src}`
+          : practitioner.portrait
+            ? `https://agenticagency.dev${practitioner.portrait}`
+            : 'https://agenticagency.dev/og-practitioners.jpg'}
+        type="article"
       />
       <BreadcrumbSchema items={[
         { name: 'Home', path: '/' },
