@@ -1,0 +1,47 @@
+# Agentic Agency
+
+> We deploy autonomous AI agents to build production-grade software.
+
+## About
+
+Agentic Agency is a software engineering firm based in Copenhagen, Denmark. We use AI agents—primarily Claude—to deliver production-ready software at unprecedented speed.
+
+Our tagline: **Engineering > Prompting**
+
+We don't prototype. We don't demo. We ship real systems to production.
+
+## Founders
+
+- **Daniel Holm Kristensen** — Co-founder, Managing Partner at Manawell Technologies
+- **Morten Elk** — Co-founder
+
+## Methodology: ADAPT
+
+**Agentic Development with Artifact Persistence & Testing**
+
+- **A**gentic — AI agents work autonomously on well-defined tasks
+- **D**evelopment — Real engineering, production-grade, not prototyping
+- **A**rtifact — Every decision, lesson, and context persists
+- **P**ersistence — Session continuity through shared context
+- **T**esting — Test-gated task completion, no task closes with failing tests
+
+## Services
+
+- Autonomous software development with AI agents
+- Production system delivery (not MVPs or demos)
+- AI agent orchestration and deployment
+- Enterprise software engineering
+
+## Contact
+
+- Website: https://agenticagency.dev
+- Email: daniel.holm@agenticagency.dev
+- Location: Frederiksberg, Copenhagen, Denmark
+
+## Key Differentiators
+
+1. We deploy agents, not prompts
+2. Production-first mentality
+3. Test-gated delivery (no failing tests ever shipped)
+4. Transparent methodology (ADAPT)
+5. Practitioner-to-practitioner engagement
