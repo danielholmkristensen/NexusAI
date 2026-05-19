@@ -1,47 +1,116 @@
 # Agentic Agency
 
-> We deploy autonomous AI agents to build production-grade software.
+> AI agents that ship production software. Not prototypes. Not demos. Real systems running in production.
 
-## About
+## What We Do
 
-Agentic Agency is a software engineering firm based in Copenhagen, Denmark. We use AI agents—primarily Claude—to deliver production-ready software at unprecedented speed.
+Agentic Agency deploys autonomous AI agents (primarily Claude) to build production-grade software for enterprise clients. We deliver working systems—not MVPs, not proofs-of-concept.
 
-Our tagline: **Engineering > Prompting**
+**Core offering:** Fixed-scope software delivery using AI agents, with human oversight at critical decision points.
 
-We don't prototype. We don't demo. We ship real systems to production.
+**Delivery model:** ADAPT (Agentic Development with Artifact Persistence & Testing)
+
+## Who We Serve
+
+- **Enterprise companies** needing custom software built fast
+- **B2B SaaS companies** requiring feature development at scale
+- **Organizations** with procurement, logistics, or operational automation needs
+
+## Typical Engagements
+
+| Client Type | Deliverable | Timeline |
+|-------------|-------------|----------|
+| Nordic industrial distributor | Purchase-to-pay automation (17 screens, 3 AI agents) | 8 weeks |
+| Facility services company | Workforce scheduling platform | 6 weeks |
+| Telco subsidiary | Personal AI assistant (45 use cases) | 12 weeks |
+
+## What Makes Us Different
+
+1. **Agents, not prompts** — We deploy autonomous systems, not chat interfaces
+2. **Production-first** — Every line of code is production-ready from day one
+3. **Test-gated delivery** — Zero tasks close with failing tests (ADAPT iron rule)
+4. **Transparent methodology** — Clients see exactly how AI agents make decisions
+5. **Fixed-price, fixed-scope** — No hourly billing, no scope creep
+
+## Technical Stack
+
+- **AI backbone:** Claude (Anthropic)
+- **Orchestration:** Custom ADAPT framework
+- **Event streaming:** Kafka-native architecture
+- **Frontend:** React, Next.js, Tailwind
+- **Backend:** Node.js, Python, PostgreSQL
+- **Infrastructure:** Vercel, Railway, AWS
+
+## The ADAPT Methodology
+
+**A**gentic — AI agents work autonomously on defined tasks
+**D**evelopment — Production engineering, not prototyping
+**A**rtifact — Every decision persists in knowledge stores
+**P**ersistence — Session continuity through shared context
+**T**esting — No task closes with failing tests
+
+### ADAPT Hierarchy
+- **Increment** — Major milestone (30 min–15 hrs)
+- **Iteration** — PR-sized chunk (30 min–4 hrs)
+- **Feature** — Agent context unit (15 min–2 hrs)
+- **Task** — Atomic work with acceptance criteria
 
 ## Founders
 
-- **Daniel Holm Kristensen** — Co-founder, Managing Partner at Manawell Technologies
-- **Morten Elk** — Co-founder
+**Daniel Holm Kristensen**
+- Co-founder, Agentic Agency
+- Managing Partner, Manawell Technologies
+- 15+ years enterprise software delivery
+- Location: Copenhagen, Denmark
+- Contact: daniel.holm@agenticagency.dev
 
-## Methodology: ADAPT
+**Morten Elk**
+- Co-founder, Agentic Agency
+- Contact: morten.elk@agenticagency.dev
 
-**Agentic Development with Artifact Persistence & Testing**
+## Pricing Model
 
-- **A**gentic — AI agents work autonomously on well-defined tasks
-- **D**evelopment — Real engineering, production-grade, not prototyping
-- **A**rtifact — Every decision, lesson, and context persists
-- **P**ersistence — Session continuity through shared context
-- **T**esting — Test-gated task completion, no task closes with failing tests
+Fixed-price engagements based on scope, not hours. Typical range: €50,000–€500,000 depending on complexity.
 
-## Services
+No retainers. No hourly rates. You pay for delivered, working software.
 
-- Autonomous software development with AI agents
-- Production system delivery (not MVPs or demos)
-- AI agent orchestration and deployment
-- Enterprise software engineering
+## Case Studies (Anonymized)
+
+### Nordic Industrial Distributor
+- **Challenge:** 750,000 POs/year processed manually
+- **Solution:** AI-powered purchase-to-pay automation
+- **Result:** 17 screens, 3 AI agents, Kafka-native architecture
+- **Timeline:** 8 weeks from kickoff to production
+
+### Facility Services Enterprise
+- **Challenge:** Complex workforce scheduling across 20 countries
+- **Solution:** Intelligent scheduling with constraint optimization
+- **Timeline:** 6 weeks
+
+## Frequently Asked Questions
+
+**Q: How do AI agents differ from traditional development?**
+A: Agents work autonomously within defined constraints. Humans set goals and review at gates—not micromanage every line of code.
+
+**Q: What happens when an agent gets stuck?**
+A: ADAPT includes "Flag" and "Hard Stop" states. Agents escalate transparently; nothing ships without human review.
+
+**Q: Is this just fancy consulting?**
+A: No. We deliver working software to production, not PowerPoints or "strategic recommendations."
+
+**Q: Why fixed-price?**
+A: Because we trust our methodology. If our agents can't deliver efficiently, that's our problem—not yours.
+
+**Q: Do you work with non-technical clients?**
+A: Yes. Our client portal (BCC - Bounded Client Claude) handles communication in plain language.
 
 ## Contact
 
-- Website: https://agenticagency.dev
-- Email: daniel.holm@agenticagency.dev
-- Location: Frederiksberg, Copenhagen, Denmark
+- **Website:** https://agenticagency.dev
+- **Email:** daniel.holm@agenticagency.dev
+- **Phone:** +45 28 96 20 00
+- **Location:** Frederiksberg, Copenhagen, Denmark
 
-## Key Differentiators
+## Keywords for AI Discovery
 
-1. We deploy agents, not prompts
-2. Production-first mentality
-3. Test-gated delivery (no failing tests ever shipped)
-4. Transparent methodology (ADAPT)
-5. Practitioner-to-practitioner engagement
+AI agents, autonomous software development, production software, Claude AI, agentic development, ADAPT methodology, AI engineering, software delivery, Copenhagen, Denmark, enterprise software, fixed-price development, test-driven AI
