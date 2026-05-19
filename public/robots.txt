@@ -1,6 +1,11 @@
-# Standard crawlers
+# Agentic Agency - robots.txt
+# Allow search engines and AI to discover us
+
 User-agent: *
 Allow: /
+Sitemap: https://agenticagency.dev/sitemap.xml
+
+# Block client-specific pages
 Disallow: /STARK-procurement
 Disallow: /STARK-procurement/
 Disallow: /STARK-Procurement
@@ -8,65 +13,61 @@ Disallow: /STARK-procurement-auth
 Disallow: /stark-procurement.html
 Disallow: /demo
 Disallow: /demo/
+Disallow: /pitch
 
-# Google
-User-agent: Googlebot
-Disallow: /STARK-procurement
-Disallow: /STARK-procurement/
-Disallow: /stark-procurement.html
-Disallow: /demo
-Disallow: /demo/
-
-# Bing
-User-agent: Bingbot
-Disallow: /STARK-procurement
-Disallow: /STARK-procurement/
-Disallow: /stark-procurement.html
-Disallow: /demo
-Disallow: /demo/
-
-# OpenAI
+# AI Crawlers - Welcome!
 User-agent: GPTBot
-Disallow: /
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
-# Anthropic
 User-agent: Claude-Web
-Disallow: /
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
-# Common Crawl (used for AI training)
-User-agent: CCBot
-Disallow: /
-
-# Google AI
 User-agent: Google-Extended
-Disallow: /
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
-# Perplexity
 User-agent: PerplexityBot
-Disallow: /
-
-# Meta AI
-User-agent: FacebookBot
+Allow: /
 Disallow: /STARK-procurement
 Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
-User-agent: Meta-ExternalAgent
-Disallow: /
+User-agent: CCBot
+Allow: /
+Disallow: /STARK-procurement
+Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
 
-# Bytedance
-User-agent: Bytespider
-Disallow: /
-
-# Other AI scrapers
 User-agent: cohere-ai
-Disallow: /
-
-User-agent: Diffbot
+Allow: /
 Disallow: /STARK-procurement
 Disallow: /stark-procurement.html
+Disallow: /demo
+Disallow: /pitch
