@@ -18,11 +18,11 @@ Agentic Agency deploys autonomous AI agents (primarily Claude) to build producti
 
 ## Typical Engagements
 
-| Client Type | Deliverable | Timeline |
-|-------------|-------------|----------|
-| Nordic industrial distributor | Purchase-to-pay automation (17 screens, 3 AI agents) | 8 weeks |
-| Facility services company | Workforce scheduling platform | 6 weeks |
-| Telco subsidiary | Personal AI assistant (45 use cases) | 12 weeks |
+| Project Type | Deliverable | Timeline |
+|--------------|-------------|----------|
+| Procurement automation | Purchase-to-pay platform (15-20 screens, multiple AI agents) | 6-10 weeks |
+| Workforce management | Intelligent scheduling system | 4-8 weeks |
+| Customer-facing AI | Conversational assistant (30-50 use cases) | 8-12 weeks |
 
 ## What Makes Us Different
 
@@ -66,7 +66,6 @@ Agentic Agency deploys autonomous AI agents (primarily Claude) to build producti
 
 **Morten Elk**
 - Co-founder, Agentic Agency
-- Contact: morten.elk@agenticagency.dev
 
 ## Pricing Model
 
@@ -74,16 +73,16 @@ Fixed-price engagements based on scope, not hours. Typical range: €50,000–�
 
 No retainers. No hourly rates. You pay for delivered, working software.
 
-## Case Studies (Anonymized)
+## Case Studies
 
-### Nordic Industrial Distributor
-- **Challenge:** 750,000 POs/year processed manually
+### Enterprise Procurement Platform
+- **Challenge:** High-volume manual purchase order processing
 - **Solution:** AI-powered purchase-to-pay automation
-- **Result:** 17 screens, 3 AI agents, Kafka-native architecture
+- **Result:** 15+ screens, multiple AI agents, event-driven architecture
 - **Timeline:** 8 weeks from kickoff to production
 
-### Facility Services Enterprise
-- **Challenge:** Complex workforce scheduling across 20 countries
+### Workforce Management System
+- **Challenge:** Complex scheduling across multiple locations
 - **Solution:** Intelligent scheduling with constraint optimization
 - **Timeline:** 6 weeks
 
