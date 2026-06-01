@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow">
+    <title>ECHO — Prepared for Talentech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+        .gate {
+            min-height: 100vh; background: #000; display: flex;
+            align-items: center; justify-content: center; padding: 20px;
+        }
+        .gate-inner { text-align: center; max-width: 360px; width: 100%; }
+        .gate-mark { font-size: 56px; font-weight: 800; letter-spacing: -2px; color: #E6E6E1; display: block; margin-bottom: 24px; }
+        .gate-title { font-size: 24px; font-weight: 700; color: #fff; margin: 0 0 8px; letter-spacing: -0.5px; }
+        .gate-subtitle {
+            font-family: 'JetBrains Mono', monospace; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 4px;
+            color: rgba(255,255,255,0.4); margin: 0 0 40px;
+        }
+        .gate-form { display: flex; flex-direction: column; gap: 12px; }
+        .gate-input {
+            width: 100%; padding: 16px 20px; font-size: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px; color: #fff; text-align: center;
+            letter-spacing: 4px; outline: none;
+        }
+        .gate-input.error { border-color: #ef4444; }
+        .gate-input:focus { border-color: rgba(255,255,255,0.3); }
+        .gate-btn {
+            padding: 16px 32px; font-size: 14px; font-weight: 700;
+            font-family: 'Space Grotesk', sans-serif; text-transform: uppercase;
+            letter-spacing: 2px; background: #E6E6E1; color: #000;
+            border: none; border-radius: 8px; cursor: pointer;
+        }
+        .gate-btn:hover { background: #fff; }
+        .gate-error { margin: 16px 0 0; font-size: 13px; color: #ef4444; font-family: 'JetBrains Mono', monospace; display: none; }
+        .gate-contact { margin: 32px 0 0; font-size: 12px; color: rgba(255,255,255,0.3); font-family: 'JetBrains Mono', monospace; }
+
+        .content {
+            display: none; min-height: 100vh; background: #000;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.018) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.018) 1px, transparent 1px);
+            background-size: 54px 54px;
+            flex-direction: column; align-items: center;
+        }
+        .content.visible { display: flex; }
+
+        header {
+            width: 100%; max-width: 1200px; padding: 48px 40px 0;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .header-left { display: flex; align-items: center; gap: 16px; }
+        .header-mark { font-weight: 900; font-size: 28px; color: #E6E6E1; letter-spacing: -2px; }
+        .header-label {
+            font-family: 'JetBrains Mono', monospace; font-weight: 700;
+            font-size: 11px; color: rgba(230,230,225,0.4);
+            letter-spacing: 4px; text-transform: uppercase;
+        }
+        .header-right {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            color: rgba(230,230,225,0.3); letter-spacing: 1px;
+        }
+
+        .hero { width: 100%; max-width: 1200px; padding: 80px 40px 40px; text-align: center; }
+        .hero h1 { font-weight: 900; font-size: 72px; color: #E6E6E1; letter-spacing: -3px; line-height: 1.05; margin: 0 0 20px; }
+        .hero p { font-size: 20px; color: rgba(230,230,225,0.5); line-height: 1.6; max-width: 520px; margin: 0 auto; }
+
+        .video-section { width: 100%; max-width: 1000px; padding: 0 40px 16px; }
+        .video-label {
+            font-family: 'JetBrains Mono', monospace; font-size: 11px;
+            color: rgba(230,230,225,0.25); letter-spacing: 1px;
+            text-transform: uppercase; text-align: center; margin-bottom: 12px;
+        }
+        .video-wrap {
+            border-radius: 12px; overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3), 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+        .video-wrap video { width: 100%; display: block; background: #0A0E28; }
+
+        .deck-section { width: 100%; max-width: 1000px; padding: 32px 40px 48px; display: flex; justify-content: center; }
+        .deck-link {
+            display: flex; align-items: center; gap: 12px;
+            padding: 16px 32px; background: rgba(230,230,225,0.06);
+            border: 1px solid rgba(230,230,225,0.12); border-radius: 8px;
+            color: #E6E6E1; text-decoration: none; font-weight: 700;
+            font-size: 15px; letter-spacing: 0.5px; transition: background 0.2s, border-color 0.2s;
+        }
+        .deck-link:hover { background: rgba(230,230,225,0.12); border-color: rgba(230,230,225,0.25); }
+
+        .divider {
+            width: 60px; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(230,230,225,0.2), transparent);
+            margin: 0 0 48px;
+        }
+
+        .contact { width: 100%; max-width: 1000px; padding: 0 40px 80px; text-align: center; }
+        .contact p {
+            font-family: 'JetBrains Mono', monospace; font-size: 13px;
+            color: rgba(230,230,225,0.35); letter-spacing: 0.5px; line-height: 2;
+        }
+        .contact a { color: rgba(230,230,225,0.5); text-decoration: none; }
+        .contact a:hover { color: rgba(230,230,225,0.7); }
+    </style>
+</head>
+<body>
+    <!-- Gate -->
+    <div id="gate" class="gate">
+        <div class="gate-inner">
+            <span class="gate-mark">&gt;&gt;</span>
+            <h1 class="gate-title">Agentic Agency</h1>
+            <p class="gate-subtitle">Talentech</p>
+            <form class="gate-form" onsubmit="return handleSubmit(event)">
+                <input id="code-input" class="gate-input" type="password" placeholder="Enter access code" autofocus autocomplete="off">
+                <button class="gate-btn" type="submit">Enter &rarr;</button>
+            </form>
+            <p id="gate-error" class="gate-error">Invalid access code</p>
+            <p class="gate-contact">Contact daniel.holm@agenticagency.dev for access</p>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="content">
+        <header>
+            <div class="header-left">
+                <span class="header-mark">&gt;&gt;</span>
+                <span class="header-label">Agentic Agency</span>
+            </div>
+            <span class="header-right">Prepared for Talentech</span>
+        </header>
+
+        <section class="hero">
+            <h1>ECHO</h1>
+            <p>From copilot to superagent. An Agentic Operating System that discovers, builds, and operates — with your people.</p>
+        </section>
+
+        <section class="video-section">
+            <p class="video-label">The ECHO Method</p>
+            <div class="video-wrap">
+                <video controls preload="metadata" playsinline>
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section class="deck-section">
+            <a href="deck.pdf" download="ECHO-Method-Talentech.pdf" class="deck-link">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 3v10M6 9l4 4 4-4M4 15h12"/>
+                </svg>
+                Download the ECHO Method Deck — Talentech
+            </a>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="contact">
+            <p>
+                Daniel Holm Kristensen<br>
+                <a href="mailto:daniel.holm@agenticagency.dev">daniel.holm@agenticagency.dev</a><br>
+                +45 28 96 20 00
+            </p>
+        </section>
+    </div>
+
+    <script>
+        const ACCESS_CODE = 'NORDIC2026';
+        const AUTH_KEY = 'aa_echo_talentech_auth';
+
+        if (sessionStorage.getItem(AUTH_KEY) === 'true') {
+            document.getElementById('gate').style.display = 'none';
+            document.getElementById('content').classList.add('visible');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('code-input');
+            if (input.value.toUpperCase() === ACCESS_CODE) {
+                sessionStorage.setItem(AUTH_KEY, 'true');
+                document.getElementById('gate').style.display = 'none';
+                document.getElementById('content').classList.add('visible');
+                input.classList.remove('error');
+            } else {
+                input.classList.add('error');
+                document.getElementById('gate-error').style.display = 'block';
+                input.value = '';
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>

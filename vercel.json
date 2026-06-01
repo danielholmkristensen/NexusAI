@@ -17,6 +17,12 @@
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
       ]
+    },
+    {
+      "source": "/echo/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet, noimageindex" }
+      ]
     }
   ],
   "redirects": [
@@ -26,6 +32,10 @@
   "rewrites": [
     { "source": "/STARK-procurement", "destination": "/STARK-procurement/index.html" },
     { "source": "/STARK-procurement/(.*)", "destination": "/STARK-procurement/$1" },
+    { "source": "/echo/falck", "destination": "/echo/falck/index.html" },
+    { "source": "/echo/falck/(.*)", "destination": "/echo/falck/$1" },
+    { "source": "/echo/talentech", "destination": "/echo/talentech/index.html" },
+    { "source": "/echo/talentech/(.*)", "destination": "/echo/talentech/$1" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
