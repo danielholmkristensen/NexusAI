@@ -76,8 +76,8 @@ const AboutPage = () => {
     {
       domain: "Platform Infrastructure",
       name: "Nana Lin",
-      pedigree: "Director, The LEGO Group · IMD · INSEAD",
-      bio: "Platform architecture at LEGO. Responsible for the LEGO Play App (7M+ users). IMD & INSEAD executive programmes."
+      pedigree: "Senior Director, Pandora · ex-The LEGO Group · IMD · INSEAD",
+      bio: "Head of Foundational Platforms at Pandora. Previously platform architecture at The LEGO Group, responsible for the LEGO Play App (7M+ users). IMD & INSEAD executive programmes."
     }
   ];
 
