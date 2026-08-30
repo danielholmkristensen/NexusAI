@@ -2,26 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://agenticagency.dev/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://agenticagency.dev/discover</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://agenticagency.dev/build</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://agenticagency.dev/operate</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://agenticagency.dev/about</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://agenticagency.dev/methodology</loc>
-    <lastmod>2026-05-19</lastmod>
+    <loc>https://agenticagency.dev/method</loc>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://agenticagency.dev/contact</loc>
-    <lastmod>2026-05-19</lastmod>
+    <loc>https://agenticagency.dev/practitioners</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://agenticagency.dev/practitioners/prayson-wilfred-daniel</loc>
+    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agenticagency.dev/practitioners/martin-rosen-lidholm</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agenticagency.dev/practitioners/nana-lin</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://agenticagency.dev/practitioners/anton-gersvang-golles</loc>
+    <lastmod>2026-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
