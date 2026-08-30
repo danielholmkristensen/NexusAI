@@ -40,19 +40,6 @@ const AboutPage = () => {
       quote: "I pick up what others don't dare to touch. I take the challenge and give others the confidence to do what they never thought possible."
     },
     {
-      initials: "RC",
-      name: "Roger Carvalho",
-      title: "Delivery",
-      pedigree: "Chair of Technical Design Authority, The Adecco Group · MSF Netherlands",
-      bio: "Roger governed cloud architecture for 50+ global websites across Adecco brands. Now at MSF, he manages mission-critical systems for field operations. He ensures the Agentic OS runs on infrastructure that doesn't fail.",
-      credentials: [
-        "Microsoft Certified: Cybersecurity Architect Expert",
-        "VMware Certified Professional (VCP6 & VCP5)",
-        "Certified Master IT Specialist (The Open Group)"
-      ],
-      quote: "Agentic systems are only as reliable as the infrastructure they run on. Getting that layer right separates demos from production."
-    },
-    {
       initials: "CF",
       name: "Christoph Frei",
       title: "Delivery",
@@ -64,19 +51,6 @@ const AboutPage = () => {
         "Diplom Informatik, Karlsruhe Institute of Technology"
       ],
       quote: "Security in agentic systems is not a feature you add at the end. It's an architectural decision you make at the beginning."
-    },
-    {
-      initials: "SLA",
-      name: "Steffen Lund Andersen",
-      title: "Delivery",
-      pedigree: "Head of Engineering & Chief Architect, Qampo · Aarhus University",
-      bio: "Steffen leads engineering at Qampo, building AI-driven decision systems. He's CSSLP certified and brings the discipline that separates demos from production systems.",
-      credentials: [
-        "Head of Engineering & Chief Architect at Qampo",
-        "CSSLP (Certified Secure Software Lifecycle Professional)",
-        "BSc Computer Science, Aarhus University"
-      ],
-      quote: "The difference between a demo and a production system is the engineering discipline behind it. That discipline is what we bring."
     }
   ];
 
