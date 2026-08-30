@@ -62,12 +62,6 @@ const AboutPage = () => {
       bio: "Production-grade data science. Speaker at GOTO Copenhagen and Aarhus. MSc Information Technology, Aalborg University."
     },
     {
-      domain: "Applied Analytics",
-      name: "Simon Eiriksson",
-      pedigree: "Eiriksson Consulting · Technical University of Denmark",
-      bio: "End-to-end analytics and shipped ML systems. Specialist in probabilistic ML and Bayesian inference. MSc Mathematical Modelling, DTU."
-    },
-    {
       domain: "Developer Experience",
       name: "Kræn Hansen",
       pedigree: "Developer Experience Engineer, ElevenLabs · MongoDB",
@@ -319,7 +313,7 @@ const AboutPage = () => {
             </div>
             <div className="bg-[#111] rounded-xl p-8 border-2 border-white/10">
               <div className="font-mono text-xs uppercase tracking-wider text-[#E6E6E1]/50 mb-4">Team locations</div>
-              <p className="text-2xl font-bold mb-2">Copenhagen · Amsterdam · Zurich · Berlin · Aarhus</p>
+              <p className="text-2xl font-bold mb-2">Copenhagen · Zurich · Berlin</p>
               <p className="text-[#E6E6E1]/60 font-medium">Building for enterprises across Europe</p>
             </div>
           </div>
