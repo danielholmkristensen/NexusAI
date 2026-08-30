@@ -73,20 +73,20 @@ His focus is on the human side of technical transformation: how teams adapt, wha
   {
     slug: "nana-lin",
     name: "Nana Lin",
-    title: "Director",
-    organisation: "The LEGO Group",
+    title: "Senior Director, Head of Foundational Platforms",
+    organisation: "Pandora",
     location: "Denmark",
-    pedigree: "The LEGO Group · IMD · INSEAD",
+    pedigree: "Pandora · ex-The LEGO Group · IMD · INSEAD",
     portrait: "/practitioners/nana.jpg",
     linkedInUrl: "https://www.linkedin.com/in/nanalin/",
     reelUrl: null,
     tagline: "Enterprise-scale platform infrastructure and engineering leadership",
-    bio: `Nana is a Director at The LEGO Group, where she's responsible for platform architecture and the LEGO Play App — serving over 7 million users worldwide. Her work sits at the intersection of enterprise infrastructure, product engineering, and programme management.
+    bio: `Nana is Senior Director and Head of Foundational Platforms at Pandora. Previously she was a Director at The LEGO Group, responsible for platform architecture and the LEGO Play App — serving over 7 million users worldwide. Her work sits at the intersection of enterprise infrastructure, product engineering, and programme management.
 
 She brings the perspective of someone who has shipped at massive scale, navigating the complexities of enterprise organisations while maintaining the craft of engineering. Her path through IMD and INSEAD executive programmes adds a strategic lens to her technical depth.`,
     credentials: [
-      "Director at The LEGO Group since 2021",
-      "Responsible for platform architecture and LEGO Play App (7M+ users)",
+      "Senior Director, Head of Foundational Platforms at Pandora",
+      "Formerly Director at The LEGO Group — platform architecture and LEGO Play App (7M+ users)",
       "IMD executive programme",
       "INSEAD"
     ],
